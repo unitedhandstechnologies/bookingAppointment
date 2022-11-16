@@ -1,0 +1,5650 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: 0px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.form-check-input:focus {
+    box-shadow: none !important;
+}
+
+.mobile-logo,
+.mobile-nav,
+.moblie-searchbar {
+    display: none;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav-bell {
+    margin-left: 38px;
+    margin-right: 22px;
+}
+
+.container-padding {
+    padding: 30px;
+}
+
+/* .nav-searchbar{
+    display: flex;
+    margin-left: 38px;
+    width: 60%;
+}
+.nav-searchbar .nav-dropdown-btn{
+    background-color: #F3F3F4;
+    border-radius: 3px;
+    border: none;
+    border-radius: 0px;
+    color: #ced4da;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    width: 100%;
+}
+.nav-searchbar .nav-dropdown-btn:active{
+        background-color: #fff;
+        border: none;
+        border-radius: 0px;
+        color: #ced4da;
+}
+.nav-searchbar .nav-dropdown-btn i{
+    color: #436B95;
+    margin:0px 20px;
+}
+
+.nav-searchbar .search-doctor-input {
+     background-color: #F3F3F4;
+    border-radius: 0px;
+    line-height: 1.9;
+    border: 1px solid #F3F3F4;
+    border-left: 1px solid;
+}
+.nav-searchbar .search-doctor-input:focus{
+    box-shadow: 0 0 0 0.25rem transparent !important;
+    background-color: #F3F3F4;
+}
+.nav-searchbar .search-doctor-group{
+    position: relative;
+    width: 100%;
+}
+.nav-searchbar .search-doctor-btn-container{
+    background-color: #436B95;
+    line-height: 20px;
+    padding: 10px 20px;
+    color: #fff;
+}
+.nav-searchbar .search-doctor-btn-container .search-doctor-icon-text{
+    display: none;
+} */
+
+/* .header-content .header-content-container .formcontent .search-doctor-input::placeholder{
+    padding-left: -40px !important;
+} */
+
+
+.divHeader {
+    padding: 7px 0px;
+    border-bottom: 0.5px solid #f2f2f2;
+    box-shadow: #f2f2f2 0px 0px 1px 1px;
+}
+
+.divHeader ul {
+    margin-left: auto;
+}
+
+/* .toggle-btn {
+    margin: 0px 20px;
+} */
+
+/* .divLoginBtn {
+    text-align: right;
+} */
+
+/* .LoginBtn {
+    border: 1px solid #20CAD6;
+    border-radius: 102px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #436B95;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.login-name {
+    border-radius: 102px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #436B95;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.LoginBtn:hover {
+    background: #20CAD6;
+    color: #ffffff !important;
+    transition: 0.5s;
+} */
+
+
+
+.divHeader .navbar .dropdown-menu-first a:hover {
+    background-color: #20CAD6;
+    color: #fff !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu-first {
+    right: 10%;
+    width: 50%;
+}
+
+.divHeader .navbar .dropdown-menu-second a:hover {
+    background-color: #20CAD6;
+    color: #fff !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu-second {
+    right: 20%;
+}
+
+.header-content {
+    background-color: #20CAD6;
+    padding: 50px 0px;
+}
+
+.header-content .header-content-container h1 {
+    color: #fff;
+    font-weight: 700;
+}
+
+.header-content .header-content-container p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.header-content .header-content-container .header-content-dropdown-button {
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    color: #ced4da;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    width: 100%;
+}
+
+.header-content .header-content-container .dropdown-menu {
+    min-width: 100%;
+    border-radius: 0px;
+}
+
+.header-content .header-content-container .header-content-dropdown-button:active {
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    color: #ced4da;
+}
+
+.header-content .header-content-container .header-content-dropdown-button i {
+    color: #436B95;
+    margin: 0px 20px;
+}
+
+.header-content .header-content-container .formcontent {
+    display: flex;
+    margin-top: 50px;
+    padding: 0px 12px;
+}
+
+.header-content .header-content-container .formcontent .formcontent-row {
+    width: 100%;
+}
+
+.header-content .header-content-container .formcontent .dropdown-col {
+    padding: 0px;
+}
+
+.header-content .header-content-container .formcontent .search-col {
+    padding: 0px;
+    display: flex;
+    border-left: 1px solid;
+}
+
+.header-content .header-content-container .formcontent .search-doctor-input {
+    border-radius: 0px;
+    line-height: 1.9;
+    border: 1px solid #fff;
+}
+
+.header-content .header-content-container .formcontent .search-doctor-group {
+    position: relative;
+    width: 100%;
+}
+
+/* .header-content .header-content-container .formcontent .search-doctor-icon{
+    position: absolute;
+    color: #436B95;
+    z-index: 1;
+    left: 20px;
+    top: 15px;
+} */
+.header-content .header-content-container .formcontent .search-doctor-btn-container {
+    background-color: #436B95;
+    line-height: 20px;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.header-content .header-content-container .formcontent .search-doctor-btn-container .search-doctor-icon-text {
+    display: none;
+}
+
+.divHeader .navbar .dropdown-menu-third .dropdown-item:hover,
+.doctor-table-card .doctor-table-card-body .action .dropdown-action:hover {
+    background-color: #20CAD6 !important;
+    color: #fff !important;
+}
+
+.divHeader .navbar .dropdown-menu-third .landing-dropdown-toggle {
+    border: 1px solid #20CAD6;
+    border-radius: 3px;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu-third {
+    right: -2%;
+}
+
+/* .divLogo1 {
+    padding-left: 50px;
+} */
+
+.divNavMenu .navbar ul li .nav-link {
+    color: #436B95;
+}
+
+.divNavMenu ul li ul.dropdown-menu li a:hover {
+    background-color: #20CAD6;
+    color: #fff !important;
+}
+
+.divNavMenu ul li .profilePhotoContainer {
+    border-left: 1px solid #E1E1E1;
+}
+
+.divNavMenu ul li .profilePhotoContainer .profilePhoto {
+    margin: 0px 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #20CAD6;
+    border-radius: 100%;
+}
+
+.profileContainer {
+    padding-right: 20px;
+}
+
+.profileContainer .userName {
+    padding-top: 5px;
+}
+
+.divNavMenu ul li .profilePhoto .userName {
+    font-size: 20px;
+    color: #505050 !important;
+}
+
+.divNavMenu ul li .profilePhoto .userName .drowdownArrow {
+    color: #505050 !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* homepage css start */
+
+.nav-searchbar {
+    display: flex;
+    margin-left: 38px;
+    width: 60%;
+}
+
+.nav-searchbar .nav-dropdown-btn {
+    background-color: #F3F3F4;
+    border-radius: 3px;
+    border: none;
+    border-radius: 0px;
+    color: #ced4da;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    width: 100%;
+}
+
+.nav-searchbar .nav-dropdown-btn:active {
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    color: #ced4da;
+}
+
+.nav-searchbar .nav-dropdown-btn i {
+    color: #436B95;
+    margin: 0px 20px;
+}
+
+.nav-searchbar .search-doctor-input {
+    background-color: #F3F3F4;
+    border-radius: 0px;
+    line-height: 1.9;
+    border: 1px solid #F3F3F4;
+    border-left: 1px solid;
+}
+
+.nav-searchbar .search-doctor-input:focus {
+    box-shadow: 0 0 0 0.25rem transparent !important;
+    background-color: #F3F3F4;
+}
+
+.nav-searchbar .search-doctor-group {
+    position: relative;
+    width: 100%;
+}
+
+.nav-searchbar .search-doctor-btn-container {
+    background-color: #436B95;
+    line-height: 20px;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.nav-searchbar .search-doctor-btn-container .search-doctor-icon-text {
+    display: none;
+}
+
+.type-consultation-section,
+.consult2,
+.top-doctors {
+    background-color: #F3F3F4;
+    padding: 50px 0px;
+}
+
+.type-consultation-section h1,
+.consult2 h1,
+.any-emergency h1,
+.top-doctors-container h1,
+.reviews h1 {
+    color: #436B95;
+    font-weight: 700;
+}
+
+.type-consultation-section .consultation-icon {
+    width: 80px;
+}
+
+.type-consultation-section .card {
+    border: 0px;
+    margin: 50px 0px;
+}
+
+.type-consultation-section .card .card-body .card-title {
+    margin-top: 20px !important;
+    color: #20CAD6;
+}
+
+.type-consultation-section .card .card-body .card-text {
+    margin-top: 20px !important;
+    color: #505050;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.type-consultation-section .card .card-body .consult-now-link {
+    color: #436B95 !important;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.type-consultation-section .card .card-body .consult-now-link i {
+    margin-left: 5px;
+}
+
+.type-consultation-section .card .card-body .link-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.type-consultation-section .card .card-body .consult-now-link:hover {
+    color: #436B95 !important;
+}
+
+.type-consultation-section hr {
+    width: 30%;
+    height: 2px !important;
+    color: #20CAD6 !important;
+    background-color: #20CAD6 !important;
+    opacity: 1;
+}
+
+.notice {
+    background: #20CAD6;
+    color: #FFFFFF;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 0px;
+}
+
+.helpLeft {
+    border: none !important;
+}
+
+.helpLeft img {
+    width: 75%;
+}
+
+.helpRight {
+    border: none !important;
+}
+
+.helpRight .heading,
+.emergency .heading,
+.consult .heading,
+.consultationRightText .heading,
+.review .heading {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.anyEmergency,
+.howIt {
+    color: #436B95;
+}
+
+.helpRight div .works,
+.any {
+    color: #20CAD6;
+}
+
+.helpRight .helpRightText .count {
+    height: 50px;
+    width: 50px;
+    background-color: #20cad6;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.helpRight .helpRightContainer {
+    background: transparent url('../images/Line25.png') 25px 0% no-repeat padding-box;
+}
+
+.helpRight .helpRightContainer .helpRightText .text {
+    color: #505050;
+    font-size: 20px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.consultSlider2 {
+    position: relative;
+}
+
+.consult2 .consult-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.consult2 .consult-btn a,
+.top-doctors-container .consult-btn a,
+.emergency2 .emergency-btn a,
+.doctor-details .doctor-details-right .review-btn a,
+.book-appointment-btn a {
+    background-color: #20CAD6;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.book-appointment-btn2 a {
+    background-color: #fff;
+    border-radius: 3px;
+    color: #436B95;
+    font-weight: 500;
+    border: 1px solid #436B95;
+}
+
+.book-appointment-btn2 a:hover {
+    color: #436B95;
+}
+
+.consultSlider2 .box,
+.doctor-timing-slider-container .box {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0px 10px;
+}
+
+.consultSlider2 .box img {
+    height: 80px !important;
+    width: 80px !important;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.consultSlider2 .consult-card-container {
+    background-color: #fff;
+}
+
+.consultSlider2 .owl-nav {
+    display: block !important;
+    position: absolute;
+    left: 80%;
+    top: -32%;
+}
+
+.consultSlider2 .owl-nav .owl-prev {
+    display: none;
+}
+
+.consultSlider2 .owl-nav .owl-next {
+    display: none;
+}
+
+.consultSlider2 .owl-nav .owl-next span {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.emergency2 .heading,
+.header .heading {
+    font-size: 40px;
+    text-align: center;
+}
+
+.emergencyCardContainer2 {
+    padding-top: 30px;
+}
+
+.emergencyCardContainer2 .emergencyCard2 .emergency-card-image img {
+    width: 100px;
+}
+
+.emergencyCardContainer2 .emergencyCard2 .emergency-card-title h5 {
+    color: #436B95;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.emergencyCardContainer2 .emergencyCard2 .emergency-card-title hr {
+    width: 30%;
+    height: 2px !important;
+    color: #20CAD6 !important;
+    background-color: #20CAD6 !important;
+    margin: 0px auto;
+    opacity: 1;
+}
+
+.emergencyCard2 {
+    border: none !important;
+    text-align: center;
+}
+
+.emergencyCard2 .arrow {
+    position: absolute;
+    height: 45px;
+    width: 150px;
+    background: transparent url('../images/arrow-long-right.png') 0% 0% no-repeat padding-box;
+    background-size: contain;
+    top: 12%;
+    border-radius: 40px;
+    left: 90%;
+    z-index: 1;
+}
+
+.emergency2 .emergencyBtn {
+    background-color: #43beb9;
+    border: 0px;
+    border-radius: 30px;
+}
+
+.emergency2 .emergencyBtn a {
+    color: #fff;
+    margin: 0px 30px;
+    font-weight: 500;
+}
+
+.top-doctor-boxes .box {
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+}
+
+.top-doctor-boxes .box .dotor-item-container,
+.doctor-profile-container .dotor-item-container,
+.dotor-item-container,
+.doctor-list .all-content .dotor-item-container {
+    display: flex;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right,
+.doctor-profile-container .dotor-item-container .doctor-item-right,
+.dotor-item-container .doctor-item-right,
+.doctor-list .all-content .dotor-item-container .doctor-item-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .star-img {
+    height: 10px;
+    width: 70px;
+    display: inline;
+    margin-right: 4px;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .doctor-rating,
+.doctor-profile-container .dotor-item-container .doctor-item-right .doctor-rating,
+.dotor-item-container .doctor-item-right .doctor-rating,
+.doctor-list .all-content .dotor-item-container .doctor-item-right .doctor-rating {
+    color: #20CAD6;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .doctor-year,
+.doctor-profile-container .dotor-item-container .doctor-item-right .doctor-year,
+.dotor-item-container .doctor-item-right .doctor-year,
+.doctor-list .all-content .dotor-item-container .doctor-item-right .doctor-year {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .doctor-exp,
+.doctor-profile-container .dotor-item-container .doctor-item-right .doctor-exp,
+.dotor-item-container .doctor-item-right .doctor-exp,
+.doctor-list .all-content .dotor-item-container .doctor-item-right .doctor-exp {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .doctor-name-link,
+.doctor-profile-container .dotor-item-container .doctor-item-right .doctor-name-link,
+.dotor-item-container .doctor-item-right .doctor-name-link,
+.doctor-list .all-content .dotor-item-container .doctor-item-right .doctor-name-link {
+    color: #436B95;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.top-doctor-boxes .box .dotor-item-container .doctor-item-right .doctor-designation,
+.doctor-profile-container .dotor-item-container .doctor-item-right .doctor-designation,
+.dotor-item-container .doctor-item-right .doctor-designation,
+.doctor-list .all-content .dotor-item-container .doctor-item-right .doctor-designation {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.top-doctor-boxes .box .top-doctor-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.top-doctor-boxes .box .doctor-boxes-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-doctor-boxes .box .doctor-boxes-btn .doctor-boxes-btn1 {
+    background-color: transparent;
+    color: #436B95;
+    border: 1px solid #436B95;
+    padding: 2px 4px;
+}
+
+.top-doctor-boxes .box .doctor-boxes-btn .doctor-boxes-btn2 {
+    background-color: #20CAD6;
+    color: #fff;
+    border: 1px solid #20CAD6;
+}
+
+.top-doctor-boxes .owl-nav {
+    display: block !important;
+    position: absolute;
+    left: 80%;
+    top: -56px;
+}
+
+.top-doctor-boxes .owl-nav .owl-prev {
+    display: none;
+}
+
+.top-doctor-boxes .owl-nav .owl-next {
+    display: none;
+}
+
+.top-doctor-boxes .owl-nav .owl-next span {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.review-boxes .owl-nav {
+    display: block !important;
+    position: absolute;
+    left: 80%;
+    top: -15%;
+}
+
+.review-boxes .owl-nav .owl-prev {
+    display: none;
+}
+
+.review-boxes .owl-nav .owl-next {
+    display: none;
+}
+
+.review-boxes .owl-nav .owl-next span {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.reviews .review-boxes .box {
+    box-shadow: 0px 3px 6px #00000029;
+    margin: 0px 20px;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.reviews .review-boxes .review-text {
+    margin-bottom: 40px;
+}
+
+.reviews .review-boxes .review-profile {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+}
+
+.reviews .review-boxes .review-profile .review-image {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.reviews .review-boxes .review-name {
+    color: #436B95;
+}
+
+.emergency .heading,
+.header .heading {
+    font-size: 30px;
+    text-align: center;
+    background-color: #F6F6F6;
+}
+
+/* homepage css end */
+
+
+/* Doctor flow home page css start */
+
+.sidebar-menu-li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu-li-active {
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0px 28px 28px 0px;
+}
+
+.sidebar-menu-name {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu-a {
+    height: 40px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.sidebar-menu-a:hover {
+    color: #fff;
+}
+
+.sidebar-menu-img {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.sidebar-menu-badge {
+    border-radius: 100% !important;
+}
+
+.doctor-table-card {
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid #CDCDCD !important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+}
+
+.doctor-table-card .doctor-table-card-title {
+    background-color: #20CAD6;
+    font-size: 15px;
+    color: #FAFAFA;
+    font-weight: 500;
+    text-align: center;
+}
+
+.doctor-table-card .doctor-table-card-title .doctor-table-card-title-link {
+    margin-right: 10px;
+}
+
+.doctor-table-card .doctor-table-card-body .doctorName {
+    color: #436B95;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.doctor-table-card .doctor-table-card-body .status {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.doctor-table-card .doctor-table-card-body .medicalSpecialty {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.sex,
+.mobile,
+.email,
+.country,
+.dob {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.patient-name {
+    text-decoration: none !important;
+}
+
+.new-patient-table-title {
+    height: 60px;
+}
+
+.doctor-table-card .doctor-table-card-body .dateTime {
+    width: 150px;
+    font-size: 14px;
+    padding-right: 8px;
+}
+
+.doctor-table-card .doctor-table-card-body div div {
+    padding-right: 0px;
+}
+
+.doctor-table-card .doctor-table-card-body .doctor-table-card-body-right {
+    padding: 0px 15px 0px 0px;
+}
+
+/* .mainRightPanel{
+    background-color: #FAFAFA;
+} */
+.mainRightPanel .my-fees {
+    background-color: #fff !important;
+}
+
+.mainRightPanel .doctor-card {
+    border-radius: 3px;
+    border: none;
+    background-color: #20CAD6;
+    color: #fff;
+}
+
+.mainRightPanel .doctor-card-title {
+    background-color: #20CAD6 !important;
+    border-radius: 3px 3px 0px 0px;
+    font-size: 15px;
+    color: #FAFAFA;
+    font-weight: 500;
+    text-align: center;
+    background-size: cover;
+}
+
+.mainRightPanel .doctor-card-text {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.doctor-table tr .doctor-table-title {
+    color: #FAFAFA;
+}
+
+.doctor-table-card .doctor-table-card-title {
+    border-radius: 3px 3px 0px 0px;
+    font-size: 15px;
+    color: #FAFAFA;
+    font-weight: 500;
+    text-align: center;
+}
+
+.doctor-table-card .doctor-table-card-body .doctorName {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.doctor-table-card .doctor-table-card-body .status {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.doctor-table-card .doctor-table-card-body .medicalSpecialty {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.doctor-table-card .doctor-table-card-body .description {
+    font-size: 10px;
+}
+
+.doctor-table-card .doctor-table-card-body .dateTime {
+    text-align: right;
+    font-size: 14px;
+}
+
+.doctor-timer {
+    font-weight: 500;
+    color: #ff0000;
+    font-size: 20px;
+}
+
+.reason {
+    color: #ff0000;
+}
+
+.doctor-table-card .doctor-table-card-body .action a {
+    height: 35px;
+    width: 100px;
+    color: #FAFAFA;
+    font-size: 13px;
+}
+
+.doctor-table-card .doctor-table-card-body .action .dropdown-action {
+    font-size: 13px;
+    color: #212529;
+    width: 100%;
+}
+
+
+.doctor-table-card .doctor-table-card-body .action .viewDetails {
+    font-weight: 500;
+    background-color: #436b95;
+    margin-right: 10px;
+}
+
+.doctor-table-card .doctor-table-card-body .action .doctor-viewDetails {
+    font-weight: 500;
+    background-color: #20CAD6;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.doctor-table-card .doctor-table-card-body .action .doctor-viewDetails-disable {
+    font-weight: 500;
+    background-color: #CDCDCD;
+    margin-right: 10px;
+}
+
+.doctor-table-card .doctor-table-card-body .action .doctor-joinCall-disable {
+    font-weight: 500;
+    background-color: #505050 !important;
+}
+
+.doctor-table-card .doctor-table-card-body .action .joinCall,
+.appointmentTable .joinCall {
+    font-weight: 500;
+    background-color: #659f74;
+    white-space: nowrap;
+}
+
+.doctor-table-card .doctor-table-card-body .action .startChat {
+    font-weight: 500;
+    background-color: #436B95;
+}
+
+.doctor-table-card .doctor-table-card-body .action .cancel {
+    font-weight: 500;
+    width: 120px;
+    height: 35px;
+    margin-left: 10px;
+}
+
+.doctor-table-card .doctor-table-card-body .action .cancel:hover {
+    background-color: #fff;
+    color: #212529;
+}
+
+.doctor-table-card .doctor-table-card-body {
+    border-bottom: 1px solid #00000026;
+}
+
+.doctor-table-card .doctor-table-card-body:last-child {
+    border-bottom: none;
+}
+
+
+.chart .chart-container {
+    height: 200px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    border: none;
+}
+
+.chart .chart-title {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.chart .chart-image {
+    height: 150px;
+    background: transparent url('../images/m1.png') 0% 0% no-repeat padding-box;
+    background-size: 100% 100%;
+}
+
+/* .bottom-nav {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px -3px 6px #0000001A;
+} */
+
+.doctorDivFooter {
+    font-weight: 500;
+}
+
+
+.doctorDivFooter a {
+    font-weight: 500;
+    color: #436B95;
+}
+
+.doctorDivFooter .div-footer-text {
+    display: flex;
+    justify-content: space-between;
+    color: #436B95;
+}
+
+/* .bottom-footer-left {
+    color: #CDCDCD;
+}
+
+.bottom-footer-right {
+    color: #436B95;
+}
+
+.div-footer-contact {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+
+/* Doctor flow home page css end */
+
+
+/* patient home page css start */
+
+.mainLeftPanel {
+    opacity: 1;
+    background-color: #20CAD6;
+}
+
+.mainLeftPanel .menu-icon {
+    display: none;
+}
+
+.pro-sidebar {
+    transition: width, left, right, 0.5s !important;
+}
+
+/* .mainRightPanel-background {
+    background-color: #FAFAFA;
+} */
+
+.mainRightPanel .mainRightPanelAlert {
+    margin: 5px 0px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #436B95;
+}
+
+.mainRightPanel .mainRightPanelAlertProfile {
+    margin: 5px 0px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.mainRightPanel .mainRightPanelAlert div {
+    font-size: 15px;
+    color: #436B95;
+    opacity: 100%;
+    padding: 10px 10px;
+}
+
+.mainRightPanel .card-links {
+    text-decoration: none;
+}
+
+.mainRightPanel .mainRightPanelCard {
+    border: none;
+    border-radius: 3px;
+    height: 125px;
+    background-color: #20CAD6;
+    display: flex;
+    justify-content: center;
+}
+
+.mainRightPanel .mainRightPanelCard .cardHeader {
+    font-size: 20px;
+    color: #FAFAFA;
+    opacity: 100%;
+    font-weight: 500;
+}
+
+.mainRightPanel .mainRightPanelCard .cardBody {
+    font-size: 25px;
+    color: #FAFAFA;
+    opacity: 100%;
+    font-weight: 100;
+}
+
+.mainRightPanel .mainRightPanelCard .cardFooter {
+    font-size: 16px;
+    color: #FAFAFA;
+    opacity: 100%;
+}
+
+.mainRightPanel .mainRightPanelCard .cardFooter .footerLeft a {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.mainRightPanel .mainRightPanelCard .cardFooter .footerRight {
+    height: 20px;
+    width: 20px;
+}
+
+.mainRightPanel .mainRightPanelCard .card2Body {
+    font-size: 15px;
+    color: #FAFAFA;
+    opacity: 100%;
+}
+
+.mainRightPanel .tableContainer {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+}
+
+.mainRightPanel .tableHeading .headingLeft {
+    /* font-size   : 23px; */
+    height: 32px;
+    color: #436B95;
+    padding-left: 30px;
+    font-weight: 500;
+}
+
+.mainRightPanel .tableHeading .admin-headingLeft {
+    /* font-size   : 23px; */
+    height: 32px;
+    color: #659F74;
+    /* padding-left: 30px; */
+    font-weight: 500;
+}
+
+.mainRightPanel .tableHeading {
+    font-size: 23px;
+}
+
+.mainRightPanel .tableHeading .headingRight {
+    padding-right: 30px;
+    font-size: 18px;
+}
+
+.mainRightPanel .tableHeading .headingRight a {
+    color: #436B95;
+}
+
+.mainRightPanel .appointmentTable {
+    border-radius: 15px;
+    margin: 0px !important;
+}
+
+.table> :not(caption)>*>* {
+    padding: 0.3rem 0.5rem !important;
+}
+
+.mainRightPanel .appointmentTable thead {
+    height: 60px;
+    background-color: #20CAD6;
+    border-radius: 3px 3px 0px 0px;
+    text-align: center;
+    color: #FFFFFF;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable tbody {
+    height: 24px;
+    font-size: 18px;
+    text-align: center;
+    color: #505050;
+}
+
+.mainRightPanel .appointmentTable tbody td {
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.mainRightPanel .appointmentTable tbody .textleft {
+    text-align: left;
+}
+
+.mainRightPanel .appointmentTable tbody tr td:nth-child(3) {
+    width: 150px;
+}
+
+.mainRightPanel .appointmentTable .doctorName {
+    color: #436B95;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.mainRightPanel .appointmentTable .dateTime {
+    width: 150px;
+    font-size: 14px;
+}
+
+.mainRightPanel .appointmentTable tbody .medicalSpecialty {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable .type {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable .type-option {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable .type-option-canceled {
+    color: #F15757;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable .feedback {
+    color: #CDCDCD;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable tbody .status {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.mainRightPanel .appointmentTable tbody .action {
+    width: 400px;
+}
+
+.mainRightPanel .appointmentTable tbody tr .action a {
+    height: 35px;
+    width: 100px;
+    border-radius: 3px;
+    color: #FAFAFA;
+    font-size: 13px;
+}
+
+.mainRightPanel .appointmentTable tbody .action .viewDetails {
+    margin: 0px 10px;
+    font-weight: 500;
+    background-color: #436b95;
+}
+
+.mainRightPanel .appointmentTable tbody .action .joinCall {
+    font-weight: 500;
+    background-color: #659f74;
+}
+
+.mainRightPanel .appointmentTable tbody .refund {
+    font-weight: 500;
+    background-color: #CDCDCD;
+    color: #fff;
+    /* font-size: 12px; */
+    white-space: nowrap;
+}
+
+.mainRightPanel .appointmentTable tbody .book-again {
+    font-weight: 500;
+    background-color: #20CAD6;
+    color: #fff;
+    /* font-size: 12px; */
+    white-space: nowrap;
+}
+
+.mainRightPanel .appointmentTable tbody .next-ption {
+    font-weight: 500;
+    background-color: #436B95;
+    color: #fff;
+}
+
+.mainRightPanel .appointmentTable tbody .action .cancel {
+    font-weight: 500;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #000;
+}
+
+.modal-btn .joinCall {
+    font-weight: 500;
+    background-color: #659f74;
+    color: #FAFAFA;
+    width: 100px;
+    height: 35px;
+}
+
+.modal-btn .joinCall:hover {
+    color: #FAFAFA;
+}
+
+.modal-btn .cancel {
+    font-weight: 500;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #000;
+}
+
+
+.mainRightPanel .pagination a,
+.doctor-profile .pagination a {
+    color: black;
+    float: left;
+    font-size: 10px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.mainRightPanel .pagination a.active,
+.doctor-profile .pagination a.active {
+    background-color: #20CAD6;
+    color: #f2f2f2;
+}
+
+.mainRightPanel .pagination .pages,
+.doctor-profile .pagination .pages {
+    border-radius: 3px;
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+    margin: 0px 5px !important;
+}
+
+.mainRightPanel .pagination .arrow,
+.doctor-profile .pagination .arrow {
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+    margin: 0px 10px;
+    border-radius: 3px;
+}
+
+.mainRightPanel .tableHeading .ongoingChats {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.ongoingChatsTableHeader {
+    height: 65px;
+}
+
+.mainRightPanel .appointmentTable tbody tr .nameDomain {
+    text-align: left;
+    font-size: 15px;
+}
+
+.reviewSlider .box {
+    height: 200px;
+    margin: 10px;
+}
+
+.appointmentTable .card-details img {
+    width: 60px;
+}
+
+.appointmentTable .card-details .text-nowrap {
+    white-space: nowrap !important;
+    width: auto !important;
+}
+
+
+/* patient flow home page css end */
+
+
+/* My Finances page css start */
+
+.mainRightPanel .mainRightPanelCard .text {
+    color: #FAFAFA;
+    font-size: 20px;
+}
+
+.mainRightPanel .mainRightPanelCard .text-currency {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.mainRightPanel .mainRightPanelCard .text .btn-withdraw {
+    color: #FAFAFA;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #FAFAFA;
+    width: 100px;
+}
+
+.mainRightPanel .mainRightPanelCard .text .btn-add-funds {
+    color: #20CAD6;
+    background-color: #FAFAFA;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #20CAD6;
+    width: 100px;
+}
+
+.search-bar .search-bar-text {
+    color: #436B95;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.search-bar .search-bar-text2 {
+    color: #436B95;
+    /* font-size  : 20px; */
+    font-weight: 500;
+}
+
+.search-bar .search-bar-text2 .tab-breadcumb {
+    color: #20CAD6;
+}
+
+/* .search-bar .search-bar-text span {
+    color: #20CAD6 !important;
+}
+
+.search-bar .search-bar-text .tab-breadcumb,
+.tab-breadcumb2 {
+    font-size: 20px;
+}
+
+.search-bar .search-bar-text-input input,
+.got-emergency-form .search-bar-text-input input {
+    border: 1px solid #20CAD6;
+}
+
+.search-bar .search-bar-text-input input:focus,
+.got-emergency-form .search-bar-text-input input:focus {
+    box-shadow: none;
+}
+
+.got-emergency-form .form-file-upload-btn {
+    background-color: #20CAD6;
+    color: #FFFFFF !important;
+}
+
+::placeholder {
+    color: #CDCDCD !important;
+}
+ */
+
+/* My Finances page css end */
+
+
+/* Add funds page css start */
+
+.add-fund-details,
+.doctor-profile-form {
+    background: #FFFFFF 0% 0% no-repeat;
+    border: 1px solid #20CAD6;
+    border-radius: 3px;
+}
+
+.add-funds-section {
+    width: 75%;
+}
+
+.add-funds-section .add-funds-section-title {
+    color: #436B95;
+    font-size: 20px;
+}
+
+
+/* Add funds page css end */
+
+
+/* Consult Doctor page css start */
+
+/* .doctorTimeSlider-table-headings {
+    padding: 0px 10px;
+    height: 40px;
+}
+
+.doctorTimeSlider-table-headings .table-headings-active-tab {
+    height: 40px;
+    border-radius: 15px 15px 0px 0px;
+    background-image: linear-gradient(100deg, #4EC1BA, #03ACB6);
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.doctorTimeSlider-table-headings .table-headings-tab {
+    height: 40px;
+    font-weight: 500;
+    color: #505050;
+}
+
+.doctorTimeSlider-table-headings .table-headings-tab .table-headings-tab-date span {
+    height: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #20CAD6 !important;
+}
+
+.date-picker-div {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.date-picker-span {
+    font-weight: 500;
+}
+
+.consult-doctor-table,
+.consult-doctor-table td,
+.consult-doctor-table th {
+    border: 1px solid #ececec !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.consult-doctor-table .consult-doctor-table-icon {
+    height: 40px;
+    width: 40px !important;
+    margin: 0 auto;
+}
+
+.consult-doctor-table thead tr {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    height: 100px;
+    text-align: center;
+}
+
+.consult-doctor-table td:hover {
+    box-shadow: 0px 5px 11px #00000029;
+    border: 3px solid #20CAD6 !important;
+    font-weight: 500;
+}
+
+.consult-doctor-table tbody tr td .online .online-pill {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    margin-right: 2px;
+}
+
+.consult-doctor-table tbody tr td .online {
+    color: #20CAD6;
+    flex-direction: row;
+}
+
+.consult-doctor-table tbody tr td .time {
+    color: #436B95;
+}
+
+.consult-doctor-table tbody>tr>:nth-child(1),
+.consult-doctor-table thead>tr>th .day {
+    color: #20CAD6;
+}
+
+.consult-doctor-table thead>tr>th .date {
+    color: #9e9e9e;
+}
+
+.consult-doctor-table tbody tr td div {
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.doctor-profile {
+    border-top: 1px solid #ececec;
+    padding: 20px 0px;
+}
+
+.doctor-profile .doctor-image {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid #20CAD6;
+}
+
+.doctor-exp {
+    text-align: center;
+    border-right: 1px solid #ececec;
+}
+
+.doctor-profile .doctor-name {
+    color: #436B95;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.doctor-exp .exp-year {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.doctor-profile .doctor-designation {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.doctor-exp .exp-year {
+    font-size: 40px;
+}
+
+.doctor-exp .exp-text {
+    color: #436B95;
+}
+
+.doctor-exp .exp-rating {
+    font-size: 40px;
+    color: #20CAD6;
+}
+
+.doctor-exp .exp-rating-text,
+.doctor-exp .exp-overall-rating {
+    color: #20CAD6;
+    font-weight: bold;
+}
+
+.doctor-info {
+    padding-left: 40px !important;
+}
+
+.day,
+.date {
+    font-size: 15px;
+}
+
+.doctor-info .about-her,
+.doctor-info .address,
+.doctor-info .contact {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.question-detail .question-rate {
+    color: #20CAD6;
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.question-detail .question-btn {
+    border: 1px solid #436B95;
+    border-radius: 20px;
+    color: #436B95;
+}
+
+.question-detail .question-rate2 .question-rate21 {
+    color: #436B95;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 15px;
+    border-right: 2px solid #ececec;
+}
+
+.question-detail .question-rate2 .question-rate22 {
+    color: #659F74;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+.question-detail .question-rate2 .question-status {
+    padding: 0px 15px;
+}
+
+.question-detail .question-btn2 {
+    background: transparent linear-gradient(105deg, #4EC1BA 0%, #03ACB6 100%) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+#doctor-profile-table {
+    display: none;
+}
+
+#doctor-profile-table a,
+#doctor-profile-table2 a {
+    text-decoration: none;
+}
+
+.doctor-available-text {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.doctor-viewavailability-card {
+    border: none !important;
+}
+
+.filter-terms div {
+    border-radius: 50px;
+    padding: 3px !important;
+    background: #436B95;
+    color: #fff;
+    border: #436B95;
+}
+
+.filter-terms div .close-btn {
+    color: #ffffff;
+}
+
+.alert-close-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.content-views {
+    border-radius: 20px;
+    border: 1px solid #20CAD6;
+    height: 50px;
+}
+
+.content-views .list-view a {
+    color: #808080;
+    padding-right: 60px;
+    border-right: 1px solid #808080;
+    text-decoration: none;
+}
+
+.content-views .list-view1 a {
+    color: #20CAD6;
+    padding-right: 60px;
+    border-right: 1px solid #808080;
+    text-decoration: none;
+}
+
+.content-views .list-view2 a {
+    padding-right: 60px;
+    border-right: 1px solid #808080;
+    text-decoration: none;
+    color: #808080;
+}
+
+.content-views .calender-first-view a {
+    color: #20CAD6;
+    text-decoration: none;
+}
+
+.content-views .calender-first-view1 a {
+    color: #808080;
+    text-decoration: none;
+}
+
+.content-views .calender-first-view2 a {
+    color: #20CAD6;
+    text-decoration: none;
+}
+
+.appointment-modal-header-title {
+    margin: 0 auto;
+    vertical-align: middle;
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.form-container2 .form-data-title-style {
+    color: #808080;
+}
+
+.form-container2 .form-data-title-data-style {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.form-container2 .form-data-title-data-style2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.form-container2 .form-data-title-currency-style {
+    color: #ff0000;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.form-container2 a {
+    color: #20CAD6;
+}
+
+.form-container2 .form-call-btn {
+    background-color: #808080 !important;
+}
+
+.checkbox-input input {
+    margin-top: 7px;
+}
+
+.checkbox-input label {
+    margin-left: 10px;
+}
+
+.modal-close-btn {
+    border: none;
+    background: none;
+}
+
+ */
+/* Consult Doctor page css end */
+/* doctor appointment2 css start */
+/*  .mobile-timing-slider{
+        display: none;
+} */
+.doctor-profile-container {
+    border-bottom: 4px solid #F3F3F4;
+    padding-top: 30px;
+}
+
+.doctor-profile-container hr,
+.all-content hr {
+    color: #ababad;
+}
+
+.doctor-profile-container .top-doctor-image,
+.dotor-item-container .doctor-item-left {
+    margin-right: 10px;
+}
+
+.doctor-profile-container .dotor-item-container .doctor-item-right .star-img,
+.all-content .dotor-item-container .doctor-item-right .star-img {
+    margin-right: 4px;
+}
+
+.doctor-profile-container .doctor-visit,
+.doctor-visit {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.doctor-profile-container .doctor-visit-container,
+.doctor-visit-container {
+    padding: 4px;
+    background-color: #E8FAFB;
+    border-radius: 3px;
+    /* margin: 0px 4px; */
+}
+
+.doctor-visit-container .visit-pills span {
+    margin-right: 5px;
+}
+
+.doctor-charges .question-rate2 {
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-right: 2px solid #ececec;
+}
+
+.doctor-charges .question-rate2:last-child {
+    border-right: none;
+}
+
+.doctor-charges .question-rate2 .question-rate21 {
+    color: #20CAD6;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+.doctor-charges .question-rate2 .question-rate22 {
+    color: #436B95;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+.doctor-charges .question-rate2 .question-rate23 {
+    color: #659F74;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+.doctor-details .doctor-details-left {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.doctor-details .doctor-details-left .doctor-details-left-title {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.doctor-details .doctor-details-left .doctor-details-left-icon {
+    margin-right: 10px;
+    width: 40px;
+}
+
+.doctor-details .doctor-details-left i {
+    padding-left: 15px;
+    color: #20CAD6;
+    font-size: 10px;
+}
+
+.doctor-details .doctor-details-right .doctor-details-right-text {
+    margin-left: 48px;
+}
+
+.doctor-timing-container {
+    /* background-color: #F3F3F4; */
+    border-radius: 3px;
+    padding: 10px 13px;
+}
+
+.doctor-timing-container-gray {
+    background-color: #F3F3F4 !important;
+}
+
+.doctor-timing-container .doctor-timing-container-title {
+    color: #436B95;
+}
+
+.doctor-timing-container .doctor-timing-type-appoitnment {
+    color: #436B95;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.doctor-timing-container .doctor-timing-type-radios {
+    background-color: #fff;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.doctor-timing-slider {
+    background-color: #fff;
+}
+
+.doctor-timing-slider .box .timing-container .doctor-timing-btn-container,
+.all-content-slider .box .timing-container .doctor-timing-btn-container {
+    /* display: flex;
+    justify-content: space-around; */
+    margin: 8px 0px;
+}
+
+.all-content-slider .box .timing-container .doctor-timing-btn-container-date {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.web-timing-container .web-timing-box .doctor-timing-date,
+/* .doctor-timing-slider .box .timing-container .doctor-timing-btn-container .timing-date, */
+.all-content-slider .box .timing-container .doctor-timing-btn-container .timing-date {
+    font-size: 13px;
+    font-weight: 500;
+    color: #436B95;
+}
+
+.calender-icon {
+    background-color: transparent;
+    border: none;
+    height: fit-content;
+    color: #436B95;
+}
+
+.calender-timing-btn {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+.web-timing-container .web-timing-box .doctor-timing-date .date-align {
+    padding-left: 15px;
+}
+
+/* .doctor-timing-slider .box .timing-container .doctor-timing-btn-container .date-pill{
+    background-color: #436B95;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+} */
+/* .doctor-timing-slider .box .timing-container .timing-btn, */
+.web-timing-container .web-timing-box .timing-btn,
+.all-content-slider .box .timing-container .timing-btn {
+    padding: 7px 4px;
+    color: #fff;
+    background-color: #20CAD6;
+    font-size: 13px;
+    width: 87px;
+    font-weight: 500;
+    margin: 4px 4px;
+    border-radius: 3px;
+}
+
+.doctor-timing-slider .box .timing-container .timing-btn-online,
+/* .all-content-slider .box .timing-container .timing-btn-online{ */
+.web-timing-container .web-timing-box .timing-btn-online {
+    color: #436B95;
+}
+
+.doctor-timing-slider .box .timing-container .timing-btn2,
+/* .all-content-slider .box .timing-container .timing-btn2{ */
+.web-timing-container .web-timing-box .timing-btn2 {
+    justify-content: center;
+    padding: 7px 4px;
+    color: #fff;
+    font-size: 13px;
+    /* width: 120px; */
+    font-weight: 500;
+    margin: 7px 4px;
+    border: 1px solid #20CAD6;
+    border-radius: 3px;
+}
+
+.doctor-timing-slider .box .timing-container .timing-btn2 a,
+/* .all-content-slider .box .timing-container .timing-btn2 a{ */
+.web-timing-container .web-timing-box .timing-btn2 a {
+    text-decoration: none;
+    color: #20CAD6;
+}
+
+.web-timing-container .web-timing-box .timing-btn a,
+/* .doctor-timing-slider .box .timing-container .timing-btn a, */
+.all-content-slider .box .timing-container .timing-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* .doctor-timing-slider .box .timing-container .timing-btn:hover, */
+.web-timing-container .web-timing-box .timing-btn:hover,
+.all-content-slider .box .timing-container .timing-btn:hover {
+    background-color: #436B95;
+}
+
+.doctor-timing-slider .box .timing-btn2:hover,
+/* .all-content-slider .box .timing-container .timing-btn2:hover{ */
+.web-timing-container .web-timing-box .timing-btn2:hover {
+    background-color: #20CAD6;
+}
+
+.doctor-timing-slider .box .timing-btn2:hover a,
+/* .all-content-slider .box .timing-container .timing-btn2:hover  a, */
+.web-timing-container .web-timing-box .timing-btn2:hover a,
+.doctor-timing-slider .box .timing-container .timing-btn2:hover .timing-btn-online,
+/* .all-content-slider .box .timing-container .timing-btn2:hover .timing-btn-online{ */
+.web-timing-container .web-timing-box .timing-btn2:hover .timing-btn-online {
+    color: #fff !important;
+}
+
+.doctor-timing-slider .box .timing-btn2:hover .circle,
+/* .all-content-slider .box .timing-container .timing-btn2:hover .circle{ */
+.web-timing-container .web-timing-box .circle {
+    background-color: #fff;
+}
+
+.doctor-timing-slider-container {
+    position: relative;
+}
+
+/* .doctor-timing-slider-container .circle{ */
+.web-timing-container .web-timing-box .circle {
+    height: 5px;
+    width: 5px;
+    background-color: #659F74;
+    border-radius: 100%;
+    margin: 0px 5px;
+}
+
+.more-timing {
+    color: #436B95;
+}
+
+.doctor-timing-slider-container .owl-nav {
+    display: block !important;
+    font-size: 30px;
+    color: #20CAD6;
+}
+
+.doctor-timing-slider-container .owl-nav .owl-prev {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
+.all-content-slider .doctor-timing-slider-container .owl-dots {
+    display: none;
+}
+
+.all-content-slider .doctor-timing-slider-container .owl-nav .owl-prev {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.doctor-timing-slider-container .owl-nav .owl-next {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.all-content-slider .doctor-timing-slider-container .owl-nav .owl-next {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+/* .doctor-timing-slider-container .timing-container{
+    width: 90%;
+} */
+.check-availability a,
+.check-availability a:hover {
+    color: #436B95;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.model-close-btn {
+    background: transparent;
+    border: transparent;
+    color: #20CAD6;
+    margin-left: auto;
+}
+
+/* .doctor-modal .modal-dialog{
+    max-width: 75%;
+} */
+.doctor-modal .modal-header {
+    /* padding: 10px 10px !important; */
+    border-bottom: none;
+    /* margin-left: auto; */
+}
+
+.calender-modal-class .modal-header {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.calender-modal-class .modal-header .header-title .header-title-text1 {
+    color: #436B95;
+}
+
+.calender-modal-class .modal-header .header-title .header-title-text2 {
+    color: #20CAD6;
+}
+
+.doctor-modal .modal-content {
+    padding: 30px 30px;
+}
+
+/* .doctor-modal .doctor-modal-body .doctor-timing-container{
+    background-color: transparent;
+    padding: 0px 10px;
+} */
+.doctor-modal .doctor-modal-body .doctor-item-left img {
+    width: 100px;
+    border-radius: 100%;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .top-doctor-image {
+    width: 80px;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .doctor-timing-container .doctor-timing-type-appoitnment {
+    margin: 10px;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .dotor-item-container .doctor-item-right .star-img {
+    margin-right: 4px;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #20CAD6;
+    font-size: 13px;
+    font-weight: 100;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-btn:hover {
+    background-color: #436B95;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .doctor-timing-slider-container2 {
+    position: relative;
+}
+
+/* .doctor-modal .doctor-modal-body .doctor-timing-modal-container .owl-nav .owl-next span,
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .owl-nav .owl-prev span{
+    font-size: 35px;
+} */
+/* .doctor-modal .doctor-modal-body .doctor-timing-modal-container .owl-nav .owl-next{
+    display: block;
+    color: #20CAD6;
+    border-radius: 20px;
+    position: absolute;
+    top: -6%;
+    left: 250px;
+    margin: 15px 0px;
+} */
+/* .doctor-modal .doctor-modal-body .doctor-timing-modal-container .owl-nav .owl-prev{
+    display: block;
+    color: #20CAD6;
+    border-radius: 20px;
+    position: absolute;
+    top: -6%;
+    left: 230px;
+    margin: 15px 0px;
+} */
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-date-container {
+    display: flex;
+    width: 60%;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .mobile-timing-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #436B95;
+    padding-left: 10px;
+
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .doctor-timing-btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #436B95;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-checkbox {
+    display: none;
+}
+
+.doctor-modal .doctor-modal-body .doctor-timing-modal-container .date-pill {
+    background-color: #436B95;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 10px 12px;
+}
+
+.book-appointment-btn a:hover {
+    color: #fff;
+}
+
+/* doctor appointment2 css end */
+/* doctor list css start */
+.doctor-list .doctor-list-row {
+    margin: 40px 0px;
+}
+
+.doctor-list .all-content .dotor-item-container .doctor-item-left .top-doctor-image {
+    width: 156px;
+    border-radius: 100%;
+}
+
+.doctor-list .nav-tabs .nav-link {
+    border: none;
+    color: #505050;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.doctor-list #nav-tab-views {
+    margin-top: 10px;
+    border-bottom: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.doctor-list #nav-tab-views .nav-link {
+    border-radius: 0px !important;
+}
+
+.doctor-list #nav-tab-views .nav-link.active,
+#nav-tab-views .nav-item.show .nav-link {
+    border-bottom: none !important;
+    color: #fff;
+    background-color: #436B95;
+}
+
+.doctor-list .nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    border-bottom: 2px solid #436B95 !important;
+    color: #436B95;
+}
+
+.doctor-list .tab-pills {
+    margin: 20px 0px;
+    overflow-x: auto;
+}
+
+.btn-group,
+.btn-group-vertical {
+    width: 100%;
+}
+
+.doctor-list .dropdown {
+    margin-right: 10px;
+    position: initial;
+}
+
+.doctor-list .dropdown-menu {
+    width: fit-content !important;
+    top: unset !important;
+    will-change: unset !important;
+    left: unset !important;
+    transform: unset !important;
+}
+
+.doctor-list .dropdown-menu.show {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.doctor-list .tab-pills .tab-pills-div {
+    background-color: #436B95;
+    border-radius: 3px;
+    padding: 7px 25px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    min-width: 140px;
+}
+
+.float-start input[type="date"] {
+    background-color: #436B95;
+    color: #fff;
+    width: fit-content;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.doctor-list select {
+    width: 140px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #fff 60%),
+        linear-gradient(135deg, #fff 40%, transparent 50%) !important;
+    background-position:
+        calc(100% - 25px) 16px,
+        calc(100% - 20px) 16px,
+        100% 0;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+}
+
+.doctor-list select option {
+    background-color: #fff !important;
+    color: #436B95;
+}
+
+.doctor-list .dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #436B95;
+    color: #fff;
+}
+
+.doctor-list .tab-pills .tab-pills-div-search {
+    background-color: #20CAD6 !important;
+}
+
+.doctor-list .doctor-list-book-appointment-btn {
+    display: none;
+}
+
+a.morelink {
+    color: #20CAD6;
+    text-decoration: none;
+}
+
+a.morelink:hover {
+    color: #20CAD6;
+}
+
+.morecontent span {
+    display: none;
+}
+
+/* doctor list css end */
+/* appointment details css start */
+.appointment-details-container .appointment-details-profile {
+    display: flex;
+    justify-content: center;
+}
+
+.appointment-details-container .appointment-details-form-background {
+    background-color: #F3F3F4;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-title h3 {
+    color: #436B95;
+    font-weight: 700;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-info {
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #20CAD6;
+    padding: 10px;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-info .appointment-details-form-info-title {
+    color: #808080;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-info .appointment-details-form-info-value {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.appointment-details-container .appointment-details-form .add-new {
+    color: #436B95;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-info .appointment-details-form-info-balance {
+    color: #FF0000;
+    font-weight: 500;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-info .appointment-details-form-info-add-funds a {
+    color: #20CAD6;
+    font-size: 14px;
+}
+
+.appointment-details-container .appointment-details-form label {
+    color: #505050;
+    margin-bottom: 5px;
+}
+
+.appointment-details-container .appointment-details-form .form-check-label a {
+    color: #20CAD6;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-inputs {
+    border: 1px solid #20CAD6;
+    resize: none;
+}
+
+.appointment-details-container .appointment-details-form .appointment-details-form-inputs:focus {
+    box-shadow: 0 0 0 0.25rem transparent;
+}
+
+.appointment-details-container .appointment-details-form .form-file-upload-btn,
+.got-emergency-form .form-file-upload-btn {
+    background-color: #20CAD6;
+    color: #FFFFFF !important;
+}
+
+.checkbox-input input {
+    margin-top: 7px;
+}
+
+/* appointment details css end */
+
+/* doctor profile page css start */
+
+.doctor-info-tabs .doctor-info-tabs-content .heading-text .heading-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: #20CAD6;
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.doctor-info-tabs {
+    box-shadow: 0px 5px 10px #00000029;
+    border-radius: 15px;
+    padding: 0px;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-data-list {
+    padding-left: 40px;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-data ul {
+    list-style-type: disc;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-data ul li {
+    color: #505050;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-data .right-list {
+    margin-left: 40px;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-heading h5 {
+    color: #436B95;
+}
+
+.doctor-info-tabs .doctor-info-tabs-content .doctor-info-tabs-content-heading .question {
+    color: #436B95;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+::marker {
+    color: #20CAD6;
+}
+
+.nav-pills .nav-link {
+    color: #505050;
+    font-weight: 500;
+    border-radius: 0px !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #20CAD6 !important;
+    color: #fff;
+}
+
+.my-profile-form .nav-pills .nav-link {
+    color: #505050;
+    font-weight: 500;
+    border-radius: 0px !important;
+}
+
+.my-profile-form .nav-pills .nav-link.active,
+.terms-tabs .nav-pills .nav-link.active {
+    background-color: #fff !important;
+    color: #436B95 !important;
+    border-bottom: 2px solid #20CAD6;
+}
+
+/* doctor profile page css end */
+
+
+/* Got Emergency page css start */
+
+.top-banner {
+    background: transparent url(../images/MaskGroup8.png) 0% 0% no-repeat padding-box;
+    height: 200px;
+    background-size: 100% 100%;
+}
+
+.top-banner .heading-background {
+    background-color: transparent;
+}
+
+.performance-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.performance-cards .performance-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.performance-cards .performance-card .card-image img {
+    height: 80px;
+    padding-right: 20px;
+}
+
+.performance-cards .performance-card .performance-card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.performance-cards .performance-card .card-count {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.performance-cards .performance-card .card-text {
+    font-weight: 500;
+}
+
+.got-emergency-cards {
+    margin: 60px 0px;
+}
+
+.search-bar-text-input textarea {
+    resize: none;
+    border: 1px solid #949AA5;
+}
+
+.search-bar-text-input textarea:focus {
+    box-shadow: none;
+}
+
+.search-bar-text-input {
+    position: relative;
+}
+
+.search-bar-text-input .filter-btn {
+    background-color: #20CAD6;
+    color: #fff;
+    font-weight: 600;
+}
+
+.search-bar-text-input .filter-btn:hover {
+    color: #fff;
+}
+
+.search-bar-text-input .filter-container {
+    position: absolute;
+    background-color: #ffffff;
+    top: 50px;
+    border: 1px solid #20CAD6;
+    padding: 20px 20px;
+    right: 50%;
+    width: max-content;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.search-bar-text-input .filter-container .filter-title {
+    color: #436B95;
+    font-weight: 600;
+}
+
+.form-container {
+    padding: 30px 30px;
+    border-radius: 3px;
+    border: 1px solid #20CAD6;
+}
+
+.form-container2 {
+    padding: 0px 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+}
+
+.form-submit-btn {
+    background-color: #e2e2e2 !important;
+    height: 50px;
+    border-radius: 50px !important;
+    font-weight: 500 !important;
+}
+
+.form-text-left .charge {
+    color: #659F74;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.form-text-left .per-consultation {
+    font-size: 20px;
+}
+
+.form-text-right .balance {
+    color: #659F74;
+    font-weight: 500;
+}
+
+.form-text-right .add-balance {
+    color: #20CAD6;
+}
+
+.form-call-btn {
+    background-color: #20CAD6 !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    padding: 10px 50px !important;
+}
+
+.chat-with-doctor .ui-switcher {
+    background-color: #000;
+    display: inline-block;
+    height: 25px;
+    width: 70px;
+    border-radius: 30px;
+}
+
+.chat-with-doctor .ui-switcher[aria-checked=true] {
+    background-color: #20CAD6;
+}
+
+.chat-with-doctor .ui-switcher[aria-checked=true]:before {
+    content: 'Yes';
+    left: 7px;
+}
+
+.chat-with-doctor .ui-switcher[aria-checked=false]:before {
+    content: 'No';
+    right: 25px;
+}
+
+.chat-with-doctor .ui-switcher[aria-checked=false]:after {
+    left: 5px;
+}
+
+.chat-with-doctor .ui-switcher:before {
+    top: 8px;
+}
+
+.chat-with-doctor .ui-switcher[aria-checked=true]:after {
+    left: 50px;
+}
+
+.chat-with-doctor .ui-switcher:after {
+    background-color: #ffffff;
+    content: '\0020';
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition: left 0.25s;
+}
+
+
+/* Got Emergency page css end */
+
+
+/* doctor my profile page css start */
+
+.my-profile-form {
+    background-color: #ffffff;
+}
+
+#my-doctor-profile {
+    border-left: 1px solid #ddd;
+    padding: 0px;
+}
+
+#myprofiletab {
+    border-bottom: 1px solid #ddd;
+}
+
+.my-profile-form .my-profile-container .my-profile-photo {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border: 3px solid #20CAD6;
+}
+
+.my-profile-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-profile-form .my-profile-container .my-profile-info {
+    color: #436B95 !important;
+    font-weight: 900;
+}
+
+.my-profile-form .my-profile-container .my-profile .profile-verified,
+.my-profile-form .my-profile-container .my-email .email-verified,
+.my-profile-form .my-profile-container .my-phone .mobile-verified,
+.patient-email-verify {
+    color: #659F74;
+}
+
+.my-profile-form .my-profile-container .my-profile .profile-not-verified,
+.my-profile-form .my-profile-container .my-email .email-not-verified,
+.my-profile-form .my-profile-container .my-phone .mobile-not-verified,
+.patient-mobile-not-verify {
+    color: #F15757;
+}
+
+.fileUpload {
+    border: 1px solid #20CAD6 !important;
+}
+
+.clinic-info {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.physician-servicies-select button {
+    background: #fff;
+    border: 1px solid #20CAD6 !important;
+    border-radius: 57px !important;
+}
+
+.physician-servicies-select .dropdown-item:hover {
+    background-color: #20CAD6;
+    color: #fff;
+}
+
+.online-appoitment-title,
+.inclinic-appoitment-title,
+.chat-consultation-title,
+.select-currency-title {
+    border-right: 1px solid #ddd;
+    color: #436B95;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+
+.online-appoitment-row,
+.inclinic-appoitment-row,
+.select-currency-row {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.send-otp {
+    color: #20CAD6;
+}
+
+.passing-year .yearpicker-container {
+    right: 2%;
+}
+
+.send-otp-model .modal-header .modal-title {
+    color: #20CAD6;
+}
+
+.send-otp-model .modal-header .send-otp-close {
+    background-color: transparent;
+    border: none;
+}
+
+.mt-38 {
+    margin-top: 38px !important;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+/* doctor my profile page css end */
+
+
+/* doctor my timing page css start */
+
+.doctor-my-timing {
+    border-left: none !important;
+}
+
+.doctor-my-timing-tab {
+    /* padding: 15px; */
+    background-color: #fff;
+}
+
+.doctor-timing-container .timing-title {
+    font-size: 20px;
+    color: #436B95;
+    font-weight: 600;
+}
+
+.doctor-timing-container .doctor-timing-row,
+.doctor-custom-timing-container .doctor-timing-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.doctor-timing-container table thead,
+.doctor-timing-container table tbody,
+.doctor-custom-timing-container table thead,
+.doctor-custom-timing-container table tbody {
+    white-space: nowrap;
+}
+
+.doctor-timing-container table tr,
+.doctor-custom-timing-container table tr {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.doctor-timing-container .doctor-timing-days-time span,
+.doctor-custom-timing-container .doctor-timing-days-time span,
+.doctor-timing-container .doctor-timing-days span {
+    background-color: #20CAD6;
+    padding: 4px 10px;
+    color: #fff;
+}
+
+/* .doctor-timing-container .doctor-timing-btn,
+.doctor-custom-timing-container .doctor-timing-btn {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.doctor-timing-container .doctor-timing-btn .doctor-timing-btn-edit,
+.doctor-custom-timing-container .doctor-timing-btn .doctor-timing-btn-edit {
+    color: #20CAD6;
+    margin: 0px 5px;
+}
+
+.doctor-timing-container .doctor-timing-btn .doctor-timing-btn-delete,
+.doctor-custom-timing-container .doctor-timing-btn .doctor-timing-btn-delete {
+    color: red;
+    margin: 0px 3px;
+}
+
+.doctor-timing-container .set-timing-btn,
+.doctor-custom-timing-container .set-custom-timing-btn {
+    border: 1px solid #20CAD6;
+    color: #20CAD6;
+}
+
+.doctor-timing-container .set-timing-btn:hover:hover,
+.doctor-custom-timing-container .set-custom-timing-btn:hover {
+    color: #20CAD6 !important;
+}
+
+#working-timing-modal .working-titming-modal-title,
+#working-custom-timing-modal .working-titming-modal-title {
+    color: #436B95;
+}
+
+#working-timing-modal .close-btn,
+#working-custom-timing-modal .close-btn {
+    border: none;
+    background: #fff;
+    font-size: 30px;
+    color: #436B95;
+}
+
+#working-timing-modal .doctor-timing-modal-cancel-btn,
+#working-custom-timing-modal .doctor-timing-modal-cancel-btn {
+    font-weight: 500;
+}
+
+#working-timing-modal .doctor-timing-modal-cancel-btn:hover,
+#working-custom-timing-modal .doctor-timing-modal-cancel-btn:hover {
+    background-color: #fff !important;
+    color: #6c757d !important;
+}
+
+#working-timing-modal .doctor-timing-modal-save-btn,
+#working-custom-timing-modal .doctor-timing-modal-save-btn {
+    font-weight: 500;
+    background-image: linear-gradient(101deg, #4EC1BA, #03ACB6);
+    color: #fff;
+}
+
+#working-timing-modal .divForm-radio,
+#working-custom-timing-modal .divForm-radio {
+    width: 50%;
+}
+
+.doctor-my-timing-dialog {
+    max-width: 700px !important;
+}
+
+
+/* doctor my timing page css end */
+
+
+/* admin-dashboard page css end */
+.admin-mainRightPanel .admin-mainRightPanel-content {
+    padding: 30px 30px;
+}
+
+#about-patient,
+/* #health-info, */
+#patient-history,
+#patient-symptoms,
+#health-monitoring {
+    margin: 50px;
+}
+
+.admin-doctor-profile-container .admin-doctor-profile {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border: 3px solid #20CAD6;
+    margin-right: 30px;
+}
+
+.admin-doctor-profile-container .admin-doctor-name {
+    font-weight: 900;
+    color: #436B95;
+}
+
+.admin-doctor-title {
+    color: #20CAD6;
+    font-weight: 700;
+}
+
+.admin-doctor-value {
+    color: #436B95;
+}
+
+.admin-doctor-name {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.admin-ducation-info {
+    list-style-type: disc;
+}
+
+.admin-doctor-approve-button,
+.modal-submit {
+    background-color: #20CAD6 !important;
+    border-radius: 3px;
+    color: #fff !important;
+}
+
+.admin-doctor-approve-button:nth-child(2) {
+    margin-left: 30px;
+}
+
+.admin-doctor-reject-button {
+    background-color: #ff0000 !important;
+    color: #fff !important;
+    margin-left: 30px;
+}
+
+.view-details-icon {
+    color: #5b7ea2;
+    font-weight: 500;
+}
+
+.view-details-link {
+    text-decoration: none !important;
+}
+
+.additional-info-doc {
+    color: #20CAD6;
+}
+
+.view-details-reject .modal-header,
+.view-details-reject .modal-footer {
+    border: none;
+}
+
+.view-details-reject .modal-header {
+    padding: 0px 10px !important;
+}
+
+.view-details-reject .modal-body .modal-title {
+    text-align: center;
+    color: #5b7ea2;
+}
+
+.modal-close-button {
+    background: none !important;
+    border: none !important;
+    font-size: 25px !important;
+}
+
+
+/* admin dashboard page css end */
+
+
+/* patient my profile page css start */
+
+#personal-info .personal-info-right-content {
+    padding-right: 40px;
+}
+
+#personal-info .personal-info-tab-container {
+    margin: 0px !important;
+}
+
+label,
+input {
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.input-wrapper i {
+    position: absolute;
+    top: 43px;
+    right: 10px;
+    width: 20px;
+    color: #20CAD6;
+}
+
+.mobile-verify::after,
+.email-verify::after {
+    content: attr(data-domain);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 12px;
+    display: block;
+    text-decoration: underline;
+}
+
+.health-tracking-section {
+    padding: 30px;
+}
+
+.health-tracking-section .health-info-question-text,
+.health-monitoring-section .health-info-question-text,
+.hearing-seeing-section .health-info-question-text,
+.Digestion-nutrition-section .health-info-question-text,
+.chronic-disease-condition-section .health-info-question-text,
+.recent-history-section .health-info-question-text,
+.medication-intake-section .health-info-question-text,
+.health-tracking-section .diopters-dropdown .diopters-dropdown-text-time,
+.health-tracking-section .diopters-dropdown .diopters-dropdown-right-eye-value,
+.health-tracking-section .diopters-dropdown .diopters-dropdown-left-eye-value,
+.health-monitoring-section .monitoring-diopters-dropdown .monitoring-diopters-dropdown-text .monitoring-diopters-dropdown-text-time,
+.health-monitoring-section .monitoring-diopters-dropdown .monitoring-diopters-dropdown-right-eye-value,
+.health-monitoring-section .monitoring-diopters-dropdown .monitoring-diopters-dropdown-left-eye-value,
+.health-tracking-section .cigarettes-day-dropdown .cigarettes-day-dropdown-text .cigarettes-day-text-time,
+.health-tracking-section .cigarettes-day-dropdown .cigarettes-day-value,
+.health-monitoring-section .monitoring-cigarettes-day-dropdown .monitoring-cigarettes-day-dropdown-text .monitoring-cigarettes-day-text-time,
+.health-monitoring-section .monitoring-cigarettes-day-dropdown .monitoring-cigarettes-day-value,
+.health-tracking-section .glucose-level-dropdown .glucose-level-dropdown-text .glucose-level-text-time,
+.health-tracking-section .glucose-level-dropdown .glucose-level-value,
+.health-tracking-section .alcohol-intake-dropdown .alcohol-intake-dropdown-text .alcohol-intake-text-time,
+.health-tracking-section .alcohol-intake-dropdown .alcohol-intake-value,
+.health-monitoring-section .monitoring-alcohol-intake-dropdown .monitoring-alcohol-intake-dropdown-text .monitoring-alcohol-intake-text-time,
+.health-monitoring-section .monitoring-alcohol-intake-dropdown .monitoring-alcohol-intake-value,
+.health-tracking-section .hba1c-dropdown .hba1c-dropdown-text .hba1c-text-time,
+.health-tracking-section .hba1c-dropdown .hba1c-value,
+.health-tracking-section .psa-dropdown .psa-dropdown-text .psa-text-time,
+.health-tracking-section .psa-dropdown .psa-value,
+.health-tracking-section .pap-dropdown .pap-dropdown-text .pap-text-time,
+.health-tracking-section .pap-dropdown .pap-value {
+    font-weight: 600;
+}
+
+#health-info .health-tracking-section .health-info-add-new-btn,
+#health-monitoring .health-monitoring-add-new-btn {
+    border: 1px solid #20CAD6;
+    color: #20CAD6;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.health-tracking-section .diopters-dropdown,
+.health-monitoring-section .monitoring-diopters-dropdown,
+.health-monitoring-section .monitoring-alcohol-intake-dropdown,
+.health-monitoring-section .monitoring-cigarettes-day-dropdown,
+.health-monitoring-section .monitoring-glucose-level-dropdown,
+.health-monitoring-section .monitoring-hba1c-dropdown,
+.health-monitoring-section .monitoring-psa-dropdown,
+.health-monitoring-section .monitoring-pap-dropdown,
+.health-tracking-section .alcohol-intake-dropdown,
+.health-tracking-section .cigarettes-day-dropdown,
+.health-tracking-section .glucose-level-dropdown,
+.health-tracking-section .hba1c-dropdown,
+.health-tracking-section .psa-dropdown,
+.health-tracking-section .pap-dropdown,
+.hearing-seeing-section .trouble-eyesight-dropdown,
+.hearing-seeing-section .contact-lenses-dropdown,
+.hearing-seeing-section .blood-relative-dropdown,
+.hearing-seeing-section .eyesight-regular-dropdown,
+.hearing-seeing-section .consume-alcohol-dropdown,
+.hearing-seeing-section .hearing-problem-dropdown,
+.hearing-seeing-section .hearing-aid-dropdown,
+.Digestion-nutrition-section .gums-bleed-dropdown,
+.Digestion-nutrition-section .gums-retreated-dropdown,
+.Digestion-nutrition-section .consume-alcohol-dropdown,
+.Digestion-nutrition-section .partial-denture-dropdown,
+.Digestion-nutrition-section .wearing-partial-denture-dropdown,
+.Digestion-nutrition-section .bad-breath-dropdown,
+.chronic-disease-condition-section .diabetes-dropdown,
+.chronic-disease-condition-section .diabetes-treated-dropdown,
+.chronic-disease-condition-section .diabetes-blood-relative-dropdown,
+.chronic-disease-condition-section .diabetes-women-dropdown,
+.chronic-disease-condition-section .stroke-dropdown,
+.chronic-disease-condition-section .cancer-dropdown,
+.chronic-disease-condition-section .drepression-dropdown,
+.chronic-disease-condition-section .migraines-dropdown,
+.chronic-disease-condition-section .chronic-dropdown,
+.chronic-disease-condition-section .chronic-eczema-dropdown,
+.chronic-disease-condition-section .vertigo-dropdown,
+.chronic-disease-condition-section .bowel-problems-dropdown,
+.chronic-disease-condition-section .bladder-weakness-dropdown,
+.chronic-disease-condition-section .chronic-back-pain-dropdown,
+.chronic-disease-condition-section .wear-joints-dropdown,
+.chronic-disease-condition-section .arthritis-dropdown,
+.chronic-disease-condition-section .breast-cancer-dropdown,
+.chronic-disease-condition-section .skin-cancer-dropdown,
+.chronic-disease-condition-section .some-form-cancer-dropdown,
+.recent-history-section .cold-dropdown,
+.recent-history-section .flu-dropdown,
+.recent-history-section .covid-dropdown,
+.recent-history-section .acute-bronchitis-dropdown,
+.recent-history-section .lung-infection-dropdown,
+.recent-history-section .infection-kidneys-dropdown,
+.recent-history-section .diarrhea-dropdown,
+.recent-history-section .vomitting-dropdown,
+.recent-history-section .gastric-ulcer-dropdown,
+.recent-history-section .other-medical-issues-dropdown,
+.medication-intake-section .pain-killers-dropdown,
+.medication-intake-section .sedatives-dropdown,
+.medication-intake-section .sleeping-pills-dropdown {
+    border-radius: 10px;
+    border: 0.5px solid #20CAD6;
+    position: relative;
+}
+
+#health-info input::placeholder {
+    text-align: center;
+}
+
+.multi-step-form-container {
+    padding-top: 50px;
+}
+
+.multi-step-form-container-progress-bar {
+    background-color: #F8F8F8;
+}
+
+.multisteps-form__progress {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.multisteps-form__progress-btn {
+    transition-property: all;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    position: relative;
+    padding-top: 20px;
+    color: #BBBBBB;
+    text-indent: -9999px;
+    border: none;
+    background-color: transparent;
+    outline: none !important;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (min-width: 500px) {
+    .multisteps-form__progress-btn {
+        text-indent: 0;
+    }
+}
+
+.multisteps-form__progress-btn:before {
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    content: '';
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    transition: all 0.15s linear 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+    transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+    transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+    border-radius: 50%;
+    background-color: #BBBBBB;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+.count1:before {
+    content: "1";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.count-align::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.count2:before {
+    content: "2";
+}
+
+.count3:before {
+    content: "3";
+}
+
+.count4:before {
+    content: "4";
+}
+
+.count5:before {
+    content: "5";
+}
+
+.count6:before {
+    content: "6";
+}
+
+.multisteps-form__progress-btn:after {
+    position: absolute;
+    top: -7px;
+    left: calc(-50% - 13px / 2);
+    transition-property: all;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: currentColor;
+    z-index: 1;
+}
+
+.multisteps-form__progress-btn:first-child:after {
+    display: none;
+}
+
+.multisteps-form__progress-btn.js-active {
+    color: #02AAB3;
+    font-weight: bold;
+}
+
+.multisteps-form__progress-btn.js-active:before {
+    -webkit-transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.2);
+    background-color: #02AAB3;
+}
+
+.multisteps-form__form {
+    position: relative;
+}
+
+.multisteps-form__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+
+.multisteps-form__panel.js-active {
+    height: auto;
+    opacity: 1;
+    display: block;
+}
+
+
+/* patient my profile page css end */
+
+
+/* admin my profile page css start */
+
+.my-profile-container .my-profile-details .admin-name,
+.admin-info-title span {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.admin-desc-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background-color: #03ACB6;
+    margin-right: 10px;
+}
+
+.admin-desc-dot2 {
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background-color: #436B95;
+    margin-right: 10px;
+}
+
+.hearing-seeing-qa .hearing-seeing-q {
+    font-weight: 500;
+}
+
+.hearing-seeing-qa .hearing-seeing-a {
+    color: #436B95;
+    font-weight: 500;
+    border-radius: 10px;
+    /* border: 0.5px solid #20CAD6; */
+}
+
+
+/* admin my profile page css end */
+
+
+/* patient general setting page css start */
+
+.password-change-container {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    border: 1px solid #20CAD6;
+
+}
+
+.password-change-container .password-change-date {
+    color: #A0A0A0;
+}
+
+.password-change-container .MyButton {
+    background-color: #20CAD6;
+    border-radius: 3px;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    border: none;
+    padding-top: 10px;
+}
+
+.patient-forget-password-text {
+    font-weight: 500;
+    font-size: 25px;
+    color: #436B95;
+}
+
+.delete-account-section a {
+    color: #436B95;
+    text-decoration: underline;
+}
+
+.delete-account-btn {
+    width: 100%;
+    height: 45px;
+    border: none;
+}
+
+.delete-account-textarea textarea {
+    border: 1px solid #20CAD6;
+}
+
+
+/* patient general setting page css end */
+
+
+/* admin doctor-patient page css start */
+
+.admin-switch .ui-switcher {
+    background-color: #bdc1c2;
+    display: inline-block;
+    height: 25px;
+    width: 70px;
+    border-radius: 30px;
+}
+
+.admin-switch .ui-switcher[aria-checked=true] {
+    background-color: #20CAD6;
+}
+
+.admin-switch .ui-switcher[aria-checked=true]:before {
+    content: 'Active';
+    left: 7px;
+}
+
+.admin-switch .ui-switcher[aria-checked=false]:before {
+    content: 'Inactive';
+    right: 25px;
+}
+
+.admin-switch .ui-switcher[aria-checked=false]:after {
+    left: 5px;
+}
+
+.admin-switch .ui-switcher:before {
+    top: 8px;
+}
+
+.admin-switch .ui-switcher[aria-checked=true]:after {
+    left: 50px;
+}
+
+.admin-switch .ui-switcher:after {
+    background-color: #ffffff;
+    content: '\0020';
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition: left 0.25s;
+}
+
+.admin-switch2 .ui-switcher {
+    background-color: #bdc1c2;
+    display: inline-block;
+    height: 25px;
+    width: 40px;
+    border-radius: 30px;
+}
+
+.admin-switch2 .ui-switcher[aria-checked=true] {
+    background-color: #20CAD6;
+}
+
+.admin-switch2 .ui-switcher[aria-checked=true]:before {
+    content: '';
+    left: 7px;
+}
+
+.admin-switch2 .ui-switcher[aria-checked=false]:before {
+    content: '';
+    right: 25px;
+}
+
+.admin-switch2 .ui-switcher[aria-checked=false]:after {
+    left: 5px;
+}
+
+.admin-switch2 .ui-switcher:before {
+    top: 8px;
+}
+
+.admin-switch2 .ui-switcher[aria-checked=true]:after {
+    left: 20px;
+}
+
+.admin-switch2 .ui-switcher:after {
+    background-color: #ffffff;
+    content: '\0020';
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition: left 0.25s;
+}
+
+
+/* admin doctor-patient page css end */
+
+.footer-container {
+    background-color: #20CAD6;
+}
+
+.footer-container ul {
+    padding-left: 0px;
+}
+
+.footer-container .div-footer-title {
+    color: #fff;
+}
+
+.footer-container hr {
+    width: 30%;
+    height: 2px !important;
+    color: #fff !important;
+    background-color: #fff !important;
+    opacity: 1;
+}
+
+.footer-container .div-footer-links li {
+    margin: 10px 0px;
+}
+
+.footer-container .div-footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-container .footer-bottom {
+    background-color: #436B95;
+}
+
+.footer-container .footer-bottom .bottom-footer-container {
+    color: #fff;
+}
+
+.footer-container .footer-bottom .bottom-footer-container .div-footer-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container .footer-bottom .bottom-footer-container .div-footer-text i {
+    margin: 0px 20px;
+}
+
+.login-tab,
+.forget-password-section,
+.check-email-section,
+.create-new-passowrd-section,
+.verification-code-section {
+    border: 1px solid #436B95;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.login-section-container .nav-pills {
+    border-bottom: 1px solid #20CAD6;
+}
+
+.login-section-container .login-section,
+.admin-login-section-container .login-section,
+.forget-password-section,
+.check-email-section,
+.create-new-passowrd-section,
+.verification-code-section,
+.add-funds-section {
+    padding: 25px 25px;
+}
+
+.forget-password-section,
+.check-email-section,
+.create-new-passowrd-section,
+.verification-code-section {
+    text-align: center;
+}
+
+.verification-email {
+    color: #20CAD6;
+}
+
+.verification-code-digits {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+}
+
+.register-header {
+    color: #949AA5;
+    font-weight: 500;
+}
+
+.register-header span {
+    color: #436B95;
+}
+
+.new-password-label {
+    text-align: left;
+}
+
+.divForm .forgetPassword {
+    text-align: right;
+    font-size: 16px;
+    letter-spacing: 0.18px;
+    color: #20CAD6;
+    text-decoration: none;
+}
+
+.divForm input[type="email"]:focus,
+.divForm input[type="password"]:focus,
+.divForm input[type="text"]:focus,
+.divForm input[type="date"]:focus,
+.divForm input[type="time"]:focus,
+select {
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: #20CAD6 !important;
+}
+
+.divForm .divForm-radio {
+    border: 1px solid #ced4da;
+    padding: 8px 10px;
+    border-radius: 3px;
+    width: 75%;
+}
+
+.divForm .divForm-radio2 {
+    border: 1px solid #20CAD6 !important;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.divForm .divForm-radio2 .form-check {
+    padding: 0px 30px;
+}
+
+.divForm .patient-profile-input-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainLeftPanelFontSize25 i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.divForm .MyButton,
+.divForm .MyButton:hover {
+    background-color: #20CAD6;
+    color: #fff;
+    width: 100%;
+    border: none;
+    width: fit-content;
+}
+
+.divForm .doctor-tab-btn,
+.divForm .doctor-tab-btn:hover {
+    background-color: #20CAD6;
+    color: #fff;
+    border: none;
+}
+
+
+.divForm .my-button-25 {
+    width: 170px !important;
+}
+
+.verification-button,
+.add-more-education,
+.add-more-experince,
+.save-button {
+    background-color: #20CAD6 !important;
+    height: 45px;
+    border: none;
+    color: #fff !important;
+    padding: 10px 50px !important;
+}
+
+.in-process-button {
+    background-color: #c4c4c4 !important;
+    height: 45px;
+    border: none;
+    border-radius: 30px !important;
+    color: #fff !important;
+    padding-top: 10px;
+}
+
+.verified-button {
+    background-color: #659f74 !important;
+    height: 45px;
+    border: none;
+    border-radius: 30px !important;
+    color: #fff !important;
+    padding-top: 10px;
+}
+
+.divForm .divor {
+    margin: 10px 0px;
+}
+
+.divFormRow label span {
+    color: #20CAD6;
+    text-decoration: underline;
+}
+
+.MyFBButton {
+    background-color: #3b5998;
+    width: 150px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.MyFBButton .login-social-icon,
+.MyGoogleButton .login-social-icon {
+    margin-right: 20px;
+    width: 25px;
+}
+
+.divor {
+    margin-top: 20px;
+}
+
+.MyGoogleButton {
+    width: 150px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    color: #949AA5;
+}
+
+.forget-password-section .forget-password-img,
+verification-code-section .verification-code-img,
+.create-new-passowrd-section .create-new-password-img {
+    width: 90px;
+}
+
+.forget-password-section .forget-password-text,
+.check-email-section .forget-password-text,
+.verification-code-section .forget-password-text,
+.create-new-passowrd-section .forget-password-text {
+    font-weight: 500;
+    font-size: 20px;
+    color: #436B95;
+}
+
+.verification-go-back {
+    color: #20CAD6;
+    text-decoration: none;
+}
+
+h6 {
+    display: flex;
+    flex-direction: row;
+    color: #949AA5;
+}
+
+h6:before,
+h6:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #949AA5;
+    margin: auto;
+}
+
+h6:before {
+    margin-right: 10px;
+}
+
+h6:after {
+    margin-left: 10px;
+}
+
+.loginImg {
+    padding: 50px 50px;
+}
+
+/* contact us css start */
+.about-banner {
+    height: 100%;
+}
+
+/* contact us css end */
+/* terms and condition css start */
+.terms-and-condition-container {
+    margin: 30px 0px;
+}
+
+.terms-and-condition-container .terms-and-condition-title {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.terms-and-condition-container .terms-and-condition-sub-title {
+    padding-left: 15px;
+    font-weight: 500;
+    color: #436B95;
+}
+
+.terms-and-condition-container .terms-and-condition-description {
+    color: #505050;
+    padding-left: 20px;
+}
+
+.terms-and-condition-container .terms-and-condition-description ul {
+    list-style: disc;
+}
+
+.faqs-container {
+    margin: 30px 0px;
+}
+
+.faqs-container .faqs-question {
+    color: #505050;
+    font-weight: 500;
+}
+
+.faqs-container .faqs-answer {
+    color: #505050;
+    padding-left: 20px;
+}
+
+.terms-tabs .nav-pills {
+    border-bottom: 1px solid #436B951A;
+}
+
+.terms-tabs .tab-content {
+    padding: 0px 15%;
+}
+
+/* terms and condition css end */
+/* about us css start */
+.about-container h2 {
+    color: #436B95;
+}
+
+.about-container .about-us-row {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.emergencyCardContainer2 .emergencyCard2 .emergency-card-image1 {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+/* about us css end */
+/* doctor my finance css start */
+.graph-filter-title {
+    color: #436B95;
+}
+
+.graph-filter-align {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* doctor my finance css end */
+/* doctor my faqs css start */
+.myfaqs-question-btn {
+    border-radius: 3px !important;
+    border: 1px solid #20CAD6 !important;
+    color: #436B95 !important;
+    white-space: nowrap;
+}
+
+.doctor-faqs-container {
+    border: 3px solid #20CAD6;
+    border-radius: 3px;
+}
+
+.doctor-faqs-container .doctor-faqs-header {
+    background-color: #20CAD6;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-faqs-container .doctor-faqs-header .doctor-faqs-question {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.doctor-faqs-container .doctor-faqs-header .doctor-faqs-delete-btn {
+    background-color: #FFFFFF;
+    color: #436B95;
+    border-radius: 3px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.doctor-faqs-container .doctor-faqs-body {
+    padding: 10px 40px;
+}
+
+.doctor-faqs-container .doctor-faqs-body .doctor-faqs-answer {
+    color: #505050;
+}
+
+/* doctor my faqs css end */
+/* doctor appoitment request css start */
+.appointmentTable .booking-btn .joinCall {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.appointmentTable .booking-btn .cancel:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.table-min-height {
+    min-height: 390px;
+}
+
+.modify-modal .modify-modal-header {
+    border-bottom: 2px solid #20CAD6;
+}
+
+.modify-modal .modify-modal-header .modify-modal-close {
+    background: transparent;
+    border: none;
+}
+
+.modify-modal .modify-modal-header .modify-modal-title {
+    color: #20CAD6;
+    margin: 0px auto;
+}
+
+.modify-modal .modify-modal-body .appointment-details {
+    padding: 0px;
+    margin: 0px 30px;
+}
+
+.modify-modal .modify-modal-body .appointment-details hr {
+    margin: 20px 0px;
+}
+
+.modify-modal .modify-modal-body .appointment-details-container .appointment-details-title,
+.modify-modal .modify-modal-body .question-answer .answer {
+    color: #808080;
+}
+
+.modify-modal .modify-modal-body .appointment-details-container .appointment-details-text {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.modify-modal .modify-modal-body .appointment-details-container .view-hiostory-link {
+    color: #436B95;
+}
+
+.modify-modal .modify-modal-body .question-answer .question,
+.modify-modal .modify-modal-body .document-container .document-title {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.modify-modal .modify-modal-body .document-container .document-links {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.modify-modal .modify-modal-body .document-container .document-links a {
+    color: #436B95;
+}
+
+.modify-modal .modify-modal-body .appointment-accept-btn {
+    background-color: #20CAD6;
+    color: #fff;
+}
+
+.modify-modal .modify-modal-body .appointment-reject-btn {
+    color: #808080;
+    border: 1px solid #808080;
+}
+
+.modify-modal .modify-modal-body .appointment-accept-btn,
+.modify-modal .modify-modal-body .appointment-reject-btn {
+    width: 190px;
+}
+
+.modal .modal-content {
+    border-radius: 0px;
+}
+
+.feedback-star-rating-text {
+    font-weight: 600;
+    color: #436B95;
+}
+
+.pending-feedback-cancel {
+    border: 1px solid #20CAD6 !important;
+    color: #20CAD6 !important;
+}
+
+/* doctor appoitment request css end */
+/* .web-timing-slider{
+        display: block;
+    } */
+.modal-backdrop {
+    display: none !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: transparent !important;
+}
+
+/* doctor view diagnostic report css start*/
+.patient-symptoms-question {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.patient-symptoms-answer {
+    color: #505050;
+}
+
+.patient-symptoms-document-link {
+    color: #436B95;
+    margin-right: 10px;
+}
+
+.my-profile-details-designation,
+.my-profile-details-rating {
+    color: #20CAD6;
+    font-weight: 500;
+}
+
+.my-profile-details-exp {
+    color: #436B95;
+    font-weight: 500;
+}
+
+.patient-symptoms-upload-document-btn,
+.patient-symptoms-save-btn {
+    background-color: #20CAD6 !important;
+    color: #fff !important;
+    width: 160px;
+}
+
+.patient-symptoms-upload-document-btn label {
+    color: #fff;
+}
+
+#patient-history .doctor-dignostic-reprot-feedback-btn {
+    background-color: #F15757;
+    color: #fff;
+}
+
+#patient-history .doctor-report-title .doctor-report-title-text,
+.admin-info-title .admin-info-title-text {
+    color: #436B95;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #20CAD6;
+    font-weight: bold;
+}
+
+#patient-history .doctor-report-title .doctor-report-edit-btn {
+    background-color: #20CAD6;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* doctor-video-call section */
+.video-section {
+    height: 100vh;
+    width: 100%;
+}
+
+.video-section .video-img {
+    height: inherit;
+    width: 100%;
+}
+
+.video-section .v-person-img {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    height: 220px;
+    width: 170px;
+    border-radius: 3px;
+    border: 1px solid #436b95;
+}
+
+.video-section .v-call-icon {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    height: 40px;
+    width: 100%;
+}
+
+.video-section .v-call-icon .icon-container {
+    height: 35px;
+    width: 35px;
+    background-color: #00000066;
+}
+
+.side-chat .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.side-chat .overlay-content .chat-item-title {
+    color: #808080;
+}
+
+.side-chat .overlay-content .chat-item-value {
+    color: #436b95;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.side-chat .overlay-content .chat-item-designation {
+    color: #20cad6;
+    font-weight: 700;
+}
+
+.side-chat .overlay-content .app-details .app-details-title {
+    color: #20cad6;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 0;
+    border-top: 1px solid #cdcdcd;
+}
+
+.side-chat .overlay-content .app-details .app-qa {
+    margin-top: 10px;
+}
+
+.side-chat .overlay-content .app-details .app-q {
+    color: #436b95;
+    font-weight: 700;
+}
+
+.side-chat .overlay-content .app-details .app-a {
+    color: #505050;
+}
+
+.side-chat .overlay .side-chat-header {
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.side-chat .overlay .side-chat-header .side-chat-title {
+    color: #20cad6;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.side-chat .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    color: #436b95;
+    display: block;
+    font-size: 20px;
+}
+
+.empty-list {
+    color: #436B95;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.error-message-style {
+    color: #ff0000;
+}
+
+.error-message-input {
+    border: 1px solid red !important;
+}
+
+/* doctor view diagnostic report css end*/
+@media screen and (max-width: 1400px) {
+    /*   body{
+        background-color: #eee !important;
+    } */
+}
+
+@media screen and (max-width: 1200px) {
+
+    /*  body{
+        background-color: yellow !important;
+    } */
+    .loginImg {
+        padding: 0px;
+    }
+
+    #health-info .health-tracking-section .health-info-add-new-btn,
+    #health-monitoring .health-monitoring-add-new-btn {
+        font-size: 10px;
+        height: 35px;
+    }
+
+    .divHeader ul {
+        font-size: 13px;
+    }
+
+    .web-timing-container .web-timing-box .timing-btn,
+    .all-content-slider .box .timing-container .timing-btn {
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    /* body{
+        background-color: pink !important;
+    } */
+    .consult-doctor-table tbody tr td .time,
+    .consult-doctor-table tbody tr td .online {
+        font-size: 10px;
+    }
+
+    .doctorTimeSlider .owl-prev,
+    .doctorTimeSlider .owl-next {
+        display: none;
+    }
+
+    .content-views .list-view a,
+    .content-views .list-view1 a {
+        padding-right: 9px;
+    }
+
+    .divHeader ul {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* body{
+        background-color: yellow !important;
+    } */
+    /* .mobile-nav {
+        padding: 5px 20px;
+        display: flex;
+    }
+    .moblie-searchbar {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        border-top: 1px solid #dee2e6;
+        padding-top: 20px;
+    }
+    .nav-searchbar {
+        margin-left: 20px;
+        width: 87%;
+    } */
+    .mobile-nav .menu-collapse .mobile-menu-item-language,
+    .mobile-nav .mobile-menu-item-profile {
+        color: #436B95;
+    }
+
+    .mobile-nav .mobile-right-menu .dropdown-menu-third {
+        right: 0%;
+        top: 15% !important;
+    }
+
+    .divHeader {
+        display: none;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .consultSlider2 .box,
+    .doctor-timing-slider-container .box {
+        margin: 0 0;
+    }
+
+    .top-doctor-boxes .box {
+        margin: 0px;
+    }
+
+    .reviews .review-boxes .box {
+        margin: 0 5px;
+        margin-bottom: 80px;
+    }
+
+    .mainLeftPanel .menu-icon {
+        display: block;
+        padding: 10px 20px;
+        position: absolute;
+        top: 55px;
+    }
+
+    .mobile-sidebar-toggle {
+        top: 0;
+        left: 0;
+        width: 40%;
+    }
+
+    .pro-sidebar.md {
+        position: fixed;
+        left: -870px !important;
+    }
+
+    .pro-sidebar.md.toggled {
+        left: 0 !important;
+    }
+
+    /* 
+    .mobile-logo {
+        display: flex;
+        justify-content: center;
+        background-color: #F3F3F4;
+        padding: 10px 0px;
+    }
+    .mobile-nav-modal-language .language-close{
+        background-color: #fff ;
+        border: none;
+        color: #436B95;
+        font-size: 30px;
+
+    } */
+    /*  .mobile-nav-modal-language .modal-header{
+        border-bottom: none;
+    }
+    .mobile-nav-modal-language .modal-header img{
+        margin: auto;
+    }
+    .mobile-nav-modal-menu .language-close{
+        background-color: #fff ;
+        border: none;
+        color: #436B95;
+        font-size: 30px;
+
+    }
+    .mobile-nav-modal-menu .modal-header{
+        border-bottom: none;
+    }
+    .mobile-nav-modal-menu .modal-header img{
+        margin: auto;
+    }
+    .mobile-nav-modal-menu .menu-container .dropdown-item{
+        color: #436B95;
+        text-align: center;
+        background-color: transparent;
+    }
+    .mobile-nav-modal-menu .menu-container .dropdown-item-signup{
+        border:1px solid #20CAD6;
+        border-radius: 3px;
+        margin: 20px auto;
+        width: 200px;
+    }
+    .mobile-nav-modal-language .languages-container .dropdown-item{
+        color: #436B95;
+    }
+    .mobile-nav-modal-language .languages-container .dropdown-item:hover{
+        background-color: #20CAD6;
+        color: #fff;
+    }
+    .mobile-nav-modal-language .modal-dialog{
+        margin: 0px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .mobile-nav-modal-language .modal-content{
+        border-radius: 0px;
+    }
+    .mobile-nav-modal-menu .modal-dialog{
+        margin: 0px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .mobile-nav-modal-menu .modal-content{
+        border-radius: 0px;
+    } */
+    .divHeader ul {
+        margin-left: 20px;
+    }
+
+    /* .divLogo1 {
+        padding-left: 20px;
+    } */
+    .credit-number-cvv,
+    .credit-number-valid {
+        width: 90%;
+    }
+
+    .profile:last-child {
+        order: -1;
+    }
+
+    .divNavMenu ul li .profilePhotoContainer {
+        border: none;
+        align-self: flex-start;
+    }
+
+    .divNavMenu ul li .profilePhotoContainer .profilePhoto {
+        margin: 0px;
+    }
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu-first {
+        right: 10%;
+        width: 90%;
+    }
+
+    .loginImg {
+        display: none;
+    }
+
+    .divForm .patient-profile-input-container {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .divForm input[type="email"],
+    .divForm input[type="password"],
+    .divForm input[type="text"],
+    .divForm input[type="date"],
+    select {
+        font-size: 16px;
+    }
+
+    .emergencyCard .arrow {
+        position: absolute;
+        height: 45px;
+        width: 150px;
+        background: transparent url('../images/arrow-long-right.png') 0% 0% no-repeat padding-box;
+        background-size: contain;
+        top: 10%;
+        border-radius: 40px;
+        left: 200px;
+        z-index: 1;
+    }
+
+    #health-info .health-tracking-section .health-info-add-new-btn,
+    #health-monitoring .health-monitoring-add-new-btn {
+        font-size: initial;
+        height: initial;
+    }
+
+    #personal-info .personal-info-right-content {
+        padding: 0px 30px;
+    }
+
+    .helpRight-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .helpRight-image img {
+        display: none;
+    }
+
+    .online-appoitment-title,
+    .inclinic-appoitment-title,
+    .chat-consultation-title,
+    .select-currency-title {
+        border-right: none;
+    }
+
+    .header-slider-right-image {
+        display: flex;
+        align-items: center;
+    }
+
+    .header .heading {
+        font-size: 30px;
+    }
+
+    .header .owl-dots {
+        bottom: -20%;
+    }
+
+    .mobile-sidebar-toggle {
+        top: 0;
+        left: 0;
+        width: 40%;
+    }
+
+    .performance-cards .performance-card .card-image img {
+        height: 60px;
+        padding-right: 20px;
+    }
+
+    .performance-cards .performance-card .card-count {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .service .LeftContent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .service .RightContent .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service hr {
+        margin: 0px auto;
+    }
+
+    .helpRight .helpRightContainer {
+        background: transparent url(../images/Line25.png) 25px 45px no-repeat padding-box;
+    }
+
+    .admin-view-details-btn {
+        text-align: center;
+    }
+
+    .search-bar .search-bar-text-input input,
+    .got-emergency-form .search-bar-text-input input {
+        font-size: 12px;
+    }
+
+    .doctor-timing-row .doctor-timing-row-data {
+        font-size: 13px;
+    }
+
+    #about-patient,
+    /* #health-info, */
+    #patient-symptoms,
+    #patient-history,
+    #health-monitoring {
+        margin: 20px;
+    }
+
+    /* new  */
+    .helpLeft img {
+        display: none;
+    }
+
+    .header-content .header-content-container .formcontent {
+        padding: 0px 0px;
+    }
+
+    .emergencyCard2 .arrow {
+        display: none;
+    }
+
+    .divForm .doctor-tab-btn,
+    .divForm .doctor-tab-btn:hover {
+        width: 100%;
+    }
+
+    #my-doctor-profile {
+        border-left: none;
+        padding: 0px;
+    }
+
+    .verification-button,
+    .add-more-education,
+    .add-more-experince,
+    .save-button {
+        width: 100%;
+    }
+
+    .terms-tabs .tab-content {
+        padding: 0px 5%;
+    }
+
+    .service .LeftContent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .service .RightContent .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service hr {
+        margin: 0px auto;
+    }
+
+    /* .helpRight .helpRightContainer{
+            background: transparent url(../images/Line25.png) 25px 45px no-repeat padding-box;
+    } */
+    .helpRight .helpRightContainer .helpRightText .text {
+        font-size: 14px;
+    }
+
+    .admin-view-details-btn {
+        text-align: center;
+    }
+
+    .search-bar .search-bar-text-input input,
+    .got-emergency-form .search-bar-text-input input {
+        font-size: 12px;
+    }
+
+    .doctor-timing-row .doctor-timing-row-data {
+        font-size: 13px;
+    }
+
+    .emergencyCard2 .arrow {
+        left: 85% !important;
+    }
+
+    .divHeader {
+        display: none;
+    }
+
+    .mobile-nav {
+        padding: 5px 20px;
+        display: flex;
+    }
+
+    .moblie-searchbar {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        border-top: 1px solid #dee2e6;
+        padding-top: 20px;
+    }
+
+    .nav-searchbar {
+        margin-left: 20px;
+        width: 87%;
+    }
+
+    .nav-bell {
+        margin-left: 20px;
+    }
+
+    .doctor-list .tab-pills {
+        margin: 20px 0px;
+    }
+
+    .doctor-timing-slider .box .timing-container .timing-btn,
+    .all-content-slider .box .timing-container .timing-btn {
+        padding: 7px 4px;
+        width: 87px;
+    }
+
+    .doctor-timing-slider-container .owl-nav .owl-prev {
+        left: 10px;
+    }
+
+    .doctor-modal .modal-content {
+        padding: 0px 20px;
+    }
+
+    .doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-date-container {
+        width: 75%;
+    }
+
+    /* .doctor-modal .doctor-modal-body .doctor-timing-slider-container3 .owl-nav .owl-next{
+        top: -5%;
+    }
+    .doctor-modal .doctor-modal-body .doctor-timing-slider-container3 .owl-nav .owl-prev{
+        top: -5%;
+    } */
+    .mainRightPanel .tableHeading .headingLeft,
+    .mainRightPanel .tableHeading .headingRight {
+        padding: 0px;
+    }
+
+    /*  .doctor-canlender-book-appointment-btn{
+        display: flex;
+        justify-content: space-evenly;
+    } */
+
+    /*  .mobile-timing-slider{
+        display: block;
+    }
+    .mobile-timing-slider .doctor-timing-type-radios{
+        background-color: transparent;
+    }
+    .mobile-timing-slider .date-pill{
+        background-color: #436B95;
+        color: #fff;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+    }
+    .mobile-timing-slider .mobile-timing-header{
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 5px;
+    }
+    .mobile-timing-slider .mobile-date{
+        padding: 15px 0px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        font-weight: 500;
+        color: #436B95; 
+    }
+    .mobile-timing-slider .doctor-timing-btn-container{
+        display: flex;
+        overflow-x: auto;
+        margin-top: 15px;
+    }
+    .mobile-timing-slider .timing-checkbox{
+        display: none;
+    }
+    .mobile-timing-slider .timing-btn{
+        margin: 0px 5px;
+        padding: 2px 4px;
+        color: #fff;
+        background-color: #20CAD6;
+        border: 0.1px solid #20CAD6;
+        font-size: 13px;
+        width: 65px;
+        display: block;
+        text-decoration: none;
+    }
+    .mobile-timing-slider .timing-btn:hover{
+       background-color: #436B95;
+    }
+    .mobile-timing-slider .doctor-timing-slider-container2{
+        position: relative;
+    }
+    .mobile-timing-slider .doctor-timing-slider-container2 .owl-nav .owl-next{
+        display: block;
+        width: 30px;
+        background-color: #20CAD6;
+        color: #fff;
+        border-radius: 20px;
+        position: absolute;
+        top: 0%;
+        left: 65%;
+        margin: 15px 0px;
+    }
+    .mobile-timing-slider .doctor-timing-slider-container2 .owl-nav .owl-prev{
+        display: block;
+        width: 30px;
+        background-color: #20CAD6;
+        color: #fff;
+        border-radius: 20px;
+        position: absolute;
+        top: 0%;
+        left: 27%;
+        margin: 15px 0px;
+    } */
+    /* .doctor-timing-container{
+        background-color: #F3F3F4;
+        border-radius: 3px;
+        padding:0px;
+    } */
+
+    .doctor-timing-container-gray {
+        background-color: #F3F3F4 !important;
+    }
+
+    .doctor-timing-container .doctor-timing-type-radios {
+        display: block;
+    }
+
+    .doctor-timing-container .doctor-timing-type-radios .timing-type-radio {
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 5px;
+    }
+
+    /* login2 css */
+    .mobile-nav .mobile-right-menu .dropdown-menu-third {
+        right: 0%;
+        top: 15% !important;
+
+    }
+
+    .login-container .login-left {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: flex;
+        justify-content: center;
+        background-color: #F3F3F4;
+        padding: 10px 0px;
+    }
+
+    .mobile-nav .menu-collapse .mobile-menu-item-language,
+    .mobile-nav .mobile-menu-item-profile {
+        color: #436B95;
+    }
+
+    .mobile-nav-modal-language .language-close {
+        background-color: #fff;
+        border: none;
+        color: #436B95;
+        font-size: 30px;
+
+    }
+
+    .mobile-nav-modal-language .modal-header {
+        border-bottom: none;
+    }
+
+    .mobile-nav-modal-language .modal-header img {
+        margin: auto;
+    }
+
+    .mobile-nav-modal-menu .language-close {
+        background-color: #fff;
+        border: none;
+        color: #436B95;
+        font-size: 30px;
+
+    }
+
+    .mobile-nav-modal-menu .modal-header {
+        border-bottom: none;
+    }
+
+    .mobile-nav-modal-menu .modal-header img {
+        margin: auto;
+    }
+
+    .mobile-nav-modal-menu .menu-container .dropdown-item {
+        color: #436B95;
+        text-align: center;
+    }
+
+    .mobile-nav-modal-menu .menu-container .dropdown-item-signup {
+        border: 1px solid #20CAD6;
+        border-radius: 3px;
+        margin: 20px auto;
+        width: 200px;
+    }
+
+    .mobile-nav-modal-language .languages-container .dropdown-item {
+        color: #436B95;
+    }
+
+    .mobile-nav-modal-language .languages-container .dropdown-item:hover {
+        background-color: #20CAD6;
+        color: #fff;
+    }
+
+    .mobile-nav-modal-language .modal-dialog {
+        margin: 0px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .mobile-nav-modal-language .modal-content {
+        border-radius: 0px;
+    }
+
+    .mobile-nav-modal-menu .modal-dialog {
+        margin: 0px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .mobile-nav-modal-menu .modal-content {
+        border-radius: 0px;
+    }
+
+    /* admin side css */
+    .container-padding {
+        padding: 0px;
+    }
+
+    /* appointment-details  css*/
+    .modify-modal .modify-modal-body .appointment-details-container {
+        margin: 10px 0px;
+    }
+
+    .modal .modal-body {
+        padding: 10px;
+    }
+
+    .modal {
+        padding: 0px !important;
+    }
+
+    .modal .modal-dialog {
+        margin: 0px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .web-timing-container .web-timing-box .timing-btn,
+    .all-content-slider .box .timing-container .timing-btn {
+        width: 87px;
+    }
+
+    .doctor-timing-slider .box .timing-container .timing-btn2,
+    .web-timing-container .web-timing-box .timing-btn2 {
+        padding: 4px 4px;
+        font-size: 12px;
+    }
+
+    .doctor-timing-slider .box .timing-container .timing-btn2 a,
+    .web-timing-container .web-timing-box .timing-btn2 a {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+    }
+
+    .web-timing-container .web-timing-box .available-timing {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /*  body{
+        background-color: skyblue !important;
+    } */
+    .nav-bell {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .nav-searchbar .nav-dropdown-btn {
+        padding-right: 10px;
+    }
+
+    .nav-searchbar .nav-dropdown-btn i {
+        margin: 0px 10px;
+    }
+
+    .login-tab,
+    .forget-password-section,
+    .check-email-section,
+    .create-new-passowrd-section,
+    .verification-code-section {
+        border: none;
+    }
+
+    .login-forget-images {
+        width: 25%;
+    }
+
+    .logo-footer img {
+        width: 25%;
+    }
+
+    .credit-number-cvv,
+    .credit-number-valid {
+        width: 70%;
+    }
+
+    .search-bar .search-bar-text {
+        color: #436B95;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .footer-container .footer-bottom .bottom-footer-container .div-footer-text i {
+        margin: 0px 4px;
+    }
+
+    .header .owl-dots {
+        bottom: -12%;
+    }
+
+    .mainRightPanel .doctor-card-title {
+        font-size: 12px;
+    }
+
+    .mainRightPanel .tableHeading {
+        font-size: 18px;
+    }
+
+    .doctor-table-card .doctor-table-card-body .action .viewDetails,
+    .doctor-table-card .doctor-table-card-body .action .joinCall,
+    .doctor-table-card .doctor-table-card-body .action .cancel {
+        font-size: 12px;
+    }
+
+    .add-funds-section {
+        width: 100%;
+    }
+
+    .performance-cards .performance-card .card-image img {
+        height: 40px;
+        padding-right: 5px;
+    }
+
+    .performance-card .card-text {
+        font-size: 9px;
+    }
+
+    .performance-cards .performance-card .card-count {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .divForm .divForm-radio {
+        width: 100%;
+    }
+
+    .divForm .my-button-25 {
+        width: 100% !important;
+    }
+
+    .health-tracking-section {
+        padding: 0px;
+    }
+
+    .divForm .divForm-radio2 .form-check {
+        padding: 0px 30px;
+    }
+
+    .divForm input[type="email"],
+    .divForm input[type="password"],
+    .divForm input[type="text"],
+    .divForm input[type="date"],
+    select {
+        font-size: 14px;
+    }
+
+    /* .admin-mainRightPanel{
+        padding: 20px 20px !important;
+    } */
+    /* #about-patient,
+    #health-info,
+    #patient-history,
+    #patient-symptoms,
+    #health-monitoring{
+        margin: 10px;
+    } */
+    .admin-view-details-btn {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-doctor-approve-button,
+    .modal-submit {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .admin-doctor-approve-button:nth-child(2) {
+        margin-left: 0px;
+    }
+
+    .admin-doctor-reject-button {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .day,
+    .date {
+        font-size: 10px;
+    }
+
+    .consult-doctor-table tbody tr td div {
+        padding: 5px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .doctor-exp {
+        border-right: none;
+    }
+
+    .LoginBtn {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+
+    /* .emergencyCard .arrow {
+        display: none !important;
+    }
+    .helpRight-image {
+        display: flex;
+        justify-content: center;
+    }
+    .helpRight-image img {
+        display: none;
+    } */
+    .online-appoitment-title,
+    .inclinic-appoitment-title,
+    .chat-consultation-title,
+    .select-currency-title {
+        border-right: none;
+    }
+
+    .my-fees {
+        padding: 5px;
+    }
+
+    .consultationLeftImage2 {
+        order: -1;
+    }
+
+    .doctor-my-timing-tab {
+        padding: 0px;
+    }
+
+    #working-timing-modal .divForm-radio,
+    #working-custom-timing-modal .divForm-radio {
+        width: 100%;
+    }
+
+    /* homepage2 */
+    .logo-footer img {
+        width: 25%;
+    }
+
+    .header-content .header-content-container .formcontent .formcontent-row {
+        background: #fff;
+        padding: 0px 10px;
+    }
+
+    .header-content .header-content-container .formcontent .dropdown-col {
+        border-bottom: 1px solid #5050504D;
+    }
+
+    .header-content .header-content-container .formcontent .search-doctor-input {
+        border-bottom: 1px solid #5050504D;
+        margin-bottom: 20px;
+    }
+
+    .header-content .header-content-container .formcontent .search-doctor-btn-container {
+        background-color: #20CAD6;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-content .header-content-container .formcontent .search-doctor-btn-container .search-doctor-icon-text {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .header-content .header-content-container h1 {
+        font-size: 25px;
+    }
+
+    .header-content .header-content-container p {
+        display: none;
+    }
+
+    .header-content .header-content-container .formcontent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-content .header-content-container .header-content-dropdown-button {
+        text-align: left;
+    }
+
+    .header-content .header-content-container .formcontent .search-col {
+        border-left: 0px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-searchbar .nav-dropdown-btn {
+        padding-right: 10px;
+    }
+
+    .nav-searchbar .search-doctor-btn-container {
+        padding: 10px 10px;
+    }
+
+    .nav-searchbar .nav-dropdown-btn i {
+        margin: 0px 10px;
+    }
+
+    .type-consultation-section .card {
+        margin: 20px 0px;
+    }
+
+    .type-consultation-section {
+        padding: 20px 0px;
+    }
+
+    .type-consultation-section .card .card-body .card-heading {
+        display: flex;
+    }
+
+    .type-consultation-section .card .card-body .card-heading .consultation-icon-title {
+        margin-left: 20px;
+    }
+
+    .type-consultation-section hr {
+        width: 70%;
+    }
+
+    .notice {
+        font-size: 15px;
+        padding: 5px 0px;
+    }
+
+    .helpLeft,
+    .helpRight {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .helpRight .heading {
+        display: none;
+    }
+
+    .type-consultation-section h1,
+    .consult2 h1,
+    .any-emergency h1 {
+        font-size: 18px;
+    }
+
+    .consultSlider2 .owl-nav .owl-next {
+        display: block;
+        color: #436B95 !important;
+    }
+
+    .consultSlider2 .owl-nav .owl-next i {
+        font-size: 20px;
+    }
+
+    .consult2 .consult-btn a,
+    .top-doctors-container .consult-btn a,
+    .emergency2 .emergency-btn a,
+    .doctor-details .doctor-details-right .review-btn a {
+        width: 100%;
+    }
+
+    .emergencyCard2 .arrow {
+        display: none;
+    }
+
+    .emergencyCardContainer2 .emergency-card-top {
+        display: flex;
+        align-items: center;
+    }
+
+    .emergencyCardContainer2 .emergencyCard2 {
+        text-align: left;
+    }
+
+    .emergencyCardContainer2 .emergencyCard2 .emergency-card-image img {
+        width: 60px;
+    }
+
+    .emergencyCardContainer2 .emergencyCard2 .emergency-card-title h5 {
+        margin-left: 10px;
+    }
+
+    .emergencyCardContainer2 .emergencyCard2 .emergency-card-title hr {
+        width: 80%;
+        height: 5px;
+        margin: 0px auto;
+    }
+
+    .top-doctor-boxes .owl-nav .owl-next {
+        display: block;
+        color: #fff;
+        border-radius: 20px;
+        color: #436B95 !important;
+    }
+
+    .top-doctor-boxes .owl-nav .owl-next i {
+        font-size: 20px;
+    }
+
+    .review-boxes .owl-nav .owl-next {
+        display: block;
+        color: #436B95 !important;
+    }
+
+    .review-boxes .owl-nav .owl-next i {
+        font-size: 20px;
+    }
+
+    .footer-container .footer-bottom .bottom-footer-container .div-footer-text i {
+        margin: 0px 4px;
+    }
+
+    .doctor-details .doctor-details-left .doctor-details-left-icon {
+        width: 25px;
+    }
+
+    .doctor-charges .question-rate2 .question-status {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+
+    .doctor-details .doctor-details-left i {
+        padding-left: 8px;
+    }
+
+    .toggle-btn {
+        margin: 0px 0px;
+    }
+
+    .doctor-modal .doctor-modal-body .doctor-timing-modal-container .date-pill {
+        padding: 5px 10px;
+        margin-right: 15px;
+    }
+
+    .doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-date-container {
+        width: 97%;
+        justify-content: flex-start;
+    }
+
+    /* .doctor-modal .doctor-modal-body .doctor-timing-slider-container3 .owl-nav .owl-next{
+        top: -5%;
+    }
+    .doctor-modal .doctor-modal-body .doctor-timing-slider-container3 .owl-nav .owl-prev{
+        top: -5%;
+    } */
+    .doctor-modal .modal-dialog {
+        max-width: 100%;
+    }
+
+    .doctor-modal .doctor-modal-body .doctor-timing-modal-container .timing-btn {
+        padding: 2px 5px;
+    }
+
+    /* appointment details */
+    .appointment-details-container .appointment-details-form,
+    .appointment-details-container .appointment-details-form .appointment-details-form-info .appointment-details-form-info-add-funds a,
+    .appointment-details-container .appointment-details-form .appointment-details-form-inputs::placeholder {
+        font-size: 9px;
+    }
+
+    .doctor-list .nav-tabs .nav-link {
+        font-size: 16px;
+    }
+
+    .modify-modal .modify-modal-body .appointment-accept-btn,
+    .modify-modal .modify-modal-body .appointment-reject-btn {
+        width: auto;
+    }
+
+    /* .all-content-slider .doctor-timing-slider-container{
+     display: none !important;
+    } */
+    .doctor-list .doctor-list-check-availability {
+        display: none;
+    }
+
+    .doctor-list .doctor-list-book-appointment-btn {
+        display: block;
+    }
+
+    .doctor-list .tab-pills .tab-pills-div {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+
+    .doctor-charges .question-rate2 .question-rate21 {
+        font-size: 20px;
+    }
+
+    .doctor-charges .question-rate2 .question-rate22 {
+        font-size: 20px;
+    }
+
+    .doctor-charges .question-rate2 .question-rate23 {
+        color: #659F74;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0px 15px;
+    }
+
+    .doctor-list .all-content .dotor-item-container .doctor-item-left .top-doctor-image {
+        width: 86px;
+    }
+
+    .otp-container .goback-container {
+        display: block;
+    }
+
+    /* .search-bar-text-input{
+        padding-top: 10px;
+    } */
+    .search-bar-text-input .filter-container {
+        width: min-content;
+        left: 10px;
+        top: 55px;
+    }
+
+    .web-timing-container .web-timing-box .timing-btn,
+    .all-content-slider .box .timing-container .timing-btn {
+        font-size: 10px;
+        width: 55px;
+        margin: 4px -3px;
+    }
+
+    .web-timing-container .web-timing-box .doctor-timing-date .date-align {
+        padding-left: 0px;
+        font-size: 10px;
+    }
+
+    /* chat with doctor */
+    .performance-cards .performance-card .card-image img {
+        height: 40px;
+        padding-right: 5px;
+    }
+
+    .performance-cards .performance-card .card-count {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .performance-card .card-text {
+        font-size: 10px;
+    }
+
+    .modify-modal .modify-modal-body .document-container .document-links {
+        flex-direction: column;
+    }
+
+    .doctor-timing-slider .box .timing-btn2,
+    .web-timing-container .web-timing-box .timing-btn2 {
+        /* padding: 4px 4px; */
+        font-size: 8px;
+    }
+
+    .doctor-timing-slider .box .timing-btn2 a,
+    .web-timing-container .web-timing-box .doctor-timing-time .timing-btn2 a {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+    }
+
+    .web-timing-container .web-timing-box .circle {
+        height: 3px;
+        width: 3px;
+        margin: 0px 2px;
+    }
+
+    .doctor-timing-slider .box .timing-container .timing-btn2,
+    /* .all-content-slider .box .timing-container .timing-btn2{ */
+    .web-timing-container .web-timing-box .timing-btn2 {
+        margin: 7px 2px;
+    }
+
+    /* docotr myfinance  css*/
+    .mainRightPanel .mainRightPanelCard .text {
+        color: #FAFAFA;
+        font-size: 14px;
+    }
+
+    .mainRightPanel .mainRightPanelCard .text-currency {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .graph-filter-align {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .mobile-sidebar-toggle {
+        width: 65%;
+    }
+
+    .my-profile-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.top-10 {
+    top: 10% !important;
+}
+
+.appearance-auto {
+    appearance: auto !important;
+    display: block !important;
+}
+
+.border-class {
+    border: 1px solid #949AA5 !important;
+    padding-right: 20px !important;
+}
+
+.border-class:focus {
+    border: 1px solid #20CAD6 !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.times-icon {
+    right: 20px;
+    position: absolute;
+    top: 43px;
+    color: #4EC1BA;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.admin-list {
+    display: flex !important;
+    align-items: center;
+}
+
+.textarea-remove-focus {
+    border: none !important;
+}
+
+.textarea-remove-focus:focus {
+    box-shadow: none !important;
+}
+
+.select.bs-select-hidden,
+.bootstrap-select>select.bs-select-hidden,
+select.selectpicker {
+    display: block !important;
+}

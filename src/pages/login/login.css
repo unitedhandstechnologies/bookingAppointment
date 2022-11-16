@@ -1,0 +1,431 @@
+/* @font-face {
+    font-family: 'Poppins-Regular';
+    src        : url('./../../assets/fonts/Poppins-Regular.ttf') format('truetype'),
+}
+
+.divHeader {
+    padding         : 20px 0px;
+    position        : fixed;
+    top             : 0;
+    width           : 100%;
+    background-color: #fff;
+    border-bottom   : 0.5px solid #f2f2f2;
+    box-shadow      : #f2f2f2 0px 0px 1px 1px;
+}
+
+.divLoginBtn {
+    text-align: right;
+}
+
+.LoginBtn {
+    border         : 1px solid #20CAD6;
+    border-radius  : 102px;
+    text-align     : center;
+    letter-spacing : 0px;
+    color          : #436B95;
+    padding        : 10px 20px;
+    text-decoration: none;
+    font-size      : 15px;
+}
+
+.LoginBtn:hover {
+    background: #20CAD6;
+    color     : #ffffff;
+    transition: 0.5s;
+}
+
+ul {
+    list-style-type: none;
+    margin         : 0;
+    padding        : 0;
+}
+
+li {
+    list-style: 0px;
+}
+
+.divNavMenu {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.divNavMenu ul li a {
+    color: #436B95 !important;
+}
+
+.divNavMenu ul li ul.dropdown-menu li a:hover {
+    background-color: #20CAD6;
+    color           : #fff !important;
+}
+
+.divLogo {
+    padding-top: 25px;
+}
+
+.divNavMenu .container-fluid {
+    display: block !important;
+}
+
+.divNavMenu #navbarSupportedContent {
+    float: right;
+}
+
+img {
+    max-width: 100%;
+}
+
+.divFooter {
+    padding   : 20px 0px;
+    border-top: 0.5px solid #f2f2f2;
+    box-shadow: #f2f2f2 0px 0px 1px 0px;
+    font-size : 16px;
+}
+
+.divFooter .divFooterText {
+    letter-spacing: 0px;
+    color         : #436B95;
+    padding-right : 40px;
+}
+
+.divFooterLogo {
+    padding-bottom: 20px;
+    font-size     : 13px;
+}
+
+.divFooter .divFooterServices,
+.divFooter .divFooterHelp {
+    padding-left: 100px;
+}
+
+.divFooter .divSocialLinks {
+    padding-left: 70px;
+}
+
+.divFooter .divFooterTitle {
+    text-align    : left;
+    font-weight   : bold;
+    font-size     : 20px;
+    letter-spacing: 0px;
+    color         : #436B95;
+    margin-bottom : 10px;
+}
+
+.divFooter ul {
+    margin : 0px;
+    padding: 0px;
+}
+
+.divFooter ul.divFooterLink li {
+    padding-top: 10px;
+}
+
+.divFooter ul.divFooterLink li a {
+    text-align     : left;
+    letter-spacing : 0px;
+    color          : #436B95;
+    text-decoration: none;
+}
+
+.divLoginSection {
+    padding: 175px 0px 50px 0px;
+}
+
+.full-width-tabs>ul.nav.nav-tabs {
+    display     : table;
+    width       : 100%;
+    table-layout: fixed;
+}
+
+.full-width-tabs>ul.nav.nav-tabs>li {
+    float  : none;
+    display: table-cell;
+}
+
+.full-width-tabs>ul.nav.nav-tabs>li>a {
+    text-align: center;
+}
+
+.nav.nav-tabs .nav-link.active {
+    background    : url(./../../assets/images/common/tabactive.png) !important;
+    border-radius : 15px 15px 0px 0px;
+    color         : #FFFFFF !important;
+    text-align    : center;
+    font-size     : 16px;
+    letter-spacing: 0px;
+}
+
+.divMainForm {
+    box-shadow: 4px 5px 10px 5px #f2f2f2;
+}
+
+.divForm .tab-pane {
+    padding: 20px;
+}
+
+.divForm .divFormRow {
+    padding-top: 10px;
+}
+
+.divForm label {
+    color    : #000000;
+    font-size: 16px;
+}
+
+.divForm .rememberMe {
+    padding-left: 10px;
+}
+
+.divForm .ForgetPassword {
+    text-align     : right;
+    font-size      : 16px;
+    letter-spacing : 0.18px;
+    color          : #20CAD6;
+    text-decoration: none;
+}
+
+.divForm input[type="email"],
+.divForm input[type="password"],
+.divForm input[type="text"] {
+    border       : 1px solid #20CAD6;
+    border-radius: 57px;
+}
+
+.divForm .MyButton {
+    background   : url(./../../assets/images/common/button.png) no-repeat center;
+    width        : 100%;
+    height       : 45px;
+    border       : none;
+    border-radius: 30px;
+    color        : #fff;
+}
+
+.divForm .divor {
+    margin: 20px 0px;
+}
+
+.MyFBButton {
+    background   : #3B5998 url(./../../assets/images/common/fb.png) no-repeat 15%;
+    width        : 100%;
+    height       : 45px;
+    border       : none;
+    border-radius: 30px;
+    color        : #fff;
+}
+
+.MyGoogleButton {
+    background   : #F1F1F1 url(./../../assets/images/common/google.png) no-repeat 15%;
+    width        : 100%;
+    height       : 45px;
+    border       : none;
+    border-radius: 30px;
+    color        : #949AA5;
+}
+
+h6 {
+    display       : flex;
+    flex-direction: row;
+    color         : #949AA5;
+}
+
+h6:before,
+h6:after {
+    content      : "";
+    flex         : 1 1;
+    border-bottom: 1px solid #949AA5;
+    margin       : auto;
+}
+
+h6:before {
+    margin-right: 10px
+}
+
+h6:after {
+    margin-left: 10px
+}
+
+.loginImg {
+    padding: 50px 65px;
+}
+
+@media screen and (max-width: 1400px) {
+    .divFooter .divSocialLinks {
+        padding-left: 65px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .divFooter .divSocialLinks {
+        padding-left: 38px;
+    }
+
+    .divFooter .divFooterText {
+        padding-right: 5px;
+    }
+
+    .divFooter .divFooterServices,
+    .divFooter .divFooterHelp {
+        padding-left: 55px;
+    }
+
+    .MyFBButton {
+        background: #3B5998 url(./../../assets/images/common/fb.png) no-repeat 6%;
+    }
+
+    .MyGoogleButton {
+        background: #F1F1F1 url(./../../assets/images/common/google.png) no-repeat 6%;
+    }
+
+    .divForm .ForgetPassword {
+        font-size: 13px;
+    }
+
+    .loginImg {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {
+    .divFooter ul.divFooterLink li {
+        padding-top: 5px;
+    }
+
+    .divFooter .divFooterTitle {
+        margin-top   : 20px;
+        margin-bottom: 0px;
+    }
+
+    .divFooterLogo {
+        text-align: center;
+    }
+
+    .divFooterText {
+        text-align: center;
+    }
+
+    .loginImg {
+        margin-bottom: 30px;
+    }
+
+    .divFooter .divSocialLinks {
+        padding-left: 12px;
+    }
+
+    .divFooter .divFooterServices,
+    .divFooter .divFooterHelp {
+        padding-left: 12px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .LoginBtn {
+        padding  : 10px 15px;
+        font-size: 11px;
+    }
+
+    .MyFBButton {
+        background: #3B5998 url(./../../assets/images/common/fb.png) no-repeat 7%;
+    }
+
+    .MyGoogleButton {
+        background: #F1F1F1 url(./../../assets/images/common/google.png) no-repeat 7%;
+    }
+} */
+
+/* By Aditya to Reg page */
+
+.regdivFormRow {
+  float: left;
+  width: 50%;
+  padding: 10px 5px 0 0;
+}
+
+.regdivFullRow {
+  float: left;
+  width: 100%;
+}
+
+.divForm {
+  display: flow-root;
+}
+
+.divForm > .tab-pane {
+  display: none !important;
+}
+
+.divForm > .active {
+  display: block !important;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line !important;
+}
+
+.otplogo {
+  width: 50%;
+  padding: 30px;
+}
+
+.otptxt {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.otpEmail {
+  font-size: 22px;
+  color: #20cad6;
+}
+
+.forgotPasswordimg {
+  height: 190px;
+  padding: 30px;
+}
+
+.forgotPasswordBtn {
+  background: url(./../../assets/images/button.png) no-repeat center;
+  width: 100%;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  border-radius: 30px 30px 0 0;
+}
+
+.otptxtbox {
+  width: 3em;
+}
+
+.modal {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  overflow: auto;
+}
+
+.modal_content {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.close {
+  color: Black;
+  float: right;
+}
+
+.close:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+.timeField::before{
+    content: 'Select Time';
+}
+

@@ -1,0 +1,17 @@
+pipeline {
+     agent {label 'master'}
+     stages {
+       stage("Build") {
+            steps {
+               sh "sudo npm install"
+               sh "sudo npm run build"
+            }
+        }
+        stage("Deploy") {
+            steps {
+                sh "sudo rm -rf /var/www/exado/ui"
+                sh "sudo cp -a ${WORKSPACE}/build/ /var/www/exado/ui/"
+            }
+        }
+    }
+ }

@@ -1,0 +1,68 @@
+/**
+* ----------------------------------------------
+* Demo styles
+* ----------------------------------------------
+**/
+.accordion {
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: 2px;
+    padding: 1rem !important;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    /*background-color: #f4f4f4;*/
+    color: #436B95;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border-bottom: 2px solid #95e5d4;
+    font-weight: 700;
+}
+
+/*.accordion__button:hover {
+    background-color: #ddd;
+}*/
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 30px;
+    border-bottom: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+[hidden] {
+    display: none;
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

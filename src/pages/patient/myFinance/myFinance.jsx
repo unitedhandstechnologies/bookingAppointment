@@ -84,11 +84,14 @@ class MyFinance extends React.Component {
     promiseWrapper(this.props.patientactions.getPatientFinanceData, {
       patientGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
+    console.log(jsdata,'----------jsdata------------------')
+    
       this.setState({
         WalletBalance: jsdata.walletBalance,
         TotalSpent: jsdata.totalSpent,
         TotalRefund: jsdata.totalRefund,
       });
+    
     });
   }
 

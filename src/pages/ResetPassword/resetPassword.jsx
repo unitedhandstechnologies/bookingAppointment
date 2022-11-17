@@ -15,7 +15,7 @@ class ResetPassword extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            UserId: "",
+            userId: "",
             Password: "",
             ConfirmPassword: "",
             redirect: null,
@@ -27,7 +27,7 @@ class ResetPassword extends React.Component {
 
     componentDidMount() {
         const { userId } = this.props.match.params;
-        this.setState({ UserId: userId });
+        this.setState({ userId: userId });
     }
 
     UpdatePassword = (event) => {
@@ -62,7 +62,7 @@ class ResetPassword extends React.Component {
                 return;
             }
         }
-        promiseWrapper(this.props.actions.resetPassword, { userId: this.state.UserId, password: this.state.Password })
+        promiseWrapper(this.props.actions.resetPassword, { userId: this.state.userId, password: this.state.Password })
             .then((data) => {
                 if (data.data.isSuccess === true) {
                     toast.success(data.data.message);

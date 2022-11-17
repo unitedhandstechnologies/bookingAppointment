@@ -54,7 +54,7 @@ export class Appointments extends Component {
         return (
 
             <div className="row mt-3 d-flex justify-content-center">
-                <div className="col-md-12" className="table-min-height">
+                <div className="col-md-12 table-min-height">
                     <div className="tableContainer table-responsive">
                         <table className="table table-bordered appointmentTable">
                             <thead>

@@ -51,19 +51,19 @@ class DoctorMyFees extends React.Component {
         this.setState(prevState => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            ["refundPercentage"]: data.refundPercentage.toString()
+            "refundPercentage": data.refundPercentage.toString()
           }
         }));
         this.setState(prevState => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            ["refundInClinicPercentage"]: data.refundInClinicPercentage.toString()
+            "refundInClinicPercentage": data.refundInClinicPercentage.toString()
           }
         }));
         this.setState(prevState => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            ["isChatFree"]: data.isChatFree.toString()
+            "isChatFree": data.isChatFree.toString()
           }
         }));
 
@@ -86,7 +86,7 @@ class DoctorMyFees extends React.Component {
     this.setState(prevState => ({
       saveMyFees: {
         ...prevState.saveMyFees,
-        ["currencyId"]: e.target.value
+        "currencyId": e.target.value
       }
     }));
     this.state.CurrencyData.map((d, i) => {
@@ -100,7 +100,7 @@ class DoctorMyFees extends React.Component {
     this.setState(prevState => ({
       saveMyFees: {
         ...prevState.saveMyFees,
-        ["refundPercentage"]: e.target.value
+        "refundPercentage": e.target.value
       }
     }));
   }
@@ -109,7 +109,7 @@ class DoctorMyFees extends React.Component {
     this.setState(prevState => ({
       saveMyFees: {
         ...prevState.saveMyFees,
-        ["refundInClinicPercentage"]: e.target.value
+        "refundInClinicPercentage": e.target.value
       }
     }));
   }
@@ -118,14 +118,14 @@ class DoctorMyFees extends React.Component {
     this.setState(prevState => ({
       saveMyFees: {
         ...prevState.saveMyFees,
-        ["isChatFree"]: e.target.value
+        "isChatFree": e.target.value
       }
     }));
     if (e.target.value === "false") {
       this.setState(prevState => ({
         saveMyFees: {
           ...prevState.saveMyFees,
-          ["chatFees"]: 0
+          "chatFees": 0
         }
       }));
     }

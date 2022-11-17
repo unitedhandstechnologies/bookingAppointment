@@ -47,14 +47,14 @@ class LoginComponent extends React.Component {
       if (data.data.isSuccess == true) {
         if (data.data.data.IsEmailVerified === "False") {
           this.props.onLoginNotVerified(
-            data.data.data.UserId,
+            data.data.data.userId,
             this.state.EmailAddress
           );
           return;
         }
         localStorage.removeItem(localStorageKeys.loginType);
         localStorage.setItem(localStorageKeys.accessToken, data.data.data.Token);
-        localStorage.setItem(localStorageKeys.userId, data.data.data.UserId);
+        localStorage.setItem(localStorageKeys.userId, data.data.data.userId);
         localStorage.setItem(localStorageKeys.userFullname, data.data.data.UserFullName);
         localStorage.setItem(localStorageKeys.userType, data.data.data.UserType);
         localStorage.setItem(localStorageKeys.profileImage, data.data.data.ProfileImage);

@@ -42,7 +42,7 @@ class AdminLoginBox extends React.Component {
                     if (data.data.isSuccess == true) {
                         localStorage.removeItem('login-Type');
                         localStorage.setItem("access-token", data.data.data.Token);
-                        localStorage.setItem("user-id", data.data.data.UserId);
+                        localStorage.setItem("user-id", data.data.data.userId);
                         localStorage.setItem("user-fullname", data.data.data.UserFullName);
                         localStorage.setItem("user-type", data.data.data.UserType);
                         localStorage.setItem("profile-image", data.data.data.ProfileImage);

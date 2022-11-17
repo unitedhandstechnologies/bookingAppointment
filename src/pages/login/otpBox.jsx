@@ -31,20 +31,22 @@ class OTPBox extends React.Component {
             return;
         }
         else {
-            promiseWrapper(this.props.actions.verifyEmailOTP, { userId: this.props.userId, emailOTP: this.state.OTP })
+            console.log(this.state.OTP,'lohi----------------------')
+            promiseWrapper(this.props.actions.verifyEmailOTP, { userId: this.props.userId, otp: this.state.OTP })
                 .then((data) => {
-                    if (data.data.isSuccess == true) {
+           console.log(data,'--------data OTP----------------')
+                    if (data.data.success === true) {
                         window.localStorage.removeItem('login-Type');
-                        window.localStorage.setItem("access-token", data.data.data.Token);
-                        window.localStorage.setItem("user-id", data.data.data.UserId);
-                        window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
-                        window.localStorage.setItem("user-type", data.data.data.UserType);
+                        window.localStorage.setItem("access-token", data.data.result.token);
+                        window.localStorage.setItem("user-id", data.data.result.userId);
+                        window.localStorage.setItem("user-fullname", data.data.result.fullName);
+                        window.localStorage.setItem("user-type", data.data.result.userType);
                         //toast.success(data.data.message);
-                        if (data.data.data.UserType === '2') {
+                        if (data.data.result.userType === '2') {
                             this.setState({ redirect: "/patient-dashboard" });
                         }
-                        else if (data.data.data.UserType === '1') {
-                            if (data.data.data.ProfileVerification === '1') {
+                        else if (data.data.result.userType === '1') {
+                            if (data.data.result.verificationStatus === '1') {
                                 this.setState({ redirect: "/doctor-profile" });
                             }
                             else {

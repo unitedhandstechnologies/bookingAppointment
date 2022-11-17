@@ -13,7 +13,7 @@ class LoginPage extends React.Component {
         super(props);
         this.state = {
             DisplayPage: "Login",
-            UserId: "",
+            userId: "",
             EmailId: "",
             IsUserLogedIn: false,
             IsReg: false
@@ -25,7 +25,7 @@ class LoginPage extends React.Component {
             if (localStorage.getItem("user-type") === '2') {
                 this.props.history.push('/patient-dashboard')
             }
-            else if (localStorage.getItem("user-type") === '1') {
+            else if (localStorage.getItem("user-type") == '1') {
                 this.props.history.push('/doctor-dashboard')
             }
             else {
@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
 
     LoadOTPUI(userId, emailId) {
         this.setState({ DisplayPage: "OTPPage" });
-        this.setState({ UserId: userId });
+        this.setState({ userId: userId });
         this.setState({ EmailId: emailId });
     }
 
@@ -50,7 +50,7 @@ class LoginPage extends React.Component {
 
     LoadRegUI() {
         this.setState({ DisplayPage: "Login" });
-        this.setState({ UserId: "" });
+        this.setState({ userId: "" });
         this.setState({ EmailId: "" });
         $('.nav-tabs a[href="#nav-registration"]').trigger('click');
     }
@@ -76,7 +76,7 @@ class LoginPage extends React.Component {
                                 {this.state.DisplayPage == 'OTPPage' &&
                                     <OTPBox
                                         onCancel={this.LoadRegUI.bind(this)}
-                                        userId={this.state.UserId}
+                                        userId={this.state.userId}
                                         emailId={this.state.EmailId}
                                     />
                                 }

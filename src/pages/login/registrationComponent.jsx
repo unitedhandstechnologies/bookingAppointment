@@ -40,29 +40,30 @@ class RegistrationComponent extends React.Component {
       email: values.email,
       password: values.password,
       UserType: ut == "Patient" ? 2 : 1,
-      IsDoctorLogin: ut == "Patient" ? false : true,
+      // IsDoctorLogin: ut == "Patient" ? false : true,
     };
 
     promiseWrapper(this.props.actions.registerUser, {
       userModel: userData,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
-        /* window.localStorage.removeItem('login-Type');
-                    window.localStorage.setItem("access-token", data.data.data.Token);
-                    window.localStorage.setItem("user-id", data.data.data.UserId);
-                    window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
-                    window.localStorage.setItem("user-type", data.data.data.UserType);
-                    toast.success(data.data.message); */
+      console.log(data.data.result.userId,'--------------data------------------')
+      if (data.data.success === true) {
+         //window.localStorage.removeItem('login-Type');
+                 //   window.localStorage.setItem("access-token", data.data.data.Token);
+                 //   window.localStorage.setItem("user-id", data.result.userId);
+                    // window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
+                  //  window.localStorage.setItem("user-type", data.UserType);
+                    // toast.success(data.data.message); 
         this.setState({ success: data.data.message });
         this.setState({
           successTimer: setTimeout(() => {this.setState({ success: "" });
-          this.setState({ UserGuid: data.data.data.UserId });
-          this.props.onRegistration(data.data.data.UserId, values.email);
+          this.setState({ UserGuid: data.data.result.userId });
+          this.props.onRegistration(data.data.result.userId, values.email);
           }, 2000),
         })
       } else {
         // toast.error(data.data.errorMessage);
-        this.setState({ error: data.data.errorMessage }, () =>
+        this.setState({ error: data.data.result.errorMessage }, () =>
           this.setState({
             errorTimer: setTimeout(() => this.setState({ error: "" }), 3000),
           })

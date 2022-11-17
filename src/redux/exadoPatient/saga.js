@@ -1,24 +1,74 @@
-import {
-  call, all, takeEvery, put
-} from 'redux-saga/effects';
+import { call, all, takeEvery, put } from "redux-saga/effects";
 
 import {
-  GET_PATIENT_PROFILE_INFO, SAVE_PATIENT_PROFILE_INFO, DELETE_PATIENT, CHANGE_STATUS,
-  GET_PATIENT_QUESTIONNAIRE, GET_PATIENT_ANSWERS, SAVE_ANSWERS, SEARCH_DOCTOR_APPOINTMENT,
-  GET_LOCATION, SEARCH_APPOINTMENT, GET_MORE_REVIEWS, VIEW_ALLAVAILABILITY, FETCH_NEXT_APPOINTMENTS, BOOK_APPOINTMENT,
-  PATIENT_APPOINTMENTS, GET_BOOKED_APPOINTMENT, UPDATE_PATIENT_ATTACHMENT, GET_APPOINTMENTS, CHANGE_APPOINTMENT_STATUS,
-  CANCEL_APPOINTMENT, UPLOAD_DOCUMENT, REMOVE_DOCUMENT, GET_DOCTOR_REVIEW_BY_ID, GET_DOCTOR_REVIEW_BY_APPOINTMENT_ID, SAVE_REVIEW,
-  GET_WALLET_BALANCE, SAVE_PAYMENT, SHOW_DIAGNOSIS_TO_OTHERS, ADD_REFUND, GET_REFUND_BY_ID, WITHDRAW_MONEY, GET_PATIENT_FINANCE_DATA
-} from './constants';
+  GET_PATIENT_PROFILE_INFO,
+  SAVE_PATIENT_PROFILE_INFO,
+  DELETE_PATIENT,
+  CHANGE_STATUS,
+  GET_PATIENT_QUESTIONNAIRE,
+  GET_PATIENT_ANSWERS,
+  SAVE_ANSWERS,
+  SEARCH_DOCTOR_APPOINTMENT,
+  GET_LOCATION,
+  SEARCH_APPOINTMENT,
+  GET_MORE_REVIEWS,
+  VIEW_ALLAVAILABILITY,
+  FETCH_NEXT_APPOINTMENTS,
+  BOOK_APPOINTMENT,
+  PATIENT_APPOINTMENTS,
+  GET_BOOKED_APPOINTMENT,
+  UPDATE_PATIENT_ATTACHMENT,
+  GET_APPOINTMENTS,
+  CHANGE_APPOINTMENT_STATUS,
+  CANCEL_APPOINTMENT,
+  UPLOAD_DOCUMENT,
+  REMOVE_DOCUMENT,
+  GET_DOCTOR_REVIEW_BY_ID,
+  GET_DOCTOR_REVIEW_BY_APPOINTMENT_ID,
+  SAVE_REVIEW,
+  GET_WALLET_BALANCE,
+  SAVE_PAYMENT,
+  SHOW_DIAGNOSIS_TO_OTHERS,
+  ADD_REFUND,
+  GET_REFUND_BY_ID,
+  WITHDRAW_MONEY,
+  GET_PATIENT_FINANCE_DATA,
+} from "./constants";
 
 import {
-  getPatientProfileInfo, savePatientProfileInfo, deletePatient, changeStatus,
-  getPatientQuestionnaire, getPatientAnswers, saveAnswers, searchDoctorAppointment,
-  getLocation, searchAppointment, getMoreReviews, viewAllAvailability, fetchNextAppointments, bookAppointment,
-  patientAppointments, getBookedAppointment, updatePatientAttachment, getAppointments, changeAppointmentStatus,
-  cancelAppointment, uploadDocument, removeDocument, getDoctorReviewById, getDoctorReviewByAppointmentId, saveReview,
-  getWalletBalance, savePayment, showDiagnosisToOthers, addRefund, getRefundById, withdrawMoney, getPatientFinanceData
-} from './apiCalls';
+  getPatientProfileInfo,
+  savePatientProfileInfo,
+  deletePatient,
+  changeStatus,
+  getPatientQuestionnaire,
+  getPatientAnswers,
+  saveAnswers,
+  searchDoctorAppointment,
+  getLocation,
+  searchAppointment,
+  getMoreReviews,
+  viewAllAvailability,
+  fetchNextAppointments,
+  bookAppointment,
+  patientAppointments,
+  getBookedAppointment,
+  updatePatientAttachment,
+  getAppointments,
+  changeAppointmentStatus,
+  cancelAppointment,
+  uploadDocument,
+  removeDocument,
+  getDoctorReviewById,
+  getDoctorReviewByAppointmentId,
+  saveReview,
+  getWalletBalance,
+  savePayment,
+  showDiagnosisToOthers,
+  addRefund,
+  getRefundById,
+  withdrawMoney,
+  getPatientFinanceData,
+} from "./apiCalls";
 
 export function* GetPatientProfileInfo(actions) {
   try {
@@ -77,7 +127,11 @@ export function* GetPatientQuestionnaire(actions) {
 
 export function* GetPatientAnswers(actions) {
   try {
-    const response = yield call(getPatientAnswers, actions.patientGuid, actions.pageNo);
+    const response = yield call(
+      getPatientAnswers,
+      actions.patientGuid,
+      actions.pageNo
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -99,7 +153,11 @@ export function* SaveAnswers(actions) {
 
 export function* SearchDoctorAppointment(actions) {
   try {
-    const response = yield call(searchDoctorAppointment, actions.appointmentModel, actions.doctorGuid);
+    const response = yield call(
+      searchDoctorAppointment,
+      actions.appointmentModel,
+      actions.doctorGuid
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -112,7 +170,7 @@ export function* GetLocation(actions) {
   try {
     const response = yield call(getLocation);
     if (response) {
-      actions.promise.resolve(response.data);
+      actions.promise.resolve(response.data.result);
     }
   } catch (error) {
     actions.promise.reject();
@@ -132,7 +190,11 @@ export function* SearchAppointment(actions) {
 
 export function* GetMoreReviews(actions) {
   try {
-    const response = yield call(getMoreReviews, actions.doctorGuid, actions.pageNo);
+    const response = yield call(
+      getMoreReviews,
+      actions.doctorGuid,
+      actions.pageNo
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -143,7 +205,11 @@ export function* GetMoreReviews(actions) {
 
 export function* ViewAllAvailability(actions) {
   try {
-    const response = yield call(viewAllAvailability, actions.appointmentModel, actions.doctorGuid);
+    const response = yield call(
+      viewAllAvailability,
+      actions.appointmentModel,
+      actions.doctorGuid
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -154,7 +220,12 @@ export function* ViewAllAvailability(actions) {
 
 export function* FetchNextAppointments(actions) {
   try {
-    const response = yield call(fetchNextAppointments, actions.appointmentModel, actions.doctorGuid, actions.isViewAllAvailability);
+    const response = yield call(
+      fetchNextAppointments,
+      actions.appointmentModel,
+      actions.doctorGuid,
+      actions.isViewAllAvailability
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -198,7 +269,11 @@ export function* GetBookedAppointment(actions) {
 
 export function* UpdatePatientAttachment(actions) {
   try {
-    const response = yield call(updatePatientAttachment, actions.patientGuid, actions.file);
+    const response = yield call(
+      updatePatientAttachment,
+      actions.patientGuid,
+      actions.file
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -220,7 +295,11 @@ export function* GetAppointments(actions) {
 
 export function* ChangeAppointmentStatus(actions) {
   try {
-    const response = yield call(changeAppointmentStatus, actions.appointmentGuid, actions.isConfirm);
+    const response = yield call(
+      changeAppointmentStatus,
+      actions.appointmentGuid,
+      actions.isConfirm
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -231,7 +310,13 @@ export function* ChangeAppointmentStatus(actions) {
 
 export function* CancelAppointment(actions) {
   try {
-    const response = yield call(cancelAppointment, actions.appointmentGuid, actions.cancelReason, actions.canceledBy, actions.suggestedDateTime);
+    const response = yield call(
+      cancelAppointment,
+      actions.appointmentGuid,
+      actions.cancelReason,
+      actions.canceledBy,
+      actions.suggestedDateTime
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -242,7 +327,12 @@ export function* CancelAppointment(actions) {
 
 export function* UploadDocument(actions) {
   try {
-    const response = yield call(uploadDocument, actions.documentType, actions.referenceGuid, actions.file);
+    const response = yield call(
+      uploadDocument,
+      actions.documentType,
+      actions.referenceGuid,
+      actions.file
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -253,7 +343,11 @@ export function* UploadDocument(actions) {
 
 export function* RemoveDocument(actions) {
   try {
-    const response = yield call(removeDocument, actions.documentURI, actions.documentName);
+    const response = yield call(
+      removeDocument,
+      actions.documentURI,
+      actions.documentName
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -275,7 +369,10 @@ export function* GetDoctorReviewById(actions) {
 
 export function* GetDoctorReviewByAppointmentId(actions) {
   try {
-    const response = yield call(getDoctorReviewByAppointmentId, actions.appointmentGuid);
+    const response = yield call(
+      getDoctorReviewByAppointmentId,
+      actions.appointmentGuid
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -319,7 +416,11 @@ export function* SavePayment(actions) {
 
 export function* ShowDiagnosisToOthers(actions) {
   try {
-    const response = yield call(showDiagnosisToOthers, actions.appointmentGuid, actions.bValue);
+    const response = yield call(
+      showDiagnosisToOthers,
+      actions.appointmentGuid,
+      actions.bValue
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -372,7 +473,6 @@ export function* GetPatientFinanceData(actions) {
   }
 }
 
-
 export default function* rootSaga() {
   yield all([
     takeEvery(GET_PATIENT_PROFILE_INFO, GetPatientProfileInfo),
@@ -398,7 +498,10 @@ export default function* rootSaga() {
     takeEvery(UPLOAD_DOCUMENT, UploadDocument),
     takeEvery(REMOVE_DOCUMENT, RemoveDocument),
     takeEvery(GET_DOCTOR_REVIEW_BY_ID, GetDoctorReviewById),
-    takeEvery(GET_DOCTOR_REVIEW_BY_APPOINTMENT_ID, GetDoctorReviewByAppointmentId),
+    takeEvery(
+      GET_DOCTOR_REVIEW_BY_APPOINTMENT_ID,
+      GetDoctorReviewByAppointmentId
+    ),
     takeEvery(SAVE_REVIEW, SaveReview),
     takeEvery(GET_WALLET_BALANCE, GetWalletBalance),
     takeEvery(SAVE_PAYMENT, SavePayment),
@@ -406,9 +509,6 @@ export default function* rootSaga() {
     takeEvery(ADD_REFUND, AddRefund),
     takeEvery(GET_REFUND_BY_ID, GetRefundById),
     takeEvery(WITHDRAW_MONEY, WithdrawMoney),
-    takeEvery(GET_PATIENT_FINANCE_DATA, GetPatientFinanceData)
+    takeEvery(GET_PATIENT_FINANCE_DATA, GetPatientFinanceData),
   ]);
 }
-
-
-

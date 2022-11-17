@@ -119,7 +119,7 @@ const AddFunds = (props) => {
                               </td>
                               <td>12-32</td>
                               <td>
-                                <button className="btn btn-success">
+                                <button className="btn btn-success" onClick={()=>{console.log('lohi')}}>
                                   Add fund
                                 </button>
                               </td>

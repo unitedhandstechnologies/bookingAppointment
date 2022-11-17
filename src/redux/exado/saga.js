@@ -1,14 +1,32 @@
-import {
-  call, all, takeEvery, put
-} from 'redux-saga/effects';
+import { call, all, takeEvery, put } from "redux-saga/effects";
 
 import {
-  SOCIAL_MEDIA_LOGIN, REGISTER_USER, LOGIN_USER, VERIFY_EMAIL_OTP, FORGOT_PASSWORD, RESET_PASSWORD, SEND_OTP_CODE, CHANGE_PASSWORD, GET_CMS_PAGE, GET_AUTH_TOKEN, SAVE_CARD_INFO
-} from './constants';
+  SOCIAL_MEDIA_LOGIN,
+  REGISTER_USER,
+  LOGIN_USER,
+  VERIFY_EMAIL_OTP,
+  FORGOT_PASSWORD,
+  RESET_PASSWORD,
+  SEND_OTP_CODE,
+  CHANGE_PASSWORD,
+  GET_CMS_PAGE,
+  GET_AUTH_TOKEN,
+  SAVE_CARD_INFO,
+} from "./constants";
 
 import {
-  socialMediaLogin, registerUser, loginUser, verifyEmailOTP, forgotPassword, resetPassword, sendOTPCode, changePassword, getCMSPage, getAuthToken, saveCardInfo
-} from './apiCalls';
+  socialMediaLogin,
+  registerUser,
+  loginUser,
+  verifyEmailOTP,
+  forgotPassword,
+  resetPassword,
+  sendOTPCode,
+  changePassword,
+  getCMSPage,
+  getAuthToken,
+  saveCardInfo,
+} from "./apiCalls";
 
 export function* PostSocialMediaLogin(actions) {
   try {
@@ -34,7 +52,12 @@ export function* PostRegisterUser(actions) {
 
 export function* PostLoginUser(actions) {
   try {
-    const response = yield call(loginUser, actions.email, actions.password, actions.userType);
+    const response = yield call(
+      loginUser,
+      actions.email,
+      actions.password,
+      actions.userType
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -45,7 +68,7 @@ export function* PostLoginUser(actions) {
 
 export function* PostVerifyEmailOTP(actions) {
   try {
-    const response = yield call(verifyEmailOTP, actions.userId, actions.emailOTP);
+    const response = yield call(verifyEmailOTP, actions.userId, actions.otp);
     if (response) {
       actions.promise.resolve(response);
     }
@@ -56,7 +79,11 @@ export function* PostVerifyEmailOTP(actions) {
 
 export function* PostForgotPassword(actions) {
   try {
-    const response = yield call(forgotPassword, actions.email, actions.userType);
+    const response = yield call(
+      forgotPassword,
+      actions.email,
+      actions.userType
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -67,7 +94,11 @@ export function* PostForgotPassword(actions) {
 
 export function* PostResetPassword(actions) {
   try {
-    const response = yield call(resetPassword, actions.userId, actions.password);
+    const response = yield call(
+      resetPassword,
+      actions.userId,
+      actions.password
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -89,7 +120,12 @@ export function* PostSendOTPCode(actions) {
 
 export function* ChangePassword(actions) {
   try {
-    const response = yield call(changePassword, actions.userId, actions.oldPassword, actions.newPassword);
+    const response = yield call(
+      changePassword,
+      actions.userId,
+      actions.oldPassword,
+      actions.newPassword
+    );
     if (response) {
       actions.promise.resolve(response);
     }
@@ -143,6 +179,6 @@ export default function* rootSaga() {
     takeEvery(CHANGE_PASSWORD, ChangePassword),
     takeEvery(GET_CMS_PAGE, GetCMSPage),
     takeEvery(GET_AUTH_TOKEN, GetAuthToken),
-    takeEvery(SAVE_CARD_INFO, SaveCardInfo)
+    takeEvery(SAVE_CARD_INFO, SaveCardInfo),
   ]);
 }

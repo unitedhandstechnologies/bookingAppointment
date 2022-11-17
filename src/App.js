@@ -58,7 +58,8 @@ import AdminFinance from "./pages/Admin/adminFinance";
 import Languages from "./pages/Admin/masterPages/languages";
 import { componentWithLazyLoad } from "./utility/common";
 import AddFunds from "./pages/patient/addFunds";
-import healthInformation from "./pages/patient/patientProfile/healthInformation";
+// import ProtectedWrapper from "./utility/ProtectedWrapper";
+// import healthInformation from "./pages/patient/patientProfile/healthInformation";
 
 const CmsPages = lazy(() => import("./pages/Admin/cmsPage/cmsPages"));
 const PhysicianServices = lazy(() =>
@@ -94,8 +95,17 @@ function App() {
           <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/emergency" component={Emergency} />
           <Route exact path="/chat-with-doctor" component={ChatWithDoctor} />
-
           <Route exact path="/login" component={LoginPage} />
+          {/* <Route
+            exact
+            // path="/login"
+            path="/"
+            element={
+              <ProtectedWrapper>
+                <LoginPage />
+              </ProtectedWrapper>
+            }
+          /> */}
           <Route exact path="/register-doctor" component={LoginPage} />
           <Route exact path="/admin-login" component={AdminLoginPage} />
           <Route

@@ -30,7 +30,7 @@ const GoogleLoginButton = (props) => {
                 if (data.data.isSuccess == true) {
                     window.localStorage.removeItem('login-Type');
                     window.localStorage.setItem("access-token", data.data.data.Token);
-                    window.localStorage.setItem("user-id", data.data.data.UserId);
+                    window.localStorage.setItem("user-id", data.data.data.userId);
                     window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
                     window.localStorage.setItem("user-type", data.data.data.UserType);
                     if (data.data.data.UserType === '2') {

@@ -199,7 +199,7 @@ class DoctorDetailView extends React.Component {
                                                                                         <span style={{ "font-size": "20px;" }} className="additional-info-doc">
                                                                                             <i className="far fa-file"></i>
                                                                                         </span>
-                                                                                        <a className="mx-2" target="_blank" href={e.docURL}>{e.docName}</a> <span style={{ color: "#FF0000" }}>{e.isDeleted ? "[DELETED]" : ""}</span>
+                                                                                        <a className="mx-2" target="_blank" href={e.docURL} rel="noreferrer">{e.docName}</a> <span style={{ color: "#FF0000" }}>{e.isDeleted ? "[DELETED]" : ""}</span>
                                                                                     </div>
                                                                                 ))
                                                                             }

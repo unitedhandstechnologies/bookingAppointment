@@ -1,16 +1,64 @@
-import {
-  call, all, takeEvery, put
-} from 'redux-saga/effects';
+import { call, all, takeEvery } from "redux-saga/effects";
 
 import {
-  GET_UNVERIFIED_DOCTORS_LIST, GET_DOCTOR_VIEW_DETAILS, VERIFY_DOCTOR_PROFILE, GET_PAGED_PATIENTS_LIST, GET_PAGED_DOCTORS_LIST, GET_PATIENT_VIEW_DETAILS,
-  GET_ALL_REFUND_DATA, APPROVE_REFUND, GET_ALL_UNPROCESSED_WITHDRAW, APPROVE_WITHDRAW, GET_ALL_REVIEWS, DELETE_REVIEW_BY_ID, GET_ALL_COMMISSION, SAVE_DOCTOR_COMMISSION, GET_FINANCE_DATA, MARK_AS_PAID, GET_DOCTOR_PAYMENT, SAVE_CMS_PAGE, GET_LANGUAGE_ALL_MESSAGES, SAVE_LANGUAGE_LABEL_DATA, GET_PATIENT_QUESTIONNAIRE_LANGUAGE, SAVE_PATIENT_QUESTIONNAIRE_LANGUAGE, GET_ALL_PHYSICIAN_SERVICE_DETAIL, SAVE_PHYSICIAN_SERVICE, GET_ALL_LANGUAGE_DETAIL, SAVE_LANGUAGE, SAVE_WEBSITE_LANGUAGE_ID
-} from './constants';
+  GET_UNVERIFIED_DOCTORS_LIST,
+  GET_DOCTOR_VIEW_DETAILS,
+  VERIFY_DOCTOR_PROFILE,
+  GET_PAGED_PATIENTS_LIST,
+  GET_PAGED_DOCTORS_LIST,
+  GET_PATIENT_VIEW_DETAILS,
+  GET_ALL_REFUND_DATA,
+  APPROVE_REFUND,
+  GET_ALL_UNPROCESSED_WITHDRAW,
+  APPROVE_WITHDRAW,
+  GET_ALL_REVIEWS,
+  DELETE_REVIEW_BY_ID,
+  GET_ALL_COMMISSION,
+  SAVE_DOCTOR_COMMISSION,
+  GET_FINANCE_DATA,
+  MARK_AS_PAID,
+  GET_DOCTOR_PAYMENT,
+  SAVE_CMS_PAGE,
+  GET_LANGUAGE_ALL_MESSAGES,
+  SAVE_LANGUAGE_LABEL_DATA,
+  GET_PATIENT_QUESTIONNAIRE_LANGUAGE,
+  SAVE_PATIENT_QUESTIONNAIRE_LANGUAGE,
+  GET_ALL_PHYSICIAN_SERVICE_DETAIL,
+  SAVE_PHYSICIAN_SERVICE,
+  GET_ALL_LANGUAGE_DETAIL,
+  SAVE_LANGUAGE,
+  SAVE_WEBSITE_LANGUAGE_ID,
+} from "./constants";
 
 import {
-  getUnVerifiedDoctorsList, getDoctorViewDetails, verifyDoctorProfile, getPagedPatientsList, getPagedDoctorsList, getPatientViewDetails,
-  getAllRefundData, approveRefund, getAllUnprocessedWithdraw, approveWithdraw, getAllReviews, deleteReviewById, getAllCommission, saveDoctorCommission, getFinanceData, markAsPaid, getDoctorPayment, saveCMSPage, getLanguageAllMessages, saveLanguageLabelData, savePatientQuestionnaireLanguage, getPatientQuestionnaireLanguage, getAllPhysicianServiceDetail, savePhysicianService, getAllLanguageDetail, saveLanguage, saveWebsiteLanguageId
-} from './apiCalls';
+  getUnVerifiedDoctorsList,
+  getDoctorViewDetails,
+  verifyDoctorProfile,
+  getPagedPatientsList,
+  getPagedDoctorsList,
+  getPatientViewDetails,
+  getAllRefundData,
+  approveRefund,
+  getAllUnprocessedWithdraw,
+  approveWithdraw,
+  getAllReviews,
+  deleteReviewById,
+  getAllCommission,
+  saveDoctorCommission,
+  getFinanceData,
+  markAsPaid,
+  getDoctorPayment,
+  saveCMSPage,
+  getLanguageAllMessages,
+  saveLanguageLabelData,
+  savePatientQuestionnaireLanguage,
+  getPatientQuestionnaireLanguage,
+  getAllPhysicianServiceDetail,
+  savePhysicianService,
+  getAllLanguageDetail,
+  saveLanguage,
+  saveWebsiteLanguageId,
+} from "./apiCalls";
 
 export function* GetUnVerifiedDoctorsList(actions) {
   try {
@@ -36,7 +84,12 @@ export function* GetDoctorViewDetails(actions) {
 
 export function* VerifyDoctorProfile(actions) {
   try {
-    const response = yield call(verifyDoctorProfile, actions.userGuid, actions.verificationType, actions.cancelReason);
+    const response = yield call(
+      verifyDoctorProfile,
+      actions.userGuid,
+      actions.verificationType,
+      actions.cancelReason
+    );
     if (response) {
       actions.promise.resolve(response.data);
     }
@@ -331,12 +384,18 @@ export default function* rootSaga() {
     takeEvery(SAVE_CMS_PAGE, SaveCMSPage),
     takeEvery(GET_LANGUAGE_ALL_MESSAGES, GetLanguageAllMessages),
     takeEvery(SAVE_LANGUAGE_LABEL_DATA, SaveLanguageLabelData),
-    takeEvery(GET_PATIENT_QUESTIONNAIRE_LANGUAGE, GetPatientQuestionnaireLanguage),
-    takeEvery(SAVE_PATIENT_QUESTIONNAIRE_LANGUAGE, SavePatientQuestionnaireLanguage),
+    takeEvery(
+      GET_PATIENT_QUESTIONNAIRE_LANGUAGE,
+      GetPatientQuestionnaireLanguage
+    ),
+    takeEvery(
+      SAVE_PATIENT_QUESTIONNAIRE_LANGUAGE,
+      SavePatientQuestionnaireLanguage
+    ),
     takeEvery(GET_ALL_PHYSICIAN_SERVICE_DETAIL, GetAllPhysicianServiceDetail),
     takeEvery(SAVE_PHYSICIAN_SERVICE, SavePhysicianService),
     takeEvery(GET_ALL_LANGUAGE_DETAIL, GetAllLanguageDetail),
     takeEvery(SAVE_LANGUAGE, SaveLanguage),
-    takeEvery(SAVE_WEBSITE_LANGUAGE_ID, SaveWebsiteLanguageId)
+    takeEvery(SAVE_WEBSITE_LANGUAGE_ID, SaveWebsiteLanguageId),
   ]);
 }

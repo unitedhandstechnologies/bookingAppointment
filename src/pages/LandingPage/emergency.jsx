@@ -23,11 +23,7 @@ const Emergency = (props) => {
     const langCode = props.languageObj?.languageAbbreviation;
     if (langCode && languageCode !== langCode) {
       setLanguageCode(langCode);
-      getCMSPageData(
-        cmsPageNum.Emergency,
-        props.languageObj.languageId,
-        false
-      );
+      getCMSPageData(cmsPageNum.Emergency, props.languageObj.languageId, false);
     }
   }, []);
 
@@ -264,7 +260,7 @@ const Emergency = (props) => {
 //         languageCode: "",
 //       };
 //     }
-  
+
 //     componentDidMount() {
 //       if (this.props.languageObj?.languageAbbreviation) {
 //         const { languageAbbreviation, languageId } = this.props.languageObj;
@@ -273,7 +269,7 @@ const Emergency = (props) => {
 //         });
 //       }
 //     }
-  
+
 //     componentDidUpdate() {
 //       const langCode = this.props.languageObj?.languageAbbreviation;
 //       if (langCode && this.state.languageCode !== langCode) {
@@ -286,7 +282,7 @@ const Emergency = (props) => {
 //         });
 //       }
 //     }
-  
+
 //     getCMSPageData = (pageNum, langId, isAdmin) => {
 //       const queryParam = {
 //         cMSPagenumber: pageNum,
@@ -297,7 +293,7 @@ const Emergency = (props) => {
 //         query: { ...queryParam },
 //       }).then((data) => this.setState({ cmsData: data.data }));
 //     };
-  
+
 //     render() {
 //       const { cmsData } = this.state;
 //       const { t } = this.props;
@@ -514,17 +510,15 @@ const Emergency = (props) => {
 //       );
 //     }
 //   }
-  
 
-
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return { languageObj: state.Exado.language };
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const comactions = bindActionCreators(exadoActions, dispatch);
   return { comactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

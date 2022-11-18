@@ -261,7 +261,7 @@ const AdminAppointmentRefund = (props) => {
                                               v.refundDescription,
                                               v.refundAmount
                                             )}
-                                        >
+                                          >
                                             Refund
                                           </a>
                                         )}
@@ -649,15 +649,15 @@ const AdminAppointmentRefund = (props) => {
 //   }
 // }
 
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
   const docactions = bindActionCreators(exadoDocActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   return { docactions, patientactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

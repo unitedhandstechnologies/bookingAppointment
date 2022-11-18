@@ -33,10 +33,7 @@ const AdminAppointmentCancelled = (props) => {
   const [FromDate, setFromDate] = useState(null);
   const [ToDate, setToDate] = useState(null);
 
-  
-
-  const {t} =props
-  
+  const { t } = props;
 
   const GetAppointmentRequestList = () => {
     let param = {
@@ -55,11 +52,10 @@ const AdminAppointmentCancelled = (props) => {
     promiseWrapper(props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      setAppointmentRequestList(data.patientAppointments)
+      setAppointmentRequestList(data.patientAppointments);
       setTotalRecords(data.totalRecords);
       setTotalPages(data.totalPages);
       setLoadedData(true);
-      
     });
   };
 
@@ -81,8 +77,7 @@ const AdminAppointmentCancelled = (props) => {
 
   const handlePageClick = (data) => {
     let currentPage = data.selected + 1;
-    setCurrentPage(currentPage)
-    
+    setCurrentPage(currentPage);
   };
 
   const SearchUpdate = (e) => {
@@ -469,15 +464,15 @@ const AdminAppointmentCancelled = (props) => {
 //     }
 // }
 
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const docactions = bindActionCreators(exadoDocActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   return { docactions, patientactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

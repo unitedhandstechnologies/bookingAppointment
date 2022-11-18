@@ -290,8 +290,9 @@ const AdminDashboard = (props) => {
                               <td className="status">{v.appointmentStatus}</td>
                               <td>
                                 <a
-                                  onClick={()=>toggleViewAppointment(v.appointmentGuid)}
-                                    
+                                  onClick={() =>
+                                    toggleViewAppointment(v.appointmentGuid)
+                                  }
                                   className="view-details-link"
                                 >
                                   <span className="view-details-icon">
@@ -958,7 +959,7 @@ const AdminDashboard = (props) => {
 //                                       </div>
 //                                   </div>
 //                               </div>
-                              
+
 //                               <div className="row mt-3 d-flex justify-content-center">
 //                                   <div className="col-md-12">
 //                                       <div className="tableHeading d-flex justify-content-between my-3">
@@ -1194,16 +1195,16 @@ const AdminDashboard = (props) => {
 //   }
 // }
 
-const mapStoreToprops=(state, props) =>{
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const docactions = bindActionCreators(exadoDocActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   const adminactions = bindActionCreators(exadoAdminActions, dispatch);
   return { docactions, patientactions, adminactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

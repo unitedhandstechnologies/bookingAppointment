@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import ErrorMessage from "../../../commonComponent/Elements/errorMessage";
 
 const WithdrawPopup = (props) => {
-  const { withdrawModal, setWithDrawModal, t, getWithdrawSuccessMsg} = props;
+  const { withdrawModal, setWithDrawModal, t, getWithdrawSuccessMsg } = props;
   const [error, setError] = useState("");
 
   const submitWithdrawalData = (values) => {
@@ -31,7 +31,9 @@ const WithdrawPopup = (props) => {
         .then((data) => {
           if (data) {
             if (data.isSuccess) {
-              const success = `${t("Patient.WithdrawReqSuccessModal.Withdraw_Request_Success_Message")}`;
+              const success = `${t(
+                "Patient.WithdrawReqSuccessModal.Withdraw_Request_Success_Message"
+              )}`;
               setWithDrawModal(false);
               getWithdrawSuccessMsg(success);
             } else {

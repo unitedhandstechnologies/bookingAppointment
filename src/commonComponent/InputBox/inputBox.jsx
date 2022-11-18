@@ -24,7 +24,7 @@ class InputBox extends React.Component {
       this.props.onChange(evt.target.value);
     }
   }
-  
+
   componentWillReceiveProps(props) {
     if (
       (props.Value !== "") &

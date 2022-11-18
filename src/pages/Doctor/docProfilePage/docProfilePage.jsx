@@ -19,7 +19,7 @@ import ChangePasswordPopup from "../changePasswordPopup";
 import DeactivateAccountPopup from "../deactivateAccountPopup";
 import SendOTPPopup from "../sendOTPPopup";
 import PersonalInfo from "./personalInfo";
-import Avatar from "../../../assets/images/Avatar.png"
+import Avatar from "../../../assets/images/Avatar.png";
 
 // const DoctorProfilePage = (props) => {
 //   const {t} =props
@@ -151,7 +151,6 @@ import Avatar from "../../../assets/images/Avatar.png"
 //       });
 //     }
 //   };
-
 
 //   const SavePersonalProfile=(ProfilePersonalInfo)=> {
 //     let prfInfo = {
@@ -695,7 +694,7 @@ class DoctorProfilePage extends React.Component {
       if (data.data.isSuccess == true) {
         this.setState({ disableTab: false });
         toast.success(data.data.message);
-        window.$('.nav-pills a[href="#additional-info"]').tab('show');
+        window.$('.nav-pills a[href="#additional-info"]').tab("show");
         localStorage.setItem(
           localStorageKeys.profileImage,
           this.state.ProfilePersonalInfo.profileImageURL
@@ -751,9 +750,8 @@ class DoctorProfilePage extends React.Component {
                                   style={{ borderRadius: "inherit" }}
                                   src={
                                     this.state.ProfilePersonalInfo[
-                                    "profileImage"
-                                    ] ||
-                                    { Avatar }
+                                      "profileImage"
+                                    ] || { Avatar }
                                   }
                                   alt="profile img"
                                 />
@@ -775,11 +773,11 @@ class DoctorProfilePage extends React.Component {
                                       "profileImageURL"
                                     ] === null
                                       ? this.state.ProfilePersonalInfo[
-                                      "profileImage"
-                                      ]
+                                          "profileImage"
+                                        ]
                                       : this.state.ProfilePersonalInfo[
-                                      "profileImageURL"
-                                      ]
+                                          "profileImageURL"
+                                        ]
                                   }
                                   profImgData={this.GetProfIMGData.bind(this)}
                                   toggle={this.togglePop}
@@ -793,43 +791,43 @@ class DoctorProfilePage extends React.Component {
                                   {this.state.ProfilePersonalInfo[
                                     "profileVerification"
                                   ] == "1" && (
-                                      <span className="profile-not-verified">
-                                        {t("Doctor.Profile_Basic.Not_Verified")}
-                                      </span>
-                                    )}
+                                    <span className="profile-not-verified">
+                                      {t("Doctor.Profile_Basic.Not_Verified")}
+                                    </span>
+                                  )}
                                   {this.state.ProfilePersonalInfo[
                                     "profileVerification"
                                   ] == "2" && (
-                                      <span
-                                        className="profile-verified"
-                                        style={{ color: "rgb(32, 202, 214)" }}
-                                      >
-                                        {t("Doctor.Profile_Basic.In_Process")}
-                                      </span>
-                                    )}
+                                    <span
+                                      className="profile-verified"
+                                      style={{ color: "rgb(32, 202, 214)" }}
+                                    >
+                                      {t("Doctor.Profile_Basic.In_Process")}
+                                    </span>
+                                  )}
                                   {this.state.ProfilePersonalInfo[
                                     "profileVerification"
                                   ] == "3" && (
-                                      <span className="profile-verified">
-                                        {t("Doctor.Profile_Basic.Verified")}
-                                      </span>
-                                    )}
+                                    <span className="profile-verified">
+                                      {t("Doctor.Profile_Basic.Verified")}
+                                    </span>
+                                  )}
                                   {this.state.ProfilePersonalInfo[
                                     "profileVerification"
                                   ] == "4" && (
-                                      <span className="profile-not-verified">
-                                        {t("Doctor.Profile_Basic.Rejected")}
-                                      </span>
-                                    )}
+                                    <span className="profile-not-verified">
+                                      {t("Doctor.Profile_Basic.Rejected")}
+                                    </span>
+                                  )}
                                   {this.state.ProfilePersonalInfo[
                                     "profileVerification"
                                   ] == "5" && (
-                                      <span className="profile-not-verified">
-                                        {t(
-                                          "Doctor.Profile_Basic.NeedAdditionInfo"
-                                        )}
-                                      </span>
-                                    )}
+                                    <span className="profile-not-verified">
+                                      {t(
+                                        "Doctor.Profile_Basic.NeedAdditionInfo"
+                                      )}
+                                    </span>
+                                  )}
                                 </div>
                                 <div className="my-email my-3">
                                   <span>
@@ -867,16 +865,16 @@ class DoctorProfilePage extends React.Component {
                                   {this.state.ProfilePersonalInfo[
                                     "isMobileVerified"
                                   ] === false && (
-                                      <span className="mx-4">
-                                        <a
-                                          style={{ cursor: "pointer" }}
-                                          className="send-otp"
-                                          onClick={this.toggleSendOTPPopup}
-                                        >
-                                          {t("Doctor.Profile_Basic.Send_OTP")}
-                                        </a>
-                                      </span>
-                                    )}
+                                    <span className="mx-4">
+                                      <a
+                                        style={{ cursor: "pointer" }}
+                                        className="send-otp"
+                                        onClick={this.toggleSendOTPPopup}
+                                      >
+                                        {t("Doctor.Profile_Basic.Send_OTP")}
+                                      </a>
+                                    </span>
+                                  )}
                                   {this.state.sendOTPPopup ? (
                                     <SendOTPPopup
                                       toggleSendOTP={this.toggleSendOTPPopup}
@@ -890,22 +888,22 @@ class DoctorProfilePage extends React.Component {
                                   .profileVerification == "4" ||
                                   this.state.ProfilePersonalInfo
                                     .profileVerification == "5") && (
-                                    <div>
-                                      <p>
-                                        <strong>
-                                          {t(
-                                            "Doctor.Profile_Basic.Reject_Reason"
-                                          )}
-                                          :
-                                        </strong>{" "}
-                                        <br />
-                                        {
-                                          this.state.ProfilePersonalInfo
-                                            .cancelReason
-                                        }
-                                      </p>
-                                    </div>
-                                  )}
+                                  <div>
+                                    <p>
+                                      <strong>
+                                        {t(
+                                          "Doctor.Profile_Basic.Reject_Reason"
+                                        )}
+                                        :
+                                      </strong>{" "}
+                                      <br />
+                                      {
+                                        this.state.ProfilePersonalInfo
+                                          .cancelReason
+                                      }
+                                    </p>
+                                  </div>
+                                )}
                                 <div className="my-phone my-3">
                                   <a
                                     className="send-otp"
@@ -981,8 +979,9 @@ class DoctorProfilePage extends React.Component {
                               </li>
                               <li className="nav-item">
                                 <a
-                                  className={`nav-link ${disableTab ? "disabled" : ""
-                                    }`}
+                                  className={`nav-link ${
+                                    disableTab ? "disabled" : ""
+                                  }`}
                                   id="additional-info-tab"
                                   data-toggle="tab"
                                   href="#additional-info"
@@ -1038,8 +1037,6 @@ class DoctorProfilePage extends React.Component {
     );
   }
 }
-
-
 
 function mapStoreToprops(state, props) {
   return {};

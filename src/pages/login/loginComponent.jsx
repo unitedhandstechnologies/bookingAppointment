@@ -36,7 +36,7 @@ class LoginComponent extends React.Component {
   OnLogin = (values) => {
     let logintype =
       localStorage.getItem(localStorageKeys.loginType) ===
-        userType.login_patient
+      userType.login_patient
         ? userType.patient
         : userType.doctor;
     promiseWrapper(this.props.actions.loginUser, {
@@ -53,11 +53,23 @@ class LoginComponent extends React.Component {
           return;
         }
         localStorage.removeItem(localStorageKeys.loginType);
-        localStorage.setItem(localStorageKeys.accessToken, data.data.data.Token);
+        localStorage.setItem(
+          localStorageKeys.accessToken,
+          data.data.data.Token
+        );
         localStorage.setItem(localStorageKeys.userId, data.data.data.userId);
-        localStorage.setItem(localStorageKeys.userFullname, data.data.data.UserFullName);
-        localStorage.setItem(localStorageKeys.userType, data.data.data.UserType);
-        localStorage.setItem(localStorageKeys.profileImage, data.data.data.ProfileImage);
+        localStorage.setItem(
+          localStorageKeys.userFullname,
+          data.data.data.UserFullName
+        );
+        localStorage.setItem(
+          localStorageKeys.userType,
+          data.data.data.UserType
+        );
+        localStorage.setItem(
+          localStorageKeys.profileImage,
+          data.data.data.ProfileImage
+        );
         const UserType = parseInt(data.data.data.UserType);
         this.setState({
           success: data.data.message,
@@ -75,11 +87,12 @@ class LoginComponent extends React.Component {
               this.setState({ redirect: "/patient-dashboard" });
             }
           }, 2000),
-        })
-      } else this.setState({
-        error: data.data.errorMessage,
-        errorTimer: setTimeout(() => this.setState({ error: "" }), 2000),
-      })
+        });
+      } else
+        this.setState({
+          error: data.data.errorMessage,
+          errorTimer: setTimeout(() => this.setState({ error: "" }), 2000),
+        });
     });
   };
   // setTimeout(function() { your_func(); }, 5000);
@@ -131,12 +144,7 @@ class LoginComponent extends React.Component {
             this.OnLogin(values);
           }}
         >
-          {({
-            errors,
-            touched,
-            getFieldProps,
-            handleSubmit
-          }) => (
+          {({ errors, touched, getFieldProps, handleSubmit }) => (
             <form className="divForm login-page" onSubmit={handleSubmit}>
               <div className="divFormRow">
                 <label htmlFor="email" className="form-label">
@@ -174,8 +182,9 @@ class LoginComponent extends React.Component {
                   {...getFieldProps("password")}
                 />
                 <i
-                  className={`far ${hiddenPassword ? "fa-eye-slash" : "fa-eye"
-                    } times-icon`}
+                  className={`far ${
+                    hiddenPassword ? "fa-eye-slash" : "fa-eye"
+                  } times-icon`}
                   id="togglePassword"
                   onClick={this.togglePasswordShow.bind(this)}
                   style={{ cursor: "pointer" }}
@@ -188,9 +197,12 @@ class LoginComponent extends React.Component {
                 {t("Login")}
               </button>
 
-              <Link className="float-end forgetPassword" onClick={()=>this.ForgotPassword(this)}>{t('Forget_Password')}</Link>
-              
-               
+              <Link
+                className="float-end forgetPassword"
+                onClick={() => this.ForgotPassword(this)}
+              >
+                {t("Forget_Password")}
+              </Link>
             </form>
           )}
         </Formik>

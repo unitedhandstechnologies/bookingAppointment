@@ -25,7 +25,7 @@ const PatientListView = (props) => {
   const [TotalRecords, setTotalRecords] = useState(0);
   const [TotalPages, setTotalPages] = useState(0);
 
-  const {t} =props
+  const { t } = props;
 
   const GetPatientList = () => {
     let param = {
@@ -47,19 +47,18 @@ const PatientListView = (props) => {
 
   useEffect(() => {
     GetPatientList();
-  },[CurrentPage]);
+  }, [CurrentPage]);
 
   const handlePageClick = (data) => {
     let currentPage = data.selected + 1;
-    setCurrentPage(currentPage)
+    setCurrentPage(currentPage);
   };
 
-
- const changeStatus = (checked, event, id) => {
+  const changeStatus = (checked, event, id) => {
     let temp = PatientList;
     let checkVar = temp.filter((d) => d.userGuid === id);
     if (checkVar.length > 0) checkVar[0].isActive = checked;
-    setPatientList(temp)
+    setPatientList(temp);
     promiseWrapper(props.patientactions.changeStatus, {
       userGuid: id,
     }).then((data) => {
@@ -72,180 +71,174 @@ const PatientListView = (props) => {
     });
   };
 
- const SearchUpdate = (e) => {
-    setSearchText(e.target.value)
+  const SearchUpdate = (e) => {
+    setSearchText(e.target.value);
   };
 
- const handleKeyPress = (event) => {
+  const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-    SearchUpdate(event);
-    GetPatientList();
+      SearchUpdate(event);
+      GetPatientList();
     }
   };
 
-  return(
+  return (
     <div>
-        <AdminHeader />
-        <div className="main">
-          <div className="container-fluid">
-            <div className="row">
-              <AdminLeftPanel />
-              <div className="col-md-12 col-sm-12 col-lg-10 mainRightPanel bg-white">
-                <div className="">
-                  <div className="row search-bar">
-                    <div className="py-4 search-bar-text w-100 bg-light">
-                      List of Patients
-                    </div>
+      <AdminHeader />
+      <div className="main">
+        <div className="container-fluid">
+          <div className="row">
+            <AdminLeftPanel />
+            <div className="col-md-12 col-sm-12 col-lg-10 mainRightPanel bg-white">
+              <div className="">
+                <div className="row search-bar">
+                  <div className="py-4 search-bar-text w-100 bg-light">
+                    List of Patients
                   </div>
-                  <div className="divForm row admin-list mt-4">
-                    <div className="search-bar-text-input mb-4 col-md-9">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search Patient Name, Email, Country"
-                        onChange={SearchUpdate}
-                        value={SearchText}
-                        onKeyPress={handleKeyPress}
-                      />
-                    </div>
-                    <div className="search-bar-text-input mb-4 col-md-3">
-                      <input
-                        type="button"
-                        onClick={GetPatientList}
-                        className="btn save-button w-100"
-                        value="Search"
-                      />
-                    </div>
+                </div>
+                <div className="divForm row admin-list mt-4">
+                  <div className="search-bar-text-input mb-4 col-md-9">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search Patient Name, Email, Country"
+                      onChange={SearchUpdate}
+                      value={SearchText}
+                      onKeyPress={handleKeyPress}
+                    />
                   </div>
-                  <div className="row d-flex justify-content-center">
-                    <div className="col-md-12 py-3">
-                      <div className="tableContainer table-responsive">
-                        <table className="table table-bordered appointmentTable">
-                          <thead>
-                            <tr className="new-patient-table-title">
-                              {/* <th>No.</th> */}
-                              <th>Patient Name</th>
-                              <th>Sex</th>
-                              <th>Email ID</th>
-                              {/* <th>Domain Name</th> */}
-                              <th>Citizenship</th>
-                              <th>Status</th>
-                              <th>Action</th>
-                            </tr>
-                          </thead>
-                          {LoadedData && LoadedData && (
-                            <tbody>
-                              {PatientList.length > 0 ? (
-                                PatientList.map((d, idx) => (
-                                  <tr>
-                                    <td className="textleft">
-                                      <Link
-                                        className="doctorName"
-                                        to={`/patient-detail-view/${d.userGuid}`}
-                                      >
-                                        {d.firstName} {d.lastName}
-                                      </Link>
-                                    </td>
-                                    <td className="sex">{d.gender}</td>
-                                    <td className="email textleft">
-                                      {d.email}
-                                    </td>
-                                    <td className="country">{d.country}</td>
-                                    <td className="admin-switch">
-                                      <Switch
-                                        id={d.userGuid}
-                                        onChange={changeStatus}
-                                        checked={d.isActive}
-                                        offColor="#bdc1c2"
-                                        onColor="#20CAD6"
-                                        handleDiameter={15}
-                                        width={80}
-                                        height={25}
-                                        uncheckedIcon={
-                                          <div
-                                            style={{
-                                              fontSize: 13,
-                                              color: "white",
-                                              position: "absolute",
-                                              left: -15,
-                                              top: 1,
-                                            }}
-                                          >
-                                            Inactive
-                                          </div>
-                                        }
-                                        checkedIcon={
-                                          <div
-                                            style={{
-                                              fontSize: 13,
-                                              color: "white",
-                                              position: "absolute",
-                                              left: 10,
-                                              top: 1,
-                                            }}
-                                          >
-                                            Active
-                                          </div>
-                                        }
-                                      />
-                                    </td>
-                                    <td>
-                                      <Link
-                                        className="view-details-link"
-                                        to={`/patient-detail-view/${d.userGuid}`}
-                                      >
-                                        <span className="view-details-icon">
-                                          <i className="fas fa-eye"></i>
-                                        </span>
-                                      </Link>
-                                    </td>
-                                  </tr>
-                                ))
-                              ) : (
+                  <div className="search-bar-text-input mb-4 col-md-3">
+                    <input
+                      type="button"
+                      onClick={GetPatientList}
+                      className="btn save-button w-100"
+                      value="Search"
+                    />
+                  </div>
+                </div>
+                <div className="row d-flex justify-content-center">
+                  <div className="col-md-12 py-3">
+                    <div className="tableContainer table-responsive">
+                      <table className="table table-bordered appointmentTable">
+                        <thead>
+                          <tr className="new-patient-table-title">
+                            {/* <th>No.</th> */}
+                            <th>Patient Name</th>
+                            <th>Sex</th>
+                            <th>Email ID</th>
+                            {/* <th>Domain Name</th> */}
+                            <th>Citizenship</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        {LoadedData && LoadedData && (
+                          <tbody>
+                            {PatientList.length > 0 ? (
+                              PatientList.map((d, idx) => (
                                 <tr>
-                                  <td colSpan={6} className="empty-list">
-                                    {" "}
-                                    {t(
-                                      "EmptyListMessages.appointments_request"
-                                    )}
+                                  <td className="textleft">
+                                    <Link
+                                      className="doctorName"
+                                      to={`/patient-detail-view/${d.userGuid}`}
+                                    >
+                                      {d.firstName} {d.lastName}
+                                    </Link>
+                                  </td>
+                                  <td className="sex">{d.gender}</td>
+                                  <td className="email textleft">{d.email}</td>
+                                  <td className="country">{d.country}</td>
+                                  <td className="admin-switch">
+                                    <Switch
+                                      id={d.userGuid}
+                                      onChange={changeStatus}
+                                      checked={d.isActive}
+                                      offColor="#bdc1c2"
+                                      onColor="#20CAD6"
+                                      handleDiameter={15}
+                                      width={80}
+                                      height={25}
+                                      uncheckedIcon={
+                                        <div
+                                          style={{
+                                            fontSize: 13,
+                                            color: "white",
+                                            position: "absolute",
+                                            left: -15,
+                                            top: 1,
+                                          }}
+                                        >
+                                          Inactive
+                                        </div>
+                                      }
+                                      checkedIcon={
+                                        <div
+                                          style={{
+                                            fontSize: 13,
+                                            color: "white",
+                                            position: "absolute",
+                                            left: 10,
+                                            top: 1,
+                                          }}
+                                        >
+                                          Active
+                                        </div>
+                                      }
+                                    />
+                                  </td>
+                                  <td>
+                                    <Link
+                                      className="view-details-link"
+                                      to={`/patient-detail-view/${d.userGuid}`}
+                                    >
+                                      <span className="view-details-icon">
+                                        <i className="fas fa-eye"></i>
+                                      </span>
+                                    </Link>
                                   </td>
                                 </tr>
-                              )}
-                            </tbody>
-                          )}
-                        </table>
-                        {PatientList.length > 0 && (
-                          <div className="my-4 d-flex justify-content-center">
-                            <ReactPaginate
-                              previousClassName={"arrow"}
-                              nextClassName={"arrow"}
-                              previousLabel={"<<"}
-                              nextLabel={">>"}
-                              breakLabel={"..."}
-                              pageLinkClassName={"pages"}
-                              pageCount={TotalPages}
-                              marginPagesDisplayed={2}
-                              pageRangeDisplayed={5}
-                              onPageChange={handlePageClick}
-                              containerClassName={"pagination"}
-                              activeLinkClassName={"active"}
-                            />
-                          </div>
+                              ))
+                            ) : (
+                              <tr>
+                                <td colSpan={6} className="empty-list">
+                                  {" "}
+                                  {t("EmptyListMessages.appointments_request")}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
                         )}
-                      </div>
+                      </table>
+                      {PatientList.length > 0 && (
+                        <div className="my-4 d-flex justify-content-center">
+                          <ReactPaginate
+                            previousClassName={"arrow"}
+                            nextClassName={"arrow"}
+                            previousLabel={"<<"}
+                            nextLabel={">>"}
+                            breakLabel={"..."}
+                            pageLinkClassName={"pages"}
+                            pageCount={TotalPages}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={5}
+                            onPageChange={handlePageClick}
+                            containerClassName={"pagination"}
+                            activeLinkClassName={"active"}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
-                  <AdminFooter />
                 </div>
+                <AdminFooter />
               </div>
             </div>
           </div>
         </div>
       </div>
-  )
-
+    </div>
+  );
 };
-
 
 // class PatientListView extends React.Component {
 //     constructor(props) {
@@ -262,11 +255,11 @@ const PatientListView = (props) => {
 //         TotalPages: 0,
 //       };
 //     }
-  
+
 //     componentDidMount() {
 //       this.GetPatientList();
 //     }
-  
+
 //     GetPatientList() {
 //       console.log("abc");
 //       let param = {
@@ -286,14 +279,14 @@ const PatientListView = (props) => {
 //         });
 //       });
 //     }
-  
+
 //     handlePageClick = (data) => {
 //       let currentPage = data.selected + 1;
 //       this.setState({ CurrentPage: currentPage }, () => {
 //         this.GetPatientList();
 //       });
 //     };
-  
+
 //     changeStatus = (checked, event, id) => {
 //       let temp = this.state.PatientList;
 //       let checkVar = temp.filter((d) => d.userGuid === id);
@@ -310,7 +303,7 @@ const PatientListView = (props) => {
 //         }
 //       });
 //     };
-  
+
 //     SearchUpdate = (e) => {
 //       this.setState({ SearchText: e.target.value });
 //     };
@@ -320,7 +313,7 @@ const PatientListView = (props) => {
 //         this.GetPatientList();
 //       }
 //     };
-  
+
 //     render() {
 //       const { t } = this.props;
 //       return (
@@ -485,17 +478,16 @@ const PatientListView = (props) => {
 //       );
 //     }
 //   }
-  
 
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const actions = bindActionCreators(exadoAdminActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   return { actions, patientactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

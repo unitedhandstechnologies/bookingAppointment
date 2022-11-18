@@ -42,8 +42,6 @@ const AdminAppointmentUpComing = (props) => {
 
   const { t } = props;
 
-  
-
   const GetAppointmentRequestList = () => {
     let param = {
       pageSize: Number(PageSize),
@@ -253,56 +251,52 @@ const AdminAppointmentUpComing = (props) => {
                         {LoadedData && LoadedData && (
                           <tbody>
                             {AppointmentRequestList.length > 0 ? (
-                              AppointmentRequestList.map(
-                                (v, idx) => (
-                                  <tr>
-                                    <td>{v.bookingId}</td>
-                                    <td>
-                                      <Link
-                                        className="doctorName"
-                                        to={`/patient-detail-view/${v.patientGuid}`}
-                                      >
-                                        {v.patientFirstName} {v.patientLastName}
-                                      </Link>
-                                    </td>
-                                    <td>
-                                      <Link
-                                        className="doctorName"
-                                        to={`/doctor-detail-view/${v.doctorGuid}`}
-                                      >
-                                        {v.doctorFirstName} {v.doctorLastName}
-                                      </Link>
-                                    </td>
-                                    <td className="dateTime">
-                                      {moment(v.appointmentDateTime).format(
-                                        "MM/DD/YYYY"
+                              AppointmentRequestList.map((v, idx) => (
+                                <tr>
+                                  <td>{v.bookingId}</td>
+                                  <td>
+                                    <Link
+                                      className="doctorName"
+                                      to={`/patient-detail-view/${v.patientGuid}`}
+                                    >
+                                      {v.patientFirstName} {v.patientLastName}
+                                    </Link>
+                                  </td>
+                                  <td>
+                                    <Link
+                                      className="doctorName"
+                                      to={`/doctor-detail-view/${v.doctorGuid}`}
+                                    >
+                                      {v.doctorFirstName} {v.doctorLastName}
+                                    </Link>
+                                  </td>
+                                  <td className="dateTime">
+                                    {moment(v.appointmentDateTime).format(
+                                      "MM/DD/YYYY"
+                                    )}
+                                    <br />
+                                    {moment(v.appointmentDateTime).format(
+                                      "HH:mm"
+                                    )}
+                                  </td>
+                                  <td className="medicalSpecialty">
+                                    {v.physicianServices}
+                                  </td>
+                                  <td className="country">{v.amount}</td>
+                                  <td className="type">{v.appointmentType}</td>
+                                  <td>
+                                    <Link
+                                      className="doctorName"
+                                      onClick={toggleViewAppointment.bind(
+                                        this,
+                                        v.appointmentGuid
                                       )}
-                                      <br />
-                                      {moment(v.appointmentDateTime).format(
-                                        "HH:mm"
-                                      )}
-                                    </td>
-                                    <td className="medicalSpecialty">
-                                      {v.physicianServices}
-                                    </td>
-                                    <td className="country">{v.amount}</td>
-                                    <td className="type">
-                                      {v.appointmentType}
-                                    </td>
-                                    <td>
-                                      <Link
-                                        className="doctorName"
-                                        onClick={toggleViewAppointment.bind(
-                                          this,
-                                          v.appointmentGuid
-                                        )}
-                                      >
-                                        View
-                                      </Link>
-                                    </td>
-                                  </tr>
-                                )
-                              )
+                                    >
+                                      View
+                                    </Link>
+                                  </td>
+                                </tr>
+                              ))
                             ) : (
                               <tr>
                                 <td colSpan={8} className="empty-list">
@@ -315,9 +309,7 @@ const AdminAppointmentUpComing = (props) => {
                       </table>
                       {viewAppointmentPopup ? (
                         <ViewAppointment
-                          ViewAppointmentAction={
-                            toggleViewAppointmentAction
-                          }
+                          ViewAppointmentAction={toggleViewAppointmentAction}
                           AppointmentGuid={appointmentGuid}
                         />
                       ) : null}
@@ -372,11 +364,11 @@ const AdminAppointmentUpComing = (props) => {
 //         appointmentGuid: "",
 //       };
 //     }
-  
+
 //     componentDidMount() {
 //       this.GetAppointmentRequestList();
 //     }
-  
+
 //     GetAppointmentRequestList() {
 //       let param = {
 //         pageSize: Number(this.state.PageSize),
@@ -407,30 +399,30 @@ const AdminAppointmentUpComing = (props) => {
 //         });
 //       });
 //     }
-  
+
 //     UpdateFromDate = (e) => {
 //       this.setState({ FromDate: e.target.value });
 //     };
-  
+
 //     UpdateToDate = (e) => {
 //       this.setState({ ToDate: e.target.value });
 //     };
-  
+
 //     UpdateFilterType = (e) => {
 //       this.setState({ appointmentTypes: e.map((v) => parseInt(v, 10)) });
 //     };
-  
+
 //     handlePageClick = (data) => {
 //       let currentPage = data.selected + 1;
 //       this.setState({ CurrentPage: currentPage }, () => {
 //         this.GetAppointmentRequestList();
 //       });
 //     };
-  
+
 //     SearchUpdate = (e) => {
 //       this.setState({ SearchText: e.target.value });
 //     };
-  
+
 //     handleKeyPress = (event) => {
 //       if (event.key === "Enter") {
 //         this.SearchUpdate(event);
@@ -444,7 +436,7 @@ const AdminAppointmentUpComing = (props) => {
 //         });
 //       });
 //     };
-  
+
 //     toggleViewAppointmentAction = (data) => {
 //       if (data === true) {
 //         this.IsAcceeptAppoinment(this.state.appointmentGuid);
@@ -458,7 +450,7 @@ const AdminAppointmentUpComing = (props) => {
 //         });
 //       });
 //     };
-  
+
 //     makeAppointmentComplete = (appointmentGuid) => {
 //       promiseWrapper(this.props.docactions.markAppointmentAsComplete, {
 //         appointmentGuid: appointmentGuid,
@@ -466,7 +458,7 @@ const AdminAppointmentUpComing = (props) => {
 //         .then((data) => console.log(data))
 //         .catch((err) => console.log(err));
 //     };
-  
+
 //     isAppointmentNewUpcomming = (date, appointmentGuid) => {
 //       const isNew = isAppointmentNew(date, 2);
 //       if (!isNew) this.makeAppointmentComplete(appointmentGuid);
@@ -665,17 +657,15 @@ const AdminAppointmentUpComing = (props) => {
 //     }
 //   }
 
-
-
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const docactions = bindActionCreators(exadoDocActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   return { docactions, patientactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

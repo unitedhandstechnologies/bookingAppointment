@@ -143,14 +143,14 @@ const AdminLoginPage = (props) => {
 //     }
 // }
 
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
   const actions = bindActionCreators(exadoActions, dispatch);
   return { actions };
-}
+};
 
 export default connect(
   mapStoreToprops,

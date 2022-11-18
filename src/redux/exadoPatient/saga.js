@@ -1,4 +1,4 @@
-import { call, all, takeEvery, put } from "redux-saga/effects";
+import { call, all, takeEvery } from "redux-saga/effects";
 
 import {
   GET_PATIENT_PROFILE_INFO,

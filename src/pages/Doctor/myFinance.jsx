@@ -340,7 +340,7 @@ class DoctorMyFinance extends React.Component {
                           ) : (
                             <tr>
                               <td colSpan={7} className="empty-list">
-                              {t("EmptyListMessages.finance_list")}
+                                {t("EmptyListMessages.finance_list")}
                               </td>
                             </tr>
                           )}

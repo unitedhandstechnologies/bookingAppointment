@@ -20,8 +20,8 @@ const AppTypeList = [
   { id: 4, name: "Emergency" },
 ];
 
-const AdminAppointmentCompleted =(props)=>{
-    const [LoadedData, setLoadedData] = useState(false);
+const AdminAppointmentCompleted = (props) => {
+  const [LoadedData, setLoadedData] = useState(false);
   const [AppointmentRequestList, setAppointmentRequestList] = useState([]);
   const [PageSize, setPageSize] = useState(10);
   const [CurrentPage, setCurrentPage] = useState(1);
@@ -34,257 +34,244 @@ const AdminAppointmentCompleted =(props)=>{
   const [FromDate, setFromDate] = useState(null);
   const [ToDate, setToDate] = useState(null);
 
-  const {t} =props
+  const { t } = props;
 
-  useEffect(()=>{
+  useEffect(() => {
+    GetAppointmentRequestList();
+  }, [CurrentPage]);
+
+  const GetAppointmentRequestList = () => {
+    let param = {
+      pageSize: Number(PageSize),
+      currentPage: Number(CurrentPage),
+      search: SearchText,
+      sortExp: SortExp,
+      sortDir: SortDir,
+      patientGuid: null,
+      doctorGuid: null,
+      appointmentStatuses: [4],
+      appointmentTypes: appointmentTypes.map((v) => parseInt(v, 10)),
+      fromDate: FromDate,
+      toDate: ToDate,
+    };
+    promiseWrapper(props.patientactions.getAppointments, {
+      filter: param,
+    }).then((data) => {
+      setAppointmentRequestList(data.patientAppointments);
+      setTotalRecords(data.totalRecords);
+      setTotalPages(data.totalPages);
+      setLoadedData(true);
+    });
+  };
+
+  const UpdateFromDate = (e) => {
+    // setState({ FromDate: e.target.value });
+    setFromDate(e.target.value);
+  };
+
+  const UpdateToDate = (e) => {
+    // setState({ ToDate: e.target.value });
+    setToDate(e.target.value);
+  };
+
+  const UpdateFilterType = (e) => {
+    // setState({ appointmentTypes: e.map(v => parseInt(v, 10)) });
+    setAppointmentTypes(e.map((v) => parseInt(v, 10)));
+  };
+
+  const handlePageClick = (data) => {
+    let currentPage = data.selected + 1;
+    // setState({ CurrentPage: currentPage }, () => {
+    //     GetAppointmentRequestList();
+    // });
+    setCurrentPage(currentPage);
+  };
+
+  const SearchUpdate = (e) => {
+    // setState({ SearchText: e.target.value });
+    setSearchText(e.target.value);
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      SearchUpdate(event);
       GetAppointmentRequestList();
-  },[CurrentPage])
+    }
+  };
 
-
-   const GetAppointmentRequestList=()=> {
-        let param = {
-          pageSize: Number(PageSize),
-          currentPage: Number(CurrentPage),
-          search: SearchText,
-          sortExp: SortExp,
-          sortDir: SortDir,
-          patientGuid: null,
-          doctorGuid: null,
-          appointmentStatuses: [4],
-          appointmentTypes: appointmentTypes.map((v) => parseInt(v, 10)),
-          fromDate:FromDate,
-          toDate:ToDate,
-        };
-        promiseWrapper(props.patientactions.getAppointments, {
-          filter: param,
-        }).then((data) => {
-
-            setAppointmentRequestList(data.patientAppointments)
-            setTotalRecords(data.totalRecords)
-            setTotalPages(data.totalPages)
-            setLoadedData(true)
-        });
-      }
-    
-
-  
-      
-      const UpdateFromDate = (e) => {
-        // setState({ FromDate: e.target.value });
-        setFromDate(e.target.value);
-      };
-    
-      const UpdateToDate = (e) => {
-        // setState({ ToDate: e.target.value });
-        setToDate(e.target.value);
-      };
-    
-      const UpdateFilterType = (e) => {
-        // setState({ appointmentTypes: e.map(v => parseInt(v, 10)) });
-        setAppointmentTypes(e.map((v) => parseInt(v, 10)));
-      };
-    
-      const handlePageClick = (data) => {
-        let currentPage = data.selected + 1;
-        // setState({ CurrentPage: currentPage }, () => {
-        //     GetAppointmentRequestList();
-        // });
-        setCurrentPage(currentPage)
-        
-      };
-    
-      const SearchUpdate = (e) => {
-        // setState({ SearchText: e.target.value });
-        setSearchText(e.target.value);
-      };
-    
-      const handleKeyPress = (event) => {
-        if (event.key === "Enter") {
-          SearchUpdate(event);
-          GetAppointmentRequestList();
-        }
-      };
-
-      return(
-        
-            <div>
-              <AdminHeader />
-              <div className="main">
-                <div className="container-fluid">
-                  <div className="row">
-                    <AdminLeftPanel />
-                    <div className="col-md-12 col-sm-12 col-lg-10 mainRightPanel">
-                      <div>
-                        <div className="row search-bar">
-                          <div className="py-4 search-bar-text w-100 bg-light">
-                            Appointment Completed
-                          </div>
-                        </div>
-                        <div className="row my-4">
-                          <div className="search-bar-text-input col-md-7 top-search">
-                            <div className="col-lg-4 float-start">
-                              <input
-                                type="date"
-                                max="2100-12-31"
-                                className="form-control"
-                                onChange={UpdateFromDate}
-                                value={FromDate}
-                              />
-                            </div>
-                            <div className="col-lg-4 float-start">
-                              <input
-                                type="date"
-                                max="2100-12-31"
-                                className="form-control"
-                                onChange={UpdateToDate}
-                                value={ToDate}
-                              />
-                            </div>
-                            <div className="col-lg-4 float-start">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Search Appointment, Doctor Name"
-                                onChange={SearchUpdate}
-                                value={SearchText}
-                                onKeyPress={handleKeyPress}
-                              />
-                            </div>
-                          </div>
-                          <div className="search-bar-text-input col-md-3">
-                            <DropdownMultiselect
-                              selected={appointmentTypes}
-                              buttonclassName="selectpicker btn filter-btn"
-                              placeholder="Filter"
-                              handleOnChange={UpdateFilterType}
-                              options={AppTypeList}
-                              optionKey="id"
-                              optionLabel="name"
-                            />
-                          </div>
-                          <div className="search-bar-text-input col-md-2">
-                            <button
-                              type="button"
-                              onClick={GetAppointmentRequestList}
-                              className="btn filter-btn w-100"
-                            >
-                              Search
-                            </button>
-                          </div>
-                        </div>
-                        <div className="row mt-3 d-flex justify-content-center">
-                          <div className="col-md-12 table-min-height">
-                            <div className="tableContainer table-responsive">
-                              <table className="table table-bordered appointmentTable">
-                                <thead>
-                                  <tr className="new-patient-table-title">
-                                    <th rowspan="2">Booking ID</th>
-                                    <th rowspan="2">Patient Name</th>
-                                    <th rowspan="2">Doctor Name</th>
-                                    <th>Date</th>
-                                    <th rowspan="2">Medical Specialty</th>
-                                    <th rowspan="2">Amount (€)</th>
-                                    <th rowspan="2">Appointment Type</th>
-                                    {/* <th rowspan="2">Symptoms</th>
+  return (
+    <div>
+      <AdminHeader />
+      <div className="main">
+        <div className="container-fluid">
+          <div className="row">
+            <AdminLeftPanel />
+            <div className="col-md-12 col-sm-12 col-lg-10 mainRightPanel">
+              <div>
+                <div className="row search-bar">
+                  <div className="py-4 search-bar-text w-100 bg-light">
+                    Appointment Completed
+                  </div>
+                </div>
+                <div className="row my-4">
+                  <div className="search-bar-text-input col-md-7 top-search">
+                    <div className="col-lg-4 float-start">
+                      <input
+                        type="date"
+                        max="2100-12-31"
+                        className="form-control"
+                        onChange={UpdateFromDate}
+                        value={FromDate}
+                      />
+                    </div>
+                    <div className="col-lg-4 float-start">
+                      <input
+                        type="date"
+                        max="2100-12-31"
+                        className="form-control"
+                        onChange={UpdateToDate}
+                        value={ToDate}
+                      />
+                    </div>
+                    <div className="col-lg-4 float-start">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search Appointment, Doctor Name"
+                        onChange={SearchUpdate}
+                        value={SearchText}
+                        onKeyPress={handleKeyPress}
+                      />
+                    </div>
+                  </div>
+                  <div className="search-bar-text-input col-md-3">
+                    <DropdownMultiselect
+                      selected={appointmentTypes}
+                      buttonclassName="selectpicker btn filter-btn"
+                      placeholder="Filter"
+                      handleOnChange={UpdateFilterType}
+                      options={AppTypeList}
+                      optionKey="id"
+                      optionLabel="name"
+                    />
+                  </div>
+                  <div className="search-bar-text-input col-md-2">
+                    <button
+                      type="button"
+                      onClick={GetAppointmentRequestList}
+                      className="btn filter-btn w-100"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </div>
+                <div className="row mt-3 d-flex justify-content-center">
+                  <div className="col-md-12 table-min-height">
+                    <div className="tableContainer table-responsive">
+                      <table className="table table-bordered appointmentTable">
+                        <thead>
+                          <tr className="new-patient-table-title">
+                            <th rowspan="2">Booking ID</th>
+                            <th rowspan="2">Patient Name</th>
+                            <th rowspan="2">Doctor Name</th>
+                            <th>Date</th>
+                            <th rowspan="2">Medical Specialty</th>
+                            <th rowspan="2">Amount (€)</th>
+                            <th rowspan="2">Appointment Type</th>
+                            {/* <th rowspan="2">Symptoms</th>
                                                                   <th rowspan="2">Actions</th> */}
-                                  </tr>
-                                  <tr>
-                                    <th>Time</th>
-                                  </tr>
-                                </thead>
-                                {LoadedData && (
-                                  <tbody>
-                                    {AppointmentRequestList.length > 0 ? (
-                                      AppointmentRequestList.map(
-                                        (v, idx) => (
-                                          <tr>
-                                            <td>{v.bookingId}</td>
-                                            <td>
-                                              <Link
-                                                className="doctorName"
-                                                to={`/patient-detail-view/${v.patientGuid}`}
-                                              >
-                                                {v.patientFirstName}{" "}
-                                                {v.patientLastName}
-                                              </Link>
-                                            </td>
-                                            <td>
-                                              <Link
-                                                className="doctorName"
-                                                to={`/doctor-detail-view/${v.doctorGuid}`}
-                                              >
-                                                {v.doctorFirstName} {v.doctorLastName}
-                                              </Link>
-                                            </td>
-                                            <td className="dateTime">
-                                              {moment(v.appointmentDateTime).format(
-                                                "MM/DD/YYYY"
-                                              )}
-                                              <br />
-                                              {moment(v.appointmentDateTime).format(
-                                                "HH:mm"
-                                              )}
-                                            </td>
-                                            <td className="medicalSpecialty">
-                                              {v.physicianServices}
-                                            </td>
-                                            <td className="country">{v.amount}</td>
-                                            <td className="type">
-                                              {v.appointmentType}
-                                            </td>
-                                            {/* <td><a className="doctorName" data-toggle="modal" data-target=".modify-modal">View</a></td>
+                          </tr>
+                          <tr>
+                            <th>Time</th>
+                          </tr>
+                        </thead>
+                        {LoadedData && (
+                          <tbody>
+                            {AppointmentRequestList.length > 0 ? (
+                              AppointmentRequestList.map((v, idx) => (
+                                <tr>
+                                  <td>{v.bookingId}</td>
+                                  <td>
+                                    <Link
+                                      className="doctorName"
+                                      to={`/patient-detail-view/${v.patientGuid}`}
+                                    >
+                                      {v.patientFirstName} {v.patientLastName}
+                                    </Link>
+                                  </td>
+                                  <td>
+                                    <Link
+                                      className="doctorName"
+                                      to={`/doctor-detail-view/${v.doctorGuid}`}
+                                    >
+                                      {v.doctorFirstName} {v.doctorLastName}
+                                    </Link>
+                                  </td>
+                                  <td className="dateTime">
+                                    {moment(v.appointmentDateTime).format(
+                                      "MM/DD/YYYY"
+                                    )}
+                                    <br />
+                                    {moment(v.appointmentDateTime).format(
+                                      "HH:mm"
+                                    )}
+                                  </td>
+                                  <td className="medicalSpecialty">
+                                    {v.physicianServices}
+                                  </td>
+                                  <td className="country">{v.amount}</td>
+                                  <td className="type">{v.appointmentType}</td>
+                                  {/* <td><a className="doctorName" data-toggle="modal" data-target=".modify-modal">View</a></td>
                                                                           <td>
                                                                               <div className="d-flex justify-content-between booking-btn">
                                                                                   <a className="btn joinCall mr-2" role="button" data-toggle="modal" data-target=".accept-appointment">Accept</a>
                                                                                   <a type="button" className="btn btn-outline-dark cancel" data-toggle="modal" data-target=".reject-appointment">Reject</a>
                                                                               </div>
                                                                           </td> */}
-                                          </tr>
-                                        )
-                                      )
-                                    ) : (
-                                      <tr>
-                                        <td colSpan={7} className="empty-list">
-                                          {t(
-                                            "EmptyListMessages.completed_appointments"
-                                          )}
-                                        </td>
-                                      </tr>
-                                    )}
-                                  </tbody>
-                                )}
-                              </table>
-                              {AppointmentRequestList.length > 0 && (
-                                <div className="my-4 d-flex justify-content-center">
-                                  <ReactPaginate
-                                    previousClassName={"arrow"}
-                                    nextClassName={"arrow"}
-                                    previousLabel={"<<"}
-                                    nextLabel={">>"}
-                                    breakLabel={"..."}
-                                    pageLinkClassName={"pages"}
-                                    pageCount={TotalPages}
-                                    marginPagesDisplayed={2}
-                                    pageRangeDisplayed={5}
-                                    onPageChange={handlePageClick}
-                                    containerClassName={"pagination"}
-                                    activeLinkClassName={"active"}
-                                  />
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          <AdminFooter />
+                                </tr>
+                              ))
+                            ) : (
+                              <tr>
+                                <td colSpan={7} className="empty-list">
+                                  {t(
+                                    "EmptyListMessages.completed_appointments"
+                                  )}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        )}
+                      </table>
+                      {AppointmentRequestList.length > 0 && (
+                        <div className="my-4 d-flex justify-content-center">
+                          <ReactPaginate
+                            previousClassName={"arrow"}
+                            nextClassName={"arrow"}
+                            previousLabel={"<<"}
+                            nextLabel={">>"}
+                            breakLabel={"..."}
+                            pageLinkClassName={"pages"}
+                            pageCount={TotalPages}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={5}
+                            onPageChange={handlePageClick}
+                            containerClassName={"pagination"}
+                            activeLinkClassName={"active"}
+                          />
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
+                  <AdminFooter />
                 </div>
               </div>
             </div>
-      )
-
-}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // class AdminAppointmentCompleted extends React.Component {
 //   constructor(props) {
@@ -549,18 +536,15 @@ const AdminAppointmentCompleted =(props)=>{
 //   }
 // }
 
-
-
-
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
   const docactions = bindActionCreators(exadoDocActions, dispatch);
   const patientactions = bindActionCreators(exadoPatientActions, dispatch);
   return { docactions, patientactions };
-}
+};
 
 export default connect(
   mapStoreToprops,

@@ -20,8 +20,8 @@ class RegistrationComponent extends React.Component {
       hiddenConPassword: true,
       errorTimer: null,
       successTimer: null,
-      success:"",
-      error:""
+      success: "",
+      error: "",
     };
   }
 
@@ -39,28 +39,32 @@ class RegistrationComponent extends React.Component {
       lastName: values.lastName,
       email: values.email,
       password: values.password,
-      UserType: ut == "Patient" ? 2 : 1,
+      UserType: ut === "Patient" ? 2 : 1,
       // IsDoctorLogin: ut == "Patient" ? false : true,
     };
 
     promiseWrapper(this.props.actions.registerUser, {
       userModel: userData,
     }).then((data) => {
-      console.log(data.data.result.userId,'--------------data------------------')
+      console.log(
+        data.data.result.userId,
+        "--------------data------------------"
+      );
       if (data.data.success === true) {
-         //window.localStorage.removeItem('login-Type');
-                 //   window.localStorage.setItem("access-token", data.data.data.Token);
-                 //   window.localStorage.setItem("user-id", data.result.userId);
-                    // window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
-                  //  window.localStorage.setItem("user-type", data.UserType);
-                    // toast.success(data.data.message); 
+        //window.localStorage.removeItem('login-Type');
+        //   window.localStorage.setItem("access-token", data.data.data.Token);
+        //   window.localStorage.setItem("user-id", data.result.userId);
+        // window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
+        //  window.localStorage.setItem("user-type", data.UserType);
+        // toast.success(data.data.message);
         this.setState({ success: data.data.message });
         this.setState({
-          successTimer: setTimeout(() => {this.setState({ success: "" });
-          this.setState({ UserGuid: data.data.result.userId });
-          this.props.onRegistration(data.data.result.userId, values.email);
+          successTimer: setTimeout(() => {
+            this.setState({ success: "" });
+            this.setState({ UserGuid: data.data.result.userId });
+            this.props.onRegistration(data.data.result.userId, values.email);
           }, 2000),
-        })
+        });
       } else {
         // toast.error(data.data.errorMessage);
         this.setState({ error: data.data.result.errorMessage }, () =>
@@ -120,11 +124,11 @@ class RegistrationComponent extends React.Component {
               </div>
             )}
             {this.state.success && (
-          <div className="alert alert-success" role="alert">
-            {this.state.success}
-            {console.log(this.state.success)}
-          </div>
-        )}
+              <div className="alert alert-success" role="alert">
+                {this.state.success}
+                {console.log(this.state.success)}
+              </div>
+            )}
             <div className="row mt-3">
               <div className="col-lg-6 col-md-6">
                 <div className="divFormRow px-2">

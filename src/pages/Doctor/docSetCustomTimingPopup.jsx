@@ -495,10 +495,9 @@ import TimePicker from "react-time-picker";
 //   );
 // };
 
-
-var today = new Date()
-var tomorrow = new Date(today)
-tomorrow.setDate(tomorrow.getDate() + 1)
+var today = new Date();
+var tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
 
 class SetCustomTiming extends React.Component {
   constructor(props) {
@@ -708,10 +707,6 @@ class SetCustomTiming extends React.Component {
       this.handleSetCustomTimingPopupClick();
     });
   }
-
-
-
-
 
   render() {
     const { t } = this.props;

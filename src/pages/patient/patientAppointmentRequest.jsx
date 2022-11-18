@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import exadoDocActions from '../../redux/exadoDoc/action';
-import exadoPatientActions from '../../redux/exadoPatient/action';
-import { isAppointmentNew, promiseWrapper } from '../../utility/common';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import ReactPaginate from 'react-paginate';
+import exadoDocActions from "../../redux/exadoDoc/action";
+import exadoPatientActions from "../../redux/exadoPatient/action";
+import { isAppointmentNew, promiseWrapper } from "../../utility/common";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import ReactPaginate from "react-paginate";
 import PatientHeader from "./header2";
 import PatientFooter from "./footer";
-import PatientLeftPanel from './../../commonComponent/LeftPanel/leftPanel';
+import PatientLeftPanel from "./../../commonComponent/LeftPanel/leftPanel";
 import ViewAppointment from "./../../commonComponent/AppoitmentCalendar/viewAppointment";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import moment from "moment";
 import AppointmentCancelPopup from "./../../commonComponent/AppoitmentCalendar/appointmentCancelPopUp";
-import { withTranslation } from 'react-i18next';
+import { withTranslation } from "react-i18next";
 
 const AppTypeList = [
   { id: 1, name: "OnLine" },
@@ -40,7 +40,7 @@ class PatientAppointmentRequests extends React.Component {
       ToDate: null, //new Date(),
       IsCancelPopUp: false,
       viewAppointmentPopup: false,
-      appointmentGuid: ""
+      appointmentGuid: "",
     };
   }
 
@@ -50,23 +50,29 @@ class PatientAppointmentRequests extends React.Component {
 
   GetAppointmentRequestList() {
     let param = {
-      "pageSize": Number(this.state.PageSize),
-      "currentPage": Number(this.state.CurrentPage),
-      "search": this.state.SearchText,
-      "sortExp": this.state.SortExp,
-      "sortDir": this.state.SortDir,
-      "patientGuid": localStorage.getItem('user-id'),
-      "doctorGuid": null,
-      "appointmentStatuses": [1],
-      "appointmentTypes": this.state.appointmentTypes.map(v => parseInt(v, 10)),
-      "fromDate": this.state.FromDate,
-      "toDate": this.state.ToDate
-    }
-    promiseWrapper(this.props.patientactions.getAppointments, { filter: param }).then((data) => {
-      const filterList = data.patientAppointments.filter(appointment => isAppointmentNew(appointment.appointmentDateTime));
+      pageSize: Number(this.state.PageSize),
+      currentPage: Number(this.state.CurrentPage),
+      search: this.state.SearchText,
+      sortExp: this.state.SortExp,
+      sortDir: this.state.SortDir,
+      patientGuid: localStorage.getItem("user-id"),
+      doctorGuid: null,
+      appointmentStatuses: [1],
+      appointmentTypes: this.state.appointmentTypes.map((v) => parseInt(v, 10)),
+      fromDate: this.state.FromDate,
+      toDate: this.state.ToDate,
+    };
+    promiseWrapper(this.props.patientactions.getAppointments, {
+      filter: param,
+    }).then((data) => {
+      const filterList = data.patientAppointments.filter((appointment) =>
+        isAppointmentNew(appointment.appointmentDateTime)
+      );
       this.setState({ AppointmentRequestList: filterList }, () => {
         this.setState({ TotalRecords: filterList.length });
-        this.setState({ TotalPages: Math.ceil(filterList.length / this.state.PageSize) });
+        this.setState({
+          TotalPages: Math.ceil(filterList.length / this.state.PageSize),
+        });
         this.setState({ LoadedData: true });
       });
     });
@@ -74,15 +80,15 @@ class PatientAppointmentRequests extends React.Component {
 
   UpdateFromDate = (e) => {
     this.setState({ FromDate: e.target.value });
-  }
+  };
 
   UpdateToDate = (e) => {
     this.setState({ ToDate: e.target.value });
-  }
+  };
 
   UpdateFilterType = (e) => {
-    this.setState({ appointmentTypes: e.map(v => parseInt(v, 10)) });
-  }
+    this.setState({ appointmentTypes: e.map((v) => parseInt(v, 10)) });
+  };
 
   handlePageClick = (data) => {
     let currentPage = data.selected + 1;
@@ -93,19 +99,19 @@ class PatientAppointmentRequests extends React.Component {
 
   SearchUpdate = (e) => {
     this.setState({ SearchText: e.target.value });
-  }
+  };
 
   handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       this.SearchUpdate(event);
       this.GetAppointmentRequestList();
     }
-  }
+  };
 
   IsCancelAppoinment(appId) {
     this.setState({ appointmentGuid: appId }, () => {
       this.setState({
-        IsCancelPopUp: !this.state.IsCancelPopUp
+        IsCancelPopUp: !this.state.IsCancelPopUp,
       });
     });
   }
@@ -113,7 +119,7 @@ class PatientAppointmentRequests extends React.Component {
   ClosePopup() {
     this.setState({ appointmentGuid: "" }, () => {
       this.setState({
-        IsCancelPopUp: !this.state.IsCancelPopUp
+        IsCancelPopUp: !this.state.IsCancelPopUp,
       });
       this.GetAppointmentRequestList();
     });
@@ -122,7 +128,7 @@ class PatientAppointmentRequests extends React.Component {
   toggleViewAppointment = (data) => {
     this.setState({ appointmentGuid: data }, () => {
       this.setState({
-        viewAppointmentPopup: !this.state.viewAppointmentPopup
+        viewAppointmentPopup: !this.state.viewAppointmentPopup,
       });
     });
   };
@@ -136,13 +142,13 @@ class PatientAppointmentRequests extends React.Component {
     }
     this.setState({ appointmentGuid: "" }, () => {
       this.setState({
-        viewAppointmentPopup: !this.state.viewAppointmentPopup
+        viewAppointmentPopup: !this.state.viewAppointmentPopup,
       });
     });
   };
 
   render() {
-    const { t } = this.props
+    const { t } = this.props;
     return (
       <div>
         <PatientHeader />
@@ -154,44 +160,61 @@ class PatientAppointmentRequests extends React.Component {
                 <div>
                   <div className="row search-bar">
                     <div className="py-4 search-bar-text w-100 bg-light">
-                      {t('Patient.AppointmentRequests.Appointment_Requests')}
+                      {t("Patient.AppointmentRequests.Appointment_Requests")}
                     </div>
                   </div>
                   <div className="row my-4">
                     <div className="search-bar-text-input col-md-7 top-search">
                       <div className="col-lg-4 float-start">
-                        <input type="date" max="2100-12-31"
+                        <input
+                          type="date"
+                          max="2100-12-31"
                           className="form-control"
                           onChange={this.UpdateFromDate.bind(this)}
-                          value={this.state.FromDate} />
+                          value={this.state.FromDate}
+                        />
                       </div>
                       <div className="col-lg-4 float-start">
-                        <input type="date" max="2100-12-31"
+                        <input
+                          type="date"
+                          max="2100-12-31"
                           className="form-control"
                           onChange={this.UpdateToDate.bind(this)}
-                          value={this.state.ToDate} />
+                          value={this.state.ToDate}
+                        />
                       </div>
                       <div className="col-lg-4 float-start">
-                        <input type="text"
+                        <input
+                          type="text"
                           className="form-control"
-                          placeholder={t('Patient.AppointmentUpComing.Search_Appointment_Doctor_Name')}
+                          placeholder={t(
+                            "Patient.AppointmentUpComing.Search_Appointment_Doctor_Name"
+                          )}
                           onChange={this.SearchUpdate.bind(this)}
                           value={this.state.SearchText}
-                          onKeyPress={this.handleKeyPress} />
+                          onKeyPress={this.handleKeyPress}
+                        />
                       </div>
                     </div>
                     <div className="search-bar-text-input col-md-3">
                       <DropdownMultiselect
                         selected={this.state.appointmentTypes}
                         buttonClass="selectpicker btn filter-btn"
-                        placeholder={t('Patient.AppointmentUpComing.Filter')}
+                        placeholder={t("Patient.AppointmentUpComing.Filter")}
                         handleOnChange={this.UpdateFilterType.bind(this)}
                         options={AppTypeList}
                         optionKey="id"
-                        optionLabel="name" />
+                        optionLabel="name"
+                      />
                     </div>
                     <div className="search-bar-text-input col-md-2">
-                      <button type="button" onClick={this.GetAppointmentRequestList.bind(this)} className="btn filter-btn w-100">{t('Patient.AppointmentUpComing.Search')}</button>
+                      <button
+                        type="button"
+                        onClick={this.GetAppointmentRequestList.bind(this)}
+                        className="btn filter-btn w-100"
+                      >
+                        {t("Patient.AppointmentUpComing.Search")}
+                      </button>
                     </div>
                   </div>
                   <div className="row mt-3 d-flex justify-content-center">
@@ -200,58 +223,143 @@ class PatientAppointmentRequests extends React.Component {
                         <table className="table table-bordered appointmentTable">
                           <thead>
                             <tr className="new-patient-table-title">
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Booking_ID')}</th>
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Doctor_Name')}</th>
-                              <th>{t('Patient.AppointmentUpComing.Date')}</th>
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Medical_Specialty')}</th>
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Amount_(€)')}</th>
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Appointment_Type')}</th>
-                              <th rowSpan="2">{t('Patient.AppointmentUpComing.Actions')}</th>
+                              <th rowSpan="2">
+                                {t("Patient.AppointmentUpComing.Booking_ID")}
+                              </th>
+                              <th rowSpan="2">
+                                {t("Patient.AppointmentUpComing.Doctor_Name")}
+                              </th>
+                              <th>{t("Patient.AppointmentUpComing.Date")}</th>
+                              <th rowSpan="2">
+                                {t(
+                                  "Patient.AppointmentUpComing.Medical_Specialty"
+                                )}
+                              </th>
+                              <th rowSpan="2">
+                                {t("Patient.AppointmentUpComing.Amount_(€)")}
+                              </th>
+                              <th rowSpan="2">
+                                {t(
+                                  "Patient.AppointmentUpComing.Appointment_Type"
+                                )}
+                              </th>
+                              <th rowSpan="2">
+                                {t("Patient.AppointmentUpComing.Actions")}
+                              </th>
                             </tr>
                             <tr>
-                              <th>{t('Patient.AppointmentUpComing.Time')}</th>
+                              <th>{t("Patient.AppointmentUpComing.Time")}</th>
                             </tr>
                           </thead>
-                          {this.state && this.state.LoadedData &&
+                          {this.state && this.state.LoadedData && (
                             <tbody>
-                              {this.state.AppointmentRequestList.length > 0 ? this.state.AppointmentRequestList.map((v, idx) => (
+                              {this.state.AppointmentRequestList.length > 0 ? (
+                                this.state.AppointmentRequestList.map(
+                                  (v, idx) => (
+                                    <tr>
+                                      <td>{v.bookingId}</td>
+                                      <td>
+                                        <Link
+                                          className="doctor-name-link"
+                                          to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                        >
+                                          {v.doctorFirstName} {v.doctorLastName}
+                                        </Link>
+                                      </td>
+                                      <td className="dateTime">
+                                        {moment(v.appointmentDateTime).format(
+                                          "MM/DD/YYYY"
+                                        )}
+                                        <br />
+                                        {moment(v.appointmentDateTime).format(
+                                          "HH:mm"
+                                        )}
+                                      </td>
+                                      <td className="medicalSpecialty">
+                                        {v.physicianServices}
+                                      </td>
+                                      <td className="country">{v.amount}</td>
+                                      <td className="type">
+                                        {v.appointmentType}
+                                      </td>
+                                      <td
+                                        className="action"
+                                        style={{ width: "240px" }}
+                                      >
+                                        <div className="d-flex justify-content-between booking-btn">
+                                          <a
+                                            className="btn viewDetails"
+                                            onClick={this.toggleViewAppointment.bind(
+                                              this,
+                                              v.appointmentGuid
+                                            )}
+                                            role="button"
+                                          >
+                                            {t(
+                                              "Patient.AppointmentUpComing.View"
+                                            )}
+                                          </a>
+                                          <button
+                                            type="button"
+                                            onClick={this.IsCancelAppoinment.bind(
+                                              this,
+                                              v.appointmentGuid
+                                            )}
+                                            className="btn btn-outline-dark cancel"
+                                          >
+                                            {t(
+                                              "Patient.AppointmentUpComing.Cancel"
+                                            )}
+                                          </button>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )
+                                )
+                              ) : (
                                 <tr>
-                                  <td>{v.bookingId}</td>
-                                  <td><Link className="doctor-name-link" to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}>{v.doctorFirstName} {v.doctorLastName}</Link></td>
-                                  <td className="dateTime">{moment(v.appointmentDateTime).format("MM/DD/YYYY")}<br />{moment(v.appointmentDateTime).format("HH:mm")}</td>
-                                  <td className="medicalSpecialty">{v.physicianServices}</td>
-                                  <td className="country">{v.amount}</td>
-                                  <td className="type">{v.appointmentType}</td>
-                                  <td className="action" style={{ width: "240px" }}>
-                                    <div className="d-flex justify-content-between booking-btn">
-                                      <a className="btn viewDetails" onClick={this.toggleViewAppointment.bind(this, v.appointmentGuid)} role="button">{t('Patient.AppointmentUpComing.View')}</a>
-                                      <button type="button" onClick={this.IsCancelAppoinment.bind(this, v.appointmentGuid)} className="btn btn-outline-dark cancel">{t('Patient.AppointmentUpComing.Cancel')}</button>
-                                    </div>
+                                  <td colSpan={7} className="empty-list">
+                                    {t(
+                                      "EmptyListMessages.appointments_request"
+                                    )}
                                   </td>
                                 </tr>
-                              )) : <tr><td colSpan={7} className="empty-list">{t("EmptyListMessages.appointments_request")}</td></tr>}
+                              )}
                             </tbody>
-                          }
+                          )}
                         </table>
-                        {this.state.viewAppointmentPopup ? <ViewAppointment ViewAppointmentAction={this.toggleViewAppointmentAction} AppointmentGuid={this.state.appointmentGuid} /> : null}
-                        {this.state.IsCancelPopUp ? <AppointmentCancelPopup ClosePopup={this.ClosePopup.bind(this)} AppointmentGuid={this.state.appointmentGuid} /> : null}
-                        {this.state.AppointmentRequestList.length > 0 &&
+                        {this.state.viewAppointmentPopup ? (
+                          <ViewAppointment
+                            ViewAppointmentAction={
+                              this.toggleViewAppointmentAction
+                            }
+                            AppointmentGuid={this.state.appointmentGuid}
+                          />
+                        ) : null}
+                        {this.state.IsCancelPopUp ? (
+                          <AppointmentCancelPopup
+                            ClosePopup={this.ClosePopup.bind(this)}
+                            AppointmentGuid={this.state.appointmentGuid}
+                          />
+                        ) : null}
+                        {this.state.AppointmentRequestList.length > 0 && (
                           <div className="my-4 d-flex justify-content-center">
                             <ReactPaginate
-                              previousClassName={'arrow'}
-                              nextClassName={'arrow'}
-                              previousLabel={'<<'}
-                              nextLabel={'>>'}
-                              breakLabel={'...'}
-                              pageLinkClassName={'pages'}
+                              previousClassName={"arrow"}
+                              nextClassName={"arrow"}
+                              previousLabel={"<<"}
+                              nextLabel={">>"}
+                              breakLabel={"..."}
+                              pageLinkClassName={"pages"}
                               pageCount={this.state.TotalPages}
                               marginPagesDisplayed={2}
                               pageRangeDisplayed={5}
                               onPageChange={this.handlePageClick}
-                              containerClassName={'pagination'}
-                              activeLinkClassName={'active'}
+                              containerClassName={"pagination"}
+                              activeLinkClassName={"active"}
                             />
-                          </div>}
+                          </div>
+                        )}
                       </div>
                     </div>
                     <PatientFooter />
@@ -262,12 +370,12 @@ class PatientAppointmentRequests extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 function mapStoreToprops(state, props) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -276,4 +384,7 @@ function mapDispatchToProps(dispatch) {
   return { docactions, patientactions };
 }
 
-export default connect(mapStoreToprops, mapDispatchToProps)(withTranslation()(PatientAppointmentRequests));
+export default connect(
+  mapStoreToprops,
+  mapDispatchToProps
+)(withTranslation()(PatientAppointmentRequests));

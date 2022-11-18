@@ -1,12 +1,12 @@
-import React from 'react';
-import exadoDocActions from '../../redux/exadoDoc/action';
-import exadoPatientActions from '../../redux/exadoPatient/action';
-import { promiseWrapper } from '../../utility/common';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import ReactPaginate from 'react-paginate';
+import React from "react";
+import exadoDocActions from "../../redux/exadoDoc/action";
+import exadoPatientActions from "../../redux/exadoPatient/action";
+import { promiseWrapper } from "../../utility/common";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import ReactPaginate from "react-paginate";
 import PatientHeader from "./header2";
-import PatientLeftPanel from './../../commonComponent/LeftPanel/leftPanel';
+import PatientLeftPanel from "./../../commonComponent/LeftPanel/leftPanel";
 
 class PatientAppointmentRequestsTest extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class PatientAppointmentRequestsTest extends React.Component {
       TotalRecords: 0,
       TotalPages: 0,
       FromDate: new Date(),
-      ToDate: ""
+      ToDate: "",
     };
   }
 
@@ -32,24 +32,29 @@ class PatientAppointmentRequestsTest extends React.Component {
 
   GetAppointmentRequestList() {
     let param = {
-      "pageSize": Number(this.state.PageSize),
-      "currentPage": Number(this.state.CurrentPage),
-      "search": this.state.SearchText,
-      "sortExp": this.state.SortExp,
-      "sortDir": this.state.SortDir,
-      "patientGuid": localStorage.getItem('user-id'),
-      "doctorGuid": null,
-      "appointmentStatuses": [1],
-      "appointmentTypes": [1, 2, 3],
-      "fromDate": new Date("08/01/2021"),
-      "toDate": new Date()
-    }
-    promiseWrapper(this.props.patientactions.getAppointments, { filter: param }).then((data) => {
-      this.setState({ AppointmentRequestList: data.patientAppointments }, () => {
-        this.setState({ TotalRecords: data.totalRecords });
-        this.setState({ TotalPages: data.totalPages });
-        this.setState({ LoadedData: true });
-      });
+      pageSize: Number(this.state.PageSize),
+      currentPage: Number(this.state.CurrentPage),
+      search: this.state.SearchText,
+      sortExp: this.state.SortExp,
+      sortDir: this.state.SortDir,
+      patientGuid: localStorage.getItem("user-id"),
+      doctorGuid: null,
+      appointmentStatuses: [1],
+      appointmentTypes: [1, 2, 3],
+      fromDate: new Date("08/01/2021"),
+      toDate: new Date(),
+    };
+    promiseWrapper(this.props.patientactions.getAppointments, {
+      filter: param,
+    }).then((data) => {
+      this.setState(
+        { AppointmentRequestList: data.patientAppointments },
+        () => {
+          this.setState({ TotalRecords: data.totalRecords });
+          this.setState({ TotalPages: data.totalPages });
+          this.setState({ LoadedData: true });
+        }
+      );
     });
   }
 
@@ -62,13 +67,13 @@ class PatientAppointmentRequestsTest extends React.Component {
 
   SearchUpdate = (e) => {
     this.setState({ SearchText: e.target.value });
-  }
+  };
   handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       this.SearchUpdate(event);
       this.GetDoctorList();
     }
-  }
+  };
 
   render() {
     return (
@@ -87,35 +92,80 @@ class PatientAppointmentRequestsTest extends React.Component {
                   </div>
                   <div className="row mb-4">
                     <div className="search-bar-text-input col-md-9 top-search">
-                      <input type="text"
+                      <input
+                        type="text"
                         className="form-control"
                         placeholder="Search Appointment, Doctor Name"
                         onChange={this.SearchUpdate.bind(this)}
                         value={this.state.SearchText}
-                        onKeyPress={this.handleKeyPress} />
+                        onKeyPress={this.handleKeyPress}
+                      />
                     </div>
                     <div className="search-bar-text-input col-md-3">
-                      <button type="button" className="btn filter-btn" onclick="myFunction()"><i className="fas fa-filter mx-1"></i><span>Filter</span></button>
+                      <button
+                        type="button"
+                        className="btn filter-btn"
+                        onclick="myFunction()"
+                      >
+                        <i className="fas fa-filter mx-1"></i>
+                        <span>Filter</span>
+                      </button>
                       <div id="filter-div" className="filter-container">
                         <div className="row">
                           <div className="col-12">
                             <div className="filter-title">Appointment Type</div>
                             <div className="filter-list"></div>
                             <div className="form-group form-check">
-                              <input type="checkbox" className="form-check-input" id="appoitment-type1" />
-                              <label className="form-check-label" for="appoitment-type1">Emergency</label>
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="appoitment-type1"
+                              />
+                              <label
+                                className="form-check-label"
+                                for="appoitment-type1"
+                              >
+                                Emergency
+                              </label>
                             </div>
                             <div className="form-group form-check">
-                              <input type="checkbox" className="form-check-input" id="appoitment-type2" />
-                              <label className="form-check-label" for="appoitment-type2">In-Clinic</label>
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="appoitment-type2"
+                              />
+                              <label
+                                className="form-check-label"
+                                for="appoitment-type2"
+                              >
+                                In-Clinic
+                              </label>
                             </div>
                             <div className="form-group form-check">
-                              <input type="checkbox" className="form-check-input" id="appoitment-type3" />
-                              <label className="form-check-label" for="appoitment-type3">Online</label>
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="appoitment-type3"
+                              />
+                              <label
+                                className="form-check-label"
+                                for="appoitment-type3"
+                              >
+                                Online
+                              </label>
                             </div>
                             <div className="form-group form-check">
-                              <input type="checkbox" className="form-check-input" id="appoitment-type4" />
-                              <label className="form-check-label" for="appoitment-type4">Chat</label>
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="appoitment-type4"
+                              />
+                              <label
+                                className="form-check-label"
+                                for="appoitment-type4"
+                              >
+                                Chat
+                              </label>
                             </div>
                           </div>
                         </div>
@@ -142,46 +192,84 @@ class PatientAppointmentRequestsTest extends React.Component {
                               <th>Time</th>
                             </tr>
                           </thead>
-                          {this.state && this.state.LoadedData &&
+                          {this.state && this.state.LoadedData && (
                             <tbody>
-                              {this.state.AppointmentRequestList.length > 0 ? this.state.AppointmentRequestList.map((v, idx) => (
-                                <tr>
-                                  <td>{v.bookingId}</td>
-                                  <td>{v.bookingId}</td>
-                                  <td><a className="doctorName">{v.doctorFirstName} {v.doctorLastName}</a></td>
-                                  <td className="dateTime">{new Date(v.appointmentDateTime).toDateString()}</td>
-                                  <td className="medicalSpecialty">{v.physicianServices}</td>
-                                  <td className="country">{v.amount}</td>
-                                  <td className="type">{v.appointmentType}</td>
-                                  <td><a className="doctorName" data-toggle="modal" data-target=".modify-modal">View</a></td>
-                                  <td>
-                                    <div className="d-flex justify-content-between booking-btn">
-                                      <a className="btn joinCall mr-2" role="button" data-toggle="modal" data-target=".accept-appointment">Accept</a>
-                                      <a type="button" className="btn btn-outline-dark cancel" data-toggle="modal" data-target=".reject-appointment">Reject</a>
-                                    </div>
-                                  </td>
-                                </tr>
-                              )) : <>List is empty</>
-                              }
+                              {this.state.AppointmentRequestList.length > 0 ? (
+                                this.state.AppointmentRequestList.map(
+                                  (v, idx) => (
+                                    <tr>
+                                      <td>{v.bookingId}</td>
+                                      <td>{v.bookingId}</td>
+                                      <td>
+                                        <a className="doctorName">
+                                          {v.doctorFirstName} {v.doctorLastName}
+                                        </a>
+                                      </td>
+                                      <td className="dateTime">
+                                        {new Date(
+                                          v.appointmentDateTime
+                                        ).toDateString()}
+                                      </td>
+                                      <td className="medicalSpecialty">
+                                        {v.physicianServices}
+                                      </td>
+                                      <td className="country">{v.amount}</td>
+                                      <td className="type">
+                                        {v.appointmentType}
+                                      </td>
+                                      <td>
+                                        <a
+                                          className="doctorName"
+                                          data-toggle="modal"
+                                          data-target=".modify-modal"
+                                        >
+                                          View
+                                        </a>
+                                      </td>
+                                      <td>
+                                        <div className="d-flex justify-content-between booking-btn">
+                                          <a
+                                            className="btn joinCall mr-2"
+                                            role="button"
+                                            data-toggle="modal"
+                                            data-target=".accept-appointment"
+                                          >
+                                            Accept
+                                          </a>
+                                          <a
+                                            type="button"
+                                            className="btn btn-outline-dark cancel"
+                                            data-toggle="modal"
+                                            data-target=".reject-appointment"
+                                          >
+                                            Reject
+                                          </a>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )
+                                )
+                              ) : (
+                                <>List is empty</>
+                              )}
                             </tbody>
-                          }
+                          )}
                         </table>
                         <div className="my-4 d-flex justify-content-center">
                           <ReactPaginate
-                            previousClassName={'arrow'}
-                            nextClassName={'arrow'}
-                            previousLabel={'<<'}
-                            nextLabel={'>>'}
-                            breakLabel={'...'}
-                            pageLinkClassName={'pages'}
+                            previousClassName={"arrow"}
+                            nextClassName={"arrow"}
+                            previousLabel={"<<"}
+                            nextLabel={">>"}
+                            breakLabel={"..."}
+                            pageLinkClassName={"pages"}
                             pageCount={this.state.TotalPages}
                             marginPagesDisplayed={2}
                             pageRangeDisplayed={5}
                             onPageChange={this.handlePageClick}
-                            containerClassName={'pagination'}
-                            activeLinkClassName={'active'}
+                            containerClassName={"pagination"}
+                            activeLinkClassName={"active"}
                           />
-
                         </div>
                       </div>
                     </div>
@@ -192,12 +280,12 @@ class PatientAppointmentRequestsTest extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 function mapStoreToprops(state, props) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -206,4 +294,7 @@ function mapDispatchToProps(dispatch) {
   return { docactions, patientactions };
 }
 
-export default connect(mapStoreToprops, mapDispatchToProps)(PatientAppointmentRequestsTest);
+export default connect(
+  mapStoreToprops,
+  mapDispatchToProps
+)(PatientAppointmentRequestsTest);

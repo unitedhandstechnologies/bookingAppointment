@@ -84,7 +84,6 @@ class GridTable extends React.Component {
     this.props.TRDRadioSelect(fval);
   }
 
-
   componentWillReceiveProps(props) {
     if (props.TableRow != null) {
       let table = window.$(`#${props.gridID}`).DataTable();

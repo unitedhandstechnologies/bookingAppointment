@@ -42,9 +42,9 @@ class MyFinance extends React.Component {
     this.setState({
       successTimer: setTimeout(() => {
         this.setState({ alertData: "" });
-      }, 2000)
-    })
-  }
+      }, 2000),
+    });
+  };
   GetAppointmentRequestList() {
     let param = {
       pageSize: Number(this.state.PageSize),
@@ -84,14 +84,13 @@ class MyFinance extends React.Component {
     promiseWrapper(this.props.patientactions.getPatientFinanceData, {
       patientGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
-    console.log(jsdata,'----------jsdata------------------')
-    
+      console.log(jsdata, "----------jsdata------------------");
+
       this.setState({
         WalletBalance: jsdata.walletBalance,
         TotalSpent: jsdata.totalSpent,
         TotalRefund: jsdata.totalRefund,
       });
-    
     });
   }
 
@@ -277,7 +276,7 @@ class MyFinance extends React.Component {
                         </tbody>
                       )}
                     </table>
-                    {this.state.AppointmentRequestList.length > 0 &&
+                    {this.state.AppointmentRequestList.length > 0 && (
                       <div className="my-4 d-flex justify-content-center">
                         <ReactPaginate
                           previousClassName={"arrow"}
@@ -293,7 +292,8 @@ class MyFinance extends React.Component {
                           containerClassName={"pagination"}
                           activeLinkClassName={"active"}
                         />
-                      </div>}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <PatientFooter />
@@ -301,12 +301,13 @@ class MyFinance extends React.Component {
             </div>
           </div>
         </div>
-        {this.state.withdrawModal &&
+        {this.state.withdrawModal && (
           <WithdrawPopup
             withdrawModal={this.state.withdrawModal}
             setWithDrawModal={this.setWithDrawModal}
             getWithdrawSuccessMsg={this.getWithdrawSuccessMsg}
-          />}
+          />
+        )}
       </div>
     );
   }

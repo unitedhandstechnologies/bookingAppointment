@@ -1,5 +1,5 @@
 import ApiService from "../../apiService";
-import { getConfig, getAxiosApiConfig } from "../../utility/apiConfig";
+import { getConfig } from "../../utility/apiConfig";
 
 export async function socialMediaLogin(userModel) {
   const config = getConfig("exado.socialmedialogin");

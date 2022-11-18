@@ -1,63 +1,64 @@
-import React from 'react';
-import exadoPatientActions from '../../redux/exadoPatient/action';
-import { promiseWrapper } from '../../utility/common';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { withTranslation } from 'react-i18next';
+import React from "react";
+import exadoPatientActions from "../../redux/exadoPatient/action";
+import { promiseWrapper } from "../../utility/common";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { withTranslation } from "react-i18next";
 
 class HealthInformationPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentPage: this.props.currentPage,
-            LoadedData: false,
-            QuestionnaireList: [],
-            AnswerDataList: [],
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: this.props.currentPage,
+      LoadedData: false,
+      QuestionnaireList: [],
+      AnswerDataList: [],
+    };
+  }
 
-    componentDidMount() {
-        this.GetQuestionnaireData();
-    }
+  componentDidMount() {
+    this.GetQuestionnaireData();
+  }
 
-    GetQuestionnaireData() {
-        promiseWrapper(this.props.patientactions.getPatientQuestionnaire, { pageNo: this.state.currentPage }).then((data) => {
-            this.setState({ QuestionnaireList: data }, () => {
-                // promiseWrapper(this.props.patientactions.getPatientAnswers, { patientGuid: localStorage.getItem("user-id"), pageNo: this.state.currentPage }).then((data) => {
-                //     this.setState({ AnswerDataList: data }, () => {
-                //         this.setState({ LoadedData: true });
-                //     });
-                // });
-            });
-            this.setState({ LoadedData: true });
-        });
-    }
+  GetQuestionnaireData() {
+    promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
+      pageNo: this.state.currentPage,
+    }).then((data) => {
+      this.setState({ QuestionnaireList: data }, () => {
+        // promiseWrapper(this.props.patientactions.getPatientAnswers, { patientGuid: localStorage.getItem("user-id"), pageNo: this.state.currentPage }).then((data) => {
+        //     this.setState({ AnswerDataList: data }, () => {
+        //         this.setState({ LoadedData: true });
+        //     });
+        // });
+      });
+      this.setState({ LoadedData: true });
+    });
+  }
 
-    CallPrev() {
-        this.props.callPrev();
-    }
+  CallPrev() {
+    this.props.callPrev();
+  }
 
-    CallNext() {
-        this.props.callNext();
-    }
+  CallNext() {
+    this.props.callNext();
+  }
 
-    render() {
-        const { t } = this.props
-        return (
-            <div>
-
-            </div>
-        )
-    }
+  render() {
+    const { t } = this.props;
+    return <div></div>;
+  }
 }
 
 function mapStoreToprops(state, props) {
-    return {}
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
-    const patientactions = bindActionCreators(exadoPatientActions, dispatch);
-    return { patientactions };
+  const patientactions = bindActionCreators(exadoPatientActions, dispatch);
+  return { patientactions };
 }
 
-export default connect(mapStoreToprops, mapDispatchToProps)(withTranslation()(HealthInformationPage));
+export default connect(
+  mapStoreToprops,
+  mapDispatchToProps
+)(withTranslation()(HealthInformationPage));

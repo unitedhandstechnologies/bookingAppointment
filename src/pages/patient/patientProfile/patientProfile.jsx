@@ -144,7 +144,6 @@ class PatientProfile extends React.Component {
                               id="personal-info"
                               role="tabpanel"
                               aria-labelledby="personal-info-tab"
-                              
                             >
                               <PersonalInformation
                                 t={t}
@@ -289,7 +288,12 @@ class PatientProfile extends React.Component {
                                     </>
                                   )
                                 )}
-                                <Link className="btn MyButton float-end" to='/patient-dashboard'>Done</Link>
+                                <Link
+                                  className="btn MyButton float-end"
+                                  to="/patient-dashboard"
+                                >
+                                  Done
+                                </Link>
                               </div>
                             </div>
                           </div>

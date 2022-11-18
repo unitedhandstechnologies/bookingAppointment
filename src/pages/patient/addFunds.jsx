@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import PatientHeader from "./header2";
 import PatientFooter from "./footer";
 import PatientLeftPanel from "./../../commonComponent/LeftPanel/leftPanel";
@@ -24,7 +24,7 @@ const AddFunds = (props) => {
 
   useEffect(() => {
     clearTimeout(timer);
-  }, []);
+  });
 
   const toggleCardForm = () => {
     setShowAddCardForm(!showAddCardForm);
@@ -119,7 +119,12 @@ const AddFunds = (props) => {
                               </td>
                               <td>12-32</td>
                               <td>
-                                <button className="btn btn-success" onClick={()=>{console.log('lohi')}}>
+                                <button
+                                  className="btn btn-success"
+                                  onClick={() => {
+                                    console.log("lohi");
+                                  }}
+                                >
                                   Add fund
                                 </button>
                               </td>
@@ -347,10 +352,8 @@ const AddFunds = (props) => {
                                       id="saveCard"
                                       type="checkbox"
                                       autoComplete="corrent-password"
-                                      onClick={() =>
-                                     
-                                       (prev)=>setSaveCard(!prev.saveCard)
-                                      }
+                                      onClick={() => (prev) =>
+                                        setSaveCard(!prev.saveCard)}
                                     />
                                     <label
                                       htmlFor="saveCard"
@@ -398,15 +401,15 @@ const AddFunds = (props) => {
 //        timer: null,
 //      };
 //    }
- 
+
 //    componentWillUnmount() {
 //      clearTimeout(this.state.timer);
 //    }
- 
+
 //    toggleCardForm = () => {
 //      this.setState((prev) => ({ showAddCardForm: !prev.showAddCardForm }));
 //    };
- 
+
 //    getYearList = () => {
 //      const currentYear = new Date().getFullYear();
 //      const range = (start, stop, step) =>
@@ -416,7 +419,7 @@ const AddFunds = (props) => {
 //        );
 //      return range(currentYear, currentYear + 22, 1);
 //    };
- 
+
 //    makePayment = (values) => {
 //      if (this.state.saveCard) {
 //        promiseWrapper(this.props.actions.saveCardInfo, {
@@ -444,7 +447,7 @@ const AddFunds = (props) => {
 //          .catch((error) => console.log(error));
 //      }
 //    };
- 
+
 //    render() {
 //      // console.log(Array.from({length:}));
 //      const { t } = this.props;
@@ -767,17 +770,15 @@ const AddFunds = (props) => {
 //      );
 //    }
 //  }
- 
 
-
-const mapStoreToprops=(state, props)=> {
+const mapStoreToprops = (state, props) => {
   return {};
-}
+};
 
-const mapDispatchToProps=(dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
   const actions = bindActionCreators(exadoActions, dispatch);
   return { actions };
-}
+};
 
 export default connect(
   mapStoreToprops,

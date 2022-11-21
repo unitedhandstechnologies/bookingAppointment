@@ -17,7 +17,7 @@ export async function registerUser(userModel) {
 
 export async function loginUser(email, password, userType) {
   const config = getConfig("exado.LogInUser");
-  config.urlParams = { email, password, userType };
+  config.data = { email, password, userType };
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }

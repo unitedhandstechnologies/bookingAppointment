@@ -66,7 +66,7 @@ export async function getLocation() {
 
 export async function searchAppointment(appointmentModel) {
   const config = getConfig("exadoPatient.SearchAppointment");
-  config.data = appointmentModel;
+  config.urlParams = appointmentModel;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }

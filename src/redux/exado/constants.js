@@ -8,13 +8,13 @@ export const GoogleClientSecret = "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";
 export const FbAppID = "1157946438003788"; //3821377704565076 - 465285027852248
 export const SOCIAL_MEDIA_LOGIN = "api/SocialMediaLogin";
 export const REGISTER_USER = "auth/signup";
-export const LOGIN_USER = "api/ValidateUser";
+export const LOGIN_USER = "auth/signin";
 export const VERIFY_EMAIL_OTP = "auth/verifyotp";
 export const FORGOT_PASSWORD = "api/ForgotPassword";
 export const RESET_PASSWORD = "api/ResetPassword";
 export const SEND_OTP_CODE = "api/SendOTPCode";
 export const CHANGE_PASSWORD = "api/ChangePassword";
-export const GET_CMS_PAGE = "GetCMSPage";
+export const GET_CMS_PAGE = "admin/cmspage";
 export const GET_AUTH_TOKEN = "api/GetAuthToken";
 export const SAVE_CARD_INFO = "api/SaveCardInfo";
 

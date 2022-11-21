@@ -44,33 +44,34 @@ class LoginComponent extends React.Component {
       password: values.password,
       userType: logintype,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
-        if (data.data.data.IsEmailVerified === "False") {
+      console.log(data,'--------anujha------------')
+      if (data.data.success === true) {
+        if (data.data.result.isEmailVerified === "False") {
           this.props.onLoginNotVerified(
-            data.data.data.userId,
-            this.state.EmailAddress
+            data.data.result.userId,
+            this.state.EmailAddress 
           );
           return;
         }
         localStorage.removeItem(localStorageKeys.loginType);
         localStorage.setItem(
           localStorageKeys.accessToken,
-          data.data.data.Token
+          data.data.result.token
         );
-        localStorage.setItem(localStorageKeys.userId, data.data.data.userId);
+        localStorage.setItem(localStorageKeys.userId, data.data.result.userId);
         localStorage.setItem(
-          localStorageKeys.userFullname,
-          data.data.data.UserFullName
+          localStorageKeys.fullName,
+          data.data.result.fullName
         );
         localStorage.setItem(
           localStorageKeys.userType,
-          data.data.data.UserType
+          data.data.result.userType
         );
         localStorage.setItem(
           localStorageKeys.profileImage,
-          data.data.data.ProfileImage
+          data.data.result.profileImage
         );
-        const UserType = parseInt(data.data.data.UserType);
+        const UserType = parseInt(data.data.result.userType);
         this.setState({
           success: data.data.message,
           successTimer: setTimeout(() => {
@@ -78,7 +79,7 @@ class LoginComponent extends React.Component {
             if (UserType === userType.patient) {
               this.setState({ redirect: "/patient-dashboard" });
             } else if (UserType === userType.doctor) {
-              if (data.data.data.ProfileVerification === "1") {
+              if (data.data.result.verificationStatus === "1") {
                 this.setState({ redirect: "/doctor-profile" });
               } else {
                 this.setState({ redirect: "/doctor-dashboard" });

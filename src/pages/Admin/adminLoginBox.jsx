@@ -40,13 +40,14 @@ class AdminLoginBox extends React.Component {
         password: this.state.Password,
         userType: 3,
       }).then((data) => {
-        if (data.data.isSuccess == true) {
+        console.log(data,'===================data')
+        if (data.data.success === true) {
           localStorage.removeItem("login-Type");
-          localStorage.setItem("access-token", data.data.data.Token);
-          localStorage.setItem("user-id", data.data.data.userId);
-          localStorage.setItem("user-fullname", data.data.data.UserFullName);
-          localStorage.setItem("user-type", data.data.data.UserType);
-          localStorage.setItem("profile-image", data.data.data.ProfileImage);
+          localStorage.setItem("access-token", data.data.result.token);
+          localStorage.setItem("user-id", data.data.result.userId);
+          localStorage.setItem("user-fullname", data.data.result.fullName);
+          localStorage.setItem("user-type", data.data.result.userType);
+          localStorage.setItem("profile-image", data.data.result.profileImage);
           //toast.success(data.data.message);
           this.setState({ redirect: "/admin-dashboard" });
         } else {

@@ -18,7 +18,7 @@ const ApiConstants = {
 
     LogInUser: {
       apiConfig: {
-        url: "api/ValidateUser",
+        url: "auth/signin",
         method: "POST",
       },
       attachPrefix: true,
@@ -65,7 +65,7 @@ const ApiConstants = {
     },
     GetCMSPage: {
       apiConfig: {
-        url: "GetCMSPage",
+        url: "admin/cmspage",
         method: "Get",
       },
       attachPrefix: true,
@@ -689,7 +689,7 @@ const ApiConstants = {
 
     SearchAppointment: {
       apiConfig: {
-        url: "api/SearchAppointment",
+        url: "patient/searchappointment",
         method: "POST",
       },
       attachPrefix: true,

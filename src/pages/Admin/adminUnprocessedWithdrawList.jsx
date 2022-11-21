@@ -33,9 +33,9 @@ const AdminUnprocessedWithdrawList = (props) => {
       },
     })
       .then((data) => {
-        if (data?.data) {
-          setWithdrawList(data.data.withdrawList);
-          setTotalPages(data.data.totalPages);
+        if (data?.data.result) {
+          setWithdrawList(data.data.result.withdrawList);
+          setTotalPages(data.data.result.totalPages);
         }
       })
       .catch((err) => console.log(err));

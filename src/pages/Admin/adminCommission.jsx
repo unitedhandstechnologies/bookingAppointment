@@ -23,9 +23,9 @@ const AdminCommission = (props) => {
   const getPageData = () => {
     promiseWrapper(props.adminactions.getAllCommission)
       .then((data) => {
-        if (data.data) {
+        if (data.data.result) {
           setCommissionList(
-            data.data.map((list) => {
+            data.data.result.map((list) => {
               return {
                 doctorCommissionGuid: list.doctorCommissionGuid,
                 doctorGuid: list.doctorGuid,

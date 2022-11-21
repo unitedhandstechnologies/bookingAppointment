@@ -22,8 +22,8 @@ const AdminFinance = (props) => {
   const getPageData = () => {
     promiseWrapper(props.adminactions.getFinanceData)
       .then((data) => {
-        if (data?.data) {
-          setFinanceList(data.data);
+        if (data?.data.result) {
+          setFinanceList(data.data.result);
         }
       })
       .catch((err) => console.log(err));

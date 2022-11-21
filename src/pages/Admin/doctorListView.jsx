@@ -39,9 +39,10 @@ const DoctorListView = (props) => {
     promiseWrapper(props.actions.getPagedDoctorsList, {
       paging: param,
     }).then((data) => {
-      setDoctorList(data.doctorsList);
-      setTotalPages(data.totalPages);
-      setTotalRecords(data.totalRecords);
+      console.log(data, "---adata");
+      setDoctorList(data.result.doctorsList);
+      setTotalPages(data.result.totalPages);
+      setTotalRecords(data.result.totalRecords);
       setLoadedData(true);
     });
   };

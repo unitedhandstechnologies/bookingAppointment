@@ -417,7 +417,7 @@ const ApiConstants = {
   exadoAdmin: {
     GetUnVerifiedDoctorsList: {
       apiConfig: {
-        url: "api/GetUnVerifiedDoctorsList",
+        url: "admin/unverifieddoctorslist",
         method: "Get",
       },
       attachPrefix: true,
@@ -441,7 +441,7 @@ const ApiConstants = {
 
     GetPagedPatientsList: {
       apiConfig: {
-        url: "api/GetPagedPatientsList",
+        url: "admin/pagedpatientslist",
         method: "Get",
       },
       attachPrefix: true,
@@ -449,7 +449,7 @@ const ApiConstants = {
 
     GetPagedDoctorsList: {
       apiConfig: {
-        url: "api/GetPagedDoctorsList",
+        url: "admin/pageddoctorslist",
         method: "Get",
       },
       attachPrefix: true,
@@ -481,7 +481,7 @@ const ApiConstants = {
 
     GetAllUnprocessedWithdraw: {
       apiConfig: {
-        url: "api/GetAllUnprocessedWithdraw",
+        url: "admin/allunprocessedwthdraw",
         method: "POST",
       },
       attachPrefix: true,
@@ -509,7 +509,7 @@ const ApiConstants = {
     },
     GetAllCommission: {
       apiConfig: {
-        url: "api/GetAllCommission",
+        url: "admin/allcommission",
         method: "Get",
       },
       attachPrefix: true,
@@ -523,7 +523,7 @@ const ApiConstants = {
     },
     GetFinanceData: {
       apiConfig: {
-        url: "api/GetFinanceData",
+        url: "admin/financedata",
         method: "Get",
       },
       attachPrefix: true,
@@ -579,7 +579,7 @@ const ApiConstants = {
     },
     GetAllPhysicianServiceDetail: {
       apiConfig: {
-        url: "GetAllPhysicianServiceDetail",
+        url: "admin/allphysicianservice",
         method: "Get",
       },
       attachPrefix: true,

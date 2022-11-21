@@ -32,7 +32,8 @@ const AdminDashBoardWithdrawComponent = (props) => {
       paging: paging,
     })
       .then((data) => {
-        if (data.data.withdrawList) setWithdrawList(data.data.withdrawList);
+        if (data.data.result.withdrawList)
+          setWithdrawList(data.data.result.withdrawList);
       })
       .catch((err) => console.log(err));
   };

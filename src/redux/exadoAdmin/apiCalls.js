@@ -61,7 +61,7 @@ export async function approveRefund(model) {
 
 export async function getAllUnprocessedWithdraw(paging) {
   const config = getConfig("exadoAdmin.GetAllUnprocessedWithdraw");
-  config.data = paging;
+  config.urlParams = paging;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }

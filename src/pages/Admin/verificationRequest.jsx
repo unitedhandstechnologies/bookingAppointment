@@ -87,8 +87,8 @@ class VerificationRequest extends React.Component {
   componentDidMount() {
     promiseWrapper(this.props.actions.getDoctorViewDetails, {
       userGuid: this.props.match.params.userGuid,
-    }).then((jsdata) => {
-      this.setState({ DoctorProfile: jsdata });
+    }).then((response) => {
+      this.setState({ DoctorProfile: response });
     });
   }
 

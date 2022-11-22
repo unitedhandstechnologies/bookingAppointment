@@ -1,9 +1,9 @@
 export const GET_UNVERIFIED_DOCTORS_LIST = "admin/unverifieddoctorslist";
-export const GET_DOCTOR_VIEW_DETAILS = "api/GetDoctorViewDetails";
+export const GET_DOCTOR_VIEW_DETAILS = "admin/doctorviewdetails";
 export const VERIFY_DOCTOR_PROFILE = "api/VerifyDoctorProfile";
 export const GET_PAGED_PATIENTS_LIST = "admin/pagedpatientslist";
 export const GET_PAGED_DOCTORS_LIST = "admin/pageddoctorslist";
-export const GET_PATIENT_VIEW_DETAILS = "api/GetPatientViewDetails";
+export const GET_PATIENT_VIEW_DETAILS = "admin/patientviewdetails";
 export const GET_ALL_REFUND_DATA = "api/GetAllRefundData";
 export const APPROVE_REFUND = "api/ApproveRefund";
 export const GET_ALL_UNPROCESSED_WITHDRAW = "admin/allunprocessedwthdraw";
@@ -23,7 +23,7 @@ export const GET_PATIENT_QUESTIONNAIRE_LANGUAGE =
 export const SAVE_PATIENT_QUESTIONNAIRE_LANGUAGE =
   "SavePatientQuestionnaireLanguage";
 export const GET_ALL_PHYSICIAN_SERVICE_DETAIL = "admin/allphysicianservice";
-export const SAVE_PHYSICIAN_SERVICE = "SavePhysicianService";
-export const GET_ALL_LANGUAGE_DETAIL = "GetAllLanguageDetail";
-export const SAVE_LANGUAGE = "SaveLanguage";
-export const SAVE_WEBSITE_LANGUAGE_ID = "SaveWebsiteLanguageId";
+export const SAVE_PHYSICIAN_SERVICE = "admin/physicianservice";
+export const GET_ALL_LANGUAGE_DETAIL = "admin/allLanguage";
+export const SAVE_LANGUAGE = "admin/language";
+export const SAVE_WEBSITE_LANGUAGE_ID = "admin/websitelanguageid";

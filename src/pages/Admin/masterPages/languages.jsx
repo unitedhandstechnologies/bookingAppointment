@@ -32,8 +32,11 @@ class Languages extends Component {
     this.setState({ [e.target.name]: e.target.value });
 
   getLanguages = () =>
-    promiseWrapper(this.props.adminactions.getAllLanguageDetail).then((data) =>
-      this.setState({ languages: data.data })
+    promiseWrapper(this.props.adminactions.getAllLanguageDetail).then((data) =>{
+         this.setState({ languages: data.data.result })
+    }
+    
+   
     );
 
   setEditLangModal = (
@@ -59,7 +62,8 @@ class Languages extends Component {
       query: { LanguageId: id, isWebsiteLanguage: e },
     })
       .then((data) => {
-        if (data.data.isSuccess) {
+        console.log(data)
+        if (data.data.success) {
           toast.success(data.data.message);
           this.getLanguages();
           const newArr = this.state.languages.map((language) => {
@@ -88,7 +92,7 @@ class Languages extends Component {
     console.log("api", data);
     promiseWrapper(this.props.adminactions.saveLanguage, { data })
       .then((data) => {
-        if (data.data.isSuccess) {
+        if (data.data.success) {
           toast.success(data.data.message);
           this.getLanguages();
         } else toast.error(data.data.errorMessage);

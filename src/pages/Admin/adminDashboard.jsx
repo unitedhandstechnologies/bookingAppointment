@@ -24,8 +24,8 @@ const AdminDashboard = (props) => {
 
   const GetUnVerifiedDoctorsList = () => {
     promiseWrapper(props.adminactions.getUnVerifiedDoctorsList).then(
-      (jsdata) => {
-        setVerificationRequestsData(jsdata);
+      (response) => {
+        setVerificationRequestsData(response.result);
       }
     );
   };

@@ -37,9 +37,9 @@ class PhysicianServices extends Component {
       promiseWrapper(this.props.adminactions.savePhysicianService, {
         data: data,
       }).then((data) => {
-        if (data.data.result.success) {
+        if (data.data.success) {
           this.getPhysicianServices();
-          toast.success(data.data.result.message);
+          toast.success(data.data.message);
           this.setState({ newService: "" });
         } else toast.error(data.data.errorMessage);
       });

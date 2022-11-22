@@ -425,7 +425,7 @@ const ApiConstants = {
 
     GetDoctorViewDetails: {
       apiConfig: {
-        url: "api/GetDoctorViewDetails",
+        url: "admin/doctorviewdetails",
         method: "Get",
       },
       attachPrefix: true,
@@ -457,7 +457,7 @@ const ApiConstants = {
 
     GetPatientViewDetails: {
       apiConfig: {
-        url: "api/GetPatientViewDetails",
+        url: "admin/patientviewdetails",
         method: "Get",
       },
       attachPrefix: true,
@@ -586,28 +586,28 @@ const ApiConstants = {
     },
     SavePhysicianService: {
       apiConfig: {
-        url: "SavePhysicianService",
+        url: "admin/physicianservice",
         method: "POST",
       },
       attachPrefix: true,
     },
     GetAllLanguageDetail: {
       apiConfig: {
-        url: "GetAllLanguageDetail",
+        url: "admin/allLanguage",
         method: "Get",
       },
       attachPrefix: true,
     },
     SaveLanguage: {
       apiConfig: {
-        url: "SaveLanguage",
+        url: "admin/language",
         method: "POST",
       },
       attachPrefix: true,
     },
     SaveWebsiteLanguageId: {
       apiConfig: {
-        url: "SaveWebsiteLanguageId",
+        url: "admin/websitelanguageid",
         method: "POST",
       },
       attachPrefix: true,
@@ -649,7 +649,7 @@ const ApiConstants = {
 
     GetPatientQuestionnaire: {
       apiConfig: {
-        url: "api/GetPatientQuestionnaire",
+        url: "admin/patientquestionnairelanguage",
         method: "Get",
       },
       attachPrefix: true,

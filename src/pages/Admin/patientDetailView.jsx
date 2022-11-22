@@ -79,36 +79,37 @@ class PatientDetailView extends React.Component {
     promiseWrapper(this.props.actions.getPatientViewDetails, {
       patientGuid: this.props.match.params.userGuid,
     }).then((data) => {
-      this.setState({ ProfilePersonalInfo: data }, () => {
+     
+      this.setState({ ProfilePersonalInfo: data.result }, () => {
         this.GetAppointmentRequestList();
         this.setState((prevState) => ({
           ProfilePersonalInfo: {
             ...prevState.ProfilePersonalInfo,
-            ["doB"]: data.doB != null ? data.doB.substr(0, 10) : null,
+            ["doB"]: data.result.doB != null ? data.result.doB.substr(0, 10) : null,
           },
         }));
         this.setState((prevState) => ({
           ProfilePersonalInfo: {
             ...prevState.ProfilePersonalInfo,
-            ["gender"]: data.gender.toString(),
+            ["gender"]: data.result.gender.toString(),
           },
         }));
 
-        if (data.gender) {
-          if (data.gender.toString() === "1") {
+        if (data.result.gender) {
+          if (data.result.gender.toString() === "1") {
             this.setState({ UserGender: "Male" });
-          } else if (data.gender.toString() === "2") {
+          } else if (data.result.gender.toString() === "2") {
             this.setState({ UserGender: "Female" });
           } else {
             this.setState({ UserGender: "Other" });
           }
         }
-        if (data.doB && data.doB !== "") {
-          let ad = this.calculate_age(data.doB);
+        if (data.doB && data.result.doB !== "") {
+          let ad = this.calculate_age(data.result.doB);
           this.setState({ Age: ad });
         }
         promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
-          pageNo: 1,
+          languageId: 1,
         }).then((data) => {
           this.setState({ MonitorQuestionnaireList: data }, () => {
             promiseWrapper(this.props.patientactions.getPatientAnswers, {

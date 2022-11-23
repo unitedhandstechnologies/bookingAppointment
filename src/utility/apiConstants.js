@@ -145,7 +145,7 @@ const ApiConstants = {
 
     GetProfileInfo: {
       apiConfig: {
-        url: "api/GetProfileInfo",
+        url: "doctor/profile",
         method: "Get",
       },
       attachPrefix: true,
@@ -344,7 +344,7 @@ const ApiConstants = {
     },
     GetDoctorFinanceData: {
       apiConfig: {
-        url: "api/GetDoctorFinanceData",
+        url: "doctor/financedata",
         method: "Get",
       },
       attachPrefix: true,
@@ -433,7 +433,7 @@ const ApiConstants = {
 
     VerifyDoctorProfile: {
       apiConfig: {
-        url: "api/VerifyDoctorProfile",
+        url: "admin/verifydoctorprofile",
         method: "POST",
       },
       attachPrefix: true,

@@ -44,7 +44,6 @@ class LoginComponent extends React.Component {
       password: values.password,
       userType: logintype,
     }).then((data) => {
-      console.log(data,'--------anujha------------')
       if (data.data.success === true) {
         if (data.data.result.isEmailVerified === "False") {
           this.props.onLoginNotVerified(
@@ -58,7 +57,7 @@ class LoginComponent extends React.Component {
           localStorageKeys.accessToken,
           data.data.result.token
         );
-        localStorage.setItem(localStorageKeys.userId, data.data.result.userId);
+        localStorage.setItem(localStorageKeys.userId, data.data.result.userGuid);
         localStorage.setItem(
           localStorageKeys.fullName,
           data.data.result.fullName
@@ -91,7 +90,7 @@ class LoginComponent extends React.Component {
         });
       } else
         this.setState({
-          error: data.data.errorMessage,
+          error: data.message,
           errorTimer: setTimeout(() => this.setState({ error: "" }), 2000),
         });
     });

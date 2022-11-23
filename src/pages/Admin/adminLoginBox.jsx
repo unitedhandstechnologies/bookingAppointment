@@ -24,13 +24,13 @@ class AdminLoginBox extends React.Component {
   OnLogin = (event) => {
     event.preventDefault();
     let errorMessage = "";
-    if ($("#txtEmailAddress").val() == "") {
+    if ($("#txtEmailAddress").val() === "") {
       errorMessage += `Please enter email address \n`;
     }
-    if ($("#txtPassword").val() == "") {
+    if ($("#txtPassword").val() === "") {
       errorMessage += "Please enter password \n";
     }
-    if (errorMessage != "") {
+    if (errorMessage !== "") {
       toast.error(errorMessage);
       return;
     } else {
@@ -40,18 +40,17 @@ class AdminLoginBox extends React.Component {
         password: this.state.Password,
         userType: 3,
       }).then((data) => {
-        console.log(data,'===================data')
         if (data.data.success === true) {
           localStorage.removeItem("login-Type");
           localStorage.setItem("access-token", data.data.result.token);
-          localStorage.setItem("user-id", data.data.result.userId);
+          localStorage.setItem("user-id", data.data.result.userGuid);
           localStorage.setItem("user-fullname", data.data.result.fullName);
           localStorage.setItem("user-type", data.data.result.userType);
           localStorage.setItem("profile-image", data.data.result.profileImage);
-          //toast.success(data.data.message);
+          toast.success(data.data.message);
           this.setState({ redirect: "/admin-dashboard" });
         } else {
-          toast.error(data.data.errorMessage);
+          toast.error(data.message);
         }
       });
     }

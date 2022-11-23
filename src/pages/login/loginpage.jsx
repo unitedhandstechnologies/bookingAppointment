@@ -72,7 +72,7 @@ class LoginPage extends React.Component {
                 />
               </div>
               <div className="col-md-12 col-lg-6 login-section-container p-0">
-                {this.state.DisplayPage == "Login" && (
+                {this.state.DisplayPage === "Login" && (
                   <LoginBox
                     IsReg={this.state.IsReg}
                     LoginType={this.state.LoginType}
@@ -80,14 +80,14 @@ class LoginPage extends React.Component {
                     onForgotPasswordClick={this.LoadForgotPasswordUI.bind(this)}
                   />
                 )}
-                {this.state.DisplayPage == "OTPPage" && (
+                {this.state.DisplayPage === "OTPPage" && (
                   <OTPBox
                     onCancel={this.LoadRegUI.bind(this)}
                     userId={this.state.userId}
                     emailId={this.state.EmailId}
                   />
                 )}
-                {this.state.DisplayPage == "ForgotPasswordPage" && (
+                {this.state.DisplayPage === "ForgotPasswordPage" && (
                   <ForgotPassword onCancel={this.LoadRegUI.bind(this)} />
                 )}
               </div>

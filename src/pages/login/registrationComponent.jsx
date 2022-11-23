@@ -67,7 +67,7 @@ class RegistrationComponent extends React.Component {
         });
       } else {
         // toast.error(data.data.errorMessage);
-        this.setState({ error: data.data.result.errorMessage }, () =>
+        this.setState({ error: data.data.message }, () =>
           this.setState({
             errorTimer: setTimeout(() => this.setState({ error: "" }), 3000),
           })

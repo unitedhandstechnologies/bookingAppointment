@@ -1,6 +1,6 @@
 export const GET_UNVERIFIED_DOCTORS_LIST = "admin/unverifieddoctorslist";
 export const GET_DOCTOR_VIEW_DETAILS = "admin/doctorviewdetails";
-export const VERIFY_DOCTOR_PROFILE = "api/VerifyDoctorProfile";
+export const VERIFY_DOCTOR_PROFILE = "admin/verifydoctorprofile";
 export const GET_PAGED_PATIENTS_LIST = "admin/pagedpatientslist";
 export const GET_PAGED_DOCTORS_LIST = "admin/pageddoctorslist";
 export const GET_PATIENT_VIEW_DETAILS = "admin/patientviewdetails";

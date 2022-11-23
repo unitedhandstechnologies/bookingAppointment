@@ -58,7 +58,7 @@ class OTPBox extends React.Component {
             this.setState({ redirect: "/patient-dashboard" });
           }
         } else {
-          toast.error(data.data.errorMessage);
+          toast.error(data.data.message);
         }
       });
     }

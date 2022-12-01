@@ -62,7 +62,7 @@ class LeftPanel extends React.Component {
               <SidebarContent>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaColumns />} active={true}>
-                    <Link to="/patient-dashboard" />
+                    <Link to="/patient/dashboard" />
                     {t("Patient.LeftPanel.My_Overview")}
                   </MenuItem>
                 </Menu>
@@ -72,26 +72,26 @@ class LeftPanel extends React.Component {
                     icon={<FaCog />}
                   >
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/patient-appointment-requests" />
+                      <Link to="/patient/appointment-requests" />
                       {t("Patient.LeftPanel.Requests")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/patient-appointment-upcoming" />
+                      <Link to="/patient/appointment-upcoming" />
                       {t("Patient.LeftPanel.Upcoming")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/patient-appointment-completed" />
+                      <Link to="/patient/appointment-completed" />
                       {t("Patient.LeftPanel.Completed")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/patient-appointment-cancelled" />
+                      <Link to="/patient/appointment-cancelled" />
                       {t("Patient.LeftPanel.Cancelled")}
                     </MenuItem>
                   </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEuroSign />} active={false}>
-                    <Link to="/patient-myfinance" />
+                    <Link to="/patient/myfinance" />
                     {t("Patient.LeftPanel.My_Finance")}
                   </MenuItem>
                 </Menu>
@@ -101,15 +101,15 @@ class LeftPanel extends React.Component {
                     icon={<FaCog />}
                   >
                     <MenuItem icon={<FaColumns />} active={false}>
-                      <Link to="/patient-profile" />
+                      <Link to="/patient/profile" />
                       {t("Patient.LeftPanel.My_Profile")}
                     </MenuItem>
-                    {/* <MenuItem icon={<FaColumns />} active={false}><Link to="/patient-profile" />General Settings</MenuItem> */}
+                    {/* <MenuItem icon={<FaColumns />} active={false}><Link to="/patient/profile" />General Settings</MenuItem> */}
                   </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/patient-profile" />
+                    <Link to="/patient/profile" />
                     {t("Patient.LeftPanel.My_Notification")}
                   </MenuItem>
                 </Menu>
@@ -142,7 +142,7 @@ class LeftPanel extends React.Component {
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaColumns />} active={true}>
                     {t("Doctor.LeftPanel.MyDashboard")}
-                    <Link to="/doctor-dashboard" />
+                    <Link to="/doctor/dashboard" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
@@ -151,19 +151,19 @@ class LeftPanel extends React.Component {
                     icon={<FaCog />}
                   >
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/doctor-appointment-requests" />
+                      <Link to="/doctor/appointment-requests" />
                       {t("Doctor.LeftPanel.Requests")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/doctor-appointment-upcoming" />
+                      <Link to="/doctor/appointment-upcoming" />
                       {t("Doctor.LeftPanel.Upcoming")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/doctor-appointment-completed" />
+                      <Link to="/doctor/appointment-completed" />
                       {t("Doctor.LeftPanel.Completed")}
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/doctor-appointment-cancelled" />
+                      <Link to="/doctor/appointment-cancelled" />
                       {t("Doctor.LeftPanel.Cancelled")}
                     </MenuItem>
                   </SubMenu>
@@ -171,31 +171,31 @@ class LeftPanel extends React.Component {
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaCommentAlt />} active={false}>
                     {t("Doctor.LeftPanel.MyChats")}
-                    <Link to="/doctor-dashboard" />
+                    <Link to="/doctor/dashboard" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaUser />} active={false}>
                     {t("Doctor.LeftPanel.MyPatients")}
-                    <Link to="/doctor-my-patients" />
+                    <Link to="/doctor/my-patients" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaAmbulance />} active={false}>
                     {t("Doctor.LeftPanel.MyEmergencyCalls")}
-                    <Link to="/doctor-dashboard" />
+                    <Link to="/doctor/dashboard" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEuroSign />} active={false}>
                     {t("Doctor.LeftPanel.MyFinance")}
-                    <Link to="/doctor-myfinance" />
+                    <Link to="/doctor/myfinance" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaQuestionCircle />} active={false}>
                     {t("Doctor.LeftPanel.MyFAQs")}
-                    <Link to="/doctor-faq" />
+                    <Link to="/doctor/faq" />
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
@@ -205,22 +205,22 @@ class LeftPanel extends React.Component {
                   >
                     <MenuItem icon={<FaColumns />} active={false}>
                       {t("Doctor.LeftPanel.MyProfile")}
-                      <Link to="/doctor-profile" />
+                      <Link to="/doctor/profile" />
                     </MenuItem>
                     <MenuItem icon={<FaColumns />} active={false}>
                       {t("Doctor.LeftPanel.MyTiming")}
-                      <Link to="/doctor-my-timing" />
+                      <Link to="/doctor/my-timing" />
                     </MenuItem>
                     <MenuItem icon={<FaColumns />} active={false}>
                       {t("Doctor.LeftPanel.MyFees")}
-                      <Link to="/doctor-my-fees" />
+                      <Link to="/doctor/my-fees" />
                     </MenuItem>
                   </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
                     {t("Doctor.LeftPanel.MassMessages")}
-                    <Link to="/doctor-profile" />
+                    <Link to="/doctor/profile" />
                   </MenuItem>
                 </Menu>
               </SidebarContent>
@@ -234,114 +234,114 @@ class LeftPanel extends React.Component {
               <SidebarContent>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaColumns />} active={true}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     My Dashboard
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <SubMenu title="Appointments" icon={<FaCog />}>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-appointment-requests" />
+                      <Link to="/admin/appointment-requests" />
                       Requests
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-appointment-upcoming" />
+                      <Link to="/admin/appointment-upcoming" />
                       Upcoming
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-appointment-completed" />
+                      <Link to="/admin/appointment-completed" />
                       Completed
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-appointment-cancelled" />
+                      <Link to="/admin/appointment-cancelled" />
                       Cancelled
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-appointment-refund" />
+                      <Link to="/admin/appointment-refund" />
                       Refund
                     </MenuItem>
                   </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaUser />} active={false}>
-                    <Link to="/doctor-list" />
+                    <Link to="/admin/doctor-list" />
                     Doctors
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/patient-list" />
+                    <Link to="/admin/patient-list" />
                     Patients
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaMoneyBill />} active={false}>
-                    <Link to="/withdraw-list" />
+                    <Link to="/admin/withdraw-list" />
                     Withdraw
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     Emergency calls
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     Billing
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-commission" />
+                    <Link to="/admin/commission" />
                     Commission
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaMoneyBill />} active={false}>
-                    <Link to="/admin-finance" />
+                    <Link to="/admin/finance" />
                     Finance
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     Reports & Analytics
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-feedback" />
+                    <Link to="/admin/feedback" />
                     Feedback
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     Support
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-cms" />
+                    <Link to="/admin/cms" />
                     CMS Pages
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                    <Link to="/admin-dashboard" />
+                    <Link to="/admin/dashboard" />
                     My Settings
                   </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
                   <SubMenu title="Master Pages" icon={<FaCog />}>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-physician-services" />
+                      <Link to="/admin/physician-servicesphysician-services" />
                       Physician Services
                     </MenuItem>
                     <MenuItem icon={<FaCalendar />} active={false}>
-                      <Link to="/admin-languages" />
+                      <Link to="/admin/physician-serviceslanguages" />
                       Languages
                     </MenuItem>
                   </SubMenu>

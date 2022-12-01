@@ -48,30 +48,30 @@ class DoctorMyFees extends React.Component {
     promiseWrapper(this.props.actions.getDoctorFees, {
       userGuid: localStorage.getItem("user-id"),
     }).then((data) => {
-      this.setState({ MyFees: data }, () => {
+      this.setState({ MyFees: data.result }, () => {
         this.setState({ saveMyFees: this.state.MyFees });
         this.setState((prevState) => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            refundPercentage: data.refundPercentage.toString(),
+            refundPercentage: data.result.refundPercentage,
           },
         }));
         this.setState((prevState) => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            refundInClinicPercentage: data.refundInClinicPercentage.toString(),
+            refundInClinicPercentage: data.result.refundInClinicPercentage,
           },
         }));
         this.setState((prevState) => ({
           saveMyFees: {
             ...prevState.saveMyFees,
-            isChatFree: data.isChatFree.toString(),
+            isChatFree: data.result.isChatFree,
           },
         }));
 
         promiseWrapper(this.props.actions.getCurrency).then((jsdata) => {
           this.setState({ CurrencyData: jsdata }, () => {
-            jsdata.map((d, i) => {
+            jsdata.result.map((d, i) => {
               d.display = d.currencyCode + " (" + d.currency + ")";
               if (d.currencyID === data.currencyId) {
                 this.setState({ CurrencyName: d.currencyCode });
@@ -91,7 +91,7 @@ class DoctorMyFees extends React.Component {
         currencyId: e.target.value,
       },
     }));
-    this.state.CurrencyData.map((d, i) => {
+    this.state.CurrencyData.result.map((d, i) => {
       if (d.currencyID == e.target.value) {
         this.setState({ CurrencyName: d.currencyCode });
       }
@@ -215,7 +215,7 @@ class DoctorMyFees extends React.Component {
     promiseWrapper(this.props.actions.saveDoctorFees, {
       doctorFeesInfoModel: Fees,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success == true) {
         toast.success(data.data.message);
       } else {
         toast.error(data.data.message);
@@ -268,11 +268,13 @@ class DoctorMyFees extends React.Component {
                                     <option value="0">
                                       {t("Doctor.MyFees.Select_Currency")}
                                     </option>
-                                    {this.state.CurrencyData.map((h, i) => (
-                                      <option key={i} value={h.currencyID}>
-                                        {h.display}
-                                      </option>
-                                    ))}
+                                    {this.state.CurrencyData.result.map(
+                                      (h, i) => (
+                                        <option key={i} value={h.currencyID}>
+                                          {h.display}
+                                        </option>
+                                      )
+                                    )}
                                   </select>
                                 </div>
                               </div>

@@ -11,6 +11,7 @@ import { withTranslation } from "react-i18next";
 import { Formik } from "formik";
 import ErrorMessage from "../../commonComponent/Elements/errorMessage";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 class RegistrationComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -46,23 +47,20 @@ class RegistrationComponent extends React.Component {
     promiseWrapper(this.props.actions.registerUser, {
       userModel: userData,
     }).then((data) => {
-      console.log(
-        data.data.result.userId,
-        "--------------data------------------"
-      );
       if (data.data.success === true) {
-        //window.localStorage.removeItem('login-Type');
+        // window.localStorage.removeItem('login-Type');
         //   window.localStorage.setItem("access-token", data.data.data.Token);
         //   window.localStorage.setItem("user-id", data.result.userId);
         // window.localStorage.setItem("user-fullname", data.data.data.UserFullName);
         //  window.localStorage.setItem("user-type", data.UserType);
-        // toast.success(data.data.message);
         this.setState({ success: data.data.message });
         this.setState({
           successTimer: setTimeout(() => {
             this.setState({ success: "" });
-            this.setState({ UserGuid: data.data.result.userId });
-            this.props.onRegistration(data.data.result.userId, values.email);
+            this.setState({ UserGuid: data.data.result.userId
+ }); toast.success(data.data.message);
+            this.props.onRegistration(data.data.result.userId
+, values.email);
           }, 2000),
         });
       } else {
@@ -271,9 +269,9 @@ class RegistrationComponent extends React.Component {
                 className="rememberMe form-label"
               >
                 {/* I agree to the&nbsp; */}
-                <Link target="_blank" to="/terms-and-conditions">
+                {/* <Link target="_blank" to="/terms-and-conditions"> */}
                   <span>{t("Terms_N_Condition")}</span>
-                </Link>
+                {/* </Link> */}
               </label>
             </div>
             <div className="mt-3">

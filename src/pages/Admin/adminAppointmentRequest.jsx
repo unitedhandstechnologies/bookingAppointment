@@ -110,7 +110,7 @@ const AdminAppointmentRequests = (props) => {
       appointmentGuid: appId,
       isConfirm: true,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         setIsAcceeptPopUp(true);
         GetAppointmentRequestList();
       } else {
@@ -124,7 +124,7 @@ const AdminAppointmentRequests = (props) => {
       appointmentGuid: appId,
       isConfirm: false,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         setIsRejectPopUp(true);
         GetAppointmentRequestList();
       } else {

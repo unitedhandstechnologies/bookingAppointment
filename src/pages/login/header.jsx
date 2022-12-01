@@ -1,14 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-// import logo from "./../../assets/images/Group9488.png";
 import exadoActions from "../../redux/exado/action";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import LanguageHandler from "../../commonComponent/LanguageSelect/LanguageHandler";
 import LanguageHandlerMobile from "../../commonComponent/LanguageSelect/LanguageHandlerMobile";
 import { withTranslation, Trans } from "react-i18next";
-// import threelines from "./../../assets/images/01aligncenter(icon).png";
-// import languagedropdown from "./../../assets/images/Iconionic-md-arrow-dropdown.png";
 
 class Header extends React.Component {
   constructor(props) {

@@ -155,7 +155,7 @@ class BookAnAppoinmentDoctorView extends React.Component {
       appointmentModel: this.state.anAppoinmentModel,
       doctorGuid: this.props.match.params.docGuid,
     }).then((jsdata) => {
-      this.setState({ docDeatils: jsdata });
+      this.setState({ docDeatils: jsdata.data.result });
     });
   }
 
@@ -187,7 +187,7 @@ class BookAnAppoinmentDoctorView extends React.Component {
       localStorageKeys.saveAppointmentData,
       JSON.stringify(docAppoinmentDetails)
     );
-    this.setState({ redirect: "/book-an-appoinment-save" });
+    this.setState({ redirect: "/patient/book-an-appoinment-save" });
   }
 
   toggleViewAllAvailability = () => {

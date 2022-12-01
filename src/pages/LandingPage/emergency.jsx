@@ -35,7 +35,7 @@ const Emergency = (props) => {
     };
     promiseWrapper(props.comactions.getCMSPage, {
       query: { ...queryParam },
-    }).then((data) => setCmsData(data.data));
+    }).then((data) => setCmsData(data.data.result));
   };
   return (
     <>

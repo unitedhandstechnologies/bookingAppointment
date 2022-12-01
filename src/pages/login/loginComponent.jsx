@@ -14,7 +14,7 @@ import { withTranslation } from "react-i18next";
 import { Formik } from "formik";
 import { object, string } from "yup";
 import ErrorMessage from "../../commonComponent/Elements/errorMessage";
-
+import { toast } from "react-toastify";
 class LoginComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -47,8 +47,8 @@ class LoginComponent extends React.Component {
       if (data.data.success === true) {
         if (data.data.result.isEmailVerified === "False") {
           this.props.onLoginNotVerified(
-            data.data.result.userId,
-            this.state.EmailAddress 
+            data.data.result.userGuid,
+            this.state.EmailAddress
           );
           return;
         }
@@ -57,7 +57,14 @@ class LoginComponent extends React.Component {
           localStorageKeys.accessToken,
           data.data.result.token
         );
-        localStorage.setItem(localStorageKeys.userId, data.data.result.userGuid);
+         localStorage.setItem(
+          localStorageKeys.email,
+          values.email
+        );
+        localStorage.setItem(
+          localStorageKeys.userId,
+          data.data.result.userGuid
+        );
         localStorage.setItem(
           localStorageKeys.fullName,
           data.data.result.fullName
@@ -76,21 +83,22 @@ class LoginComponent extends React.Component {
           successTimer: setTimeout(() => {
             this.setState({ success: "" });
             if (UserType === userType.patient) {
-              this.setState({ redirect: "/patient-dashboard" });
+              this.setState({ redirect: "/patient/dashboard" });
             } else if (UserType === userType.doctor) {
               if (data.data.result.verificationStatus === "1") {
-                this.setState({ redirect: "/doctor-profile" });
+                this.setState({ redirect: "/doctor/profile" });
               } else {
-                this.setState({ redirect: "/doctor-dashboard" });
+                this.setState({ redirect: "/doctor/profile" });
               }
             } else {
-              this.setState({ redirect: "/patient-dashboard" });
+              this.setState({ redirect: "/patient/dashboard" });
             }
-          }, 2000),
+          }, 500),
         });
+      toast.success(data.data.message);
       } else
         this.setState({
-          error: data.message,
+          error: data.data.errorMessage,
           errorTimer: setTimeout(() => this.setState({ error: "" }), 2000),
         });
     });

@@ -89,7 +89,7 @@ const ApiConstants = {
   exadoDoc: {
     GetCurrency: {
       apiConfig: {
-        url: "api/GetCurrency",
+        url: "api/getcurrency",
         method: "Get",
       },
       attachPrefix: true,
@@ -129,7 +129,7 @@ const ApiConstants = {
 
     GetDoctorFees: {
       apiConfig: {
-        url: "api/GetDoctorFees",
+        url: "doctor/getfees",
         method: "Get",
       },
       attachPrefix: true,
@@ -137,7 +137,7 @@ const ApiConstants = {
 
     SaveDoctorFees: {
       apiConfig: {
-        url: "api/SaveDoctorFees",
+        url: "doctor/savefees",
         method: "POST",
       },
       attachPrefix: true,
@@ -145,7 +145,7 @@ const ApiConstants = {
 
     GetProfileInfo: {
       apiConfig: {
-        url: "doctor/profile",
+        url: "doctor/getprofileinfo",
         method: "Get",
       },
       attachPrefix: true,
@@ -153,7 +153,7 @@ const ApiConstants = {
 
     GetAdditionalInfo: {
       apiConfig: {
-        url: "api/GetAdditionalInfo",
+        url: "doctor/getadditionalinfo",
         method: "Get",
       },
       attachPrefix: true,
@@ -169,7 +169,7 @@ const ApiConstants = {
 
     SaveProfileInfo: {
       apiConfig: {
-        url: "api/SaveProfileInfo",
+        url: "doctor/saveprofileinfo",
         method: "POST",
       },
       attachPrefix: true,
@@ -177,7 +177,7 @@ const ApiConstants = {
 
     SaveAdditionalInfo: {
       apiConfig: {
-        url: "api/SaveAdditionalInfo",
+        url: "doctor/saveadditionalinfo",
         method: "POST",
       },
       attachPrefix: true,
@@ -185,7 +185,7 @@ const ApiConstants = {
 
     UploadDoctorProfileCertificates: {
       apiConfig: {
-        url: "api/UploadDoctorProfileCertificates",
+        url: "doctor/profilecertificates",
         method: "POST",
       },
       attachPrefix: true,
@@ -201,7 +201,7 @@ const ApiConstants = {
 
     GetTimezones: {
       apiConfig: {
-        url: "api/GetTimezones",
+        url: "api/gettimezones",
         method: "Get",
       },
       attachPrefix: true,
@@ -209,7 +209,7 @@ const ApiConstants = {
 
     DeactivateAccount: {
       apiConfig: {
-        url: "api/DeactivateAccount",
+        url: "doctor/deactivateaccount",
         method: "POST",
       },
       attachPrefix: true,
@@ -217,7 +217,7 @@ const ApiConstants = {
 
     GetDoctorDefaultTiming: {
       apiConfig: {
-        url: "api/GetDoctorDefaultTiming",
+        url: "doctor/getdefaulttiming",
         method: "GET",
       },
       attachPrefix: true,
@@ -225,7 +225,7 @@ const ApiConstants = {
 
     GetDoctorDefaultTimingById: {
       apiConfig: {
-        url: "api/GetDoctorDefaultTimingById",
+        url: "doctor/getdefaulttimingbyid",
         method: "GET",
       },
       attachPrefix: true,
@@ -233,7 +233,7 @@ const ApiConstants = {
 
     SaveDoctorDefaultTiming: {
       apiConfig: {
-        url: "api/SaveDoctorDefaultTiming",
+        url: "doctor/savedefaulttiming",
         method: "POST",
       },
       attachPrefix: true,
@@ -241,7 +241,7 @@ const ApiConstants = {
 
     DeleteDoctorDefaultTimingById: {
       apiConfig: {
-        url: "api/DeleteDoctorDefaultTimingById",
+        url: "doctor/deletedefaulttimingbyid",
         method: "DELETE",
       },
       attachPrefix: true,
@@ -249,7 +249,7 @@ const ApiConstants = {
 
     GetDoctorCustomTiming: {
       apiConfig: {
-        url: "api/GetDoctorCustomTiming",
+        url: "doctor/getcustomtiming",
         method: "GET",
       },
       attachPrefix: true,
@@ -257,7 +257,7 @@ const ApiConstants = {
 
     GetDoctorCustomTimingById: {
       apiConfig: {
-        url: "api/GetDoctorCustomTimingById",
+        url: "doctor/getcustomtimingbyid",
         method: "GET",
       },
       attachPrefix: true,
@@ -273,7 +273,7 @@ const ApiConstants = {
 
     DeleteDoctorCustomTimingById: {
       apiConfig: {
-        url: "api/DeleteDoctorCustomTimingById",
+        url: "doctor/deletecustomtimingbyid",
         method: "DELETE",
       },
       attachPrefix: true,
@@ -313,7 +313,7 @@ const ApiConstants = {
 
     GetDoctorFAQById: {
       apiConfig: {
-        url: "api/GetDoctorFAQById",
+        url: "doctor/getfaqbyid",
         method: "Get",
       },
       attachPrefix: true,
@@ -321,7 +321,7 @@ const ApiConstants = {
 
     GetDoctorsFAQs: {
       apiConfig: {
-        url: "api/GetDoctorsFAQs",
+        url: "doctor/getfaq",
         method: "Get",
       },
       attachPrefix: true,
@@ -329,7 +329,7 @@ const ApiConstants = {
 
     SaveFAQ: {
       apiConfig: {
-        url: "api/SaveFAQ",
+        url: "doctor/savefaq",
         method: "POST",
       },
       attachPrefix: true,
@@ -337,8 +337,8 @@ const ApiConstants = {
 
     DeleteFAQ: {
       apiConfig: {
-        url: "api/DeleteFAQ",
-        method: "POST",
+        url: "doctor/deletefaq",
+        method: "DELETE",
       },
       attachPrefix: true,
     },
@@ -372,7 +372,7 @@ const ApiConstants = {
     },
     GetAllDoctorAdditionalService: {
       apiConfig: {
-        url: "api/GetAllDoctorAdditionalService",
+        url: "doctor/alladditionalservice",
         method: "Get",
       },
       attachPrefix: true,
@@ -400,14 +400,14 @@ const ApiConstants = {
     },
     GetInvoiceDetails: {
       apiConfig: {
-        url: "api/GetInvoiceDetails",
+        url: "doctor/invoice",
         method: "Get",
       },
       attachPrefix: true,
     },
     GetAdditionalServiceInfo: {
       apiConfig: {
-        url: "api/GetAdditionalServiceInfo",
+        url: "doctor/additionalservice",
         method: "Get",
       },
       attachPrefix: true,
@@ -465,7 +465,7 @@ const ApiConstants = {
 
     GetAllRefundData: {
       apiConfig: {
-        url: "api/GetAllRefundData",
+        url: "admin/allrefund",
         method: "Get",
       },
       attachPrefix: true,
@@ -537,42 +537,42 @@ const ApiConstants = {
     },
     GetDoctorPayment: {
       apiConfig: {
-        url: "api/GetDoctorPayment",
-        method: "Get",
+        url: "admin/exportdoctorpayment",
+        method: "POST",
       },
       attachPrefix: true,
     },
     SaveCMSPage: {
       apiConfig: {
-        url: "SaveCMSPage",
+        url: "admin/CMSPage",
         method: "POST",
       },
       attachPrefix: true,
     },
     GetLanguageAllMessages: {
       apiConfig: {
-        url: "GetLanguageAllMessages",
+        url: "admin/languageallmessages",
         method: "Get",
       },
       attachPrefix: true,
     },
     SaveLanguageLabelData: {
       apiConfig: {
-        url: "SaveLanguageLabelData",
+        url: "admin/languagelabel",
         method: "POST",
       },
       attachPrefix: true,
     },
     GetPatientQuestionnaireLanguage: {
       apiConfig: {
-        url: "GetPatientQuestionnaireLanguage",
+        url: "admin/patientquestionnairelanguage",
         method: "Get",
       },
       attachPrefix: true,
     },
     SavePatientQuestionnaireLanguage: {
       apiConfig: {
-        url: "SavePatientQuestionnaireLanguage",
+        url: "admin/patientquestionnairelanguage",
         method: "POST",
       },
       attachPrefix: true,
@@ -617,7 +617,7 @@ const ApiConstants = {
   exadoPatient: {
     GetPatientProfileInfo: {
       apiConfig: {
-        url: "api/GetPatientProfileInfo",
+        url: "patient/getprofile",
         method: "Get",
       },
       attachPrefix: true,
@@ -625,16 +625,16 @@ const ApiConstants = {
 
     SavePatientProfileInfo: {
       apiConfig: {
-        url: "api/SavePatientProfileInfo",
-        method: "POST",
+        url: "patient/saveprofile",
+        method: "PUT",
       },
       attachPrefix: true,
     },
 
     DeletePatient: {
       apiConfig: {
-        url: "api/DeletePatient",
-        method: "POST",
+        url: "patient/deletepatientbyid",
+        method: "DELETE",
       },
       attachPrefix: true,
     },
@@ -649,7 +649,7 @@ const ApiConstants = {
 
     GetPatientQuestionnaire: {
       apiConfig: {
-        url: "admin/patientquestionnairelanguage",
+        url: "patient/question",
         method: "Get",
       },
       attachPrefix: true,
@@ -657,7 +657,7 @@ const ApiConstants = {
 
     GetPatientAnswers: {
       apiConfig: {
-        url: "api/GetPatientAnswers",
+        url: "patient/answers",
         method: "Get",
       },
       attachPrefix: true,
@@ -673,7 +673,7 @@ const ApiConstants = {
 
     SearchDoctorAppointment: {
       apiConfig: {
-        url: "api/SearchDoctorAppointment",
+        url: "patient/searchdoctorappointment",
         method: "POST",
       },
       attachPrefix: true,
@@ -697,7 +697,7 @@ const ApiConstants = {
 
     GetMoreReviews: {
       apiConfig: {
-        url: "api/GetMoreReviews",
+        url: "patient/getreviews",
         method: "Get",
       },
       attachPrefix: true,
@@ -745,7 +745,7 @@ const ApiConstants = {
 
     UpdatePatientAttachment: {
       apiConfig: {
-        url: "api/UpdatePatientAttachment",
+        url: "patient/attachment",
         method: "Post",
       },
       attachPrefix: true,
@@ -753,7 +753,7 @@ const ApiConstants = {
 
     GetAppointments: {
       apiConfig: {
-        url: "api/GetAppointments",
+        url: "patient/appointments",
         method: "POST",
       },
       attachPrefix: true,
@@ -817,7 +817,7 @@ const ApiConstants = {
 
     GetWalletBalance: {
       apiConfig: {
-        url: "api/GetWalletBalance",
+        url: "patient/walletbalance",
         method: "Get",
       },
       attachPrefix: true,
@@ -856,14 +856,14 @@ const ApiConstants = {
     },
     WithdrawMoney: {
       apiConfig: {
-        url: "api/AddWithdraw",
+        url: "patient/withdraw",
         method: "POST",
       },
       attachPrefix: true,
     },
     GetPatientFinanceData: {
       apiConfig: {
-        url: "api/GetPatientFinanceData",
+        url: "patient/financedata",
         method: "Get",
       },
       attachPrefix: true,

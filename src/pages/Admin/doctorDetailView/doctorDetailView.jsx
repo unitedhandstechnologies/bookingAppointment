@@ -41,7 +41,7 @@ class DoctorDetailView extends React.Component {
                     <div className="d-flex justify-content-between">
                       <div className="search-bar-text search-bar-text2">
                         <Link
-                          to="/doctor-list"
+                          to="/admin/doctor-list"
                           className="search-bar-text search-bar-text2"
                         >
                           Doctor
@@ -135,6 +135,7 @@ class DoctorDetailView extends React.Component {
                                           this.state.DoctorProfile.profileImage
                                         }
                                         style={{ borderRadius: "50px" }}
+                                        alt=''
                                       />
                                     </div>
                                     <div className="admin-doctor-name">
@@ -656,7 +657,7 @@ class DoctorDetailView extends React.Component {
                                                           <a
                                                             className="mx-2"
                                                             target="_blank"
-                                                            href={e.docURL}
+                                                            href={e.docURL} rel="noreferrer"
                                                           >
                                                             {e.docName}
                                                           </a>{" "}
@@ -715,13 +716,7 @@ class DoctorDetailView extends React.Component {
                                       ))}
                                 </div>
                               </div>
-                              {/* <div className="row mt-5">
-                                                                <div className="admin-doctor-title mb-2 p-0">Status</div>
-                                                                <hr />
-                                                                <div className="col-lg-12 col-md-12 admin-switch">
-                                                                    <input className="form-check-input d-none ui-switcher" type="checkbox" value="option1" />
-                                                                </div>
-                                                            </div> */}
+          
                             </div>
                             <div
                               className="tab-pane fade"

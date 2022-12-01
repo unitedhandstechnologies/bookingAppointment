@@ -51,7 +51,6 @@ class VerificationRequest extends React.Component {
         city: "",
         state: "",
         zip: "",
-        country: "",
         educationModel: [
           {
             doctorEducationGuid: "",
@@ -88,7 +87,8 @@ class VerificationRequest extends React.Component {
     promiseWrapper(this.props.actions.getDoctorViewDetails, {
       userGuid: this.props.match.params.userGuid,
     }).then((response) => {
-      this.setState({ DoctorProfile: response });
+      
+      this.setState({ DoctorProfile: response.result});
     });
   }
 
@@ -98,9 +98,9 @@ class VerificationRequest extends React.Component {
       verificationType: 3,
       cancelReason: "",
     }).then((jsdata) => {
-      if (jsdata.isSuccess == true) {
+      if (jsdata.isSuccess === true) {
         toast.success(jsdata.message);
-        this.props.history.push("/admin-dashboard");
+        this.props.history.push("/admin/dashboard");
       } else {
         toast.error(jsdata.message);
       }
@@ -187,9 +187,7 @@ class VerificationRequest extends React.Component {
                             this.state.DoctorProfile.preferredLanguages.length <
                               1
                               ? "---"
-                              : this.state.DoctorProfile.preferredLanguages.join(
-                                  ", "
-                                )}
+                              : this.state.DoctorProfile.preferredLanguages}
                           </div>
                           <div className="mb-2 admin-doctor-value">
                             {this.state.DoctorProfile.gender === "" ||

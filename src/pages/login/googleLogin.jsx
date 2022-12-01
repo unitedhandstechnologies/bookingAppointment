@@ -22,33 +22,33 @@ const GoogleLoginButton = (props) => {
       FirstName: res.profileObj.givenName,
       LastName: res.profileObj.familyName,
       Email: res.profileObj.email,
-      UserType: ut == "Patient" ? 2 : 1,
+      UserType: ut === "Patient" ? 2 : 1,
       SocialMediaLoginId: res.profileObj.googleId,
       SocialMediaType: 2,
-      IsDoctorLogin: ut == "Patient" ? false : true,
+      IsDoctorLogin: ut === "Patient" ? false : true,
     };
     promiseWrapper(props.actions.socialMediaLogin, {
       userModel: userData,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         window.localStorage.removeItem("login-Type");
-        window.localStorage.setItem("access-token", data.data.data.Token);
-        window.localStorage.setItem("user-id", data.data.data.userId);
+        window.localStorage.setItem("access-token", data.data.result.Token);
+        window.localStorage.setItem("user-id", data.data.result.userGuid);
         window.localStorage.setItem(
           "user-fullname",
-          data.data.data.UserFullName
+          data.data.result.fullname
         );
-        window.localStorage.setItem("user-type", data.data.data.UserType);
-        if (data.data.data.UserType === "2") {
-          history.push("/patient-dashboard");
-        } else if (data.data.data.UserType === "1") {
-          if (data.data.data.ProfileVerification === "1") {
-            history.push("/doctor-profile");
+        window.localStorage.setItem("user-type", data.data.result.userType);
+        if (data.data.data.userType === "2") {
+          history.push("/patient/dashboard");
+        } else if (data.data.data.userType === "1") {
+          if (data.data.data.verificationStatus === "1") {
+            history.push("/doctor/profile");
           } else {
-            history.push("/doctor-dashboard");
+            history.push("/doctor/dashboard");
           }
         } else {
-          history.push("/patient-dashboard");
+          history.push("/patient/dashboard");
         }
       } else {
         toast.error(data.data.errorMessage);

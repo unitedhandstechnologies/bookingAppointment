@@ -30,7 +30,7 @@ class PersonalInformation extends Component {
       sendOTPPopup: false,
       CurrencyData: [],
       SelectedCurrency: {},
-      loaded: false,
+      loaded: true,
       error: "",
       success: "",
       errorTimer: null,
@@ -139,26 +139,27 @@ class PersonalInformation extends Component {
 
   getAllCurrency = () =>
     promiseWrapper(this.props.docactions.getCurrency)
-      .then((jsdata) => this.setState({ CurrencyData: jsdata }))
+      .then((jsdata) => {
+      this.setState({ CurrencyData: jsdata.result })})
       .catch((err) => console.log(err));
 
   getCountry = () =>
     promiseWrapper(this.props.docactions.getCountry).then((jsdata) =>
-      this.setState({ CitizenshipData: jsdata })
+      this.setState({ CitizenshipData: jsdata.result  })
     );
 
   getLanguages = () =>
     promiseWrapper(this.props.docactions.getLanguages).then((jsdata) =>
-      this.setState({ LanguageData: jsdata })
+      this.setState({ LanguageData: jsdata.result  })
     );
 
   getWebsiteLanguages = () =>
     promiseWrapper(this.props.docactions.getWebsiteLanguages).then((jsdata) => {
-      this.setState({ WebSiteLanguageData: jsdata });
+      this.setState({ WebSiteLanguageData: jsdata.result  });
     });
   getTimezones = () =>
     promiseWrapper(this.props.docactions.getTimezones).then((jsdata) =>
-      this.setState({ TimezoneData: jsdata })
+      this.setState({ TimezoneData: jsdata.result  })
     );
 
   getPatientProfileInfo = () =>
@@ -167,16 +168,16 @@ class PersonalInformation extends Component {
     }).then((data) => {
       const languageObj = this.getLanguageObject(
         JSON.parse(localStorage.getItem(localStorageKeys.websiteLanguageData)),
-        parseInt(data.languageId)
+        parseInt(data.result.languageId)
       );
       this.setState(
         {
           ProfilePersonalInfo: {
-            ...data,
-            doB: data.doB != null ? data.doB.substr(0, 10) : null,
+            ...data.result,
+            doB: data.result.doB != null ? data.result.doB.substr(0, 10) : null,
           },
           SelectedCurrency:
-            data.currency && this.selectCurrencyFromList(data.currency),
+            data.result.currency && this.selectCurrencyFromList(data.result.currency),
         },
         () => {
           if (languageObj) this.changeStateLanguage(languageObj);
@@ -267,12 +268,15 @@ class PersonalInformation extends Component {
       timezoneGuid: values.timezoneGuid,
       socialSecurityNumber: values.socialSecurityNumber,
       currency: values.currencyCode,
+      address: "do velit",
+      cancelReason: "Lorem ea veniam eu",
+      preferredLanguageIds:[1,2]
     };
 
     promiseWrapper(this.props.patientactions.savePatientProfileInfo, {
       userModel: prfInfo,
     }).then((data) => {
-      if (data.data.isSuccess === true) {
+      if (data.data.success === true) {
         this.setState({
           success: data.data.message,
           successTimer: setTimeout(() => {
@@ -615,7 +619,7 @@ class PersonalInformation extends Component {
                                   name="weight"
                                   placeholder={t(
                                     "Patient.PatientProfile.Weight"
-                                  )}
+                                  )}                                
                                 />
                                 {errors.weight && touched.weight && (
                                   <ErrorMessage error={errors.weight} t={t} />
@@ -678,7 +682,7 @@ class PersonalInformation extends Component {
                           <label className="form-label">
                             {t("Doctor.Profile_Basic.Language_Website")}
                           </label>
-                          <Select
+                          {/* <Select
                             name="languageId"
                             className={`${
                               errors.socialSecurityNumber &&
@@ -700,12 +704,13 @@ class PersonalInformation extends Component {
                               )
                             }
                             options={WebSiteLanguageData.map((language) => {
+                              console.log(language.languageId,'----------language----------')
                               return {
                                 value: language.languageId,
                                 label: language.languageName,
                               };
                             })}
-                          />
+                          /> */}
                           {/* <option value="">{t('Doctor.Profile_Basic.Select_Language')}</option>
                                           {WebSiteLanguageData.map((h, i) => (<option key={i} value={h.languageId}>{h.languageName}</option>))}
                                        </Select> */}
@@ -909,7 +914,7 @@ const patientProfileSchema = object({
   ),
   timezoneGuid: string().required("ProfileErrorMessages.timezone"),
   citizenshipId: string().required("ProfileErrorMessages.citizenship"),
-  languageId: string().required("ProfileErrorMessages.language_platform"),
+  // languageId: string().required("ProfileErrorMessages.language_platform"),
   occupation: string().required("ProfileErrorMessages.occupatiom"),
   height: string().required("ProfileErrorMessages.height"),
   weight: string().required("ProfileErrorMessages.weight"),

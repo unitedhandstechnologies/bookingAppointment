@@ -79,13 +79,13 @@ class PatientDetailView extends React.Component {
     promiseWrapper(this.props.actions.getPatientViewDetails, {
       patientGuid: this.props.match.params.userGuid,
     }).then((data) => {
-     
       this.setState({ ProfilePersonalInfo: data.result }, () => {
         this.GetAppointmentRequestList();
         this.setState((prevState) => ({
           ProfilePersonalInfo: {
             ...prevState.ProfilePersonalInfo,
-            ["doB"]: data.result.doB != null ? data.result.doB.substr(0, 10) : null,
+            ["doB"]:
+              data.result.doB != null ? data.result.doB.substr(0, 10) : null,
           },
         }));
         this.setState((prevState) => ({
@@ -111,12 +111,12 @@ class PatientDetailView extends React.Component {
         promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
           languageId: 1,
         }).then((data) => {
-          this.setState({ MonitorQuestionnaireList: data }, () => {
+          this.setState({ MonitorQuestionnaireList: data.result }, () => {
             promiseWrapper(this.props.patientactions.getPatientAnswers, {
               patientGuid: this.props.match.params.userGuid,
-              pageNo: 1,
+              languageId: 1,
             }).then((data) => {
-              this.setState({ MonitorAnswerDataList: data }, () => {
+              this.setState({ MonitorAnswerDataList: data.result }, () => {
                 this.setState({ LoadedData: true });
               });
             });
@@ -189,7 +189,7 @@ class PatientDetailView extends React.Component {
                       <div className="search-bar-text search-bar-text2">
                         <Link
                           className="search-bar-text search-bar-text2"
-                          to="/patient-list"
+                          to="/admin/patient-list"
                         >{`My Patients`}</Link>{" "}
                         &gt;&gt;
                         <span>
@@ -731,7 +731,7 @@ class PatientDetailView extends React.Component {
                                                   <td>
                                                     <Link
                                                       className="doctor-name-link"
-                                                      to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                                      to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                                     >
                                                       {v.doctorFirstName}{" "}
                                                       {v.doctorLastName}

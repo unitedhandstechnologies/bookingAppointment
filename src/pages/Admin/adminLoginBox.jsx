@@ -48,11 +48,11 @@ class AdminLoginBox extends React.Component {
           localStorage.setItem("user-type", data.data.result.userType);
           localStorage.setItem("profile-image", data.data.result.profileImage);
           toast.success(data.data.message);
-          this.setState({ redirect: "/admin-dashboard" });
+          this.setState({ redirect: "/admin/dashboard" });
         } else {
           toast.error(data.message);
         }
-      });
+      })
     }
   };
 

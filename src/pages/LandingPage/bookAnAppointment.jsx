@@ -304,7 +304,7 @@ class BookAnAppoinment extends React.Component {
       localStorageKeys.saveAppointmentData,
       JSON.stringify(docAppoinmentDetails)
     );
-    this.props.history.push("/book-an-appoinment-save");
+    this.props.history.push("/patient/book-an-appoinment-save");
   }
 
   render() {
@@ -507,7 +507,7 @@ class BookAnAppoinment extends React.Component {
                                           <div className="doctor-item-right w-100 mx-2">
                                             <Link
                                               className="doctor-name-link"
-                                              to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                              to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                             >
                                               {v.firstName === "" ||
                                               v.firstName == null
@@ -780,7 +780,7 @@ class BookAnAppoinment extends React.Component {
                                           <div className="doctor-item-right w-100 mx-2">
                                             <Link
                                               className="doctor-name-link"
-                                              to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                              to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                             >
                                               {v.firstName === "" ||
                                               v.firstName == null

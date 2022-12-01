@@ -64,9 +64,9 @@ class CmsEmergency extends Component {
     promiseWrapper(this.props.comactions.getCMSPage, {
       query: { ...queryParam },
     })
-      .then((data) => {
+      .then((response) => {
         const receivedData = {
-          ...data.data,
+          ...response.data.result,
           pageNumber: cmsPageNum.Emergency,
           languageId: this.props.langId,
         };
@@ -80,7 +80,7 @@ class CmsEmergency extends Component {
       data: { ...this.state.cmsData },
     })
       .then((data) => {
-        if (data.data.isSuccess) toast.success(data.data.message);
+        if (data.data.success) toast.success(data.data.result);
         else toast.error(data.data.errorMessage);
       })
       .catch((err) => console.log(err));

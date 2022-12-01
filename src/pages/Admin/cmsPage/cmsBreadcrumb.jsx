@@ -15,7 +15,7 @@ class CmsBreadcrumb extends Component {
           <ol className="breadcrumb mb-0">
             <li className="breadcrumb-item">
               <Link
-                to={"/admin-cms"}
+                to={"/admin/cms"}
                 className="doctorName"
                 style={{ color: "#436B95" }}
               >

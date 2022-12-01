@@ -55,7 +55,7 @@ class DoctorLeftPanel extends React.Component {
             <Menu iconShape="circle">
               <MenuItem icon={<FaColumns />} active={true}>
                 {t("Doctor.LeftPanel.MyDashboard")}
-                <Link to="/doctor-dashboard" />
+                <Link to="/doctor/dashboard" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
@@ -64,19 +64,19 @@ class DoctorLeftPanel extends React.Component {
                 icon={<FaCog />}
               >
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/doctor-appointment-requests" />
+                  <Link to="/doctor/appointment-requests" />
                   {t("Doctor.LeftPanel.Requests")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/doctor-appointment-upcoming" />
+                  <Link to="/doctor/appointment-upcoming" />
                   {t("Doctor.LeftPanel.Upcoming")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/doctor-appointment-completed" />
+                  <Link to="/doctor/appointment-completed" />
                   {t("Doctor.LeftPanel.Completed")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/doctor-appointment-cancelled" />
+                  <Link to="/doctor/appointment-cancelled" />
                   {t("Doctor.LeftPanel.Cancelled")}
                 </MenuItem>
               </SubMenu>
@@ -84,31 +84,31 @@ class DoctorLeftPanel extends React.Component {
             <Menu iconShape="circle">
               <MenuItem icon={<FaCommentAlt />} active={false}>
                 {t("Doctor.LeftPanel.MyChats")}
-                <Link to="/doctor-dashboard" />
+                <Link to="/doctor/dashboard" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaUser />} active={false}>
                 {t("Doctor.LeftPanel.MyPatients")}
-                <Link to="/doctor-dashboard" />
+                <Link to="/doctor/dashboard" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaAmbulance />} active={false}>
                 {t("Doctor.LeftPanel.MyEmergencyCalls")}
-                <Link to="/doctor-dashboard" />
+                <Link to="/doctor/dashboard" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEuroSign />} active={false}>
                 {t("Doctor.LeftPanel.MyFinance")}
-                <Link to="/doctor-dashboard" />
+                <Link to="/doctor/dashboard" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaQuestionCircle />} active={false}>
                 {t("Doctor.LeftPanel.MyFAQs")}
-                <Link to="/doctor-faq" />
+                <Link to="/doctor/faq" />
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
@@ -118,22 +118,22 @@ class DoctorLeftPanel extends React.Component {
               >
                 <MenuItem icon={<FaColumns />} active={false}>
                   {t("Doctor.LeftPanel.MyProfile")}
-                  <Link to="/doctor-profile" />
+                  <Link to="/doctor/profile" />
                 </MenuItem>
                 <MenuItem icon={<FaColumns />} active={false}>
                   {t("Doctor.LeftPanel.MyTiming")}
-                  <Link to="/doctor-my-timing" />
+                  <Link to="/doctor/my-timing" />
                 </MenuItem>
                 <MenuItem icon={<FaColumns />} active={false}>
                   {t("Doctor.LeftPanel.MyFees")}
-                  <Link to="/doctor-my-fees" />
+                  <Link to="/doctor/my-fees" />
                 </MenuItem>
               </SubMenu>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
                 {t("Doctor.LeftPanel.MassMessages")}
-                <Link to="/doctor-profile" />
+                <Link to="/doctor/profile" />
               </MenuItem>
             </Menu>
           </SidebarContent>
@@ -148,7 +148,7 @@ export default withTranslation()(DoctorLeftPanel);
                   <div className="row mt-4">
                    <ul>
                       <li className="w-100 sidebar-menu-li">
-                          <NavLink className="sidebar-menu-a w-100" to="/doctor-dashboard" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+                          <NavLink className="sidebar-menu-a w-100" to="/doctor/dashboard" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
                               <div className="d-flex align-items-center">
                                   <div className="sidebar-menu-img">
                                       <span className="mainLeftPanelFontSize25">
@@ -245,21 +245,21 @@ export default withTranslation()(DoctorLeftPanel);
                       </li>
                       <ul className="sub-menu-setting">
                           <li className="w-100 sidebar-menu-li">
-                              <NavLink className="sidebar-menu-a w-100" to="/doctor-profile" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+                              <NavLink className="sidebar-menu-a w-100" to="/doctor/profile" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
                                   <div className="d-flex align-items-center">
                                       <div className="sidebar-menu-name">{t('Doctor.LeftPanel.MyProfile')}</div>
                                   </div>
                               </NavLink>
                           </li>
                           <li className="w-100 sidebar-menu-li">
-                              <NavLink className="sidebar-menu-a w-100" to="/doctor-my-timing" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+                              <NavLink className="sidebar-menu-a w-100" to="/doctor/my-timing" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
                                   <div className="d-flex align-items-center">
                                       <div className="sidebar-menu-name">{t('Doctor.LeftPanel.MyTiming')}</div>
                                   </div>
                               </NavLink>
                           </li>
                           <li className="w-100 sidebar-menu-li">
-                              <NavLink className="sidebar-menu-a w-100" to="/doctor-my-fees" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+                              <NavLink className="sidebar-menu-a w-100" to="/doctor/my-fees" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
                                   <div className="d-flex align-items-center">
                                       <div className="sidebar-menu-name">{t('Doctor.LeftPanel.MyFees')}</div>
                                   </div>

@@ -27,7 +27,7 @@ class ForgotPassword extends React.Component {
   }
 
   OnForgotPasswordSubmit() {
-    if ($("#txtEmailId").val() == "") {
+    if ($("#txtEmailId").val() === "") {
       toast.error("Please enter valid Email Address");
       return;
     } else if (this.isEmail($("#txtEmailId").val()) === false) {
@@ -45,7 +45,7 @@ class ForgotPassword extends React.Component {
         email: this.state.EmailId,
         userType: type,
       }).then((data) => {
-        if (data.data.isSuccess == true) {
+        if (data.data.success === true) {
           toast.success(data.data.message);
           this.props.onCancel();
         } else {

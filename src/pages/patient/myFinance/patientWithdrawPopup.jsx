@@ -30,7 +30,7 @@ const WithdrawPopup = (props) => {
       })
         .then((data) => {
           if (data) {
-            if (data.isSuccess) {
+            if (data.success) {
               const success = `${t(
                 "Patient.WithdrawReqSuccessModal.Withdraw_Request_Success_Message"
               )}`;

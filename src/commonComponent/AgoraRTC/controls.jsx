@@ -48,15 +48,15 @@ const Controls = (props) => {
       MarkAppointmentAsCompleteWithDiagnostic();
       props.push(`/save-diagnostic/${props.appointmentGuid}`);
     } else if (userMode === userType.patient)
-      props.push("/patient-appointment-upcoming");
+      props.push("/patient/appointment-upcoming");
   };
 
   const MarkAppointmentAsCompleteWithDiagnostic = () => {
     promiseWrapper(props.docactions.markAppointmentAsComplete, {
       appointmentGuid: props.appointmentGuid,
     }).then((data) => {
-      if (data.isSuccess === true) console.log(data.data.message);
-      else console.log(data.data.errorMessage);
+      if (data.success === true) console.log(data.data.message);
+      else console.log(data.data.message);
     });
   };
 

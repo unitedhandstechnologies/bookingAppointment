@@ -42,7 +42,7 @@ class CmsApiMessages extends Component {
       query: { languageId: this.props.langId },
     })
       .then((data) => {
-        this.setState({ cmsData: data.data });
+        this.setState({ cmsData: data.data.result });
       })
       .catch((err) => console.log(err));
   };
@@ -58,7 +58,7 @@ class CmsApiMessages extends Component {
           data: { languageLabelData: this.state.cmsData },
         })
           .then((data) => {
-            if (data.data.isSuccess) toast.success(data.data.message);
+            if (data.data.success) toast.success(data.data.result);
             else toast.error(data.data.errorMessage);
           })
           .catch((err) => console.log(err));
@@ -68,7 +68,7 @@ class CmsApiMessages extends Component {
         data: { languageLabelData: this.state.cmsData },
       })
         .then((data) => {
-          if (data.data.isSuccess) toast.success(data.data.message);
+          if (data.data.success) toast.success(data.data.result);
           else toast.error(data.data.errorMessage);
         })
         .catch((err) => console.log(err));

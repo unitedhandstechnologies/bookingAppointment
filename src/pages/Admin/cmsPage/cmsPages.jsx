@@ -68,23 +68,23 @@ class CmsPages extends Component {
 
   render() {
     const cmsPage = [
-      { name: "Home Page", path: "/admin-cms/homepage" },
-      { name: "Chat With Doctors", path: "/admin-cms/chatwithdoctors" },
-      { name: "Emergency", path: "/admin-cms/emergency" },
-      { name: "Contact Us", path: "/admin-cms/contactus" },
-      { name: "About Us", path: "/admin-cms/aboutus" },
+      { name: "Home Page", path: "/admin/cms/homepage" },
+      { name: "Chat With Doctors", path: "/admin/cms/chatwithdoctors" },
+      { name: "Emergency", path: "/admin/cms/emergency" },
+      { name: "Contact Us", path: "/admin/cms/contactus" },
+      { name: "About Us", path: "/admin/cms/aboutus" },
       {
         name: "Terms and Condition (Patient)",
-        path: "/admin-cms/termsncondition",
+        path: "/admin/cms/termsncondition",
       },
       {
         name: "Terms and Condition (Doctor)",
-        path: "/admin-cms/termsnconditiondoctor",
+        path: "/admin/cms/termsnconditiondoctor",
       },
-      { name: "Privacy Policy", path: "/admin-cms/privacypolicy" },
-      { name: "FAQs", path: "/admin-cms/faqs" },
-      { name: "Api Messages", path: "/admin-cms/apimessages" },
-      { name: "Patient Questionnaire", path: "/admin-cms/patientquestions" },
+      { name: "Privacy Policy", path: "/admin/cms/privacypolicy" },
+      { name: "FAQs", path: "/admin/cms/faqs" },
+      { name: "Api Messages", path: "/admin/cms/apimessages" },
+      { name: "Patient Questionnaire", path: "/admin/cms/patientquestions" },
     ];
     const { languageId, WebSiteLanguageData, pageName } = this.state;
 
@@ -165,37 +165,37 @@ class CmsPages extends Component {
                   </>
                 ) : (
                   <>
-                    <Route path={"/admin-cms/homepage"}>
+                    <Route path={"/admin/cms/homepage"}>
                       <CmsHome langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/chatwithdoctors"}>
+                    <Route path={"/admin/cms/chatwithdoctors"}>
                       <CmsChatWithDoctors langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/termsncondition"}>
+                    <Route path={"/admin/cms/termsncondition"}>
                       <CmsTandC langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/termsnconditiondoctor"}>
+                    <Route path={"/admin/cms/termsnconditiondoctor"}>
                       <CmsTandCDoc langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/emergency"}>
+                    <Route path={"/admin/cms/emergency"}>
                       <CmsEmergency langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/contactus"}>
+                    <Route path={"/admin/cms/contactus"}>
                       <CmsContactUs langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/aboutus"}>
+                    <Route path={"/admin/cms/aboutus"}>
                       <CmsAboutUs langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/privacypolicy"}>
+                    <Route path={"/admin/cms/privacypolicy"}>
                       <CmsPrivacyPolicy langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/faqs"}>
+                    <Route path={"/admin/cms/faqs"}>
                       <CmsFAQs langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/apimessages"}>
+                    <Route path={"/admin/cms/apimessages"}>
                       <CmsApiMessages langId={languageId} />
                     </Route>
-                    <Route path={"/admin-cms/patientquestions"}>
+                    <Route path={"/admin/cms/patientquestions"}>
                       <CmsPatientQuestions langId={languageId} />
                     </Route>
                   </>

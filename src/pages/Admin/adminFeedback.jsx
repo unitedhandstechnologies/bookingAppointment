@@ -51,7 +51,7 @@ const AdminFeedback = (props) => {
     })
       .then((data) => {
         if (data?.data) {
-          if (data.data.isSuccess) {
+          if (data.data.success) {
             toast.success(data.data.message);
             getPageData();
           } else toast.error(data.data.errorMessage);

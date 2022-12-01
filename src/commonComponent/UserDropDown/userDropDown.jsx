@@ -14,7 +14,7 @@ class UserDropDown extends React.Component {
     localStorage.clear();
     if (this.props.history.location.pathname === "/" && userType !== "3")
       this.props.logOutAction();
-    else if (userType === "3") this.props.history.replace("/admin-login");
+    else if (userType === "3") this.props.history.replace("/admin/login");
     else this.props.history.replace("/home");
   };
 
@@ -58,11 +58,11 @@ class UserDropDown extends React.Component {
                     aria-labelledby="navbarDropdown3"
                   >
                     <div className="row">
-                      {localStorage.getItem("user-type") == "3" && (
+                      {localStorage.getItem("user-type") === "3" && (
                         <div className="col-md-12">
                           <Link
                             className="dropdown-item"
-                            to={`/admin-dashboard`}
+                            to={`/admin/dashboard`}
                           >
                             {t("Doctor.DocHeader.Overview")}
                           </Link>
@@ -78,13 +78,13 @@ class UserDropDown extends React.Component {
                         <div className="col-md-12">
                           <Link
                             className="dropdown-item"
-                            to={`/patient-dashboard`}
+                            to={`/patient/dashboard`}
                           >
                             {t("Doctor.DocHeader.Overview")}
                           </Link>
                           <Link
                             className="dropdown-item"
-                            to={`/patient-profile`}
+                            to={`/patient/profile`}
                           >
                             {t("Doctor.DocHeader.My_Profile")}
                           </Link>
@@ -100,13 +100,13 @@ class UserDropDown extends React.Component {
                         <div className="col-md-12">
                           <Link
                             className="dropdown-item"
-                            to={`/doctor-dashboard`}
+                            to={`/doctor/dashboard`}
                           >
                             {t("Doctor.DocHeader.Overview")}
                           </Link>
                           <Link
                             className="dropdown-item"
-                            to={`/doctor-profile`}
+                            to={`/doctor/profile`}
                           >
                             {t("Doctor.DocHeader.My_Profile")}
                           </Link>
@@ -142,21 +142,21 @@ class UserDropDown extends React.Component {
       //                     <div className="row">
       //                         {localStorage.getItem("user-type") == "3" &&
       //                             <div className="col-md-12">
-      //                                 <Link className="dropdown-item" to={`/admin-dashboard`}>Overview</Link>
+      //                                 <Link className="dropdown-item" to={`/admin/physician-servicesdashboard`}>Overview</Link>
       //                                 <a className="dropdown-item" onClick={this.LogoutUser.bind(this)}>Logout</a>
       //                             </div>
       //                         }
       //                         {localStorage.getItem("user-type") == "2" &&
       //                             <div className="col-md-12">
-      //                                 <Link className="dropdown-item" to={`/patient-dashboard`}>Overview</Link>
-      //                                 <Link className="dropdown-item" to={`/patient-profile`}>My Profile</Link>
+      //                                 <Link className="dropdown-item" to={`/patient/dashboard`}>Overview</Link>
+      //                                 <Link className="dropdown-item" to={`/patient/profile`}>My Profile</Link>
       //                                 <a className="dropdown-item" onClick={this.LogoutUser.bind(this)}>Logout</a>
       //                             </div>
       //                         }
       //                         {localStorage.getItem("user-type") == "1" &&
       //                             <div className="col-md-12">
-      //                                 <Link className="dropdown-item" to={`/doctor-dashboard`}>Overview</Link>
-      //                                 <Link className="dropdown-item" to={`/doctor-profile`}>My Profile</Link>
+      //                                 <Link className="dropdown-item" to={`/doctor/dashboard`}>Overview</Link>
+      //                                 <Link className="dropdown-item" to={`/doctor/profile`}>My Profile</Link>
       //                                 <a className="dropdown-item" onClick={this.LogoutUser.bind(this)}>Logout</a>
       //                             </div>
       //                         }

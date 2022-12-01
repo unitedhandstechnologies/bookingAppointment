@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "development") {
 const apiUrlPrefixes = {
   // [environments.DEV]: 'https://localhost:44361/',
   // [environments.TEST]: 'https://localhost:44361/'
-  [environments.DEV]: "http://3.92.251.60/exado/",
+  [environments.DEV]: "https://api.internal.exado.eu/",
   [environments.TEST]: "https://api.internal.exado.eu/",
   // [environments.DEV]: 'http://exado.yashwe.in/',
   // [environments.TEST]: 'http://exado.yashwe.in/'

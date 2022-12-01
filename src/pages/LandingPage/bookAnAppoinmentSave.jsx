@@ -61,7 +61,7 @@ class BookAnAppoinmentSave extends React.Component {
       promiseWrapper(this.props.patientactions.getWalletBalance, {
         patientGuid: localStorage.getItem("user-id"),
       }).then((jsdata) => {
-        this.setState({ WalletBalance: jsdata.data.walletBalance });
+        this.setState({ WalletBalance: jsdata.result.walletBalance });
         this.setState((prevState) => ({
           bookAppoinment: {
             ...prevState.bookAppoinment,
@@ -123,12 +123,12 @@ class BookAnAppoinmentSave extends React.Component {
       patientGuid: localStorage.getItem("user-id"),
       file: e.target.files[0],
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.success === true) {
         let curState = this.state.bookAppoinment.patientAttachments;
         let newFile = {
           fileGuid: null,
-          docName: data.data.data.docName,
-          docURL: data.data.data.docURL,
+          docName: data.result,
+          docURL: data.result,
           isDeleted: false,
         };
         curState.push(newFile);
@@ -150,7 +150,7 @@ class BookAnAppoinmentSave extends React.Component {
       documentURI: dUrl,
       documentName: dName,
     }).then((data) => {
-      if (data.isSuccess == true) {
+      if (data.success === true) {
         let curState = this.state.bookAppoinment.patientAttachments;
         curState.splice(idx, 1);
         // let newState = curState.map(function (d, id) {
@@ -194,14 +194,14 @@ class BookAnAppoinmentSave extends React.Component {
     ) {
       errorMessage += `Insufficient Balance Please Add funds to book appoinment" \n`;
     }
-    if (errorMessage != "") {
+    if (errorMessage !== "") {
       toast.error(errorMessage);
       return;
     }
     promiseWrapper(this.props.patientactions.bookAppointment, {
       appointment: this.state.bookAppoinment,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.isSuccess === true) {
         toast.success(data.data.message);
         this.setState({ ShowSuccess: true });
       } else {
@@ -356,7 +356,7 @@ class BookAnAppoinmentSave extends React.Component {
                                 € {this.state.WalletBalance}
                               </span>
                               <span className="appointment-details-form-info-add-funds">
-                                <Link to="/patient-addfunds">
+                                <Link to="/patient/addfunds">
                                   {t("Public.Appointment.Add_Funds")}
                                 </Link>
                               </span>
@@ -563,7 +563,7 @@ class BookAnAppoinmentSave extends React.Component {
                       <div className="mt-3 text-center">
                         <Link
                           className="btn MyButton reset-password-button w-50"
-                          to="/patient-dashboard"
+                          to="/patient/dashboard"
                         >
                           {t("Public.BookAppointment.Go_to_Dashboard")}
                         </Link>

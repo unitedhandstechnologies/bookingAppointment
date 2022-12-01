@@ -114,11 +114,11 @@ class DoctorMyFinance extends React.Component {
       doctorGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
       this.setState({
-        TotalEarning: jsdata.totalEarning,
-        TotalOnlineEarning: jsdata.totalOnlineEarning,
-        TotalOfflineEarning: jsdata.totalOfflineEarning,
-        TotalRefunded: jsdata.totalRefunded,
-        TotalPending: jsdata.totalPending,
+        TotalEarning: jsdata.result.totalEarning,
+        TotalOnlineEarning: jsdata.result.totalOnlineEarning,
+        TotalOfflineEarning: jsdata.result.totalOfflineEarning,
+        TotalRefunded: jsdata.result.totalRefunded,
+        TotalPending: jsdata.result.totalPending,
       });
     });
   }

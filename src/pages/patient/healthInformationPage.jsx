@@ -22,7 +22,7 @@ class HealthInformationPage extends React.Component {
 
   GetQuestionnaireData() {
     promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
-      pageNo: this.state.currentPage,
+      languageId: this.state.currentPage,
     }).then((data) => {
       this.setState({ QuestionnaireList: data }, () => {
         // promiseWrapper(this.props.patientactions.getPatientAnswers, { patientGuid: localStorage.getItem("user-id"), pageNo: this.state.currentPage }).then((data) => {

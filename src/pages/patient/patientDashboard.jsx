@@ -119,7 +119,7 @@ class PatientDashboard extends React.Component {
     promiseWrapper(this.props.patientactions.getPatientProfileInfo, {
       userGuid: localStorage.getItem(localStorageKeys.userId),
     }).then((data) => {
-      if (data.languageId) {
+      if (data.result.languageId) {
         const languageData = JSON.parse(
           localStorage.getItem(localStorageKeys.websiteLanguageData)
         );
@@ -161,7 +161,7 @@ class PatientDashboard extends React.Component {
                 </div>
                 <div className="row mt-3">
                   <div className="col-lg-3 col-md-6 mb-3">
-                    <Link to="/patient-myfinance" className="card-links">
+                    <Link to="/patient/myfinance" className="card-links">
                       <div className="card card1 mainRightPanelCard">
                         <div className="p-3">
                           <div className="cardHeader">
@@ -245,7 +245,7 @@ class PatientDashboard extends React.Component {
                         </div>
                       </div>
                       <div className="headingRight">
-                        <Link to="/patient-appointment-requests">
+                        <Link to="/patient/appointment-requests">
                           {t("Patient.AppointmentUpComing.View_All")}
                         </Link>
                       </div>
@@ -292,7 +292,7 @@ class PatientDashboard extends React.Component {
                                     <td>
                                       <Link
                                         className="doctor-name-link"
-                                        to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                        to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                       >
                                         {v.doctorFirstName} {v.doctorLastName}
                                       </Link>
@@ -397,156 +397,7 @@ class PatientDashboard extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/* <div className="row mt-5 mb-5 d-flex justify-content-center">
-                                    <div className="col-lg-6 col-md-12">
-                                        <div className="tableHeading d-flex justify-content-between mb-2">
-                                            <div className="headingLeft ongoingChats">
-                                                Ongoing Chats
-                                            </div>
-                                            <div className="headingRight">
-                                                <a>View All</a>
-                                            </div>
-                                        </div>
-                                        <div className="tableContainer table-responsive">
-                                            <table className="table table-bordered appointmentTable">
-                                                <thead>
-                                                    <tr>
-                                                        <th className="ongoingChatsTableHeader">No.</th>
-                                                        <th>
-                                                            <div>Doctor Name </div>
-                                                            <div>& Domain</div>
-                                                        </th>
-                                                        <th>Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>
-                                                            <div className="nameDomain">
-                                                                <div className="mb-2">
-                                                                    <span className="doctorName">John Doe</span>  |<span className="medicalSpecialty"> Dentist</span>
-                                                                </div>
-                                                                <div>
-                                                                    Lorem Ipsum is simply dummy ...
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                                <a className="btn joinCall" role="button">Respond</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>
-                                                            <div className="nameDomain">
-                                                                <div className="mb-2">
-                                                                    <span className="doctorName">John Doe</span>  |<span className="medicalSpecialty"> Dentist</span>
-                                                                </div>
-                                                                <div>
-                                                                    Lorem Ipsum is simply dummy ...
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                                <a className="btn joinCall" role="button">Respond</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>
-                                                            <div className="nameDomain">
-                                                                <div className="mb-2">
-                                                                    <span className="doctorName">John Doe</span>  |<span className="medicalSpecialty"> Dentist</span>
-                                                                </div>
-                                                                <div>
-                                                                    Lorem Ipsum is simply dummy ...
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                                <a className="btn joinCall" role="button">Respond</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 col-md-12">
-                                        <div className="tableHeading d-flex justify-content-between mb-2">
-                                            <div className="headingLeft">
-                                                Requested Open Chats
-                                            </div>
-                                            <div className="headingRight">
-                                                <a>View All</a>
-                                            </div>
-                                        </div>
-                                        <div className="tableContainer table-responsive">
-                                            <table className="table table-bordered appointmentTable">
-                                                <thead>
-                                                    <tr>
-                                                        <th rowspan="2">No.</th>
-                                                        <th rowspan="2">Chat ID</th>
-                                                        <th>Date</th>
-                                                        <th rowspan="2">Medical Specialty</th>
-                                                        <th rowspan="2">Status</th>
-                                                        <th rowspan="2">Actions</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Time</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>#IDxxxxxxxx</td>
-                                                        <td className="dateTime">April 21, 2020 07:01AM</td>
-                                                        <td className="medicalSpecialty">Dentist</td>
-                                                        <td className="medicalSpecialty">Waiting</td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>#IDxxxxxxxx</td>
-                                                        <td className="dateTime">April 21, 2020 07:01AM</td>
-                                                        <td className="medicalSpecialty">Dentist</td>
-                                                        <td className="medicalSpecialty">Waiting</td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>001</td>
-                                                        <td>#IDxxxxxxxx</td>
-                                                        <td className="dateTime">April 21, 2020 07:01AM</td>
-                                                        <td className="medicalSpecialty">Dentist</td>
-                                                        <td className="medicalSpecialty">Waiting</td>
-                                                        <td className="action">
-                                                            <div className="d-flex justify-content-around">
-                                                                <a className="btn viewDetails" role="button">View Details</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div> */}
+                
                 <PatientFooter />
               </div>
             </div>

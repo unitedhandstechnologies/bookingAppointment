@@ -84,13 +84,12 @@ class MyFinance extends React.Component {
     promiseWrapper(this.props.patientactions.getPatientFinanceData, {
       patientGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
-      console.log(jsdata, "----------jsdata------------------");
-
       this.setState({
-        WalletBalance: jsdata.walletBalance,
-        TotalSpent: jsdata.totalSpent,
-        TotalRefund: jsdata.totalRefund,
+        WalletBalance: jsdata.result.walletBalance,
+        TotalSpent: jsdata.result.totalSpent,
+        TotalRefund: jsdata.result.totalRefund,
       });
+
     });
   }
 
@@ -137,7 +136,7 @@ class MyFinance extends React.Component {
                           </div>
                           <div className="text">
                             <Link
-                              to={"/patient-addfunds"}
+                              to={"/patient/addfunds"}
                               className="btn py-0 btn-add-funds"
                             >
                               {t("Patient.MyFinance.Add_Funds")}
@@ -241,7 +240,7 @@ class MyFinance extends React.Component {
                                 <td>
                                   <Link
                                     className="doctor-name-link"
-                                    to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                    to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                   >
                                     {v.doctorFirstName} {v.doctorLastName}
                                   </Link>

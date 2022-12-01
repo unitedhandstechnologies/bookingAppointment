@@ -75,7 +75,7 @@ class CmsHome extends Component {
     })
       .then((data) => {
         const receivedData = {
-          ...data.data,
+          ...data.data.result,
           pageNumber: this.state.cmsData.pageNumber,
           languageId: this.state.cmsData.languageId,
         };
@@ -89,8 +89,8 @@ class CmsHome extends Component {
       data: { ...this.state.cmsData },
     })
       .then((data) => {
-        if (data.data.isSuccess) toast.success(data.data.message);
-        else toast.error(data.data.errorMessage);
+        if (data.data.success) toast.success(data.data.result);
+        else toast.error(data.errorMessage);
       })
       .catch((err) => console.log(err));
   };

@@ -29,7 +29,7 @@ class DoctorFAQ extends React.Component {
     promiseWrapper(this.props.docactions.getDoctorsFAQs, {
       doctorGuid: localStorage.getItem("user-id"),
     }).then((data) => {
-      this.setState({ FAQList: data }, () => {
+      this.setState({ FAQList: data.result }, () => {
         this.setState({ LoadedData: true });
       });
     });
@@ -53,9 +53,9 @@ class DoctorFAQ extends React.Component {
     promiseWrapper(this.props.docactions.getDoctorFAQById, {
       faqGuid: id,
     }).then((data) => {
-      this.setState({ FAQQuestion: data.question });
-      this.setState({ FAQAnswer: data.answer });
-      this.setState({ DoctorFAQGuid: data.doctorFAQGuid });
+      this.setState({ FAQQuestion: data.result.question });
+      this.setState({ FAQAnswer: data.result.answer });
+      this.setState({ DoctorFAQGuid: data.result.doctorFAQGuid });
       this.toggleAddFAQPopUp();
     });
   }
@@ -63,12 +63,12 @@ class DoctorFAQ extends React.Component {
   DeleteFAQ(id) {
     promiseWrapper(this.props.docactions.deleteFAQ, { faqGuid: id }).then(
       (data) => {
-        if (data.isSuccess == true) {
+        if (data.success === true) {
           toast.success("FAQ deleted successfully.");
           promiseWrapper(this.props.docactions.getDoctorsFAQs, {
             doctorGuid: localStorage.getItem("user-id"),
           }).then((data) => {
-            this.setState({ FAQList: data }, () => {
+            this.setState({ FAQList: data.result }, () => {
               this.setState({ LoadedData: true });
               this.setState({ FAQQuestion: "" });
               this.setState({ FAQAnswer: "" });
@@ -84,7 +84,7 @@ class DoctorFAQ extends React.Component {
 
   SaveFAQ() {
     let data = {
-      doctorFAQGuid: this.state.DoctorFAQGuid,
+      // doctorFAQGuid: this.state.DoctorFAQGuid,
       doctorGuid: localStorage.getItem("user-id"),
       question: this.state.FAQQuestion,
       answer: this.state.FAQAnswer,
@@ -92,12 +92,12 @@ class DoctorFAQ extends React.Component {
     if (this.state.FAQQuestion !== "" && this.state.FAQAnswer !== "") {
       promiseWrapper(this.props.docactions.saveFAQ, { model: data }).then(
         (data) => {
-          if (data.isSuccess == true) {
+          if (data.success === true) {
             this.toggleAddFAQPopUp();
             promiseWrapper(this.props.docactions.getDoctorsFAQs, {
               doctorGuid: localStorage.getItem("user-id"),
             }).then((data) => {
-              this.setState({ FAQList: data }, () => {
+              this.setState({ FAQList: data.result }, () => {
                 this.setState({ LoadedData: true });
                 this.setState({ FAQQuestion: "" });
                 this.setState({ FAQAnswer: "" });

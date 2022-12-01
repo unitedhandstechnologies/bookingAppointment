@@ -329,7 +329,7 @@ class DoctorDashboard extends React.Component {
                           <div className="doctor-table-card-title-link">
                             <Link
                               className="text-light"
-                              to="/doctor-appointment-requests"
+                              to="/doctor/appointment-requests"
                             >
                               {t("Doctor.MyDashboard.View_All")}
                             </Link>
@@ -528,7 +528,7 @@ class DoctorDashboard extends React.Component {
                           <div className="doctor-table-card-title-link">
                             <Link
                               className="text-light"
-                              to="/doctor-appointment-upcoming"
+                              to="/doctor/appointment-upcoming"
                             >
                               {t("Doctor.MyDashboard.View_All")}
                             </Link>

@@ -46,7 +46,7 @@ class ChatWithDoctor extends React.Component {
     };
     promiseWrapper(this.props.comactions.getCMSPage, {
       query: { ...queryParam },
-    }).then((data) => this.setState({ cmsData: data.data }));
+    }).then((data) => this.setState({ cmsData: data.data.result }));
   };
 
   render() {

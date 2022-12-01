@@ -35,7 +35,7 @@ class SetDefaultTiming extends React.Component {
       promiseWrapper(this.props.actions.getDoctorDefaultTimingById, {
         defaultGuid: this.props.DefaultGUID,
       }).then((jsdata) => {
-        let tempdata = jsdata.data;
+        let tempdata = jsdata.data.result;
         let tta = [];
         tta.push(tempdata.dayID);
         this.setState({
@@ -176,7 +176,7 @@ class SetDefaultTiming extends React.Component {
     }
 
     let response = {
-      defaultTimingGuid: null,
+      defaultTimingGuid: "ac70d5b3-1e9f-4e86-b3cd-e057c9c986dc",
       doctorGuid: localStorage.getItem("user-id"),
       isOnlineAppointment: stringToBoolean(this.state.IsOnline),
       days: this.state.WeekDays.map((v) => parseInt(v, 10)),
@@ -188,8 +188,9 @@ class SetDefaultTiming extends React.Component {
     };
     promiseWrapper(this.props.actions.saveDoctorDefaultTiming, {
       doctorDefaultTimingModel: response,
+      doctorGuid: localStorage.getItem("user-id"),
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success == true) {
         toast.success(data.data.message);
       } else {
         toast.error(data.data.message);

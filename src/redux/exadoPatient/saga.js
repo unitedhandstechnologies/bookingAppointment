@@ -116,7 +116,7 @@ export function* ChangeStatus(actions) {
 
 export function* GetPatientQuestionnaire(actions) {
   try {
-    const response = yield call(getPatientQuestionnaire, actions.pageNo);
+    const response = yield call(getPatientQuestionnaire, actions.languageId);
     if (response) {
       actions.promise.resolve(response.data);
     }

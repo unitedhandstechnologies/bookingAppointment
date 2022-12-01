@@ -34,7 +34,7 @@ const AdminFinance = (props) => {
       data: { adminFinanceData: financeList },
     })
       .then((data) => {
-        if (data.data.isSuccess) {
+        if (data.data.success) {
           toast.success(data.data.message);
         } else toast.error(data.data.errorMessage);
       })

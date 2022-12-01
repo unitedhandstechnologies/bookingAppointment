@@ -23,11 +23,11 @@ class LoginPage extends React.Component {
   componentWillMount() {
     if (localStorage.getItem("access-token") != null) {
       if (localStorage.getItem("user-type") === "2") {
-        this.props.history.push("/patient-dashboard");
-      } else if (localStorage.getItem("user-type") == "1") {
-        this.props.history.push("/doctor-dashboard");
+        this.props.history.push("/patient/dashboard");
+      } else if (localStorage.getItem("user-type") === "1") {
+        this.props.history.push("/doctor/dashboard");
       } else {
-        this.props.history.push("/patient-dashboard");
+        this.props.history.push("/patient/dashboard");
       }
     }
     if (window.location.pathname === "/register-doctor") {

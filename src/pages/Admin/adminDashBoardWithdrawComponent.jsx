@@ -69,7 +69,7 @@ const AdminDashBoardWithdrawComponent = (props) => {
             </div>
           </div>
           <div className="headingRight">
-            <Link to={"/withdraw-list"}>
+            <Link to={"/admin/withdraw-list"}>
               {t("Admin.AdminDashBoardWithdrawComponent.View_All")}
             </Link>
           </div>

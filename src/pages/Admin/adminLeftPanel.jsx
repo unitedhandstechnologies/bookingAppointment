@@ -32,75 +32,75 @@ class AdminLeftPanel extends React.Component {
           <SidebarContent>
             <Menu iconShape="circle">
               <MenuItem icon={<FaColumns />} active={true}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 My Dashboard
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <SubMenu title="Appointments" icon={<FaCog />}>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/admin-appointment-requests" />
+                  <Link to="/admin/appointment-requests" />
                   Requests
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/admin-appointment-upcoming" />
+                  <Link to="/admin/appointment-upcoming" />
                   Upcoming
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/admin-appointment-completed" />
+                  <Link to="/admin/appointment-completed" />
                   Completed
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/admin-appointment-cancelled" />
+                  <Link to="/admin/appointment-cancelled" />
                   Cancelled
                 </MenuItem>
               </SubMenu>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaUser />} active={false}>
-                <Link to="/doctor-list" />
+                <Link to="/admin/doctor-list" />
                 Doctors
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/patient-list" />
+                <Link to="/admin/patient-list" />
                 Patients
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 Emergency calls
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 Billing
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 Reports & Analytics
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 Support
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 CMS
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/admin-dashboard" />
+                <Link to="/admin/dashboard" />
                 My Settings
               </MenuItem>
             </Menu>
@@ -111,7 +111,7 @@ class AdminLeftPanel extends React.Component {
       //     <div className="row mt-4">
       //         <ul>
       //             <li className="w-100 sidebar-menu-li">
-      //                 <NavLink className="sidebar-menu-a w-100" to="/admin-dashboard" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+      //                 <NavLink className="sidebar-menu-a w-100" to="/admin/physician-servicesdashboard" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
       //                     <div className="d-flex align-items-center">
       //                         <div className="sidebar-menu-img">
       //                             <span className="mainLeftPanelFontSize25">
@@ -135,7 +135,7 @@ class AdminLeftPanel extends React.Component {
       //                 </a>
       //             </li>
       //             <li className="w-100 sidebar-menu-li">
-      //                 <NavLink className="sidebar-menu-a w-100" to="/doctor-list" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+      //                 <NavLink className="sidebar-menu-a w-100" to="/admin/doctor-list" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
       //                     <div className="d-flex align-items-center">
       //                         <div className="sidebar-menu-img">
       //                             <span className="mainLeftPanelFontSize25">
@@ -147,7 +147,7 @@ class AdminLeftPanel extends React.Component {
       //                 </NavLink>
       //             </li>
       //             <li className="w-100 sidebar-menu-li">
-      //                 <NavLink className="sidebar-menu-a w-100" to="/patient-list" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
+      //                 <NavLink className="sidebar-menu-a w-100" to="/admin/patient-list" activeClassName="sidebar-menu-li-active" activeStyle={{ fontWeight: "bold", color: "#000" }}>
       //                     <div className="d-flex align-items-center">
       //                         <div className="sidebar-menu-img">
       //                             <span className="mainLeftPanelFontSize25">

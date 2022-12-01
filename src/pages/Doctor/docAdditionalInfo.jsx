@@ -67,32 +67,32 @@ class DoctorAdditionalInfo extends React.Component {
         promiseWrapper(this.props.actions.getAdditionalInfo, {
           userGuid: localStorage.getItem("user-id"),
         }).then((data) => {
-          this.setState({ ProfileAdditionalInfo: data }, () => {
+          this.setState({ ProfileAdditionalInfo: data.result }, () => {
             if (
-              data.experienceModel != null &&
-              data.experienceModel.length === 0
+              data.result.experienceModel != null &&
+              data.result.experienceModel.length === 0
             ) {
               this.onAddExperience();
             } else {
               this.UpdateExperienceDates();
             }
 
-            if (data.educationModel.length === 0) {
+            if (data.result.educationModel.length === 0) {
               this.onAddEducation();
             }
 
             this.setState((prevState) => ({
               ProfileAdditionalInfo: {
                 ...prevState.ProfileAdditionalInfo,
-                ["physicianServiceIds"]: data.physicianServiceIds.map((v) =>
-                  v.toString()
+                ["physicianServiceIds"]: data.result.physicianServiceIds.map(
+                  (v) => v.toString()
                 ),
               },
             }));
             this.setState((prevState) => ({
               ProfileAdditionalInfo: {
                 ...prevState.ProfileAdditionalInfo,
-                ["ownPractice"]: data.ownPractice.toString(),
+                ["ownPractice"]: data.result.ownPractice.toString(),
               },
             }));
             this.setState({ LoadedData: true });
@@ -108,13 +108,14 @@ class DoctorAdditionalInfo extends React.Component {
       doctorGuid: localStorage.getItem("user-id"),
       file: e.target.files[0],
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         this.setState((prevState) => ({
           ProfileAdditionalInfo: {
             ...prevState.ProfileAdditionalInfo,
             practiceDocument: {
               ...prevState.ProfileAdditionalInfo.practiceDocument,
-              ["docName"]: data.data.data.docName,
+              ["docName"]: data.data.result,
+              ["docURL"]: data.data.result,
             },
           },
         }));
@@ -123,7 +124,8 @@ class DoctorAdditionalInfo extends React.Component {
             ...prevState.ProfileAdditionalInfo,
             practiceDocument: {
               ...prevState.ProfileAdditionalInfo.practiceDocument,
-              ["docURL"]: data.data.data.docURL,
+              ["docURL"]: data.data.result,
+               ["docURL"]: data.data.result,
             },
           },
         }));
@@ -136,7 +138,8 @@ class DoctorAdditionalInfo extends React.Component {
             },
           },
         }));
-      } else {
+      } 
+      else {
         toast.error("there is some issue with file upload");
       }
     });
@@ -338,7 +341,7 @@ class DoctorAdditionalInfo extends React.Component {
           errorMessage += "Please enter details of activity \n";
       });
     }
-    if (errorMessage != "") {
+    if (errorMessage !== "") {
       toast.error(errorMessage);
       return;
     }
@@ -370,18 +373,18 @@ class DoctorAdditionalInfo extends React.Component {
         "physicianServiceIds"
       ].map((v) => parseInt(v, 10)),
       ownPractice: stringToBoolean(
-        this.state.ProfileAdditionalInfo["ownPractice"]
+        this.state.ProfileAdditionalInfo["ownPractice"]||null
       ),
-      practiceNumber: this.state.ProfileAdditionalInfo["practiceNumber"],
+      practiceNumber: this.state.ProfileAdditionalInfo["practiceNumber"]||null,
       practiceDocument: this.state.ProfileAdditionalInfo["practiceDocument"],
-      clinicName: this.state.ProfileAdditionalInfo["clinicName"],
+      clinicName: this.state.ProfileAdditionalInfo["clinicName"]||null,
       clinicContact: this.state.ProfileAdditionalInfo["clinicContact"],
       clinicEmail: this.state.ProfileAdditionalInfo["clinicEmail"],
-      clinicAddress: this.state.ProfileAdditionalInfo["clinicAddress"],
-      city: this.state.ProfileAdditionalInfo["city"],
-      state: this.state.ProfileAdditionalInfo["state"],
+      clinicAddress: this.state.ProfileAdditionalInfo["clinicAddress"]||null,
+      city: this.state.ProfileAdditionalInfo["city"]||null,
+      state: this.state.ProfileAdditionalInfo["state"]||null,
       zip: this.state.ProfileAdditionalInfo["zip"],
-      country: this.state.ProfileAdditionalInfo["country"],
+      country: this.state.ProfileAdditionalInfo["country"]||null,
       educationModel: this.state.ProfileAdditionalInfo["educationModel"],
       experienceModel: this.state.ProfileAdditionalInfo["experienceModel"],
     };
@@ -389,7 +392,7 @@ class DoctorAdditionalInfo extends React.Component {
     promiseWrapper(this.props.actions.saveAdditionalInfo, {
       additionalInfoModel: additionalInfo,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         toast.success(data.data.message);
         this.setState({ ShowButtonSave: "In Process" });
       } else {
@@ -488,14 +491,14 @@ class DoctorAdditionalInfo extends React.Component {
       doctorGuid: localStorage.getItem("user-id"),
       file: e.target.files[0],
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         let curState = this.state.ProfileAdditionalInfo.educationModel;
         var newState = curState.map(function (d, id) {
           if (id === idx) {
             let newFile = {
               fileGuid: null,
-              docName: data.data.data.docName,
-              docURL: data.data.data.docURL,
+              docName: data.data.result,
+              docURL: data.data.result,
             };
             d.educationCertificates.push(newFile);
           }
@@ -508,7 +511,8 @@ class DoctorAdditionalInfo extends React.Component {
             ["educationModel"]: newState,
           },
         }));
-      } else {
+      } 
+      else {
         toast.error("there is some issue with file upload");
       }
     });

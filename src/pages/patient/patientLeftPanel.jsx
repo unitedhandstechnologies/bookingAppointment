@@ -50,48 +50,48 @@ class PatientLeftPanel extends React.Component {
           <SidebarContent>
             <Menu iconShape="circle">
               <MenuItem icon={<FaColumns />} active={true}>
-                <Link to="/patient-dashboard" />
+                <Link to="/patient/dashboard" />
                 {t("Patient.LeftPanel.My_Overview")}
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <SubMenu title="My Appointment" icon={<FaCog />}>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/patient-appointment-requests" />
+                  <Link to="/patient/appointment-requests" />
                   {t("Patient.LeftPanel.Requests")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/patient-appointment-upcoming" />
+                  <Link to="/patient/appointment-upcoming" />
                   {t("Patient.LeftPanel.Upcoming")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/patient-appointment-completed" />
+                  <Link to="/patient/appointment-completed" />
                   {t("Patient.LeftPanel.Completed")}
                 </MenuItem>
                 <MenuItem icon={<FaCalendar />} active={false}>
-                  <Link to="/patient-appointment-cancelled" />
+                  <Link to="/patient/appointment-cancelled" />
                   {t("Patient.LeftPanel.Cancelled")}
                 </MenuItem>
               </SubMenu>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEuroSign />} active={false}>
-                <Link to="/patient-dashboard" />
+                <Link to="/patient/dashboard" />
                 {t("Patient.LeftPanel.My_Finance")}
               </MenuItem>
             </Menu>
             <Menu iconShape="circle">
               <SubMenu title="My Settings" icon={<FaCog />}>
                 <MenuItem icon={<FaColumns />} active={false}>
-                  <Link to="/patient-profile" />
+                  <Link to="/patient/profile" />
                   {t("Patient.LeftPanel.My_Profile")}
                 </MenuItem>
-                {/* <MenuItem icon={<FaColumns />} active={false}><Link to="/patient-profile" />General Settings</MenuItem> */}
+                {/* <MenuItem icon={<FaColumns />} active={false}><Link to="/patient/profile" />General Settings</MenuItem> */}
               </SubMenu>
             </Menu>
             <Menu iconShape="circle">
               <MenuItem icon={<FaEnvelopeOpenText />} active={false}>
-                <Link to="/doctor-profile" />
+                <Link to="/doctor/profile" />
                 {t("Patient.LeftPanel.My_Notification")}
               </MenuItem>
             </Menu>

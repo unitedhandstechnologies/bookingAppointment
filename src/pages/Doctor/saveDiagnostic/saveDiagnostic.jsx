@@ -266,14 +266,14 @@ class SaveDiagnostic extends React.Component {
               .then((data2) => {
                 if (data2.data.isSuccess === true) {
                   toast.success(data2.data.message);
-                  this.setState({ redirect: "/doctor-appointment-upcoming" });
+                  this.setState({ redirect: "/doctor/appointment-upcoming" });
                 } else toast.error(data2.data.errorMessage);
               })
               .catch((err) => console.log(err));
           }
           if (data.isSuccess === true) {
             toast.success(data.message);
-            this.setState({ redirect: "/doctor-appointment-upcoming" });
+            this.setState({ redirect: "/doctor/appointment-upcoming" });
           } else toast.error(data.errorMessage);
         } else toast.error(data.errorMessage);
       })
@@ -566,7 +566,7 @@ class SaveDiagnostic extends React.Component {
                           t={t}
                         />
                         <div className="book-appointment-btn my-4 d-flex justify-content-around">
-                          <Link to="/doctor-dashboard" className="btn px-5">
+                          <Link to="/doctor/dashboard" className="btn px-5">
                             Cancel
                           </Link>
                           <a

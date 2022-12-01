@@ -121,8 +121,7 @@ const AddFunds = (props) => {
                               <td>
                                 <button
                                   className="btn btn-success"
-                                  onClick={() => {
-                                    console.log("lohi");
+                                  onClick={() => { 
                                   }}
                                 >
                                   Add fund

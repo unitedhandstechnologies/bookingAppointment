@@ -1,5 +1,6 @@
 import axios from "axios";
 import MessageFormat from "messageformat";
+import { toast } from "react-toastify";
 import { getAxiosApiConfig } from "./utility/apiConfig";
 import { checkIfObject } from "./utility/common";
 axios.defaults.withCredentials = true;
@@ -108,7 +109,7 @@ class ApiService {
           document.getElementById("ExadoLoader").style.display = "none";
         })
         .catch((error) => {
-          alert(error);
+          toast.error(error.response.data.message);
           document.getElementById("ExadoLoader").style.display = "none";
         });
     });

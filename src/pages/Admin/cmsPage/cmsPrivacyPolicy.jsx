@@ -61,7 +61,7 @@ class CmsPrivacyPolicy extends Component {
     })
       .then((data) => {
         const receivedData = {
-          ...data.data,
+          ...data.data.result,
           pageNumber: cmsPageNum.PrivacyPolicy,
           languageId: this.props.langId,
         };
@@ -82,7 +82,7 @@ class CmsPrivacyPolicy extends Component {
       data: { ...this.state.cmsData, htmlDescription: this.state.content },
     })
       .then((data) => {
-        if (data.data.isSuccess) toast.success(data.data.message);
+        if (data.data.success) toast.success(data.data.result);
         else toast.error(data.data.errorMessage);
       })
       .catch((err) => console.log(err));

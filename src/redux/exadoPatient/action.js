@@ -59,9 +59,9 @@ const changeStatus = ({ userGuid, promise }) => ({
   promise,
 });
 
-const getPatientQuestionnaire = ({ pageNo, promise }) => ({
+const getPatientQuestionnaire = ({ languageId, promise }) => ({
   type: GET_PATIENT_QUESTIONNAIRE,
-  pageNo,
+  languageId,
   promise,
 });
 

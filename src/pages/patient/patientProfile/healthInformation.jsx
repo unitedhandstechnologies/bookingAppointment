@@ -52,14 +52,14 @@ class HealthInformation extends React.Component {
 
   GetQuestionnaireData() {
     promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
-      pageNo: this.state.currentPage,
+      languageId: this.state.currentPage,
     }).then((data) => {
-      this.setState({ QuestionnaireList: data }, () => {
+      this.setState({ QuestionnaireList: data.result }, () => {
         promiseWrapper(this.props.patientactions.getPatientAnswers, {
           patientGuid: localStorage.getItem(localStorageKeys.userId),
           pageNo: this.state.currentPage,
         }).then((data) => {
-          this.setState({ AnswerDataList: data }, () => {
+          this.setState({ AnswerDataList: data.result }, () => {
             this.setState({ LoadedData: true });
           });
         });
@@ -106,7 +106,6 @@ class HealthInformation extends React.Component {
       this.GetQuestionnaireData();
     });
   };
-
   SaveAnswertoDB(curPage) {
     let result = {
       answerList: this.state.AnswerDataList,
@@ -115,7 +114,7 @@ class HealthInformation extends React.Component {
     promiseWrapper(this.props.patientactions.saveAnswers, {
       answers: result,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         this.setState({
           success: data.data.message,
           successTimer: setTimeout(() => this.setState({ success: "" }), 2000),

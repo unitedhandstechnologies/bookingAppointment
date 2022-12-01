@@ -295,7 +295,7 @@ class PatientAppointmentUpComing extends React.Component {
                                           <td>
                                             <Link
                                               className="doctor-name-link"
-                                              to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                              to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                             >
                                               {v.doctorFirstName}{" "}
                                               {v.doctorLastName}

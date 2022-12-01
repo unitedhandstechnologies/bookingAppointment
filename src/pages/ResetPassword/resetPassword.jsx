@@ -68,7 +68,7 @@ class ResetPassword extends React.Component {
       if (data.data.isSuccess === true) {
         toast.success(data.data.message);
         if (data.data.data.userType === 3) {
-          this.setState({ redirect: "/admin-login" });
+          this.setState({ redirect: "/admin/login" });
         } else {
           this.setState({ redirect: "/login" });
         }

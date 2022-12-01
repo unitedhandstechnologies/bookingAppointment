@@ -30,32 +30,34 @@ class OTPBox extends React.Component {
       toast.error("Please enter valid otp");
       return;
     } else {
-      console.log(this.state.OTP, "lohi----------------------");
       promiseWrapper(this.props.actions.verifyEmailOTP, {
         userId: this.props.userId,
         otp: this.state.OTP,
       }).then((data) => {
-        console.log(data, "--------data OTP----------------");
         if (data.data.success === true) {
           window.localStorage.removeItem("login-Type");
           window.localStorage.setItem("access-token", data.data.result.token);
-          window.localStorage.setItem("user-id", data.data.result.userId);
+          window.localStorage.setItem("user-id", data.data.result.userGuid);
           window.localStorage.setItem(
             "user-fullname",
             data.data.result.fullName
           );
+            window.localStorage.setItem(
+            "email",
+            this.props.emailId
+          );
           window.localStorage.setItem("user-type", data.data.result.userType);
           //toast.success(data.data.message);
-          if (data.data.result.userType === "2") {
-            this.setState({ redirect: "/patient-dashboard" });
-          } else if (data.data.result.userType === "1") {
-            if (data.data.result.verificationStatus === "1") {
-              this.setState({ redirect: "/doctor-profile" });
+          if (data.data.result.userType === 2) {
+            this.setState({ redirect: "/patient/dashboard" });
+          } else if (data.data.result.userType === 1) {
+            if (data.data.result.verificationStatus === 1) {
+              this.setState({ redirect: "/doctor/profile" });
             } else {
-              this.setState({ redirect: "/doctor-dashboard" });
+              this.setState({ redirect: "/doctor/dashboard" });
             }
           } else {
-            this.setState({ redirect: "/patient-dashboard" });
+            this.setState({ redirect: "/patient/dashboard" });
           }
         } else {
           toast.error(data.data.message);

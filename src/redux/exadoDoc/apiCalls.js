@@ -68,14 +68,14 @@ export async function sendTextOTP(userGuid, mobile) {
 
 export async function saveProfileInfo(userModel) {
   const config = getConfig("exadoDoc.SaveProfileInfo");
-  config.data = userModel;
+  config.urlParams = userModel;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }
 
 export async function saveAdditionalInfo(additionalInfoModel) {
   const config = getConfig("exadoDoc.SaveAdditionalInfo");
-  config.data = additionalInfoModel;
+  config.urlParams = additionalInfoModel;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }
@@ -128,7 +128,7 @@ export async function getDoctorDefaultTimingById(defaultGuid) {
 
 export async function saveDoctorDefaultTiming(doctorDefaultTimingModel) {
   const config = getConfig("exadoDoc.SaveDoctorDefaultTiming");
-  config.data = doctorDefaultTimingModel;
+  config.urlParams = doctorDefaultTimingModel;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }
@@ -212,7 +212,7 @@ export async function getDoctorsFAQs(doctorGuid) {
 
 export async function saveFAQ(model) {
   const config = getConfig("exadoDoc.SaveFAQ");
-  config.data = model;
+  config.urlParams = model;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }
@@ -226,7 +226,7 @@ export async function deleteFAQ(faqGuid) {
 
 export async function getDoctorFinanceData(doctorGuid) {
   const config = getConfig("exadoDoc.GetDoctorFinanceData");
-  config.useParams = { doctorGuid };
+  config.urlParams = { doctorGuid };
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }

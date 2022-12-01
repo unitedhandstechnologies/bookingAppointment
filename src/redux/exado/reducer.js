@@ -32,7 +32,7 @@ export default function ExadoReducer(state = initStateObj, action) {
       return {
         ...state,
         userId: action.value,
-        userFullName: action.value,
+        fullName: action.value,
         userType: action.value,
         userEmail: action.value,
       };

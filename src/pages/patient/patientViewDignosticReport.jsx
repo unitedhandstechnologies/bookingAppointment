@@ -867,7 +867,7 @@ class PatientViewDignosticReport extends React.Component {
                                   <div>
                                     <Link
                                       className="btn patient-symptoms-save-btn"
-                                      to={`/book-an-appoinment-doc-detail/${this.state.DiagnosticDetails.appointmentData.doctorGuid}`}
+                                      to={`/doctor/book-an-appoinment-doc-detail/${this.state.DiagnosticDetails.appointmentData.doctorGuid}`}
                                     >
                                       {t(
                                         "Patient.ViewDignosticReport.Book_Again"

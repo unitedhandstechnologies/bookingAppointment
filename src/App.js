@@ -58,8 +58,6 @@ import AdminFinance from "./pages/Admin/adminFinance";
 import Languages from "./pages/Admin/masterPages/languages";
 import { componentWithLazyLoad } from "./utility/common";
 import AddFunds from "./pages/patient/addFunds";
-// import ProtectedWrapper from "./utility/ProtectedWrapper";
-// import healthInformation from "./pages/patient/patientProfile/healthInformation";
 
 const CmsPages = lazy(() => import("./pages/Admin/cmsPage/cmsPages"));
 const PhysicianServices = lazy(() =>
@@ -72,6 +70,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
+          {/* Common route */}
           <Route exact path="/" component={landingPage} />
           <Route exact path="/language" component={landingPage} />
           <Route exact path="/language/:lan" component={landingPage} />
@@ -96,158 +95,152 @@ function App() {
           <Route exact path="/emergency" component={Emergency} />
           <Route exact path="/chat-with-doctor" component={ChatWithDoctor} />
           <Route exact path="/login" component={LoginPage} />
-          {/* <Route
-            exact
-            // path="/login"
-            path="/"
-            element={
-              <ProtectedWrapper>
-                <LoginPage />
-              </ProtectedWrapper>
-            }
-          /> */}
           <Route exact path="/register-doctor" component={LoginPage} />
-          <Route exact path="/admin-login" component={AdminLoginPage} />
+          <Route exact path="/admin/login" component={AdminLoginPage} />
           <Route
             exact
             path="/reset-password/:userId"
             component={ResetPassword}
           />
-
-          <Route exact path="/patient-dashboard" component={PatientDashboard} />
-          <Route exact path="/patient-profile" component={PatientProfile} />
+          {/* patient route */}
+          <Route exact path="/patient/dashboard" component={PatientDashboard} />
+          <Route exact path="/patient/profile" component={PatientProfile} />
           <Route
             exact
-            path="/patient-general-setting"
+            path="/patient/general-setting"
             component={PatientGeneralSetting}
           />
           <Route
             exact
-            path="/book-an-appoinment-save"
+            path="/patient/book-an-appoinment-save"
             component={BookAnAppoinmentSave}
           />
           <Route
             exact
-            path="/patient-appointment-requests"
+            path="/patient/appointment-requests"
             component={PatientAppointmentRequests}
           />
           <Route
             exact
-            path="/patient-appointment-upcoming"
+            path="/patient/appointment-upcoming"
             component={PatientAppointmentUpComing}
           />
           <Route
             exact
-            path="/patient-appointment-completed"
+            path="/patient/appointment-completed"
             component={PatientAppointmentCompleted}
           />
           <Route
             exact
-            path="/patient-appointment-cancelled"
+            path="/patient/appointment-cancelled"
             component={PatientAppointmentCancelled}
           />
           <Route
             exact
-            path="/patient-view-diagnostic/:appointmentGuid"
+            path="/patient/view-diagnostic/:appointmentGuid"
             component={PatientViewDignosticReport}
           />
-          <Route exact path="/patient-myfinance" component={PatientMyFinance} />
-          <Route exact path="/patient-addfunds" component={AddFunds} />
-
-          <Route exact path="/doctor-dashboard" component={DoctorDashboard} />
-          <Route exact path="/doctor-my-patients" component={DocMyPatients} />
-          <Route exact path="/doctor-profile" component={DoctorProfilePage} />
-          <Route exact path="/doctor-my-fees" component={DoctorMyFees} />
-          <Route exact path="/doctor-my-timing" component={DoctorMyTiming} />
+          <Route exact path="/patient/myfinance" component={PatientMyFinance} />
+          <Route exact path="/patient/addfunds" component={AddFunds} />
+          {/* Doctor Route */}
+          <Route exact path="/doctor/dashboard" component={DoctorDashboard} />
+          <Route exact path="/doctor/my-patients" component={DocMyPatients} />
+          <Route exact path="/doctor/profile" component={DoctorProfilePage} />
+          <Route exact path="/doctor/my-fees" component={DoctorMyFees} />
+          <Route exact path="/doctor/my-timing" component={DoctorMyTiming} />
           <Route
             exact
-            path="/book-an-appoinment-doc-detail/:docGuid"
+            path="/doctor/book-an-appoinment-doc-detail/:docGuid"
             component={BookAnAppoinmentDocView}
           />
           <Route
             exact
-            path="/doctor-appointment-requests"
+            path="/doctor/appointment-requests"
             component={DoctorAppointmentRequests}
           />
           <Route
             exact
-            path="/doctor-appointment-upcoming"
+            path="/doctor/appointment-upcoming"
             component={DoctorAppointmentUpComing}
           />
           <Route
             exact
-            path="/doctor-appointment-completed"
+            path="/doctor/appointment-completed"
             component={DoctorAppointmentCompleted}
           />
           <Route
             exact
-            path="/doctor-appointment-cancelled"
+            path="/doctor/appointment-cancelled"
             component={DoctorAppointmentCancelled}
           />
           <Route
             exact
-            path="/save-diagnostic/:appointmentGuid"
+            path="/doctor/save-diagnostic/:appointmentGuid"
             component={SaveDiagnostic}
           />
           <Route
             exact
-            path="/doc-view-diagnostic/:appointmentGuid"
+            path="/doctor/view-diagnostic/:appointmentGuid"
             component={DoctorViewDignosticReport}
           />
-          <Route exact path="/doctor-faq" component={DoctorFAQ} />
-          <Route exact path="/doctor-myfinance" component={DoctorMyFinance} />
-
-          <Route exact path="/admin-dashboard" component={AdminDashboard} />
+          <Route exact path="/doctor/faq" component={DoctorFAQ} />
+          <Route exact path="/doctor/myfinance" component={DoctorMyFinance} />
+          {/* Admin Route */}
+          <Route exact path="/admin/dashboard" component={AdminDashboard} />
           <Route
             exact
-            path="/withdraw-list"
+            path="/admin/withdraw-list"
             component={AdminUnprocessedWithdrawList}
           />
           <Route
             exact
-            path="/admin-verification-request/:userGuid"
+            path="/admin/verification-request/:userGuid"
             component={VerificationRequest}
           />
           <Route
             exact
-            path="/admin-appointment-requests"
+            path="/admin/appointment-requests"
             component={AdminAppointmentRequests}
           />
           <Route
             exact
-            path="/admin-appointment-upcoming"
+            path="/admin/appointment-upcoming"
             component={AdminAppointmentUpComing}
           />
           <Route
             exact
-            path="/admin-appointment-completed"
+            path="/admin/appointment-completed"
             component={AdminAppointmentCompleted}
           />
           <Route
             exact
-            path="/admin-appointment-cancelled"
+            path="/admin/appointment-cancelled"
             component={AdminAppointmentCancelled}
           />
-          <Route exact path="/admin-feedback" component={AdminFeedback} />
-          <Route exact path="/admin-commission" component={AdminCommission} />
-          <Route exact path="/admin-finance" component={AdminFinance} />
+          <Route exact path="/admin/feedback" component={AdminFeedback} />
+          <Route exact path="/admin/commission" component={AdminCommission} />
+          <Route exact path="/admin/finance" component={AdminFinance} />
           <Route
             exact
-            path="/admin-appointment-refund"
+            path="/admin/appointment-refund"
             component={AdminAppointmentRefund}
           />
           <Route
-            path="/admin-cms"
+            path="/admin/cms"
             component={() => componentWithLazyLoad(CmsPages)}
           />
           <Route
-            path="/admin-physician-services"
+            path="/admin/physician-servicesphysician-services"
             component={() => componentWithLazyLoad(PhysicianServices)}
           />
-          <Route exact path="/admin-languages" component={Languages} />
+          <Route
+            exact
+            path="/admin/physician-serviceslanguages"
+            component={Languages}
+          />
 
-          <Route exact path="/patient-list" component={PatientListView} />
-          <Route exact path="/doctor-list" component={DoctorListView} />
+          <Route exact path="/admin/patient-list" component={PatientListView} />
+          <Route exact path="/admin/doctor-list" component={DoctorListView} />
           <Route
             exact
             path="/patient-detail-view/:userGuid"
@@ -260,7 +253,7 @@ function App() {
           />
           <Route
             exact
-            path="/video-call/:appointmentGuid"
+            path="/admin/video-call/:appointmentGuid"
             component={() => componentWithLazyLoad(AgoraRTC)}
           />
 

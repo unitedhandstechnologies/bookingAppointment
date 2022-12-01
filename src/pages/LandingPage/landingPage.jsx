@@ -113,7 +113,7 @@ class LandingPage extends React.Component {
     };
     promiseWrapper(this.props.comactions.getCMSPage, {
       query: { ...queryParam },
-    }).then((data) => this.setState({ cmsData: data.data }));
+    }).then((data) => this.setState({ cmsData: data.data.result }));
   };
 
   getDoctorData = () => {
@@ -559,7 +559,7 @@ class LandingPage extends React.Component {
                           </div>
                           <div className="doctor-item-right">
                             <Link
-                              to={`/book-an-appoinment-doc-detail/${doctorData.doctorGuid}`}
+                              to={`/doctor/book-an-appoinment-doc-detail/${doctorData.doctorGuid}`}
                               className="doctor-name-link"
                             >
                               {doctorData.firstName} {doctorData.lastName}
@@ -602,7 +602,7 @@ class LandingPage extends React.Component {
                             {t("Public.LandingPage.Chat_with_Doctor")}
                           </button>
                           <Link
-                            to={`/book-an-appoinment-doc-detail/${doctorData.doctorGuid}`}
+                            to={`/doctor/book-an-appoinment-doc-detail/${doctorData.doctorGuid}`}
                             className="btn doctor-boxes-btn2"
                           >
                             {t("Public.LandingPage.View_Availability")}

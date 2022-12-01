@@ -341,7 +341,7 @@ class PatientAppointmentCompleted extends React.Component {
                                       <td>
                                         <Link
                                           className="doctor-name-link"
-                                          to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                          to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                         >
                                           {v.doctorFirstName} {v.doctorLastName}
                                         </Link>
@@ -507,7 +507,7 @@ class PatientAppointmentCompleted extends React.Component {
                                             </a>
                                             <Link
                                               className="dropdown-item"
-                                              to={`/book-an-appoinment-doc-detail/${v.doctorGuid}`}
+                                              to={`/doctor/book-an-appoinment-doc-detail/${v.doctorGuid}`}
                                             >
                                               {t(
                                                 "Patient.ViewDignosticReport.Book_Again"

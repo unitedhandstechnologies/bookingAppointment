@@ -27,14 +27,14 @@ class PatientProfile extends React.Component {
 
   GotoLastTab() {
     promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
-      pageNo: 1,
+      languageId: 1,
     }).then((data) => {
-      this.setState({ MonitorQuestionnaireList: data }, () => {
+      this.setState({ MonitorQuestionnaireList: data.result }, () => {
         promiseWrapper(this.props.patientactions.getPatientAnswers, {
           patientGuid: localStorage.getItem("user-id"),
           pageNo: 1,
         }).then((data) => {
-          this.setState({ MonitorAnswerDataList: data }, () => {
+          this.setState({ MonitorAnswerDataList: data.result }, () => {
             window.$('.nav-pills a[href="#1812health-monitoring"]').tab("show");
           });
         });
@@ -44,14 +44,14 @@ class PatientProfile extends React.Component {
 
   handleSelect = () => {
     promiseWrapper(this.props.patientactions.getPatientQuestionnaire, {
-      pageNo: 1,
+      languageId: 1,
     }).then((data) => {
-      this.setState({ MonitorQuestionnaireList: data }, () => {
+      this.setState({ MonitorQuestionnaireList: data.result }, () => {
         promiseWrapper(this.props.patientactions.getPatientAnswers, {
           patientGuid: localStorage.getItem("user-id"),
           pageNo: 1,
         }).then((data) => {
-          this.setState({ MonitorAnswerDataList: data }, () => {});
+          this.setState({ MonitorAnswerDataList: data.result }, () => {});
         });
       });
     });
@@ -290,7 +290,7 @@ class PatientProfile extends React.Component {
                                 )}
                                 <Link
                                   className="btn MyButton float-end"
-                                  to="/patient-dashboard"
+                                  to="/patient/dashboard"
                                 >
                                   Done
                                 </Link>

@@ -32,7 +32,7 @@ class DeactivateAccountPopup extends React.Component {
       promiseWrapper(this.props.actions.deactivateAccount, {
         doctorGuid: localStorage.getItem("user-id"),
       }).then((data) => {
-        if (data.data.isSuccess == true) {
+        if (data.data.success === true) {
           toast.success(data.data.message);
           localStorage.clear();
           this.setState({ redirect: "/home" });
@@ -44,7 +44,7 @@ class DeactivateAccountPopup extends React.Component {
       promiseWrapper(this.props.patientActions.deletePatient, {
         patientGuid: localStorage.getItem("user-id"),
       }).then((data) => {
-        if (data.data.isSuccess == true) {
+        if (data.data.success === true) {
           toast.success(data.data.message);
           localStorage.clear();
           this.setState({ redirect: "/home" });

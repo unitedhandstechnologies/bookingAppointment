@@ -32,7 +32,7 @@ class DoctorMyTiming extends React.Component {
     promiseWrapper(this.props.actions.getDoctorDefaultTiming, {
       doctorGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
-      this.setState({ DocDefaultTimingData: jsdata }, () => {
+      this.setState({ DocDefaultTimingData: jsdata.result }, () => {
         this.setState({ DefaultGUID: "" });
         this.setState({ LoadedDefaultData: true });
       });
@@ -43,7 +43,7 @@ class DoctorMyTiming extends React.Component {
     promiseWrapper(this.props.actions.getDoctorCustomTiming, {
       doctorGuid: localStorage.getItem("user-id"),
     }).then((jsdata) => {
-      this.setState({ DocCustomTimingData: jsdata }, () => {
+      this.setState({ DocCustomTimingData: jsdata.result }, () => {
         this.setState({ DefaultCustomGUID: "" });
         this.setState({ LoadedCustomData: true });
       });

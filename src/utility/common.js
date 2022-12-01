@@ -221,9 +221,10 @@ export const localStorageKeys = {
   userType: "user-type",
   userId: "user-id",
   accessToken: "access-token",
-  userFullname: "user-fullname",
+  fullName: "user-fullname",
   profileImage: "profile-image",
   websiteLanguageData: "website-language-data",
+  email: "email",
 };
 
 export const appointmentStatus = {

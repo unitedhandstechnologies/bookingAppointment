@@ -31,13 +31,13 @@ class FaceBookLoginButton extends React.Component {
       Email: res.email,
       SocialMediaLoginId: res.userID,
       SocialMediaType: 1,
-      UserType: ut == "Patient" ? 2 : 1,
-      IsDoctorLogin: ut == "Patient" ? false : true,
+      UserType: ut === "Patient" ? 2 : 1,
+      IsDoctorLogin: ut === "Patient" ? false : true,
     };
     promiseWrapper(this.props.actions.socialMediaLogin, {
       userModel: userData,
     }).then((data) => {
-      if (data.data.isSuccess == true) {
+      if (data.data.success === true) {
         window.localStorage.removeItem("login-Type");
         window.localStorage.setItem("access-token", data.data.data.Token);
         window.localStorage.setItem("user-id", data.data.data.userId);
@@ -47,17 +47,17 @@ class FaceBookLoginButton extends React.Component {
         );
         window.localStorage.setItem("user-type", data.data.data.UserType);
         if (data.data.data.UserType === "2") {
-          this.setState({ redirect: "/patient-dashboard" });
+          this.setState({ redirect: "/patient/dashboard" });
         } else if (data.data.data.UserType === "1") {
           if (data.data.data.ProfileVerification === "1") {
-            this.setState({ redirect: "/doctor-profile" });
+            this.setState({ redirect: "/doctor/profile" });
           } else {
-            this.setState({ redirect: "/doctor-dashboard" });
+            this.setState({ redirect: "/doctor/dashboard" });
           }
         } else {
-          this.setState({ redirect: "/patient-dashboard" });
+          this.setState({ redirect: "/patient/dashboard" });
         }
-        this.setState({ redirect: "/patient-dashboard" });
+        this.setState({ redirect: "/patient/dashboard" });
       } else {
         toast.error(data.data.errorMessage);
       }

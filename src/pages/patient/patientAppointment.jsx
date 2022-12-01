@@ -48,10 +48,10 @@ class PatientAppointmentRequestsTest extends React.Component {
       filter: param,
     }).then((data) => {
       this.setState(
-        { AppointmentRequestList: data.patientAppointments },
+        { AppointmentRequestList: data.result.patientAppointments },
         () => {
-          this.setState({ TotalRecords: data.totalRecords });
-          this.setState({ TotalPages: data.totalPages });
+          this.setState({ TotalRecords: data.result.totalRecords });
+          this.setState({ TotalPages: data.result.totalPages });
           this.setState({ LoadedData: true });
         }
       );

@@ -32,7 +32,7 @@ class RejectPopup extends React.Component {
       cancelReason: this.state.Reason,
     }).then((jsdata) => {
       if (jsdata.success === true) {
-        toast.success(jsdata.message);
+        toast.success(jsdata.result);
         this.setState({ redirect: "/admin/dashboard" });
       } else {
         toast.error(jsdata.message);

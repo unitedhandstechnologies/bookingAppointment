@@ -379,14 +379,14 @@ const ApiConstants = {
     },
     SaveDoctorAdditionalService: {
       apiConfig: {
-        url: "api/SaveDoctorAdditionalService",
+        url: "doctor/saveadditionalserviceinfo",
         method: "POST",
       },
       attachPrefix: true,
     },
     DeleteDoctorServiceById: {
       apiConfig: {
-        url: "api/DeleteDoctorServiceById",
+        url: "doctor/deleteservicebyid",
         method: "DELETE",
       },
       attachPrefix: true,
@@ -516,7 +516,7 @@ const ApiConstants = {
     },
     SaveDoctorCommission: {
       apiConfig: {
-        url: "api/SaveDoctorCommission",
+        url: "admin/commission",
         method: "POST",
       },
       attachPrefix: true,
@@ -600,7 +600,7 @@ const ApiConstants = {
     },
     SaveLanguage: {
       apiConfig: {
-        url: "admin/language",
+        url: "admin/savelanguage",
         method: "POST",
       },
       attachPrefix: true,

@@ -30,9 +30,9 @@ const AdminAppointmentCompleted = (props) => {
   const [SortDir, setSortDir] = useState("");
   const [TotalRecords, setTotalRecords] = useState(0);
   const [TotalPages, setTotalPages] = useState(0);
-  const [appointmentTypes, setAppointmentTypes] = useState(["1", "2", "3"]);
-  const [FromDate, setFromDate] = useState(null);
-  const [ToDate, setToDate] = useState(null);
+  const [appointmentTypes, setAppointmentTypes] = useState(["1"]);
+  const [FromDate, setFromDate] = useState("");
+  const [ToDate, setToDate] = useState("");
 
   const { t } = props;
 
@@ -47,19 +47,19 @@ const AdminAppointmentCompleted = (props) => {
       search: SearchText,
       sortExp: SortExp,
       sortDir: SortDir,
-      patientGuid: null,
-      doctorGuid: null,
+      patientGuid: "",
+      doctorGuid: "",
       appointmentStatuses: [4],
       appointmentTypes: appointmentTypes.map((v) => parseInt(v, 10)),
-      fromDate: FromDate,
-      toDate: ToDate,
+      fromDate: "",
+      toDate: "",
     };
     promiseWrapper(props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      setAppointmentRequestList(data.patientAppointments);
-      setTotalRecords(data.totalRecords);
-      setTotalPages(data.totalPages);
+      setAppointmentRequestList(data.result.patientAppointments);
+      setTotalRecords(data.result.totalRecords);
+      setTotalPages(data.result.totalPages);
       setLoadedData(true);
     });
   };

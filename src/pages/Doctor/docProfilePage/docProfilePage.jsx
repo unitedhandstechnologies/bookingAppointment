@@ -169,15 +169,17 @@ class DoctorProfilePage extends React.Component {
   SavePersonalProfile(ProfilePersonalInfo) {
     let prfInfo = {
       userGuid: localStorage.getItem(localStorageKeys.userId),
-      firstName: ProfilePersonalInfo["firstName"],
-      lastName: ProfilePersonalInfo["lastName"]||'',
+      firstName:
+        ProfilePersonalInfo["firstName"] ||
+        localStorage.getItem(localStorageKeys.fullName),
+      lastName: ProfilePersonalInfo["lastName"] || "",
       email: ProfilePersonalInfo["email"],
       phone: ProfilePersonalInfo["phone"],
-      address: ProfilePersonalInfo["address"]|| null,
+      address: ProfilePersonalInfo["address"] || null,
       userType: ProfilePersonalInfo["userType"] || 1,
-      isVerified: ProfilePersonalInfo["isVerified"]|| false,
-      isEmailVerified: ProfilePersonalInfo["isEmailVerified"]||true,
-      isMobileVerified: ProfilePersonalInfo["isMobileVerified"]||false,
+      isVerified: ProfilePersonalInfo["isVerified"] || false,
+      isEmailVerified: ProfilePersonalInfo["isEmailVerified"] || true,
+      isMobileVerified: ProfilePersonalInfo["isMobileVerified"] || false,
       languageId: Number(ProfilePersonalInfo["languageId"]),
       gender: Number(ProfilePersonalInfo["gender"]),
       doB: ProfilePersonalInfo["doB"],
@@ -190,7 +192,7 @@ class DoctorProfilePage extends React.Component {
       profileImageURL: ProfilePersonalInfo["profileImageURL"],
       profileImagePath: ProfilePersonalInfo["profileImagePath"],
       timezoneGuid: ProfilePersonalInfo["timezoneGuid"],
-      cancelReason:ProfilePersonalInfo["cancelReason"]|| null
+      cancelReason: ProfilePersonalInfo["cancelReason"] || null,
     };
     promiseWrapper(this.props.actions.saveProfileInfo, {
       userModel: prfInfo,

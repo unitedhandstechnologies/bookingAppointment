@@ -129,7 +129,7 @@ export async function updatePatientAttachment(patientGuid, file) {
 
 export async function getAppointments(filter) {
   const config = getConfig("exadoPatient.GetAppointments");
-  config.data = filter;
+  config.urlParams = filter;
   const apiInstance = new ApiService(config);
   return apiInstance.call();
 }

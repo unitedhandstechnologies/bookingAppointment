@@ -16,8 +16,8 @@ class DoctorMyTiming extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      LoadedDefaultData: false,
-      LoadedCustomData: false,
+      LoadedDefaultData: true,
+      LoadedCustomData: true,
       setDefaultOnlineTimingPopup: false,
       setDefaultOfflineTimingPopup: false,
       setCustomTimingPopup: false,

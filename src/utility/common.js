@@ -225,6 +225,7 @@ export const localStorageKeys = {
   profileImage: "profile-image",
   websiteLanguageData: "website-language-data",
   email: "email",
+  isEmailVerified: "isEmailVerified",
 };
 
 export const appointmentStatus = {

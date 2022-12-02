@@ -35,7 +35,7 @@ class PatientAppointmentRequests extends React.Component {
       SortDir: "",
       TotalRecords: 0,
       TotalPages: 0,
-      appointmentTypes: ["1", "2", "3"],
+      appointmentTypes: ["1"],
       FromDate: null, //new moment().subtract(3, 'months'),
       ToDate: null, //new Date(),
       IsCancelPopUp: false,
@@ -55,17 +55,17 @@ class PatientAppointmentRequests extends React.Component {
       search: this.state.SearchText,
       sortExp: this.state.SortExp,
       sortDir: this.state.SortDir,
-      patientGuid: localStorage.getItem("user-id"),
-      doctorGuid: null,
+      patientGuid: localStorage.getItem("user-id") || "",
+      doctorGuid: "",
       appointmentStatuses: [1],
       appointmentTypes: this.state.appointmentTypes.map((v) => parseInt(v, 10)),
-      fromDate: this.state.FromDate,
-      toDate: this.state.ToDate,
+      fromDate: this.state.FromDate || "",
+      toDate: this.state.ToDate || "",
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      const filterList = data.patientAppointments.filter((appointment) =>
+      const filterList = data.result.patientAppointments.filter((appointment) =>
         isAppointmentNew(appointment.appointmentDateTime)
       );
       this.setState({ AppointmentRequestList: filterList }, () => {

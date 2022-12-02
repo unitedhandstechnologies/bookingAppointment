@@ -31,7 +31,7 @@ class AdditionalServices extends Component {
     promiseWrapper(this.props.docactions.getAllDoctorAdditionalService, {
       params: { doctorGuid: localStorage.getItem("user-id") },
     })
-      .then((data) => this.setState({ additionalServices: data.data }))
+      .then((data) => this.setState({ additionalServices: data.data.result }))
       .catch((err) => console.log(err));
   };
 
@@ -48,7 +48,7 @@ class AdditionalServices extends Component {
       },
     })
       .then((data) => {
-        if (data.data.isSuccess) {
+        if (data.data.success) {
           toast.success(data.data.message);
           this.getDoctorAdditionalService();
         } else toast.error(data.data.errorMessage);

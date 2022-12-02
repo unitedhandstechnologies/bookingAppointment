@@ -22,20 +22,20 @@ class BookAnAppoinment extends React.Component {
       docGuid: "",
       anAppoinmentModel: {
         appDate: new Date().toISOString().split("T")[0],
-        location: "",
-        physicianService: [],
+        location: null,
+        physicianService: [1],
         isMale: 0,
-        languageId: [],
+        languageId: [1],
         appointmentType: 2,
         userType: localStorage.getItem(localStorageKeys.userType)
           ? parseInt(localStorage.getItem(localStorageKeys.userType))
-          : null,
+          : 1,
       },
       docDetailList: [],
       viewAllAvailabilityPopup: false,
       LocationList: [],
       LanguageData: [],
-      PhysicianServiceList: [],
+      PhysicianServiceList: [1],
       PhysicianServiceLable: "",
       LanguageLable: "",
     };

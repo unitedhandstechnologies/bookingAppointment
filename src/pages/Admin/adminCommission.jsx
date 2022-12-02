@@ -75,7 +75,7 @@ const AdminCommission = (props) => {
       list: { CommissionData: data },
     })
       .then((data) => {
-        if (data.data.isSuccess) {
+        if (data.data.success) {
           toast.success(data.data.message);
           getPageData();
         }

@@ -87,8 +87,7 @@ class VerificationRequest extends React.Component {
     promiseWrapper(this.props.actions.getDoctorViewDetails, {
       userGuid: this.props.match.params.userGuid,
     }).then((response) => {
-      
-      this.setState({ DoctorProfile: response.result});
+      this.setState({ DoctorProfile: response.result });
     });
   }
 
@@ -98,8 +97,8 @@ class VerificationRequest extends React.Component {
       verificationType: 3,
       cancelReason: "",
     }).then((jsdata) => {
-      if (jsdata.isSuccess === true) {
-        toast.success(jsdata.message);
+      if (jsdata.success === true) {
+        toast.success(jsdata.result);
         this.props.history.push("/admin/dashboard");
       } else {
         toast.error(jsdata.message);

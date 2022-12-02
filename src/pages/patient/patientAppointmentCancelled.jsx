@@ -33,7 +33,7 @@ class PatientAppointmentCancelled extends React.Component {
       SortDir: "",
       TotalRecords: 0,
       TotalPages: 0,
-      appointmentTypes: ["1", "2", "3"],
+      appointmentTypes: ["1"],
       FromDate: null, //new moment().subtract(3, 'months'),
       ToDate: null, //new Date(),
     };
@@ -51,20 +51,20 @@ class PatientAppointmentCancelled extends React.Component {
       sortExp: this.state.SortExp,
       sortDir: this.state.SortDir,
       patientGuid: localStorage.getItem("user-id"),
-      doctorGuid: null,
-      appointmentStatuses: [3, 5],
+      doctorGuid: "",
+      appointmentStatuses: [3],
       appointmentTypes: this.state.appointmentTypes.map((v) => parseInt(v, 10)),
-      fromDate: this.state.FromDate,
-      toDate: this.state.ToDate,
+      fromDate: this.state.FromDate || "",
+      toDate: this.state.ToDate || "",
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
       this.setState(
-        { AppointmentRequestList: data.patientAppointments },
+        { AppointmentRequestList: data.result.patientAppointments },
         () => {
-          this.setState({ TotalRecords: data.totalRecords });
-          this.setState({ TotalPages: data.totalPages });
+          this.setState({ TotalRecords: data.result.totalRecords });
+          this.setState({ TotalPages: data.result.totalPages });
           this.setState({ LoadedData: true });
         }
       );

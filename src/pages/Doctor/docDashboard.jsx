@@ -58,29 +58,29 @@ class DoctorDashboard extends React.Component {
       search: "",
       sortExp: "",
       sortDir: "",
-      patientGuid: null,
+      patientGuid: "",
       doctorGuid: localStorage.getItem("user-id"),
-      appointmentStatuses: [1, 2],
-      appointmentTypes: [1, 2, 3],
-      fromDate: null, //new moment().subtract(3, 'months'),
-      toDate: null, //new Date(),
+      appointmentStatuses: [1],
+      appointmentTypes: [1],
+      fromDate: "", //new moment().subtract(3, 'months'),
+      toDate: "", //new Date(),
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      const requestList = data.patientAppointments.filter(
+      const requestList = data.result.patientAppointments.filter(
         (appointmentData) =>
           appointmentData.appointmentStatus === "Requested" &&
           isAppointmentNew(appointmentData.appointmentDateTime)
       );
-      const upcomingList = data.patientAppointments.filter(
+      const upcomingList = data.result.patientAppointments.filter(
         (appointmentData) =>
           appointmentData.appointmentStatus === "Approved" &&
           isAppointmentNew(appointmentData.appointmentDateTime, 2)
       );
       this.setState(
         {
-          AppointmentRequestList: data.patientAppointments,
+          AppointmentRequestList: data.result.patientAppointments,
           appointmentRequestList: requestList,
           appointmentUpcomingList: upcomingList,
         },

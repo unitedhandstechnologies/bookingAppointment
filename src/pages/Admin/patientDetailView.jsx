@@ -115,6 +115,7 @@ class PatientDetailView extends React.Component {
             promiseWrapper(this.props.patientactions.getPatientAnswers, {
               patientGuid: this.props.match.params.userGuid,
               languageId: 1,
+              pageNo: 1,
             }).then((data) => {
               this.setState({ MonitorAnswerDataList: data.result }, () => {
                 this.setState({ LoadedData: true });
@@ -136,19 +137,19 @@ class PatientDetailView extends React.Component {
       patientGuid: this.props.match.params.userGuid,
       doctorGuid: localStorage.getItem("user-id"),
       appointmentStatuses: [4],
-      appointmentTypes: [1, 2, 3],
-      fromDate: null,
-      toDate: null,
+      appointmentTypes: [1],
+      fromDate: "",
+      toDate: "",
       isFromPatientDetailPage: true,
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
       this.setState(
-        { AppointmentRequestList: data.patientAppointments },
+        { AppointmentRequestList: data.result.patientAppointments },
         () => {
-          this.setState({ TotalRecords: data.totalRecords });
-          this.setState({ TotalPages: data.totalPages });
+          this.setState({ TotalRecords: data.result.totalRecords });
+          this.setState({ TotalPages: data.result.totalPages });
         }
       );
     });

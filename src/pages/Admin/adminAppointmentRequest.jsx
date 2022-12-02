@@ -35,7 +35,7 @@ const AdminAppointmentRequests = (props) => {
   const [SortDir, setSortDir] = useState("");
   const [TotalRecords, setTotalRecords] = useState(0);
   const [TotalPages, setTotalPages] = useState(0);
-  const [appointmentTypes, setAppointmentTypes] = useState(["1", "2", "3"]);
+  const [appointmentTypes, setAppointmentTypes] = useState(["1"]);
   const [FromDate, setFromDate] = useState(null);
   const [ToDate, setToDate] = useState(null);
   const [IsAcceeptPopUp, setIsAcceeptPopUp] = useState(false);
@@ -56,17 +56,17 @@ const AdminAppointmentRequests = (props) => {
       search: SearchText,
       sortExp: SortExp,
       sortDir: SortDir,
-      patientGuid: null,
-      doctorGuid: null,
+      patientGuid: "",
+      doctorGuid: "",
       appointmentStatuses: [1],
       appointmentTypes: appointmentTypes.map((v) => parseInt(v, 10)),
-      fromDate: FromDate,
-      toDate: ToDate,
+      fromDate: "",
+      toDate: "",
     };
     promiseWrapper(props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      const filterList = data.patientAppointments.filter((appointment) =>
+      const filterList = data.result.patientAppointments.filter((appointment) =>
         isAppointmentNew(appointment.appointmentDateTime)
       );
 

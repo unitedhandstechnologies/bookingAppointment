@@ -47,12 +47,16 @@ class AdminLoginBox extends React.Component {
           localStorage.setItem("user-fullname", data.data.result.fullName);
           localStorage.setItem("user-type", data.data.result.userType);
           localStorage.setItem("profile-image", data.data.result.profileImage);
+          localStorage.setItem(
+            "isEmailVerified",
+            data.data.result.isEmailVerified
+          );
           toast.success(data.data.message);
           this.setState({ redirect: "/admin/dashboard" });
         } else {
           toast.error(data.message);
         }
-      })
+      });
     }
   };
 

@@ -140,26 +140,27 @@ class PersonalInformation extends Component {
   getAllCurrency = () =>
     promiseWrapper(this.props.docactions.getCurrency)
       .then((jsdata) => {
-      this.setState({ CurrencyData: jsdata.result })})
+        this.setState({ CurrencyData: jsdata.result });
+      })
       .catch((err) => console.log(err));
 
   getCountry = () =>
     promiseWrapper(this.props.docactions.getCountry).then((jsdata) =>
-      this.setState({ CitizenshipData: jsdata.result  })
+      this.setState({ CitizenshipData: jsdata.result })
     );
 
   getLanguages = () =>
     promiseWrapper(this.props.docactions.getLanguages).then((jsdata) =>
-      this.setState({ LanguageData: jsdata.result  })
+      this.setState({ LanguageData: jsdata.result })
     );
 
   getWebsiteLanguages = () =>
     promiseWrapper(this.props.docactions.getWebsiteLanguages).then((jsdata) => {
-      this.setState({ WebSiteLanguageData: jsdata.result  });
+      this.setState({ WebSiteLanguageData: jsdata.result });
     });
   getTimezones = () =>
     promiseWrapper(this.props.docactions.getTimezones).then((jsdata) =>
-      this.setState({ TimezoneData: jsdata.result  })
+      this.setState({ TimezoneData: jsdata.result })
     );
 
   getPatientProfileInfo = () =>
@@ -177,7 +178,8 @@ class PersonalInformation extends Component {
             doB: data.result.doB != null ? data.result.doB.substr(0, 10) : null,
           },
           SelectedCurrency:
-            data.result.currency && this.selectCurrencyFromList(data.result.currency),
+            data.result.currency &&
+            this.selectCurrencyFromList(data.result.currency),
         },
         () => {
           if (languageObj) this.changeStateLanguage(languageObj);
@@ -270,7 +272,7 @@ class PersonalInformation extends Component {
       currency: values.currencyCode,
       address: "do velit",
       cancelReason: "Lorem ea veniam eu",
-      preferredLanguageIds:[1,2]
+      preferredLanguageIds: [1],
     };
 
     promiseWrapper(this.props.patientactions.savePatientProfileInfo, {
@@ -619,7 +621,7 @@ class PersonalInformation extends Component {
                                   name="weight"
                                   placeholder={t(
                                     "Patient.PatientProfile.Weight"
-                                  )}                                
+                                  )}
                                 />
                                 {errors.weight && touched.weight && (
                                   <ErrorMessage error={errors.weight} t={t} />

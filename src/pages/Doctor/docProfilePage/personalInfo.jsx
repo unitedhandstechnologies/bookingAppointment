@@ -64,7 +64,7 @@ export class PersonalInfo extends Component {
       TimezoneData,
       LanguageData,
       onSubmit,
-      ProfilePersonalInfo
+      ProfilePersonalInfo,
     } = this.props;
     return (
       <Formik
@@ -72,12 +72,13 @@ export class PersonalInfo extends Component {
         initialValues={{
           languageId: ProfilePersonalInfo.languageId || "",
           preferredLanguageIds: ProfilePersonalInfo.preferredLanguageIds || "",
-          firstName: ProfilePersonalInfo.firstName || localStorage.getItem("user-fullname")||"",
-          lastName: ProfilePersonalInfo.lastName || "",
+          firstName: ProfilePersonalInfo.firstName,
+          lastName: ProfilePersonalInfo.lastName,
           gender: ProfilePersonalInfo.gender
             ? ProfilePersonalInfo.gender.toString()
             : "",
-          email: ProfilePersonalInfo.email || localStorage.getItem("email")||"",
+          email:
+            ProfilePersonalInfo.email || localStorage.getItem("email") || "",
           citizenshipId: ProfilePersonalInfo.citizenshipId || "",
           doB: ProfilePersonalInfo.doB || "",
           phone: ProfilePersonalInfo.phone || "",

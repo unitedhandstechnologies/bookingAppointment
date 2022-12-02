@@ -70,7 +70,7 @@ class DoctorMyFees extends React.Component {
         }));
 
         promiseWrapper(this.props.actions.getCurrency).then((jsdata) => {
-          this.setState({ CurrencyData: jsdata }, () => {
+          this.setState({ CurrencyData: jsdata.result }, () => {
             jsdata.result.map((d, i) => {
               d.display = d.currencyCode + " (" + d.currency + ")";
               if (d.currencyID === data.currencyId) {
@@ -210,6 +210,8 @@ class DoctorMyFees extends React.Component {
       isChatFree: this.stringToBoolean(this.state.saveMyFees["isChatFree"]),
       chatFees: Number(this.state.saveMyFees["chatFees"]),
       acceptOnlinePayment: this.state.saveMyFees["acceptOnlinePayment"],
+      currency: "Excepteur consectetur in qui",
+      currencyCode: "cupidatat incididu",
     };
 
     promiseWrapper(this.props.actions.saveDoctorFees, {
@@ -268,13 +270,11 @@ class DoctorMyFees extends React.Component {
                                     <option value="0">
                                       {t("Doctor.MyFees.Select_Currency")}
                                     </option>
-                                    {this.state.CurrencyData.result.map(
-                                      (h, i) => (
-                                        <option key={i} value={h.currencyID}>
-                                          {h.display}
-                                        </option>
-                                      )
-                                    )}
+                                    {this.state.CurrencyData.map((h, i) => (
+                                      <option key={i} value={h.currencyID}>
+                                        {h.display}
+                                      </option>
+                                    ))}
                                   </select>
                                 </div>
                               </div>

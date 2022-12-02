@@ -25,9 +25,9 @@ export class Appointments extends Component {
     let param = {
       pageSize: 10,
       currentPage: this.state.CurrentPage,
-      doctorGuid: this.props.DoctorProfile.userGuid,
-      appointmentStatuses: [0, 1, 2],
-      appointmentTypes: [0, 1, 2],
+      doctorGuid: this.props.DoctorProfile.userGuid || "",
+      appointmentStatuses: [1],
+      appointmentTypes: [1],
       isFromPatientDetailPage: true,
       isRequiredRefundData: true,
       isRequiredCommissionData: true,
@@ -36,8 +36,8 @@ export class Appointments extends Component {
       filter: param,
     }).then((data) => {
       this.setState({
-        AppointmentList: data.patientAppointments,
-        TotalPages: data.totalPages,
+        AppointmentList: data.result.patientAppointments,
+        TotalPages: data.result.totalPages,
       });
     });
   }

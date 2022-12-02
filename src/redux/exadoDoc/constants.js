@@ -37,8 +37,9 @@ export const GET_DOCTORS_PATIENT = "api/GetDoctorsPatient";
 export const GET_BOOKED_APPOINTMENTS = "api/GetBookedAppointments";
 export const BOOK_OFFLINE_APPOINTMENT = "api/BookOfflineAppointment";
 export const GET_ALL_DOCTOR_ADDITIONAL_SERVICE = "doctor/alladditionalservice";
-export const SAVE_DOCTOR_ADDITIONAL_SERVICE = "api/SaveDoctorAdditionalService";
-export const DELETE_DOCTOR_SERVICE_BY_ID = "api/DeleteDoctorServiceById";
+export const SAVE_DOCTOR_ADDITIONAL_SERVICE =
+  "doctor/saveadditionalserviceinfo";
+export const DELETE_DOCTOR_SERVICE_BY_ID = "doctor/deleteservicebyid";
 export const SAVE_ADDITIONAL_SERVICES = "api/SaveAdditionalServices";
 export const GET_INVOICE_DETAILS = "doctor/invoice";
 export const GET_ADDITIONAL_SERVICE_INFO = "doctor/additionalservice";

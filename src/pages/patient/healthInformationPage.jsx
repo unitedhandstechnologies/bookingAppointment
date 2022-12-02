@@ -25,11 +25,14 @@ class HealthInformationPage extends React.Component {
       languageId: this.state.currentPage,
     }).then((data) => {
       this.setState({ QuestionnaireList: data }, () => {
-        // promiseWrapper(this.props.patientactions.getPatientAnswers, { patientGuid: localStorage.getItem("user-id"), pageNo: this.state.currentPage }).then((data) => {
-        //     this.setState({ AnswerDataList: data }, () => {
-        //         this.setState({ LoadedData: true });
-        //     });
-        // });
+        promiseWrapper(this.props.patientactions.getPatientAnswers, {
+          patientGuid: localStorage.getItem("user-id"),
+          pageNo: 1,
+        }).then((data) => {
+          this.setState({ AnswerDataList: data.result }, () => {
+            this.setState({ LoadedData: true });
+          });
+        });
       });
       this.setState({ LoadedData: true });
     });

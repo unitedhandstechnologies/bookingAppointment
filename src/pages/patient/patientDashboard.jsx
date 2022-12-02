@@ -52,18 +52,18 @@ class PatientDashboard extends React.Component {
       search: "",
       sortExp: "",
       sortDir: "",
-      patientGuid: localStorage.getItem("user-id"),
-      doctorGuid: null,
-      appointmentStatuses: [1, 2],
-      appointmentTypes: [1, 2, 3],
-      fromDate: null, //new moment().subtract(3, 'months'),
-      toDate: null, //new Date()
+      patientGuid: localStorage.getItem("user-id") || "",
+      doctorGuid: "",
+      appointmentStatuses: [1],
+      appointmentTypes: [1],
+      fromDate: "", //new moment().subtract(3, 'months'),
+      toDate: "", //new Date()
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      const filterArray = data.patientAppointments.filter((appointment) =>
-        isAppointmentNew(appointment.appointmentDateTime)
+      const filterArray = data.result.patientAppointments.filter(
+        (appointment) => isAppointmentNew(appointment.appointmentDateTime)
       );
       this.setState({ AppointmentRequestList: filterArray }, () => {
         this.setState({ TotalAppointmentRecords: filterArray.length });
@@ -397,7 +397,7 @@ class PatientDashboard extends React.Component {
                     </div>
                   </div>
                 </div>
-                
+
                 <PatientFooter />
               </div>
             </div>

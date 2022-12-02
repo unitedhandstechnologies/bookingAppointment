@@ -57,10 +57,7 @@ class LoginComponent extends React.Component {
           localStorageKeys.accessToken,
           data.data.result.token
         );
-         localStorage.setItem(
-          localStorageKeys.email,
-          values.email
-        );
+        localStorage.setItem(localStorageKeys.email, values.email);
         localStorage.setItem(
           localStorageKeys.userId,
           data.data.result.userGuid
@@ -76,6 +73,10 @@ class LoginComponent extends React.Component {
         localStorage.setItem(
           localStorageKeys.profileImage,
           data.data.result.profileImage
+        );
+        localStorage.setItem(
+          localStorageKeys.isEmailVerified,
+          data.data.result.isEmailVerified
         );
         const UserType = parseInt(data.data.result.userType);
         this.setState({
@@ -95,7 +96,7 @@ class LoginComponent extends React.Component {
             }
           }, 500),
         });
-      toast.success(data.data.message);
+        toast.success(data.data.message);
       } else
         this.setState({
           error: data.data.errorMessage,

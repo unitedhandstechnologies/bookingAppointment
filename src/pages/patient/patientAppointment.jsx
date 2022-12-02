@@ -37,12 +37,12 @@ class PatientAppointmentRequestsTest extends React.Component {
       search: this.state.SearchText,
       sortExp: this.state.SortExp,
       sortDir: this.state.SortDir,
-      patientGuid: localStorage.getItem("user-id"),
-      doctorGuid: null,
+      patientGuid: localStorage.getItem("user-id") || "",
+      doctorGuid: "",
       appointmentStatuses: [1],
-      appointmentTypes: [1, 2, 3],
-      fromDate: new Date("08/01/2021"),
-      toDate: new Date(),
+      appointmentTypes: [1],
+      fromDate: new Date("08/01/2021") || "",
+      toDate: new Date() || "",
     };
     promiseWrapper(this.props.patientactions.getAppointments, {
       filter: param,

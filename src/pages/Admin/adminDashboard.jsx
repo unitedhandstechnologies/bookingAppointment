@@ -37,17 +37,17 @@ const AdminDashboard = (props) => {
       search: "",
       sortExp: "",
       sortDir: "",
-      patientGuid: null,
-      doctorGuid: null,
-      appointmentStatuses: [1, 2, 3, 4, 5],
-      appointmentTypes: [1, 2, 3],
-      fromDate: null, //new moment().subtract(3, 'months'),
-      toDate: null, //new Date(),
+      patientGuid: "",
+      doctorGuid: "",
+      appointmentStatuses: [1],
+      appointmentTypes: [1],
+      fromDate: "", //new moment().subtract(3, 'months'),
+      toDate: "", //new Date(),
     };
     promiseWrapper(props.patientactions.getAppointments, {
       filter: param,
     }).then((data) => {
-      setAppointmentRequestList(data.patientAppointments);
+      setAppointmentRequestList(data.result.patientAppointments);
     });
   };
 
@@ -331,8 +331,6 @@ const AdminDashboard = (props) => {
     </div>
   );
 };
-
-
 
 const mapStoreToprops = (state, props) => {
   return {};

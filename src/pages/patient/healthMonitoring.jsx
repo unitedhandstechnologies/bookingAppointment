@@ -24,7 +24,7 @@ class HealthMonitoring extends React.Component {
       this.setState({ QuestionnaireList: data.result }, () => {
         promiseWrapper(this.props.patientactions.getPatientAnswers, {
           patientGuid: localStorage.getItem("user-id"),
-          pageNo: this.state.currentPage,
+          pageNo: 1,
         }).then((data) => {
           this.setState({ AnswerDataList: data.result }, () => {
             this.setState({ LoadedData: true });

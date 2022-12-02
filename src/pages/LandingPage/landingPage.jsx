@@ -119,10 +119,10 @@ class LandingPage extends React.Component {
   getDoctorData = () => {
     const appointmentModel = {
       appDate: new Date().toISOString().split("T")[0],
-      location: "",
-      physicianService: [],
+      location: null,
+      physicianService: [1],
       isMale: 0,
-      languageId: [],
+      languageId: [1],
       appointmentType: appointmentType.InClinic,
     };
     promiseWrapper(this.props.patientactions.searchAppointment, {
